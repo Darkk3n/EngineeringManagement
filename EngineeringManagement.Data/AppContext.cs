@@ -100,6 +100,34 @@ namespace EngineeringManagement.Data
                 new Certification{Id = -18, CertificationName = "NOM-026", Description = "CORRECTA INTERPRETACION DE LOS ELEMENTOS DE SEÑALIZACION DEL CENTRO DE TRABAJO"},
                 new Certification{Id = -19, CertificationName = "NOM-029", Description = "MANTENIMIENTO DE LAS INSTALACIONES ELECTRICAS EN LOS CENTROS DE TRABAJO"},
             });
+
+            modelBuilder.Entity<FacilityCertification>().HasData(new[]
+            {
+                //Sabic
+                new FacilityCertification{Id = -1, FacilityId = -1, CertificationId = -2},
+                new FacilityCertification{Id = -2, FacilityId = -2, CertificationId = -9},
+                //Cabot
+                new FacilityCertification{Id = -3, FacilityId = -2, CertificationId = -10},
+                new FacilityCertification{Id = -4, FacilityId = -2, CertificationId = -11},
+                new FacilityCertification{Id = -5, FacilityId = -2, CertificationId = -12},
+                new FacilityCertification{Id = -6, FacilityId = -2, CertificationId = -13},
+                new FacilityCertification{Id = -7, FacilityId = -2, CertificationId = -14},
+                new FacilityCertification{Id = -8, FacilityId = -2, CertificationId = -15},
+                new FacilityCertification{Id = -9, FacilityId = -2, CertificationId = -16},
+                new FacilityCertification{Id = -10, FacilityId = -2, CertificationId = -17},
+                //Both
+                new FacilityCertification{Id = -11, FacilityId = -1, CertificationId = -1},
+                new FacilityCertification{Id = -12, FacilityId = -2, CertificationId = -1},
+                new FacilityCertification{Id = -13, FacilityId = -1, CertificationId = -3},
+                new FacilityCertification{Id = -14, FacilityId = -2, CertificationId = -3},
+                new FacilityCertification{Id = -15, FacilityId = -1, CertificationId = -4},
+                new FacilityCertification{Id = -16, FacilityId = -2, CertificationId = -4},
+                new FacilityCertification{Id = -17, FacilityId = -1, CertificationId = -5},
+                new FacilityCertification{Id = -18, FacilityId = -2, CertificationId = -5},
+                new FacilityCertification{Id = -19, FacilityId = -1, CertificationId = -6},
+                new FacilityCertification{Id = -20, FacilityId = -2, CertificationId = -6},
+
+            });
         }
     }
 }
