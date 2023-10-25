@@ -71,6 +71,35 @@ namespace EngineeringManagement.Data
                 new Employee{Id =-39,EmployeeName="Santiago Hernandez Bernabe Esequiel", EmployeeType=EmployeeType.Administrative, Position="Electrico"},
                 new Employee{Id =-40,EmployeeName="Alvarez Martir Christian", EmployeeType=EmployeeType.Operative, Position="Auxiliar de control de proyectos"},
             });
+
+            modelBuilder.Entity<Facility>().HasData(new[]
+            {
+                new Facility{Id=-1,FacilityName="Sabic"},
+                new Facility{Id=-2,FacilityName="Cabot"},
+            });
+
+            modelBuilder.Entity<Certification>().HasData(new[]
+            {
+                new Certification{Id = -1, CertificationName = "Espacios Confinados"},
+                new Certification{Id = -2, CertificationName = "Corte y Soldadura"},
+                new Certification{Id = -3, CertificationName = "NOM-009-STPS-2011", Description = "Trabajos en Altura"},
+                new Certification{Id = -4, CertificationName = "NOM-018-STPS-2015",Description ="Sistema Globalmente Armonizado para la identificacion y comunicación de peligros y riesgos por sustancias quimicas peligrosas en los centros de trabajo"},
+                new Certification{Id = -5, CertificationName = "NOM-004-STPS-1999", Description = "Sistemas de Proteccion y Diapositivos de Seguridad en la Maquinaria y Equipo (candados y etiquetas)"},
+                new Certification{Id = -6, CertificationName = "NOM-002-STPS-2010", Description = "Condiciones de Seguridad Prevencion y Proteccion contra Incendio en los centros de Trabajo"},
+                new Certification{Id = -7, CertificationName = "Formacion de Armadores de Andamios"},
+                new Certification{Id = -8, CertificationName = "Izajes y Cargas"},
+                new Certification{Id = -9, CertificationName = "Operación segura de plataformas articuladas y elevadas"},
+                new Certification{Id = -10, CertificationName = "NOM-031", Description = "Condiciones de seguridad e higiene"},
+                new Certification{Id = -11, CertificationName = "Uso, revisión, reposición, limpieza, limitaciones, mantenimiento, resguardo y disposición final del equipo de protección personal."},
+                new Certification{Id = -12, CertificationName = "NOM-036"},
+                new Certification{Id = -13, CertificationName = "Manejo de cargas manuales"},
+                new Certification{Id = -14, CertificationName = "NOM-030", Description = "Servicios Preventivos de Seguridad y Salud en el Trabajo"},
+                new Certification{Id = -15, CertificationName = "Trabajos en caliente"},
+                new Certification{Id = -16, CertificationName = "Aperturas de líneas de proceso"},
+                new Certification{Id = -17, CertificationName = "Candados y etiquetas"},
+                new Certification{Id = -18, CertificationName = "NOM-026", Description = "CORRECTA INTERPRETACION DE LOS ELEMENTOS DE SEÑALIZACION DEL CENTRO DE TRABAJO"},
+                new Certification{Id = -19, CertificationName = "NOM-029", Description = "MANTENIMIENTO DE LAS INSTALACIONES ELECTRICAS EN LOS CENTROS DE TRABAJO"},
+            });
         }
     }
 }

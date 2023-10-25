@@ -6,5 +6,7 @@ namespace EngineeringManagement.Data.Models
     {
         [Required]
         public string CertificationName { get; set; }
+
+        public string Description { get; set; }
     }
 }
