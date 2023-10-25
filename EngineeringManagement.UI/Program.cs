@@ -11,6 +11,10 @@ namespace EngineeringManagement.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            using (var context = new Data.AppContext())
+            {
+                context.Database.EnsureCreated();
+            }
             Application.Run(new MainForm());
         }
     }

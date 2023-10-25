@@ -6,9 +6,11 @@ namespace EngineeringManagement.Data.Models
     public class Employee : BaseModel
     {
         [Required]
+        [Display(Name = "Colaborador")]
         public string EmployeeName { get; set; }
 
         [Required]
+        [Display(Name = "Puesto")]
         public string Position { get; set; }
 
         [Required]
