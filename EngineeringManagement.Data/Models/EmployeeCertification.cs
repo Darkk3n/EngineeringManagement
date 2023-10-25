@@ -13,6 +13,9 @@ namespace EngineeringManagement.Data.Models
 
         public DateTime? EndDate { get; set; }
 
-        public string CertificationName { get; set; }
+        [ForeignKey("FK_EmployeeCertifiction_Certification")]
+        public int CertificationId { get; set; }
+
+        public virtual Certification Certification { get; set; }
     }
 }
