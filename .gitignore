@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.db
+/EngineeringManagement.UI/EngineeringManagement.db-shm
+/EngineeringManagement.UI/EngineeringManagement.db-wal
