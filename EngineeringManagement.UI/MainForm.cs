@@ -26,11 +26,10 @@ namespace EngineeringManagement.UI
                     r.Certification.CertificationName,
                     r.StartDate,
                     r.EndDate
-                })
-                .ToList();
+                });
             var filteredData = data.Where(r => r.StartDate.HasValue && DateTime.Now.AddDays(-10) > r.EndDate).ToList();
-            dgvExpiringCertEmp.DataSource = filteredData;
-            dgvAllEmployees.DataSource = data;
+            dgvExpiringCertEmp.DataSource = filteredData.OrderBy(r => r.EndDate).ToList();
+            dgvAllEmployees.DataSource = data.ToList();
             FormatColumnHeaders(dgvExpiringCertEmp);
             FormatColumnHeaders(dgvAllEmployees);
         }

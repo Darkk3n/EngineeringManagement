@@ -57,11 +57,12 @@
             dgvExpiringCertEmp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExpiringCertEmp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExpiringCertEmp.Dock = DockStyle.Bottom;
-            dgvExpiringCertEmp.Location = new Point(3, 83);
+            dgvExpiringCertEmp.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvExpiringCertEmp.Location = new Point(3, 59);
             dgvExpiringCertEmp.Name = "dgvExpiringCertEmp";
             dgvExpiringCertEmp.ReadOnly = true;
             dgvExpiringCertEmp.RowTemplate.Height = 25;
-            dgvExpiringCertEmp.Size = new Size(942, 350);
+            dgvExpiringCertEmp.Size = new Size(942, 374);
             dgvExpiringCertEmp.TabIndex = 0;
             // 
             // menuStrip1
@@ -160,6 +161,7 @@
             // 
             dgvAllEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAllEmployees.Dock = DockStyle.Fill;
+            dgvAllEmployees.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAllEmployees.Location = new Point(3, 3);
             dgvAllEmployees.Name = "dgvAllEmployees";
             dgvAllEmployees.RowTemplate.Height = 25;
