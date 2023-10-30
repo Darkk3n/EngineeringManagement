@@ -23,7 +23,7 @@ namespace EngineeringManagement.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = EngineeringManagement.db");
+            optionsBuilder.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
