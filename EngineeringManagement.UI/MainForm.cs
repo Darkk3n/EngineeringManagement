@@ -16,10 +16,10 @@ namespace EngineeringManagement.UI
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            dgvEmployees.DataSource = context.EmployeeCertifications
+            var data = context.EmployeeCertifications
                 .Include(r => r.Employee)
                 .Include(r => r.Certification)
-                .Where(r => r.StartDate.HasValue && DateTime.Now.AddDays(-10) > r.EndDate)
+                .OrderByDescending(r => r.EmployeeId)
                 .Select(r => new
                 {
                     r.Employee.EmployeeName,
@@ -28,15 +28,19 @@ namespace EngineeringManagement.UI
                     r.EndDate
                 })
                 .ToList();
-            FormatColumnHeaders();
+            var filteredData = data.Where(r => r.StartDate.HasValue && DateTime.Now.AddDays(-10) > r.EndDate).ToList();
+            dgvExpiringCertEmp.DataSource = filteredData;
+            dgvAllEmployees.DataSource = data;
+            FormatColumnHeaders(dgvExpiringCertEmp);
+            FormatColumnHeaders(dgvAllEmployees);
         }
 
-        private void FormatColumnHeaders()
+        private void FormatColumnHeaders(DataGridView gridView)
         {
-            dgvEmployees.Columns[0].HeaderText = "Colaborador";
-            dgvEmployees.Columns[1].HeaderText = "Puesto";
-            dgvEmployees.Columns[2].HeaderText = "Inicio";
-            dgvEmployees.Columns[3].HeaderText = "Vencimiento";
+            gridView.Columns[0].HeaderText = "Colaborador";
+            gridView.Columns[1].HeaderText = "Puesto";
+            gridView.Columns[2].HeaderText = "Inicio";
+            gridView.Columns[3].HeaderText = "Vencimiento";
         }
 
         protected override void OnClosing(CancelEventArgs e)

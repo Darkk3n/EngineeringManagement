@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvEmployees = new DataGridView();
+            dgvExpiringCertEmp = new DataGridView();
             menuStrip1 = new MenuStrip();
             empleadosToolStripMenuItem = new ToolStripMenuItem();
             agregarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
@@ -38,23 +38,31 @@
             agregarDC3ToolStripMenuItem = new ToolStripMenuItem();
             editarDC3ToolStripMenuItem = new ToolStripMenuItem();
             agregarDC3AEmpleadoToolStripMenuItem = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dgvEmployees).BeginInit();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            dgvAllEmployees = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAllEmployees).BeginInit();
             SuspendLayout();
             // 
-            // dgvEmployees
+            // dgvExpiringCertEmp
             // 
-            dgvEmployees.AllowUserToAddRows = false;
-            dgvEmployees.AllowUserToDeleteRows = false;
-            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmployees.Dock = DockStyle.Fill;
-            dgvEmployees.Location = new Point(0, 24);
-            dgvEmployees.Name = "dgvEmployees";
-            dgvEmployees.ReadOnly = true;
-            dgvEmployees.RowTemplate.Height = 25;
-            dgvEmployees.Size = new Size(956, 464);
-            dgvEmployees.TabIndex = 0;
+            dgvExpiringCertEmp.AllowUserToAddRows = false;
+            dgvExpiringCertEmp.AllowUserToDeleteRows = false;
+            dgvExpiringCertEmp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvExpiringCertEmp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpiringCertEmp.Dock = DockStyle.Bottom;
+            dgvExpiringCertEmp.Location = new Point(3, 83);
+            dgvExpiringCertEmp.Name = "dgvExpiringCertEmp";
+            dgvExpiringCertEmp.ReadOnly = true;
+            dgvExpiringCertEmp.RowTemplate.Height = 25;
+            dgvExpiringCertEmp.Size = new Size(942, 350);
+            dgvExpiringCertEmp.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -115,28 +123,75 @@
             agregarDC3AEmpleadoToolStripMenuItem.Size = new Size(211, 22);
             agregarDC3AEmpleadoToolStripMenuItem.Text = "Agregar DC-3 a Empleado";
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 24);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(956, 464);
+            tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(dgvExpiringCertEmp);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(948, 436);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Proximos a Expirar";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(dgvAllEmployees);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(948, 436);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Todos los Empleados";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvAllEmployees
+            // 
+            dgvAllEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAllEmployees.Dock = DockStyle.Fill;
+            dgvAllEmployees.Location = new Point(3, 3);
+            dgvAllEmployees.Name = "dgvAllEmployees";
+            dgvAllEmployees.RowTemplate.Height = 25;
+            dgvAllEmployees.Size = new Size(942, 430);
+            dgvAllEmployees.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(956, 488);
-            Controls.Add(dgvEmployees);
+            Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CONTROL TOTAL INGENIERIA";
-            ((System.ComponentModel.ISupportInitialize)dgvEmployees).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAllEmployees).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvEmployees;
+        private DataGridView dgvExpiringCertEmp;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem empleadosToolStripMenuItem;
         private ToolStripMenuItem agregarEmpleadoToolStripMenuItem;
@@ -146,5 +201,9 @@
         private ToolStripMenuItem agregarDC3ToolStripMenuItem;
         private ToolStripMenuItem editarDC3ToolStripMenuItem;
         private ToolStripMenuItem agregarDC3AEmpleadoToolStripMenuItem;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private DataGridView dgvAllEmployees;
     }
 }
