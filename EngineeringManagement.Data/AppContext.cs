@@ -137,7 +137,7 @@ namespace EngineeringManagement.Data
 
             modelBuilder.Entity<EmployeeCertification>().HasData(new[]
             {
-               new EmployeeCertification{Id =-1, EmployeeId =-1, CertificationId =-1, StartDate = new DateTime(2023,8,5),EndDate = new DateTime(2024,8,4)},
+               new EmployeeCertification{Id =-1, EmployeeId =-1, CertificationId =-1, StartDate = new DateTime(2023,8,5),EndDate = new DateTime(2023,11,1)},
                 new EmployeeCertification{Id =-2, EmployeeId =-1, CertificationId =-2, StartDate = new DateTime(2023,8,1),EndDate = new DateTime(2024,7,31)},
                 new EmployeeCertification{Id =-3, EmployeeId =-1, CertificationId =-3, StartDate = new DateTime(2023,8,4),EndDate = new DateTime(2024,8,3)},
                 new EmployeeCertification{Id =-4, EmployeeId =-1, CertificationId =-4, StartDate = new DateTime(2023,8,7),EndDate = new DateTime(2024,8,6)},
