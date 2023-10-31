@@ -85,13 +85,14 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            agregarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            agregarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
             agregarEmpleadoToolStripMenuItem.Text = "Agregar Empleado";
+            agregarEmpleadoToolStripMenuItem.Click += agregarEmpleadoToolStripMenuItem_Click;
             // 
             // editarEmpleadoToolStripMenuItem
             // 
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
-            editarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            editarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
             // 
             // plantasToolStripMenuItem

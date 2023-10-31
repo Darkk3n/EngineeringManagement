@@ -1,3 +1,4 @@
+using EngineeringManagement.UI.Forms.Employees;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
@@ -35,7 +36,7 @@ namespace EngineeringManagement.UI
                                 });
                 var soonToExpire = allEmployees.Where(r => r.StartDate.HasValue
                     && DateTime.Now.AddDays(-10) < r.EndDate
-                    && r.EndDate < DateTime.Now)
+                    && r.EndDate <= DateTime.Now)
                     .ToList();
                 dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
                 dgvAllEmployees.DataSource = allEmployees.ToList();
@@ -58,6 +59,14 @@ namespace EngineeringManagement.UI
         {
             base.OnClosing(e);
             context.Dispose();
+        }
+
+        private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var addEmp = new AddEmployee())
+            {
+                addEmp.ShowDialog();
+            }
         }
     }
 }
