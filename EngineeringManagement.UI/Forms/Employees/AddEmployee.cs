@@ -24,6 +24,7 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            errors.Clear();
             this.Close();
         }
 
@@ -90,7 +91,7 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void cmbEmployeeType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (((ComboBox)sender).SelectedIndex == 0)
+            if (((ComboBox)sender).SelectedIndex == 0 && !string.IsNullOrEmpty(txtName.Text))
             {
                 e.Cancel = true;
                 errors.SetError(cmbEmployeeType, "Seleccione un tipo de Empleado");
