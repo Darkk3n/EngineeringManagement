@@ -94,6 +94,7 @@
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
             editarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
+            editarEmpleadoToolStripMenuItem.Click += editarEmpleadoToolStripMenuItem_Click;
             // 
             // plantasToolStripMenuItem
             // 

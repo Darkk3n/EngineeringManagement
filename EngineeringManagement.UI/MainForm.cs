@@ -68,5 +68,13 @@ namespace EngineeringManagement.UI
                 addEmp.ShowDialog();
             }
         }
+
+        private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var editEmp = new EditEmployee())
+            {
+                editEmp.ShowDialog();
+            }
+        }
     }
 }
