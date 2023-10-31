@@ -40,6 +40,7 @@
             agregarDC3AEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            lblSoonToExpire = new Label();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
@@ -137,6 +138,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(lblSoonToExpire);
             tabPage1.Controls.Add(dgvExpiringCertEmp);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -145,6 +147,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Proximos a Expirar";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblSoonToExpire
+            // 
+            lblSoonToExpire.AutoSize = true;
+            lblSoonToExpire.Font = new Font("Cascadia Code", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSoonToExpire.Location = new Point(256, 24);
+            lblSoonToExpire.Name = "lblSoonToExpire";
+            lblSoonToExpire.Size = new Size(235, 21);
+            lblSoonToExpire.TabIndex = 1;
+            lblSoonToExpire.Text = "Proximos a Expirar Entre:";
             // 
             // tabPage2
             // 
@@ -161,7 +173,6 @@
             // 
             dgvAllEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAllEmployees.Dock = DockStyle.Fill;
-            dgvAllEmployees.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAllEmployees.Location = new Point(3, 3);
             dgvAllEmployees.Name = "dgvAllEmployees";
             dgvAllEmployees.RowTemplate.Height = 25;
@@ -185,6 +196,7 @@
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvAllEmployees).EndInit();
             ResumeLayout(false);
@@ -207,5 +219,6 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private DataGridView dgvAllEmployees;
+        private Label lblSoonToExpire;
     }
 }
