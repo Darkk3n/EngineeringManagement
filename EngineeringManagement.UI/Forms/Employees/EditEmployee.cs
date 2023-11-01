@@ -147,7 +147,7 @@ namespace EngineeringManagement.UI.Forms
             }
             finally
             {
-                MessageBox.Show("Guardado con exito.", "Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Actualizado con exito.", "Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

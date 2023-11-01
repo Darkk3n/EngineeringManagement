@@ -1,4 +1,5 @@
 using EngineeringManagement.UI.Forms;
+using EngineeringManagement.UI.Forms.Certifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace EngineeringManagement.UI
@@ -89,7 +90,8 @@ namespace EngineeringManagement.UI
 
         private void editarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using var editCertification = new EditCertification();
+            editCertification.ShowDialog();
         }
 
         private void agregarDC3AEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
