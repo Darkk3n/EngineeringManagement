@@ -35,16 +35,15 @@
             editarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             plantasToolStripMenuItem = new ToolStripMenuItem();
             agregarPlantaToolStripMenuItem = new ToolStripMenuItem();
+            editarPlantaToolStripMenuItem = new ToolStripMenuItem();
             dC3ToolStripMenuItem = new ToolStripMenuItem();
             agregarDC3ToolStripMenuItem = new ToolStripMenuItem();
             editarDC3ToolStripMenuItem = new ToolStripMenuItem();
             agregarDC3AEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            lblSoonToExpire = new Label();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
-            editarPlantaToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -59,13 +58,13 @@
             dgvExpiringCertEmp.AllowUserToDeleteRows = false;
             dgvExpiringCertEmp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExpiringCertEmp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvExpiringCertEmp.Dock = DockStyle.Bottom;
+            dgvExpiringCertEmp.Dock = DockStyle.Fill;
             dgvExpiringCertEmp.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvExpiringCertEmp.Location = new Point(3, 59);
+            dgvExpiringCertEmp.Location = new Point(3, 3);
             dgvExpiringCertEmp.Name = "dgvExpiringCertEmp";
             dgvExpiringCertEmp.ReadOnly = true;
             dgvExpiringCertEmp.RowTemplate.Height = 25;
-            dgvExpiringCertEmp.Size = new Size(942, 374);
+            dgvExpiringCertEmp.Size = new Size(942, 430);
             dgvExpiringCertEmp.TabIndex = 0;
             // 
             // menuStrip1
@@ -108,9 +107,16 @@
             // agregarPlantaToolStripMenuItem
             // 
             agregarPlantaToolStripMenuItem.Name = "agregarPlantaToolStripMenuItem";
-            agregarPlantaToolStripMenuItem.Size = new Size(180, 22);
+            agregarPlantaToolStripMenuItem.Size = new Size(152, 22);
             agregarPlantaToolStripMenuItem.Text = "Agregar Planta";
             agregarPlantaToolStripMenuItem.Click += agregarPlantaToolStripMenuItem_Click;
+            // 
+            // editarPlantaToolStripMenuItem
+            // 
+            editarPlantaToolStripMenuItem.Name = "editarPlantaToolStripMenuItem";
+            editarPlantaToolStripMenuItem.Size = new Size(152, 22);
+            editarPlantaToolStripMenuItem.Text = "Editar Planta";
+            editarPlantaToolStripMenuItem.Click += editarPlantaToolStripMenuItem_Click;
             // 
             // dC3ToolStripMenuItem
             // 
@@ -150,7 +156,6 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(lblSoonToExpire);
             tabPage1.Controls.Add(dgvExpiringCertEmp);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -159,16 +164,6 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Proximos a Expirar";
             tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // lblSoonToExpire
-            // 
-            lblSoonToExpire.AutoSize = true;
-            lblSoonToExpire.Font = new Font("Cascadia Code", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSoonToExpire.Location = new Point(256, 24);
-            lblSoonToExpire.Name = "lblSoonToExpire";
-            lblSoonToExpire.Size = new Size(235, 21);
-            lblSoonToExpire.TabIndex = 1;
-            lblSoonToExpire.Text = "Proximos a Expirar Entre:";
             // 
             // tabPage2
             // 
@@ -191,13 +186,6 @@
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
             // 
-            // editarPlantaToolStripMenuItem
-            // 
-            editarPlantaToolStripMenuItem.Name = "editarPlantaToolStripMenuItem";
-            editarPlantaToolStripMenuItem.Size = new Size(180, 22);
-            editarPlantaToolStripMenuItem.Text = "Editar Planta";
-            editarPlantaToolStripMenuItem.Click += editarPlantaToolStripMenuItem_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,7 +203,6 @@
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvAllEmployees).EndInit();
             ResumeLayout(false);
@@ -238,7 +225,6 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private DataGridView dgvAllEmployees;
-        private Label lblSoonToExpire;
         private ToolStripMenuItem agregarPlantaToolStripMenuItem;
         private ToolStripMenuItem editarPlantaToolStripMenuItem;
     }

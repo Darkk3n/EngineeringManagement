@@ -45,7 +45,7 @@ namespace EngineeringManagement.UI
             FormatColumnHeaders(dgvExpiringCertEmp);
             FormatColumnHeaders(dgvAllEmployees);
             dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            lblSoonToExpire.Text = $"{lblSoonToExpire.Text} {DateTime.Now.AddDays(-10).ToShortDateString()} y {DateTime.Now.ToShortDateString()}";
+            tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToShortDateString()} y {DateTime.Now.ToShortDateString()}";
         }
 
         private static void FormatColumnHeaders(DataGridView gridView)
