@@ -2,7 +2,6 @@
 using EngineeringManagement.Data.Models.Enums;
 using System.Data;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace EngineeringManagement.UI.Forms
 {
@@ -148,7 +147,7 @@ namespace EngineeringManagement.UI.Forms
             }
             finally
             {
-                MessageBox.Show("Guardado con exito.", "Editar Empleados", MessageBoxButtons.OK);
+                MessageBox.Show("Guardado con exito.", "Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

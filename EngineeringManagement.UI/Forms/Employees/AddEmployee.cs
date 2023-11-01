@@ -48,7 +48,7 @@ namespace EngineeringManagement.UI.Forms
             }
             finally
             {
-                MessageBox.Show("Guardado con exito", "Agregar Empleados", MessageBoxButtons.OK);
+                MessageBox.Show("Guardado con exito", "Agregar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

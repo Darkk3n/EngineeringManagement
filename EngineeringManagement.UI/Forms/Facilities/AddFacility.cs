@@ -34,7 +34,7 @@ namespace EngineeringManagement.UI.Forms
                 }
                 finally
                 {
-                    MessageBox.Show("Guardado con exito.", "Agregar Planta", MessageBoxButtons.OK);
+                    MessageBox.Show("Guardado con exito.", "Agregar Planta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
