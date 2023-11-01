@@ -1,4 +1,4 @@
-﻿namespace EngineeringManagement.UI.Forms.Facilities
+﻿namespace EngineeringManagement.UI.Forms
 {
     partial class EditFacility
     {
@@ -124,8 +124,10 @@
             // 
             // EditFacility
             // 
+            AcceptButton = BtnOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = BtnCancel;
             ClientSize = new Size(351, 145);
             Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;

@@ -4,7 +4,7 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-namespace EngineeringManagement.UI.Forms.Employees
+namespace EngineeringManagement.UI.Forms
 {
     public partial class EditEmployee : Form
     {

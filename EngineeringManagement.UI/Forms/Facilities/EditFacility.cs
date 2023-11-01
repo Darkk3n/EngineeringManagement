@@ -1,6 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 
-namespace EngineeringManagement.UI.Forms.Facilities
+namespace EngineeringManagement.UI.Forms
 {
     public partial class EditFacility : Form
     {
@@ -63,7 +63,7 @@ namespace EngineeringManagement.UI.Forms.Facilities
                 existingFacility.FacilityName = TxtName.Text.Trim();
                 try
                 {
-                context.SaveChanges();
+                    context.SaveChanges();
                 }
                 catch (Exception)
                 {

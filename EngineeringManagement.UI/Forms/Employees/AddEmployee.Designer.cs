@@ -1,4 +1,4 @@
-﻿namespace EngineeringManagement.UI.Forms.Employees
+﻿namespace EngineeringManagement.UI.Forms
 {
     partial class AddEmployee
     {

@@ -30,6 +30,8 @@
         {
             dgvExpiringCertEmp = new DataGridView();
             menuStrip1 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
             empleadosToolStripMenuItem = new ToolStripMenuItem();
             agregarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             editarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
@@ -44,8 +46,6 @@
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            salirToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -78,6 +78,20 @@
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(60, 20);
+            toolStripMenuItem1.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(96, 22);
+            salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
+            // 
             // empleadosToolStripMenuItem
             // 
             empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarEmpleadoToolStripMenuItem, editarEmpleadoToolStripMenuItem });
@@ -88,14 +102,14 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            agregarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
+            agregarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
             agregarEmpleadoToolStripMenuItem.Text = "Agregar Empleado";
             agregarEmpleadoToolStripMenuItem.Click += agregarEmpleadoToolStripMenuItem_Click;
             // 
             // editarEmpleadoToolStripMenuItem
             // 
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
-            editarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
+            editarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
             editarEmpleadoToolStripMenuItem.Click += editarEmpleadoToolStripMenuItem_Click;
             // 
@@ -132,18 +146,21 @@
             agregarDC3ToolStripMenuItem.Name = "agregarDC3ToolStripMenuItem";
             agregarDC3ToolStripMenuItem.Size = new Size(211, 22);
             agregarDC3ToolStripMenuItem.Text = "Agregar DC-3";
+            agregarDC3ToolStripMenuItem.Click += agregarDC3ToolStripMenuItem_Click;
             // 
             // editarDC3ToolStripMenuItem
             // 
             editarDC3ToolStripMenuItem.Name = "editarDC3ToolStripMenuItem";
             editarDC3ToolStripMenuItem.Size = new Size(211, 22);
             editarDC3ToolStripMenuItem.Text = "Editar DC-3";
+            editarDC3ToolStripMenuItem.Click += editarDC3ToolStripMenuItem_Click;
             // 
             // agregarDC3AEmpleadoToolStripMenuItem
             // 
             agregarDC3AEmpleadoToolStripMenuItem.Name = "agregarDC3AEmpleadoToolStripMenuItem";
             agregarDC3AEmpleadoToolStripMenuItem.Size = new Size(211, 22);
             agregarDC3AEmpleadoToolStripMenuItem.Text = "Agregar DC-3 a Empleado";
+            agregarDC3AEmpleadoToolStripMenuItem.Click += agregarDC3AEmpleadoToolStripMenuItem_Click;
             // 
             // tabControl1
             // 
@@ -187,20 +204,6 @@
             dgvAllEmployees.RowTemplate.Height = 25;
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(60, 20);
-            toolStripMenuItem1.Text = "Archivo";
-            // 
-            // salirToolStripMenuItem
-            // 
-            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
-            salirToolStripMenuItem.Text = "Salir";
-            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // MainForm
             // 

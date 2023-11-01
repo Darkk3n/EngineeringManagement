@@ -1,4 +1,4 @@
-﻿namespace EngineeringManagement.UI.Forms.Facilities
+﻿namespace EngineeringManagement.UI.Forms
 {
     partial class AddFacility
     {

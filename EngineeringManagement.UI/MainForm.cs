@@ -1,14 +1,10 @@
-using EngineeringManagement.UI.Forms.Employees;
-using EngineeringManagement.UI.Forms.Facilities;
+using EngineeringManagement.UI.Forms;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
 
 namespace EngineeringManagement.UI
 {
     public partial class MainForm : Form
     {
-        private readonly Data.AppContext context;
-
         public MainForm()
         {
             InitializeComponent();
@@ -56,12 +52,6 @@ namespace EngineeringManagement.UI
             gridView.Columns[3].HeaderText = "Vencimiento";
         }
 
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            context.Dispose();
-        }
-
         private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using var addEmp = new AddEmployee();
@@ -89,6 +79,22 @@ namespace EngineeringManagement.UI
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void agregarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var addCertificacion = new AddCertificaction();
+            addCertificacion.ShowDialog();
+        }
+
+        private void editarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarDC3AEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

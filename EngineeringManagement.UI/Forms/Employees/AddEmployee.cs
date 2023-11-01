@@ -1,7 +1,7 @@
 ﻿using EngineeringManagement.Data.Models;
 using System.Text.RegularExpressions;
 
-namespace EngineeringManagement.UI.Forms.Employees
+namespace EngineeringManagement.UI.Forms
 {
     public partial class AddEmployee : Form
     {
