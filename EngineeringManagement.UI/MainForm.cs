@@ -85,5 +85,10 @@ namespace EngineeringManagement.UI
             using var editFacility = new EditFacility();
             editFacility.ShowDialog();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

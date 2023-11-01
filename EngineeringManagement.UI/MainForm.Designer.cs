@@ -44,6 +44,8 @@
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { empleadosToolStripMenuItem, plantasToolStripMenuItem, dC3ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, empleadosToolStripMenuItem, plantasToolStripMenuItem, dC3ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(956, 24);
@@ -86,14 +88,14 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            agregarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            agregarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
             agregarEmpleadoToolStripMenuItem.Text = "Agregar Empleado";
             agregarEmpleadoToolStripMenuItem.Click += agregarEmpleadoToolStripMenuItem_Click;
             // 
             // editarEmpleadoToolStripMenuItem
             // 
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
-            editarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            editarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
             editarEmpleadoToolStripMenuItem.Click += editarEmpleadoToolStripMenuItem_Click;
             // 
@@ -186,6 +188,20 @@
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
             // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(60, 20);
+            toolStripMenuItem1.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -227,5 +243,7 @@
         private DataGridView dgvAllEmployees;
         private ToolStripMenuItem agregarPlantaToolStripMenuItem;
         private ToolStripMenuItem editarPlantaToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem salirToolStripMenuItem;
     }
 }
