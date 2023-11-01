@@ -43,6 +43,7 @@
             lblSoonToExpire = new Label();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
+            agregarPlantaToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -98,6 +99,7 @@
             // 
             // plantasToolStripMenuItem
             // 
+            plantasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarPlantaToolStripMenuItem });
             plantasToolStripMenuItem.Name = "plantasToolStripMenuItem";
             plantasToolStripMenuItem.Size = new Size(57, 20);
             plantasToolStripMenuItem.Text = "Plantas";
@@ -181,6 +183,13 @@
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
             // 
+            // agregarPlantaToolStripMenuItem
+            // 
+            agregarPlantaToolStripMenuItem.Name = "agregarPlantaToolStripMenuItem";
+            agregarPlantaToolStripMenuItem.Size = new Size(180, 22);
+            agregarPlantaToolStripMenuItem.Text = "Agregar Planta";
+            agregarPlantaToolStripMenuItem.Click += agregarPlantaToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -222,5 +231,6 @@
         private TabPage tabPage2;
         private DataGridView dgvAllEmployees;
         private Label lblSoonToExpire;
+        private ToolStripMenuItem agregarPlantaToolStripMenuItem;
     }
 }

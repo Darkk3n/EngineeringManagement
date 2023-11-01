@@ -1,4 +1,5 @@
 using EngineeringManagement.UI.Forms.Employees;
+using EngineeringManagement.UI.Forms.Facilities;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
@@ -63,18 +64,20 @@ namespace EngineeringManagement.UI
 
         private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var addEmp = new AddEmployee())
-            {
-                addEmp.ShowDialog();
-            }
+            using var addEmp = new AddEmployee();
+            addEmp.ShowDialog();
         }
 
         private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var editEmp = new EditEmployee())
-            {
-                editEmp.ShowDialog();
-            }
+            using var editEmp = new EditEmployee();
+            editEmp.ShowDialog();
+        }
+
+        private void agregarPlantaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var addFacility = new AddFacility();
+            addFacility.ShowDialog();
         }
     }
 }
