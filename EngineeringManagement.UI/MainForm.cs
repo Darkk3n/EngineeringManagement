@@ -84,7 +84,7 @@ namespace EngineeringManagement.UI
 
         private void agregarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using var addCertificacion = new AddCertificaction();
+            using var addCertificacion = new AddCertification();
             addCertificacion.ShowDialog();
         }
 
