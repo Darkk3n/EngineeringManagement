@@ -34,6 +34,7 @@
             agregarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             editarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             plantasToolStripMenuItem = new ToolStripMenuItem();
+            agregarPlantaToolStripMenuItem = new ToolStripMenuItem();
             dC3ToolStripMenuItem = new ToolStripMenuItem();
             agregarDC3ToolStripMenuItem = new ToolStripMenuItem();
             editarDC3ToolStripMenuItem = new ToolStripMenuItem();
@@ -43,7 +44,7 @@
             lblSoonToExpire = new Label();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
-            agregarPlantaToolStripMenuItem = new ToolStripMenuItem();
+            editarPlantaToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -86,23 +87,30 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            agregarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
+            agregarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
             agregarEmpleadoToolStripMenuItem.Text = "Agregar Empleado";
             agregarEmpleadoToolStripMenuItem.Click += agregarEmpleadoToolStripMenuItem_Click;
             // 
             // editarEmpleadoToolStripMenuItem
             // 
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
-            editarEmpleadoToolStripMenuItem.Size = new Size(180, 22);
+            editarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
             editarEmpleadoToolStripMenuItem.Click += editarEmpleadoToolStripMenuItem_Click;
             // 
             // plantasToolStripMenuItem
             // 
-            plantasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarPlantaToolStripMenuItem });
+            plantasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarPlantaToolStripMenuItem, editarPlantaToolStripMenuItem });
             plantasToolStripMenuItem.Name = "plantasToolStripMenuItem";
             plantasToolStripMenuItem.Size = new Size(57, 20);
             plantasToolStripMenuItem.Text = "Plantas";
+            // 
+            // agregarPlantaToolStripMenuItem
+            // 
+            agregarPlantaToolStripMenuItem.Name = "agregarPlantaToolStripMenuItem";
+            agregarPlantaToolStripMenuItem.Size = new Size(180, 22);
+            agregarPlantaToolStripMenuItem.Text = "Agregar Planta";
+            agregarPlantaToolStripMenuItem.Click += agregarPlantaToolStripMenuItem_Click;
             // 
             // dC3ToolStripMenuItem
             // 
@@ -183,12 +191,12 @@
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
             // 
-            // agregarPlantaToolStripMenuItem
+            // editarPlantaToolStripMenuItem
             // 
-            agregarPlantaToolStripMenuItem.Name = "agregarPlantaToolStripMenuItem";
-            agregarPlantaToolStripMenuItem.Size = new Size(180, 22);
-            agregarPlantaToolStripMenuItem.Text = "Agregar Planta";
-            agregarPlantaToolStripMenuItem.Click += agregarPlantaToolStripMenuItem_Click;
+            editarPlantaToolStripMenuItem.Name = "editarPlantaToolStripMenuItem";
+            editarPlantaToolStripMenuItem.Size = new Size(180, 22);
+            editarPlantaToolStripMenuItem.Text = "Editar Planta";
+            editarPlantaToolStripMenuItem.Click += editarPlantaToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -232,5 +240,6 @@
         private DataGridView dgvAllEmployees;
         private Label lblSoonToExpire;
         private ToolStripMenuItem agregarPlantaToolStripMenuItem;
+        private ToolStripMenuItem editarPlantaToolStripMenuItem;
     }
 }

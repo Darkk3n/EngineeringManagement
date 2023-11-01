@@ -79,5 +79,11 @@ namespace EngineeringManagement.UI
             using var addFacility = new AddFacility();
             addFacility.ShowDialog();
         }
+
+        private void editarPlantaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var editFacility = new EditFacility();
+            editFacility.ShowDialog();
+        }
     }
 }
