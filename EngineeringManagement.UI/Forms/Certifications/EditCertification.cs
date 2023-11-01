@@ -64,7 +64,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            if(!TxtCertName.Text.HasValue())
+            if (!TxtCertName.Text.HasValue())
             {
                 MessageBox.Show("Nombre es un campo requerido", "Editar DC-3", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
@@ -77,7 +77,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 certification.Description = TxtCertDesc.Text.Trim();
                 try
                 {
-                context.SaveChanges();
+                    context.SaveChanges();
                 }
                 catch (Exception)
                 {

@@ -57,18 +57,18 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tableLayoutPanel1.Size = new Size(420, 178);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 43.22034F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 56.77966F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 84F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tableLayoutPanel1.Size = new Size(420, 194);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(108, 13);
+            label1.Location = new Point(108, 6);
             label1.Name = "label1";
             label1.Size = new Size(37, 15);
             label1.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(91, 54);
+            label2.Location = new Point(91, 39);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(73, 98);
+            label3.Location = new Point(73, 100);
             label3.Name = "label3";
             label3.Size = new Size(72, 15);
             label3.TabIndex = 2;
@@ -99,7 +99,7 @@
             CmbCertifications.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CmbCertifications.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCertifications.FormattingEnabled = true;
-            CmbCertifications.Location = new Point(151, 9);
+            CmbCertifications.Location = new Point(151, 3);
             CmbCertifications.Name = "CmbCertifications";
             CmbCertifications.Size = new Size(266, 23);
             CmbCertifications.TabIndex = 3;
@@ -109,24 +109,25 @@
             // 
             TxtCertName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxtCertName.Enabled = false;
-            TxtCertName.Location = new Point(151, 50);
+            TxtCertName.Location = new Point(151, 35);
             TxtCertName.Name = "TxtCertName";
             TxtCertName.Size = new Size(266, 23);
             TxtCertName.TabIndex = 4;
             // 
             // TxtCertDesc
             // 
-            TxtCertDesc.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TxtCertDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TxtCertDesc.Enabled = false;
-            TxtCertDesc.Location = new Point(151, 94);
+            TxtCertDesc.Location = new Point(151, 69);
+            TxtCertDesc.Multiline = true;
             TxtCertDesc.Name = "TxtCertDesc";
-            TxtCertDesc.Size = new Size(266, 23);
+            TxtCertDesc.Size = new Size(266, 78);
             TxtCertDesc.TabIndex = 5;
             // 
             // BtnOk
             // 
             BtnOk.Anchor = AnchorStyles.Right;
-            BtnOk.Location = new Point(70, 142);
+            BtnOk.Location = new Point(70, 160);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 6;
@@ -137,7 +138,7 @@
             // BtnCancel
             // 
             BtnCancel.Anchor = AnchorStyles.Left;
-            BtnCancel.Location = new Point(151, 142);
+            BtnCancel.Location = new Point(151, 160);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 7;
@@ -147,9 +148,11 @@
             // 
             // EditCertification
             // 
+            AcceptButton = BtnOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(420, 178);
+            CancelButton = BtnCancel;
+            ClientSize = new Size(420, 194);
             Controls.Add(tableLayoutPanel1);
             Name = "EditCertification";
             StartPosition = FormStartPosition.CenterScreen;
