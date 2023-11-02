@@ -6,6 +6,8 @@ namespace EngineeringManagement.UI
 {
     public partial class MainForm : Form
     {
+        public bool ShouldRefreshAllEmployees { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
@@ -19,6 +21,17 @@ namespace EngineeringManagement.UI
 
         private void Setup()
         {
+            LoadGrids();
+            FormatColumnHeaders(dgvExpiringCertEmp);
+            FormatColumnHeaders(dgvAllEmployees);
+            dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToShortDateString()} y {DateTime.Now.ToShortDateString()}";
+        }
+
+        private void LoadGrids()
+        {
+            dgvAllEmployees.DataSource = null;
+            dgvExpiringCertEmp.DataSource = null;
             using (var context = new Data.AppContext())
             {
                 var allEmployees = context.EmployeeCertifications
@@ -39,10 +52,6 @@ namespace EngineeringManagement.UI
                 dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
                 dgvAllEmployees.DataSource = allEmployees.ToList();
             }
-            FormatColumnHeaders(dgvExpiringCertEmp);
-            FormatColumnHeaders(dgvAllEmployees);
-            dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToShortDateString()} y {DateTime.Now.ToShortDateString()}";
         }
 
         private static void FormatColumnHeaders(DataGridView gridView)
@@ -96,7 +105,12 @@ namespace EngineeringManagement.UI
 
         private void agregarDC3AEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using var addCertToEmployee = new AddEmployeeCertification(this);
+            addCertToEmployee.ShowDialog();
+            if (ShouldRefreshAllEmployees)
+            {
+                LoadGrids();
+            }
         }
     }
 }
