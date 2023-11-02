@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -37,38 +36,19 @@
             TxtCertDesc = new TextBox();
             BtnOk = new Button();
             BtnCancel = new Button();
-            tableLayoutPanel1.SuspendLayout();
+            label4 = new Label();
+            lbAllFacilities = new ListBox();
+            lbAssignedFacilities = new ListBox();
+            BtnRemove = new Button();
+            BtnRemoveAll = new Button();
+            BtnAdd = new Button();
+            BtnAddAll = new Button();
             SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.2380943F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64.7619F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Controls.Add(label3, 0, 2);
-            tableLayoutPanel1.Controls.Add(CmbCertifications, 1, 0);
-            tableLayoutPanel1.Controls.Add(TxtCertName, 1, 1);
-            tableLayoutPanel1.Controls.Add(TxtCertDesc, 1, 2);
-            tableLayoutPanel1.Controls.Add(BtnOk, 0, 3);
-            tableLayoutPanel1.Controls.Add(BtnCancel, 1, 3);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 43.22034F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 56.77966F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 84F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
-            tableLayoutPanel1.Size = new Size(420, 194);
-            tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(108, 6);
+            label1.Location = new Point(41, 17);
             label1.Name = "label1";
             label1.Size = new Size(37, 15);
             label1.TabIndex = 0;
@@ -76,9 +56,8 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(91, 39);
+            label2.Location = new Point(24, 50);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 1;
@@ -86,9 +65,8 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(73, 100);
+            label3.Location = new Point(6, 111);
             label3.Name = "label3";
             label3.Size = new Size(72, 15);
             label3.TabIndex = 2;
@@ -96,38 +74,34 @@
             // 
             // CmbCertifications
             // 
-            CmbCertifications.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CmbCertifications.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCertifications.FormattingEnabled = true;
-            CmbCertifications.Location = new Point(151, 3);
+            CmbCertifications.Location = new Point(84, 14);
             CmbCertifications.Name = "CmbCertifications";
-            CmbCertifications.Size = new Size(266, 23);
+            CmbCertifications.Size = new Size(288, 23);
             CmbCertifications.TabIndex = 3;
             CmbCertifications.SelectedIndexChanged += CmbCertifications_SelectedIndexChanged;
             // 
             // TxtCertName
             // 
-            TxtCertName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxtCertName.Enabled = false;
-            TxtCertName.Location = new Point(151, 35);
+            TxtCertName.Location = new Point(84, 46);
             TxtCertName.Name = "TxtCertName";
-            TxtCertName.Size = new Size(266, 23);
+            TxtCertName.Size = new Size(288, 23);
             TxtCertName.TabIndex = 4;
             // 
             // TxtCertDesc
             // 
-            TxtCertDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TxtCertDesc.Enabled = false;
-            TxtCertDesc.Location = new Point(151, 69);
+            TxtCertDesc.Location = new Point(84, 80);
             TxtCertDesc.Multiline = true;
             TxtCertDesc.Name = "TxtCertDesc";
-            TxtCertDesc.Size = new Size(266, 78);
+            TxtCertDesc.Size = new Size(288, 78);
             TxtCertDesc.TabIndex = 5;
             // 
             // BtnOk
             // 
-            BtnOk.Anchor = AnchorStyles.Right;
-            BtnOk.Location = new Point(70, 160);
+            BtnOk.Location = new Point(127, 296);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 6;
@@ -137,8 +111,7 @@
             // 
             // BtnCancel
             // 
-            BtnCancel.Anchor = AnchorStyles.Left;
-            BtnCancel.Location = new Point(151, 160);
+            BtnCancel.Location = new Point(208, 296);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 7;
@@ -146,25 +119,110 @@
             BtnCancel.UseVisualStyleBackColor = true;
             BtnCancel.Click += BtnCancel_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(26, 177);
+            label4.Name = "label4";
+            label4.Size = new Size(56, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Planta(s):";
+            // 
+            // lbAllFacilities
+            // 
+            lbAllFacilities.Enabled = false;
+            lbAllFacilities.FormattingEnabled = true;
+            lbAllFacilities.ItemHeight = 15;
+            lbAllFacilities.Location = new Point(84, 168);
+            lbAllFacilities.Name = "lbAllFacilities";
+            lbAllFacilities.Size = new Size(120, 109);
+            lbAllFacilities.TabIndex = 9;
+            // 
+            // lbAssignedFacilities
+            // 
+            lbAssignedFacilities.Enabled = false;
+            lbAssignedFacilities.FormattingEnabled = true;
+            lbAssignedFacilities.ItemHeight = 15;
+            lbAssignedFacilities.Location = new Point(252, 168);
+            lbAssignedFacilities.Name = "lbAssignedFacilities";
+            lbAssignedFacilities.Size = new Size(120, 109);
+            lbAssignedFacilities.TabIndex = 10;
+            // 
+            // BtnRemove
+            // 
+            BtnRemove.Enabled = false;
+            BtnRemove.Location = new Point(208, 169);
+            BtnRemove.Name = "BtnRemove";
+            BtnRemove.Size = new Size(38, 23);
+            BtnRemove.TabIndex = 11;
+            BtnRemove.Text = "<";
+            BtnRemove.UseVisualStyleBackColor = true;
+            BtnRemove.Click += BtnRemove_Click;
+            // 
+            // BtnRemoveAll
+            // 
+            BtnRemoveAll.Enabled = false;
+            BtnRemoveAll.Location = new Point(208, 198);
+            BtnRemoveAll.Name = "BtnRemoveAll";
+            BtnRemoveAll.Size = new Size(38, 23);
+            BtnRemoveAll.TabIndex = 12;
+            BtnRemoveAll.Text = "<<";
+            BtnRemoveAll.UseVisualStyleBackColor = true;
+            BtnRemoveAll.Click += BtnRemoveAll_Click;
+            // 
+            // BtnAdd
+            // 
+            BtnAdd.Enabled = false;
+            BtnAdd.Location = new Point(210, 227);
+            BtnAdd.Name = "BtnAdd";
+            BtnAdd.Size = new Size(38, 23);
+            BtnAdd.TabIndex = 13;
+            BtnAdd.Text = ">";
+            BtnAdd.UseVisualStyleBackColor = true;
+            BtnAdd.Click += BtnAdd_Click;
+            // 
+            // BtnAddAll
+            // 
+            BtnAddAll.Enabled = false;
+            BtnAddAll.Location = new Point(210, 256);
+            BtnAddAll.Name = "BtnAddAll";
+            BtnAddAll.Size = new Size(38, 23);
+            BtnAddAll.TabIndex = 14;
+            BtnAddAll.Text = ">>";
+            BtnAddAll.UseVisualStyleBackColor = true;
+            BtnAddAll.Click += BtnAddAll_Click;
+            // 
             // EditCertification
             // 
             AcceptButton = BtnOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = BtnCancel;
-            ClientSize = new Size(420, 194);
-            Controls.Add(tableLayoutPanel1);
+            ClientSize = new Size(396, 333);
+            Controls.Add(BtnAddAll);
+            Controls.Add(BtnAdd);
+            Controls.Add(BtnRemoveAll);
+            Controls.Add(BtnRemove);
+            Controls.Add(lbAssignedFacilities);
+            Controls.Add(lbAllFacilities);
+            Controls.Add(label4);
+            Controls.Add(label1);
+            Controls.Add(label2);
+            Controls.Add(BtnCancel);
+            Controls.Add(label3);
+            Controls.Add(BtnOk);
+            Controls.Add(CmbCertifications);
+            Controls.Add(TxtCertDesc);
+            Controls.Add(TxtCertName);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EditCertification";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar DC-3";
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -173,5 +231,12 @@
         private TextBox TxtCertDesc;
         private Button BtnOk;
         private Button BtnCancel;
+        private Label label4;
+        private ListBox lbAllFacilities;
+        private ListBox lbAssignedFacilities;
+        private Button BtnRemove;
+        private Button BtnRemoveAll;
+        private Button BtnAdd;
+        private Button BtnAddAll;
     }
 }

@@ -46,7 +46,7 @@
             // BtnRemove
             // 
             BtnRemove.Enabled = false;
-            BtnRemove.Location = new Point(200, 96);
+            BtnRemove.Location = new Point(216, 158);
             BtnRemove.Name = "BtnRemove";
             BtnRemove.Size = new Size(38, 23);
             BtnRemove.TabIndex = 10;
@@ -56,7 +56,7 @@
             // 
             // BtnOk
             // 
-            BtnOk.Location = new Point(73, 252);
+            BtnOk.Location = new Point(135, 314);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             // BtnCancel
             // 
-            BtnCancel.Location = new Point(244, 252);
+            BtnCancel.Location = new Point(260, 314);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 5;
@@ -78,7 +78,7 @@
             // 
             lbAssignedFacilities.FormattingEnabled = true;
             lbAssignedFacilities.ItemHeight = 15;
-            lbAssignedFacilities.Location = new Point(244, 97);
+            lbAssignedFacilities.Location = new Point(260, 159);
             lbAssignedFacilities.Name = "lbAssignedFacilities";
             lbAssignedFacilities.Size = new Size(121, 109);
             lbAssignedFacilities.TabIndex = 8;
@@ -87,7 +87,7 @@
             // 
             lbAllFacilities.FormattingEnabled = true;
             lbAllFacilities.ItemHeight = 15;
-            lbAllFacilities.Location = new Point(79, 97);
+            lbAllFacilities.Location = new Point(95, 159);
             lbAllFacilities.Name = "lbAllFacilities";
             lbAllFacilities.SelectionMode = SelectionMode.MultiSimple;
             lbAllFacilities.Size = new Size(115, 109);
@@ -96,7 +96,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(11, 125);
+            label3.Location = new Point(27, 187);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 6;
@@ -105,15 +105,16 @@
             // TxtCertDesc
             // 
             TxtCertDesc.Location = new Point(95, 56);
+            TxtCertDesc.Multiline = true;
             TxtCertDesc.Name = "TxtCertDesc";
-            TxtCertDesc.Size = new Size(158, 23);
+            TxtCertDesc.Size = new Size(286, 78);
             TxtCertDesc.TabIndex = 3;
             // 
             // TxtCertName
             // 
             TxtCertName.Location = new Point(95, 12);
             TxtCertName.Name = "TxtCertName";
-            TxtCertName.Size = new Size(158, 23);
+            TxtCertName.Size = new Size(286, 23);
             TxtCertName.TabIndex = 2;
             // 
             // label2
@@ -137,7 +138,7 @@
             // BtnRemoveAll
             // 
             BtnRemoveAll.Enabled = false;
-            BtnRemoveAll.Location = new Point(200, 124);
+            BtnRemoveAll.Location = new Point(216, 186);
             BtnRemoveAll.Name = "BtnRemoveAll";
             BtnRemoveAll.Size = new Size(38, 23);
             BtnRemoveAll.TabIndex = 11;
@@ -147,7 +148,7 @@
             // 
             // BtnAdd
             // 
-            BtnAdd.Location = new Point(200, 154);
+            BtnAdd.Location = new Point(216, 216);
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(38, 23);
             BtnAdd.TabIndex = 12;
@@ -157,7 +158,7 @@
             // 
             // BtnAddAll
             // 
-            BtnAddAll.Location = new Point(200, 183);
+            BtnAddAll.Location = new Point(216, 245);
             BtnAddAll.Name = "BtnAddAll";
             BtnAddAll.Size = new Size(38, 23);
             BtnAddAll.TabIndex = 13;
@@ -171,7 +172,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = BtnCancel;
-            ClientSize = new Size(385, 314);
+            ClientSize = new Size(415, 358);
             Controls.Add(BtnAddAll);
             Controls.Add(BtnAdd);
             Controls.Add(BtnRemoveAll);
