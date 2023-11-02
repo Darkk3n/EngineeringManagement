@@ -25,8 +25,8 @@ namespace EngineeringManagement.UI.Forms
             using (var context = new Data.AppContext())
             {
                 var facilities = context.Facilities.ToList();
-                facilities.Add(new Facility { Id = -10000, FacilityName = "-- SELECCIONE --" });
-                CmbFacilities.DataSource = facilities.OrderBy(r => r.Id).ToList();
+                facilities.Add(new Facility { Id = 10000, FacilityName = "-- SELECCIONE --" });
+                CmbFacilities.DataSource = facilities.OrderByDescending(r => r.Id).ToList();
                 CmbFacilities.ValueMember = "Id";
                 CmbFacilities.DisplayMember = "FacilityName";
             }

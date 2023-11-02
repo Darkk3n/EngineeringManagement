@@ -41,8 +41,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.8992233F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.1007767F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Controls.Add(BtnOk, 0, 2);
@@ -56,14 +56,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
-            tableLayoutPanel1.Size = new Size(351, 145);
+            tableLayoutPanel1.Size = new Size(275, 145);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(129, 16);
+            label1.Location = new Point(82, 16);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(118, 63);
+            label2.Location = new Point(71, 63);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             BtnOk.Anchor = AnchorStyles.Right;
             BtnOk.Enabled = false;
-            BtnOk.Location = new Point(97, 108);
+            BtnOk.Location = new Point(50, 108);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 2;
@@ -94,7 +94,7 @@
             // BtnCancel
             // 
             BtnCancel.Anchor = AnchorStyles.Left;
-            BtnCancel.Location = new Point(178, 108);
+            BtnCancel.Location = new Point(131, 108);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 3;
@@ -106,9 +106,9 @@
             // 
             TxtName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxtName.Enabled = false;
-            TxtName.Location = new Point(178, 59);
+            TxtName.Location = new Point(131, 59);
             TxtName.Name = "TxtName";
-            TxtName.Size = new Size(170, 23);
+            TxtName.Size = new Size(141, 23);
             TxtName.TabIndex = 4;
             // 
             // CmbFacilities
@@ -116,9 +116,9 @@
             CmbFacilities.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             CmbFacilities.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbFacilities.FormattingEnabled = true;
-            CmbFacilities.Location = new Point(178, 12);
+            CmbFacilities.Location = new Point(131, 12);
             CmbFacilities.Name = "CmbFacilities";
-            CmbFacilities.Size = new Size(170, 23);
+            CmbFacilities.Size = new Size(141, 23);
             CmbFacilities.TabIndex = 5;
             CmbFacilities.SelectedIndexChanged += CmbFacilities_SelectedIndexChanged;
             // 
@@ -128,7 +128,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = BtnCancel;
-            ClientSize = new Size(351, 145);
+            ClientSize = new Size(275, 145);
             Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;
             MinimizeBox = false;

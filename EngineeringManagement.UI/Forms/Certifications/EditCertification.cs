@@ -25,8 +25,8 @@ namespace EngineeringManagement.UI.Forms.Certifications
             using (var context = new Data.AppContext())
             {
                 var certifications = context.Certifications.ToList();
-                certifications.Add(new Certification { Id = -10000, CertificationName = "-- SELECCIONE --" });
-                CmbCertifications.DataSource = certifications.OrderBy(r => r.Id).ToList();
+                certifications.Add(new Certification { Id = 10000, CertificationName = "-- SELECCIONE --" });
+                CmbCertifications.DataSource = certifications.OrderByDescending(r => r.Id).ToList();
                 CmbCertifications.ValueMember = "Id";
                 CmbCertifications.DisplayMember = "CertificationName";
                 CmbCertifications.SelectedIndex = 0;

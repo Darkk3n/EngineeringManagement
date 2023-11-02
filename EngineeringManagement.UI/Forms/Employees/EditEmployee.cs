@@ -31,8 +31,8 @@ namespace EngineeringManagement.UI.Forms
             using (var context = new Data.AppContext())
             {
                 var employees = context.Employees.ToList();
-                employees.Add(new Employee { Id = -1000000, EmployeeName = "-- SELECCIONE --" });
-                CmbEmployees.DataSource = employees.OrderBy(r => r.Id).ToList();
+                employees.Add(new Employee { Id = 1000000, EmployeeName = "-- SELECCIONE --" });
+                CmbEmployees.DataSource = employees.OrderByDescending(r => r.Id).ToList();
                 CmbEmployees.ValueMember = "Id";
                 CmbEmployees.DisplayMember = "EmployeeName";
                 CmbEmployees.SelectedIndex = 0;

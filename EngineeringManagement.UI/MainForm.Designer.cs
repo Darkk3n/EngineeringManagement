@@ -217,6 +217,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CONTROL TOTAL INGENIERIA";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
