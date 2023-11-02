@@ -197,6 +197,10 @@
             // 
             // dgvAllEmployees
             // 
+            dgvAllEmployees.AllowUserToAddRows = false;
+            dgvAllEmployees.AllowUserToDeleteRows = false;
+            dgvAllEmployees.AllowUserToOrderColumns = true;
+            dgvAllEmployees.AllowUserToResizeRows = false;
             dgvAllEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAllEmployees.Dock = DockStyle.Fill;
             dgvAllEmployees.Location = new Point(3, 3);

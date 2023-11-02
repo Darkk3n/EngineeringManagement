@@ -42,15 +42,16 @@ namespace EngineeringManagement.UI
                                 {
                                     r.Employee.EmployeeName,
                                     r.Certification.CertificationName,
-                                    r.StartDate,
-                                    r.EndDate
+                                    StarDate = r.StartDate.Value.Date,
+                                    EndDate = r.EndDate.Value.Date
                                 });
-                var soonToExpire = allEmployees.Where(r => r.StartDate.HasValue
-                    && DateTime.Now.AddDays(-10) < r.EndDate
+                var soonToExpire = allEmployees.Where(r => DateTime.Now.AddDays(-10) < r.EndDate
                     && r.EndDate <= DateTime.Now)
                     .ToList();
                 dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
                 dgvAllEmployees.DataSource = allEmployees.ToList();
+                FormatColumnHeaders(dgvAllEmployees);
+                FormatColumnHeaders(dgvExpiringCertEmp);
             }
         }
 
@@ -105,7 +106,7 @@ namespace EngineeringManagement.UI
 
         private void agregarDC3AEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using var addCertToEmployee = new AddEmployeeCertification(this);
+            using var addCertToEmployee = new AddEmployeeCertification2(this);
             addCertToEmployee.ShowDialog();
             if (ShouldRefreshAllEmployees)
             {
