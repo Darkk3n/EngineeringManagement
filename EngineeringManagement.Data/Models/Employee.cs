@@ -17,5 +17,7 @@ namespace EngineeringManagement.Data.Models
         public EmployeeType EmployeeType { get; set; } = EmployeeType.Operative;
 
         public string Curp { get; set; }
+
+        public string LabsFileName { get; set; }
     }
 }
