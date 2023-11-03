@@ -32,6 +32,7 @@ namespace EngineeringManagement.UI
         {
             dgvAllEmployees.DataSource = null;
             dgvExpiringCertEmp.DataSource = null;
+            var tenDaysAgo = DateTime.Now.AddDays(-10);
             using (var context = new Data.AppContext())
             {
                 var allEmployees = context.EmployeeCertifications
@@ -45,7 +46,8 @@ namespace EngineeringManagement.UI
                                     StarDate = r.StartDate.Value.Date,
                                     EndDate = r.EndDate.Value.Date
                                 });
-                var soonToExpire = allEmployees.Where(r => DateTime.Now.AddDays(-10) < r.EndDate
+                var soonToExpire = allEmployees.Where(r =>
+                    r.EndDate >= tenDaysAgo
                     && r.EndDate <= DateTime.Now)
                     .ToList();
                 dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
