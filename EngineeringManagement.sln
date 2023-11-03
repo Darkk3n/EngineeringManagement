@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineeringManagement.UI", "EngineeringManagement.UI\EngineeringManagement.UI.csproj", "{46C12D0E-66A1-4DDE-AC91-E9969825C400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineeringManagement.UI", "EngineeringManagement.UI\EngineeringManagement.UI.csproj", "{46C12D0E-66A1-4DDE-AC91-E9969825C400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineeringManagement.Data", "EngineeringManagement.Data\EngineeringManagement.Data.csproj", "{319DD262-64F8-4C0C-822B-D56B774E5229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineeringManagement.Data", "EngineeringManagement.Data\EngineeringManagement.Data.csproj", "{319DD262-64F8-4C0C-822B-D56B774E5229}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EngineeringManagement.Installer", "EngineeringManagement.Installer\EngineeringManagement.Installer.vdproj", "{0D261C1A-3619-4692-94A3-D2D208C1051B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{319DD262-64F8-4C0C-822B-D56B774E5229}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{319DD262-64F8-4C0C-822B-D56B774E5229}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{319DD262-64F8-4C0C-822B-D56B774E5229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D261C1A-3619-4692-94A3-D2D208C1051B}.Debug|Any CPU.ActiveCfg = Debug
+		{0D261C1A-3619-4692-94A3-D2D208C1051B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
