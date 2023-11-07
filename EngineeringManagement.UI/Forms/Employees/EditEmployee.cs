@@ -11,13 +11,14 @@ namespace EngineeringManagement.UI.Forms
     public partial class EditEmployee : Form
     {
         #region Properties
+        private Employee _employee;
         private string LabsFileName { get; set; }
         private string LabsSafeFileName { get; set; }
         private string SisositFileName { get; set; }
         private string SisositSafeFileName { get; set; }
         private string PictureSafeFileName { get; set; }
         private string PictureFileName { get; set; }
-        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"; 
+        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
         #endregion
 
         #region Constructor
@@ -78,6 +79,7 @@ namespace EngineeringManagement.UI.Forms
             LblLabsFileName.Text = employee?.LabsFileName;
             LblSisositFileName.Text = employee?.SisositFileName;
             pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
+            _employee = employee;
         }
 
         private static string GetFilePath(Employee employee) => Path.Combine(Application.StartupPath, "Documentos", employee.EmployeeName, employee.PictureFileName);
@@ -191,14 +193,17 @@ namespace EngineeringManagement.UI.Forms
         {
             if (fileDialogLabs.ShowDialog() == DialogResult.OK)
             {
-                LabsFileName = fileDialogLabs.FileName;
-                LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
+                if (MessageBox.Show("Esta a punto de modificar el archivo seleccionado de Laboratorios, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    LabsFileName = fileDialogLabs.FileName;
+                    LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
+                }
             }
         }
 
         private void BtnSisositFile_Click(object sender, EventArgs e)
         {
-            if (fileDialogSisosit.ShowDialog() == DialogResult.OK)
+            if (MessageBox.Show("Esta a punto de modificar el archivo seleccionado de SISOSIT, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SisositFileName = fileDialogSisosit.FileName;
                 SisositSafeFileName = LblSisositFileName.Text = fileDialogSisosit.SafeFileName;
@@ -213,7 +218,7 @@ namespace EngineeringManagement.UI.Forms
                 PictureFileName = fileDialogPicture.FileName;
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
-        } 
+        }
         #endregion
     }
 }
