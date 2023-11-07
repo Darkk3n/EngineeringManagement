@@ -1,3 +1,4 @@
+using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,7 @@ namespace EngineeringManagement.UI
                                 .OrderByDescending(r => r.EmployeeId)
                                 .Select(r => new
                                 {
+                                    EmployeeCertId = r.Id,
                                     r.Employee.EmployeeName,
                                     r.Certification.CertificationName,
                                     StarDate = r.StartDate.Value.Date,
@@ -59,10 +61,11 @@ namespace EngineeringManagement.UI
 
         private static void FormatColumnHeaders(DataGridView gridView)
         {
-            gridView.Columns[0].HeaderText = "Colaborador";
-            gridView.Columns[1].HeaderText = "Certificacion";
-            gridView.Columns[2].HeaderText = "Inicio";
-            gridView.Columns[3].HeaderText = "Vencimiento";
+            gridView.Columns[1].HeaderText = "Colaborador";
+            gridView.Columns[2].HeaderText = "Certificacion";
+            gridView.Columns[3].HeaderText = "Inicio";
+            gridView.Columns[4].HeaderText = "Vencimiento";
+            gridView.Columns[0].Visible = false;
         }
 
         private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +117,33 @@ namespace EngineeringManagement.UI
             {
                 LoadGrids();
             }
+        }
+
+        private void dgvExpiringCertEmp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var empCert = GetCertificationFromGrid(sender as DataGridView, e.RowIndex);
+            OpenEditCertificationDialog(empCert);
+        }
+
+
+        private void dgvAllEmployees_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var empCert = GetCertificationFromGrid(sender as DataGridView, e.RowIndex);
+            OpenEditCertificationDialog(empCert);
+        }
+
+        private void OpenEditCertificationDialog(EmployeeCertification empCert)
+        {
+            using var editCertification = new EditEmployeeCertification(this, empCert);
+            editCertification.ShowDialog();
+        }
+
+        private static EmployeeCertification GetCertificationFromGrid(DataGridView dataGridView, int rowIndex)
+        {
+            var empCertificationId = dataGridView.Rows[rowIndex].Cells[0].Value;
+            using var context = new Data.AppContext();
+            var empCert = context.EmployeeCertifications.Find(empCertificationId);
+            return empCert;
         }
     }
 }

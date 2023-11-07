@@ -68,6 +68,7 @@
             dgvExpiringCertEmp.RowTemplate.Height = 25;
             dgvExpiringCertEmp.Size = new Size(942, 430);
             dgvExpiringCertEmp.TabIndex = 0;
+            dgvExpiringCertEmp.CellDoubleClick += dgvExpiringCertEmp_CellDoubleClick;
             // 
             // menuStrip1
             // 
@@ -208,6 +209,7 @@
             dgvAllEmployees.RowTemplate.Height = 25;
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
+            dgvAllEmployees.CellDoubleClick += dgvAllEmployees_CellDoubleClick;
             // 
             // MainForm
             // 
