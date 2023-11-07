@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace EngineeringManagement.UI
 {
     internal static class Program
@@ -13,9 +15,13 @@ namespace EngineeringManagement.UI
             ApplicationConfiguration.Initialize();
             using (var context = new Data.AppContext())
             {
-                context.Database.EnsureCreated();
+                context.Database.Migrate();
+            }
+            if (!Directory.Exists(Path.Combine(Application.StartupPath, "Documentos")))
+            {
+                Directory.CreateDirectory(Path.Combine(Application.StartupPath, "Documentos"));
             }
             Application.Run(new MainForm());
         }
     }
-}   
+}

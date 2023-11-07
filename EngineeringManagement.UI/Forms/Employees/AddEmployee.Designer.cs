@@ -38,52 +38,74 @@
             txtCurp = new TextBox();
             label4 = new Label();
             cmbEmployeeType = new ComboBox();
-            btnCancel = new Button();
-            btnOk = new Button();
             label5 = new Label();
             btnOpenFile = new Button();
+            lblSelectedLabsFile = new Label();
+            label6 = new Label();
+            btnCancel = new Button();
+            btnOk = new Button();
+            lblSisositFile = new Label();
+            btnSisositOpenFile = new Button();
+            pbEmpPhoto = new PictureBox();
+            btnPicture = new Button();
+            label7 = new Label();
             errors = new ErrorProvider(components);
             fileDialog = new OpenFileDialog();
+            fileDialogPicture = new OpenFileDialog();
+            fileDialogSisosit = new OpenFileDialog();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEmpPhoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errors).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.3677826F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.6322174F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.2264137F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.7735863F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 12F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Controls.Add(label3, 0, 2);
-            tableLayoutPanel1.Controls.Add(txtName, 1, 0);
-            tableLayoutPanel1.Controls.Add(txtPosition, 1, 1);
-            tableLayoutPanel1.Controls.Add(txtCurp, 1, 2);
-            tableLayoutPanel1.Controls.Add(label4, 0, 3);
-            tableLayoutPanel1.Controls.Add(cmbEmployeeType, 1, 3);
-            tableLayoutPanel1.Controls.Add(btnCancel, 1, 5);
-            tableLayoutPanel1.Controls.Add(btnOk, 0, 5);
-            tableLayoutPanel1.Controls.Add(label5, 0, 4);
-            tableLayoutPanel1.Controls.Add(btnOpenFile, 1, 4);
+            tableLayoutPanel1.Controls.Add(label1, 0, 2);
+            tableLayoutPanel1.Controls.Add(label2, 0, 3);
+            tableLayoutPanel1.Controls.Add(label3, 0, 4);
+            tableLayoutPanel1.Controls.Add(txtName, 1, 2);
+            tableLayoutPanel1.Controls.Add(txtPosition, 1, 3);
+            tableLayoutPanel1.Controls.Add(txtCurp, 1, 4);
+            tableLayoutPanel1.Controls.Add(label4, 0, 5);
+            tableLayoutPanel1.Controls.Add(cmbEmployeeType, 1, 5);
+            tableLayoutPanel1.Controls.Add(label5, 0, 6);
+            tableLayoutPanel1.Controls.Add(btnOpenFile, 1, 6);
+            tableLayoutPanel1.Controls.Add(lblSelectedLabsFile, 1, 7);
+            tableLayoutPanel1.Controls.Add(label6, 0, 8);
+            tableLayoutPanel1.Controls.Add(btnCancel, 1, 10);
+            tableLayoutPanel1.Controls.Add(btnOk, 0, 10);
+            tableLayoutPanel1.Controls.Add(lblSisositFile, 1, 9);
+            tableLayoutPanel1.Controls.Add(btnSisositOpenFile, 1, 8);
+            tableLayoutPanel1.Controls.Add(pbEmpPhoto, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnPicture, 1, 1);
+            tableLayoutPanel1.Controls.Add(label7, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 32.727272F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 31.818182F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 35.4545441F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
-            tableLayoutPanel1.Size = new Size(342, 193);
+            tableLayoutPanel1.RowCount = 11;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 296F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 9F));
+            tableLayoutPanel1.Size = new Size(436, 690);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(112, 7);
+            label1.Location = new Point(139, 344);
             label1.Name = "label1";
             label1.Size = new Size(54, 15);
             label1.TabIndex = 0;
@@ -93,7 +115,7 @@
             // 
             label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(120, 35);
+            label2.Location = new Point(147, 385);
             label2.Name = "label2";
             label2.Size = new Size(46, 15);
             label2.TabIndex = 1;
@@ -103,7 +125,7 @@
             // 
             label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(126, 65);
+            label3.Location = new Point(153, 423);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 2;
@@ -111,28 +133,28 @@
             // 
             // txtName
             // 
-            txtName.Dock = DockStyle.Fill;
-            txtName.Location = new Point(172, 3);
+            txtName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtName.Location = new Point(199, 340);
             txtName.Name = "txtName";
-            txtName.Size = new Size(154, 23);
+            txtName.Size = new Size(222, 23);
             txtName.TabIndex = 5;
             txtName.Validating += txtName_Validating;
             // 
             // txtPosition
             // 
-            txtPosition.Dock = DockStyle.Fill;
-            txtPosition.Location = new Point(172, 32);
+            txtPosition.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtPosition.Location = new Point(199, 381);
             txtPosition.Name = "txtPosition";
-            txtPosition.Size = new Size(154, 23);
+            txtPosition.Size = new Size(222, 23);
             txtPosition.TabIndex = 6;
             txtPosition.Validating += txtPosition_Validating;
             // 
             // txtCurp
             // 
-            txtCurp.Dock = DockStyle.Fill;
-            txtCurp.Location = new Point(172, 60);
+            txtCurp.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtCurp.Location = new Point(199, 419);
             txtCurp.Name = "txtCurp";
-            txtCurp.Size = new Size(154, 23);
+            txtCurp.Size = new Size(222, 23);
             txtCurp.TabIndex = 7;
             txtCurp.Validating += txtCurp_Validating;
             // 
@@ -140,7 +162,7 @@
             // 
             label4.Anchor = AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(61, 98);
+            label4.Location = new Point(88, 462);
             label4.Name = "label4";
             label4.Size = new Size(105, 15);
             label4.TabIndex = 8;
@@ -148,18 +170,60 @@
             // 
             // cmbEmployeeType
             // 
-            cmbEmployeeType.Dock = DockStyle.Fill;
+            cmbEmployeeType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             cmbEmployeeType.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEmployeeType.FormattingEnabled = true;
-            cmbEmployeeType.Location = new Point(172, 91);
+            cmbEmployeeType.Location = new Point(199, 458);
             cmbEmployeeType.Name = "cmbEmployeeType";
-            cmbEmployeeType.Size = new Size(154, 23);
+            cmbEmployeeType.Size = new Size(222, 23);
             cmbEmployeeType.TabIndex = 9;
             cmbEmployeeType.Validating += cmbEmployeeType_Validating;
             // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new Point(117, 503);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 15);
+            label5.TabIndex = 10;
+            label5.Text = "Laboratorios:";
+            // 
+            // btnOpenFile
+            // 
+            btnOpenFile.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnOpenFile.Location = new Point(199, 499);
+            btnOpenFile.Name = "btnOpenFile";
+            btnOpenFile.Size = new Size(222, 23);
+            btnOpenFile.TabIndex = 11;
+            btnOpenFile.Text = "Seleccionar Archivo...";
+            btnOpenFile.UseVisualStyleBackColor = true;
+            btnOpenFile.Click += btnOpenFile_Click;
+            // 
+            // lblSelectedLabsFile
+            // 
+            lblSelectedLabsFile.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblSelectedLabsFile.AutoSize = true;
+            lblSelectedLabsFile.Location = new Point(199, 538);
+            lblSelectedLabsFile.Name = "lblSelectedLabsFile";
+            lblSelectedLabsFile.Size = new Size(222, 15);
+            lblSelectedLabsFile.TabIndex = 12;
+            lblSelectedLabsFile.Text = "No se ha seleccionado archivo...";
+            lblSelectedLabsFile.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new Point(144, 583);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 15);
+            label6.TabIndex = 13;
+            label6.Text = "SISOSIT:";
+            // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(172, 163);
+            btnCancel.Location = new Point(199, 653);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 4;
@@ -170,7 +234,7 @@
             // btnOk
             // 
             btnOk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnOk.Location = new Point(91, 163);
+            btnOk.Location = new Point(118, 653);
             btnOk.Name = "btnOk";
             btnOk.Size = new Size(75, 23);
             btnOk.TabIndex = 3;
@@ -178,26 +242,59 @@
             btnOk.UseVisualStyleBackColor = true;
             btnOk.Click += btnOk_Click;
             // 
-            // label5
+            // lblSisositFile
             // 
-            label5.Anchor = AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Location = new Point(90, 134);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 15);
-            label5.TabIndex = 10;
-            label5.Text = "Laboratorios:";
+            lblSisositFile.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblSisositFile.AutoSize = true;
+            lblSisositFile.Location = new Point(199, 628);
+            lblSisositFile.Name = "lblSisositFile";
+            lblSisositFile.Size = new Size(222, 15);
+            lblSisositFile.TabIndex = 14;
+            lblSisositFile.Text = "No se ha seleccionado archivo...";
+            lblSisositFile.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnOpenFile
+            // btnSisositOpenFile
             // 
-            btnOpenFile.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnOpenFile.Location = new Point(172, 130);
-            btnOpenFile.Name = "btnOpenFile";
-            btnOpenFile.Size = new Size(154, 23);
-            btnOpenFile.TabIndex = 11;
-            btnOpenFile.Text = "Seleccionar Archivo...";
-            btnOpenFile.UseVisualStyleBackColor = true;
-            btnOpenFile.Click += btnOpenFile_Click;
+            btnSisositOpenFile.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnSisositOpenFile.Location = new Point(199, 579);
+            btnSisositOpenFile.Name = "btnSisositOpenFile";
+            btnSisositOpenFile.Size = new Size(222, 23);
+            btnSisositOpenFile.TabIndex = 15;
+            btnSisositOpenFile.Text = "Seleccionar Archivo...";
+            btnSisositOpenFile.UseVisualStyleBackColor = true;
+            btnSisositOpenFile.Click += btnSisositOpenFile_Click;
+            // 
+            // pbEmpPhoto
+            // 
+            pbEmpPhoto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.SetColumnSpan(pbEmpPhoto, 3);
+            pbEmpPhoto.Location = new Point(3, 3);
+            pbEmpPhoto.Name = "pbEmpPhoto";
+            pbEmpPhoto.Size = new Size(430, 290);
+            pbEmpPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEmpPhoto.TabIndex = 16;
+            pbEmpPhoto.TabStop = false;
+            // 
+            // btnPicture
+            // 
+            btnPicture.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnPicture.Location = new Point(199, 302);
+            btnPicture.Name = "btnPicture";
+            btnPicture.Size = new Size(222, 23);
+            btnPicture.TabIndex = 17;
+            btnPicture.Text = "Seleccionar Archivo...";
+            btnPicture.UseVisualStyleBackColor = true;
+            btnPicture.Click += btnPicture_Click;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Location = new Point(159, 306);
+            label7.Name = "label7";
+            label7.Size = new Size(34, 15);
+            label7.TabIndex = 18;
+            label7.Text = "Foto:";
             // 
             // errors
             // 
@@ -205,12 +302,21 @@
             // 
             // fileDialog
             // 
-            fileDialog.DefaultExt = "txt";
             fileDialog.Filter = "PDF files (*.pdf) | *.pdf";
             fileDialog.InitialDirectory = "C:\\";
             fileDialog.RestoreDirectory = true;
             fileDialog.Tag = "";
             fileDialog.Title = "Seleccionar Laboratorios";
+            // 
+            // fileDialogPicture
+            // 
+            fileDialogPicture.Filter = "Archivos de Imagen (*.png, *.jpg, *.jpeg) | *.png ;*.jpg;*.jpeg";
+            fileDialogPicture.InitialDirectory = "C:\\";
+            // 
+            // fileDialogSisosit
+            // 
+            fileDialogSisosit.Filter = "PDF files (*.pdf) | *.pdf";
+            fileDialogSisosit.InitialDirectory = "C:\\";
             // 
             // AddEmployee
             // 
@@ -218,7 +324,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
-            ClientSize = new Size(342, 193);
+            ClientSize = new Size(436, 690);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -228,6 +334,7 @@
             Text = "Agregar Empleado";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEmpPhoto).EndInit();
             ((System.ComponentModel.ISupportInitialize)errors).EndInit();
             ResumeLayout(false);
         }
@@ -249,5 +356,14 @@
         private Label label5;
         private OpenFileDialog fileDialog;
         private Button btnOpenFile;
+        private Label lblSelectedLabsFile;
+        private Label label6;
+        private Label lblSisositFile;
+        private Button btnSisositOpenFile;
+        private PictureBox pbEmpPhoto;
+        private Button btnPicture;
+        private Label label7;
+        private OpenFileDialog fileDialogPicture;
+        private OpenFileDialog fileDialogSisosit;
     }
 }

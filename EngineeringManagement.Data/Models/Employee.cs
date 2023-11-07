@@ -19,5 +19,9 @@ namespace EngineeringManagement.Data.Models
         public string Curp { get; set; }
 
         public string LabsFileName { get; set; }
+
+        public string SisositFileName { get; set; }
+
+        public string PictureFileName { get; set; }
     }
 }
