@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.Data.Models.Enums;
+using EngineeringManagement.UI.Extensions;
 using EngineeringManagement.UI.Services;
 using System.Data;
 using System.Text.RegularExpressions;
@@ -9,18 +10,24 @@ namespace EngineeringManagement.UI.Forms
 {
     public partial class EditEmployee : Form
     {
+        #region Properties
         private string LabsFileName { get; set; }
         private string LabsSafeFileName { get; set; }
         private string SisositFileName { get; set; }
         private string SisositSafeFileName { get; set; }
         private string PictureSafeFileName { get; set; }
         private string PictureFileName { get; set; }
+        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"; 
+        #endregion
 
+        #region Constructor
         public EditEmployee()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -81,6 +88,7 @@ namespace EngineeringManagement.UI.Forms
             TxtCurp.Text = string.Empty;
             TxtPosition.Text = string.Empty;
             CmbEmployeeType.SelectedIndex = 0;
+            LblLabsFileName.Text = LblSisositFileName.Text = "Ningun archivo seleccionado...";
         }
 
         private void EnableControls(bool enable)
@@ -93,17 +101,11 @@ namespace EngineeringManagement.UI.Forms
             BtnLabsFile.Enabled = enable;
             BtnPicture.Enabled = enable;
             BtnSisositFile.Enabled = enable;
-            if (!enable)
-            {
-                LblLabsFileName.Text = LblSisositFileName.Text = "Ningun archivo seleccionado...";
-            }
         }
-
-        private static bool IsEmptyString(string value) => string.IsNullOrEmpty(value);
 
         private void TxtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (IsEmptyString(((TextBox)sender).Text.ToString()))
+            if (((TextBox)sender).Text.HasValue())
             {
                 e.Cancel = true;
                 errors.SetError(TxtName, "Nombre es un campo requerido");
@@ -114,7 +116,7 @@ namespace EngineeringManagement.UI.Forms
 
         private void TxtPosition_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (IsEmptyString(((TextBox)sender).Text.ToString()))
+            if (((TextBox)sender).Text.HasValue())
             {
                 e.Cancel = true;
                 errors.SetError(TxtPosition, "Puesto es un campo requerido");
@@ -126,7 +128,7 @@ namespace EngineeringManagement.UI.Forms
         private void TxtCurp_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Regex rx = new(CuprRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            if (!string.IsNullOrEmpty(TxtCurp.Text) && !rx.IsMatch(TxtCurp.Text.Trim()))
+            if (TxtCurp.Text.HasValue() && !rx.IsMatch(TxtCurp.Text.Trim()))
             {
                 e.Cancel = true;
                 errors.SetError(TxtCurp, "Formato de CURP invalido");
@@ -137,7 +139,7 @@ namespace EngineeringManagement.UI.Forms
 
         private void CmbEmployeeType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (((ComboBox)sender).SelectedIndex == 0 && !string.IsNullOrEmpty(TxtName.Text))
+            if (((ComboBox)sender).SelectedIndex == 0 && TxtName.Text.HasValue())
             {
                 e.Cancel = true;
                 errors.SetError(CmbEmployeeType, "Seleccione un tipo de Empleado");
@@ -211,8 +213,7 @@ namespace EngineeringManagement.UI.Forms
                 PictureFileName = fileDialogPicture.FileName;
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
-        }
-
-        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
+        } 
+        #endregion
     }
 }
