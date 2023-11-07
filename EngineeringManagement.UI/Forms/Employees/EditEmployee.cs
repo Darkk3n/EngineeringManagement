@@ -1,12 +1,21 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.Data.Models.Enums;
+using EngineeringManagement.UI.Services;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace EngineeringManagement.UI.Forms
 {
     public partial class EditEmployee : Form
     {
+        private string LabsFileName { get; set; }
+        private string LabsSafeFileName { get; set; }
+        private string SisositFileName { get; set; }
+        private string SisositSafeFileName { get; set; }
+        private string PictureSafeFileName { get; set; }
+        private string PictureFileName { get; set; }
+
         public EditEmployee()
         {
             InitializeComponent();
@@ -43,7 +52,7 @@ namespace EngineeringManagement.UI.Forms
         {
             if (CmbEmployees.SelectedIndex != 0)
             {
-                LoadEmployee(CmbEmployees.SelectedItem);
+                LoadEmployee(CmbEmployees.SelectedItem as Employee);
                 EnableControls(true);
             }
             else
@@ -53,14 +62,18 @@ namespace EngineeringManagement.UI.Forms
             }
         }
 
-        private void LoadEmployee(object selectedItem)
+        private void LoadEmployee(Employee employee)
         {
-            var casted = (Employee)selectedItem;
-            TxtName.Text = casted.EmployeeName;
-            TxtCurp.Text = casted.Curp;
-            TxtPosition.Text = casted.Position;
-            CmbEmployeeType.SelectedIndex = (int)casted.EmployeeType;
+            TxtName.Text = employee?.EmployeeName;
+            TxtCurp.Text = employee?.Curp;
+            TxtPosition.Text = employee?.Position;
+            CmbEmployeeType.SelectedIndex = (int)employee?.EmployeeType;
+            LblLabsFileName.Text = employee?.LabsFileName;
+            LblSisositFileName.Text = employee?.SisositFileName;
+            pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
         }
+
+        private static string GetFilePath(Employee employee) => Path.Combine(Application.StartupPath, "Documentos", employee.EmployeeName, employee.PictureFileName);
 
         private void CleanControls()
         {
@@ -77,6 +90,13 @@ namespace EngineeringManagement.UI.Forms
             TxtPosition.Enabled = enable;
             CmbEmployeeType.Enabled = enable;
             BtnOk.Enabled = enable;
+            BtnLabsFile.Enabled = enable;
+            BtnPicture.Enabled = enable;
+            BtnSisositFile.Enabled = enable;
+            if (!enable)
+            {
+                LblLabsFileName.Text = LblSisositFileName.Text = "Ningun archivo seleccionado...";
+            }
         }
 
         private static bool IsEmptyString(string value) => string.IsNullOrEmpty(value);
@@ -138,7 +158,20 @@ namespace EngineeringManagement.UI.Forms
                     employee.Curp = TxtCurp.Text.Trim();
                     employee.Position = TxtPosition.Text.Trim();
                     employee.EmployeeType = (EmployeeType)CmbEmployeeType.SelectedIndex;
+                    employee.PictureFileName = PictureSafeFileName;
+                    employee.LabsFileName = LabsSafeFileName;
+                    employee.SisositFileName = SisositSafeFileName;
                     context.SaveChanges();
+                    CopyFilesService.Execute(new CopyFilesServiceArgs
+                    {
+                        EmployeeName = employee.EmployeeName,
+                        SisositFileName = SisositFileName,
+                        SisositSafeFileName = SisositSafeFileName,
+                        LabsFileName = LabsFileName,
+                        LabsSafeFileName = LabsSafeFileName,
+                        PictureFileName = PictureFileName,
+                        PictureSafeFileName = PictureSafeFileName
+                    });
                 }
             }
             catch (Exception)
@@ -148,7 +181,35 @@ namespace EngineeringManagement.UI.Forms
             finally
             {
                 MessageBox.Show("Actualizado con exito.", "Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                Close();
+            }
+        }
+
+        private void BtnLabsFile_Click(object sender, EventArgs e)
+        {
+            if (fileDialogLabs.ShowDialog() == DialogResult.OK)
+            {
+                LabsFileName = fileDialogLabs.FileName;
+                LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
+            }
+        }
+
+        private void BtnSisositFile_Click(object sender, EventArgs e)
+        {
+            if (fileDialogSisosit.ShowDialog() == DialogResult.OK)
+            {
+                SisositFileName = fileDialogSisosit.FileName;
+                SisositSafeFileName = LblSisositFileName.Text = fileDialogSisosit.SafeFileName;
+            }
+        }
+
+        private void BtnPicture_Click(object sender, EventArgs e)
+        {
+            if (fileDialogPicture.ShowDialog() == DialogResult.OK)
+            {
+                PictureSafeFileName = fileDialogPicture.SafeFileName;
+                PictureFileName = fileDialogPicture.FileName;
+                pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
         }
 

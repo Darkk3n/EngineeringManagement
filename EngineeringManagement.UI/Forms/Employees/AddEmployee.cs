@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.UI.Services;
 using System.Text.RegularExpressions;
 
 namespace EngineeringManagement.UI.Forms
@@ -10,8 +11,8 @@ namespace EngineeringManagement.UI.Forms
         private string LabsSafeFileName { get; set; }
         private string SisositFileName { get; set; }
         private string SisositSafeFileName { get; set; }
-        public string PictureSafeFileName { get; set; }
-        public string PictureFileName { get; set; }
+        private string PictureSafeFileName { get; set; }
+        private string PictureFileName { get; set; }
 
         public AddEmployee()
         {
@@ -52,7 +53,16 @@ namespace EngineeringManagement.UI.Forms
                 using var context = new Data.AppContext();
                 context.Employees.Add(newEmp);
                 context.SaveChanges();
-                HandleLabsFile(newEmp.EmployeeName);
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = newEmp.EmployeeName,
+                    SisositFileName = SisositFileName,
+                    SisositSafeFileName = SisositSafeFileName,
+                    LabsFileName = LabsFileName,
+                    LabsSafeFileName = LabsSafeFileName,
+                    PictureFileName = PictureFileName,
+                    PictureSafeFileName = PictureSafeFileName
+                });
             }
             catch (Exception)
             {
@@ -62,39 +72,6 @@ namespace EngineeringManagement.UI.Forms
             {
                 MessageBox.Show("Guardado con exito", "Agregar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            }
-        }
-
-        private void HandleLabsFile(string employeeName)
-        {
-            var pathToCopy = Path.Combine(Application.StartupPath, "Documentos", employeeName);
-            if (!Directory.Exists(pathToCopy))
-            {
-                Directory.CreateDirectory(pathToCopy);
-            }
-            if (LabsFileName.HasValue())
-            {
-                CopyFile(LabsFileName, Path.Combine(pathToCopy, LabsSafeFileName));
-            }
-            if (SisositFileName.HasValue())
-            {
-                CopyFile(SisositFileName, Path.Combine(pathToCopy, SisositSafeFileName));
-            }
-            if (PictureSafeFileName.HasValue())
-            {
-                CopyFile(PictureFileName, Path.Combine(pathToCopy, PictureSafeFileName));
-            }
-        }
-
-        private void CopyFile(string fileName, string pathToCopy)
-        {
-            try
-            {
-                File.Copy(fileName, pathToCopy);
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
 

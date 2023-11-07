@@ -267,6 +267,7 @@
             // pbEmpPhoto
             // 
             pbEmpPhoto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pbEmpPhoto.BorderStyle = BorderStyle.FixedSingle;
             tableLayoutPanel1.SetColumnSpan(pbEmpPhoto, 3);
             pbEmpPhoto.Location = new Point(3, 3);
             pbEmpPhoto.Name = "pbEmpPhoto";
@@ -304,7 +305,6 @@
             // 
             fileDialog.Filter = "PDF files (*.pdf) | *.pdf";
             fileDialog.InitialDirectory = "C:\\";
-            fileDialog.RestoreDirectory = true;
             fileDialog.Tag = "";
             fileDialog.Title = "Seleccionar Laboratorios";
             // 
