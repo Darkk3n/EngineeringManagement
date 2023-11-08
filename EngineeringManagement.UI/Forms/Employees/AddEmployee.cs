@@ -50,25 +50,16 @@ namespace EngineeringManagement.UI.Forms
                 EmployeeName = txtName.Text,
                 Curp = txtCurp.Text,
                 Position = txtPosition.Text,
-                LabsFileName = LabsSafeFileName.HasValue() ? LabsSafeFileName : string.Empty,
-                SisositFileName = SisositSafeFileName.HasValue() ? SisositSafeFileName : string.Empty,
-                PictureFileName = PictureSafeFileName.HasValue() ? PictureSafeFileName : string.Empty,
+                LabsFileName = LabsSafeFileName,
+                SisositFileName = SisositSafeFileName,
+                PictureFileName = PictureSafeFileName,
             };
             try
             {
                 using var context = new Data.AppContext();
                 context.Employees.Add(newEmp);
                 context.SaveChanges();
-                CopyFilesService.Execute(new CopyFilesServiceArgs
-                {
-                    EmployeeName = newEmp.EmployeeName,
-                    SisositFileName = SisositFileName,
-                    SisositSafeFileName = SisositSafeFileName,
-                    LabsFileName = LabsFileName,
-                    LabsSafeFileName = LabsSafeFileName,
-                    PictureFileName = PictureFileName,
-                    PictureSafeFileName = PictureSafeFileName
-                });
+                HandleFiles(newEmp);
             }
             catch (Exception)
             {
@@ -78,6 +69,37 @@ namespace EngineeringManagement.UI.Forms
             {
                 MessageBox.Show("Guardado con exito", "Agregar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+            }
+        }
+
+        private void HandleFiles(Employee newEmp)
+        {
+            if (PictureSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = newEmp.EmployeeName,
+                    FileName = PictureFileName,
+                    SafeFileName = PictureSafeFileName,
+                });
+            }
+            if (LabsSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = newEmp.EmployeeName,
+                    FileName = LabsFileName,
+                    SafeFileName = LabsSafeFileName,
+                });
+            }
+            if (SisositSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = newEmp.EmployeeName,
+                    FileName = SisositFileName,
+                    SafeFileName = SisositSafeFileName,
+                });
             }
         }
 

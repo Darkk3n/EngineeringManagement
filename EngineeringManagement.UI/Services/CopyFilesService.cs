@@ -11,29 +11,20 @@ namespace EngineeringManagement.UI.Services
             {
                 Directory.CreateDirectory(pathToCopy);
             }
-            if (serviceArgs.LabsFileName.HasValue())
+            if (serviceArgs.FileName.HasValue())
             {
-                CopyFile(serviceArgs.LabsFileName, Path.Combine(pathToCopy, serviceArgs.LabsSafeFileName));
-            }
-            if (serviceArgs.SisositFileName.HasValue())
-            {
-                CopyFile(serviceArgs.SisositFileName, Path.Combine(pathToCopy, serviceArgs.SisositSafeFileName));
-            }
-            if (serviceArgs.PictureSafeFileName.HasValue())
-            {
-                CopyFile(serviceArgs.PictureFileName, Path.Combine(pathToCopy, serviceArgs.PictureSafeFileName));
-            }
-        }
-
-        private static void CopyFile(string fileName, string pathToCopy)
-        {
-            try
-            {
-                File.Copy(fileName, pathToCopy);
-            }
-            catch (Exception)
-            {
-                throw;
+                try
+                {
+                    if (serviceArgs.OriginalFileName.HasValue())
+                    {
+                        File.Delete(Path.Combine(pathToCopy, serviceArgs.OriginalFileName));
+                    }
+                    File.Copy(serviceArgs.FileName, Path.Combine(pathToCopy, serviceArgs.SafeFileName));
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }
@@ -41,11 +32,8 @@ namespace EngineeringManagement.UI.Services
     public class CopyFilesServiceArgs
     {
         public string EmployeeName { get; set; }
-        public string LabsFileName { get; set; }
-        public string LabsSafeFileName { get; set; }
-        public string SisositFileName { get; set; }
-        public string SisositSafeFileName { get; set; }
-        public string PictureSafeFileName { get; set; }
-        public string PictureFileName { get; set; }
+        public string FileName { get; set; }
+        public string SafeFileName { get; set; }
+        public string OriginalFileName { get; set; }
     }
 }

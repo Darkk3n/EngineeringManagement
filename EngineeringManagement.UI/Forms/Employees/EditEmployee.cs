@@ -76,9 +76,18 @@ namespace EngineeringManagement.UI.Forms
             TxtCurp.Text = employee?.Curp;
             TxtPosition.Text = employee?.Position;
             CmbEmployeeType.SelectedIndex = (int)employee?.EmployeeType;
-            LblLabsFileName.Text = employee?.LabsFileName;
-            LblSisositFileName.Text = employee?.SisositFileName;
-            pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
+            if (employee.LabsFileName.HasValue())
+            {
+                LblLabsFileName.Text = employee?.LabsFileName;
+            }
+            if (employee.SisositFileName.HasValue())
+            {
+                LblSisositFileName.Text = employee?.SisositFileName;
+            }
+            if (employee.PictureFileName.HasValue())
+            {
+                pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
+            }
             _employee = employee;
         }
 
@@ -107,7 +116,7 @@ namespace EngineeringManagement.UI.Forms
 
         private void TxtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (((TextBox)sender).Text.HasValue())
+            if (!((TextBox)sender).Text.HasValue())
             {
                 e.Cancel = true;
                 errors.SetError(TxtName, "Nombre es un campo requerido");
@@ -118,7 +127,7 @@ namespace EngineeringManagement.UI.Forms
 
         private void TxtPosition_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (((TextBox)sender).Text.HasValue())
+            if (!((TextBox)sender).Text.HasValue())
             {
                 e.Cancel = true;
                 errors.SetError(TxtPosition, "Puesto es un campo requerido");
@@ -158,24 +167,29 @@ namespace EngineeringManagement.UI.Forms
                 using (var context = new Data.AppContext())
                 {
                     var employee = context.Employees.Find(employeeId);
+                    var originalPicture = employee.PictureFileName;
+                    var originalLabs = employee.LabsFileName;
+                    var originalSisosit = employee.SisositFileName;
+                    var originalEmployeeName = employee.EmployeeName;
                     employee.EmployeeName = TxtName.Text.Trim();
                     employee.Curp = TxtCurp.Text.Trim();
                     employee.Position = TxtPosition.Text.Trim();
                     employee.EmployeeType = (EmployeeType)CmbEmployeeType.SelectedIndex;
-                    employee.PictureFileName = PictureSafeFileName;
-                    employee.LabsFileName = LabsSafeFileName;
-                    employee.SisositFileName = SisositSafeFileName;
-                    context.SaveChanges();
-                    CopyFilesService.Execute(new CopyFilesServiceArgs
+                    if (PictureSafeFileName.HasValue())
                     {
-                        EmployeeName = employee.EmployeeName,
-                        SisositFileName = SisositFileName,
-                        SisositSafeFileName = SisositSafeFileName,
-                        LabsFileName = LabsFileName,
-                        LabsSafeFileName = LabsSafeFileName,
-                        PictureFileName = PictureFileName,
-                        PictureSafeFileName = PictureSafeFileName
-                    });
+                        employee.PictureFileName = PictureSafeFileName;
+                    }
+                    if (LabsSafeFileName.HasValue())
+                    {
+                        employee.LabsFileName = LabsSafeFileName;
+                    }
+                    if (SisositSafeFileName.HasValue())
+                    {
+                        employee.SisositFileName = SisositSafeFileName;
+                    }
+                    context.SaveChanges();
+                    RelocateFilesIfNecessary(originalEmployeeName, employee);
+                    HandleFiles(employee, originalPicture, originalLabs, originalSisosit);
                 }
             }
             catch (Exception)
@@ -189,21 +203,75 @@ namespace EngineeringManagement.UI.Forms
             }
         }
 
+        private void RelocateFilesIfNecessary(string originalEmployeeName, Employee employee)
+        {
+            if (originalEmployeeName == employee.EmployeeName)
+                return;
+            var files = Directory.GetFiles(Path.Combine(Application.StartupPath, "Documentos", originalEmployeeName));
+            var newPath = Path.Combine(Application.StartupPath, "Documentos", employee.EmployeeName);
+            Directory.CreateDirectory(newPath);
+            foreach (var file in files)
+            {
+                var fileName = Path.GetFileName(file);
+                File.Copy(file, Path.Combine(newPath, fileName));
+            }
+            ReloadPicture(Path.Combine(newPath,employee.PictureFileName));
+            files.ToList().ForEach(r => File.Delete(r));
+            Directory.Delete(Path.Combine(Application.StartupPath, "Documentos", originalEmployeeName));
+        }
+
+        private void ReloadPicture(string pictureFileName)
+        {
+            pbEmpPhoto.Image.Dispose();
+            pbEmpPhoto.Image = Image.FromFile(pictureFileName);
+        }
+
+        private void HandleFiles(Employee employee, string originalPicture, string originalLabs, string originalSisosit)
+        {
+            if (PictureSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = employee.EmployeeName,
+                    FileName = PictureFileName,
+                    SafeFileName = PictureSafeFileName,
+                    OriginalFileName = originalPicture
+                });
+            }
+            if (LabsSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = employee.EmployeeName,
+                    FileName = LabsFileName,
+                    SafeFileName = LabsSafeFileName,
+                    OriginalFileName = originalLabs
+                });
+            }
+            if (SisositSafeFileName.HasValue())
+            {
+                CopyFilesService.Execute(new CopyFilesServiceArgs
+                {
+                    EmployeeName = employee.EmployeeName,
+                    FileName = SisositFileName,
+                    SafeFileName = SisositSafeFileName,
+                    OriginalFileName = originalSisosit
+                });
+            }
+        }
+
         private void BtnLabsFile_Click(object sender, EventArgs e)
         {
-            if (fileDialogLabs.ShowDialog() == DialogResult.OK)
+            if (fileDialogLabs.ShowDialog() == DialogResult.OK && MessageBox.Show("Esta a punto de modificar el archivo seleccionado de Laboratorios, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Esta a punto de modificar el archivo seleccionado de Laboratorios, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    LabsFileName = fileDialogLabs.FileName;
-                    LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
-                }
+                LabsFileName = fileDialogLabs.FileName;
+                LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
             }
         }
 
         private void BtnSisositFile_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta a punto de modificar el archivo seleccionado de SISOSIT, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (fileDialogSisosit.ShowDialog() == DialogResult.OK && MessageBox.Show("Esta a punto de modificar el archivo seleccionado de SISOSIT, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SisositFileName = fileDialogSisosit.FileName;
                 SisositSafeFileName = LblSisositFileName.Text = fileDialogSisosit.SafeFileName;
