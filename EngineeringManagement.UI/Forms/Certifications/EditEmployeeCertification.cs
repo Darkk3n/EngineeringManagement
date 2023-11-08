@@ -1,13 +1,5 @@
 ﻿using EngineeringManagement.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using EngineeringManagement.UI.Extensions;
 
 namespace EngineeringManagement.UI.Forms.Certifications
 {
@@ -16,11 +8,37 @@ namespace EngineeringManagement.UI.Forms.Certifications
         private readonly MainForm mainForm;
         private readonly EmployeeCertification empCert;
 
+        public string FileName { get; set; }
+        public string SafeFileName { get; set; }
+
         public EditEmployeeCertification(MainForm mainForm, EmployeeCertification empCert)
         {
             this.mainForm = mainForm;
             this.empCert = empCert;
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            LblCertName.Text = empCert.Certification.CertificationName;
+            LblEmployeeName.Text = empCert.Employee.EmployeeName;
+            if (empCert.FileName.HasValue())
+            {
+                LblFileName.Text = empCert.FileName;
+            }
+            dtpStartDate.Value = empCert.StartDate.Value;
+            dtpEndDate.Value = empCert.EndDate.Value;
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e) => Close();
+
+        private void BtnOpenFile_Click(object sender, EventArgs e)
+        {
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

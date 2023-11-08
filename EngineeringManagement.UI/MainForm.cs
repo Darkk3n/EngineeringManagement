@@ -140,9 +140,12 @@ namespace EngineeringManagement.UI
 
         private static EmployeeCertification GetCertificationFromGrid(DataGridView dataGridView, int rowIndex)
         {
-            var empCertificationId = dataGridView.Rows[rowIndex].Cells[0].Value;
+            var empCertificationId = (int)dataGridView.Rows[rowIndex].Cells[0].Value;
             using var context = new Data.AppContext();
-            var empCert = context.EmployeeCertifications.Find(empCertificationId);
+            var empCert = context.EmployeeCertifications
+                .Include(r => r.Certification)
+                .Include(r => r.Employee)
+                .First(r => r.Id == empCertificationId);
             return empCert;
         }
     }
