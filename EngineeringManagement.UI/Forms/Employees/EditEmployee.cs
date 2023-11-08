@@ -3,6 +3,8 @@ using EngineeringManagement.Data.Models.Enums;
 using EngineeringManagement.UI.Extensions;
 using EngineeringManagement.UI.Services;
 using System.Data;
+using System.Diagnostics;
+using System.Security.Policy;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -76,14 +78,10 @@ namespace EngineeringManagement.UI.Forms
             TxtCurp.Text = employee?.Curp;
             TxtPosition.Text = employee?.Position;
             CmbEmployeeType.SelectedIndex = (int)employee?.EmployeeType;
-            if (employee.LabsFileName.HasValue())
-            {
-                LblLabsFileName.Text = employee?.LabsFileName;
-            }
-            if (employee.SisositFileName.HasValue())
-            {
-                LblSisositFileName.Text = employee?.SisositFileName;
-            }
+            LblLabsFileName.Text = employee.LabsFileName.HasValue() ? employee?.LabsFileName : "Ningun archivo seleccionado...";
+            BtnViewLabs.Enabled = employee.LabsFileName.HasValue();
+            LblSisositFileName.Text = employee.SisositFileName.HasValue() ? employee.SisositFileName : "Ningun archivo seleccionado";
+            BtnViewSisosit.Enabled = employee.SisositFileName.HasValue();
             if (employee.PictureFileName.HasValue())
             {
                 pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
@@ -215,7 +213,7 @@ namespace EngineeringManagement.UI.Forms
                 var fileName = Path.GetFileName(file);
                 File.Copy(file, Path.Combine(newPath, fileName));
             }
-            ReloadPicture(Path.Combine(newPath,employee.PictureFileName));
+            ReloadPicture(Path.Combine(newPath, employee.PictureFileName));
             files.ToList().ForEach(r => File.Delete(r));
             Directory.Delete(Path.Combine(Application.StartupPath, "Documentos", originalEmployeeName));
         }
@@ -264,7 +262,7 @@ namespace EngineeringManagement.UI.Forms
         {
             if (fileDialogLabs.ShowDialog() == DialogResult.OK && MessageBox.Show("Esta a punto de modificar el archivo seleccionado de Laboratorios, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                LabsFileName = fileDialogLabs.FileName;
+                LabsFileName = _employee.LabsFileName = fileDialogLabs.FileName;
                 LabsSafeFileName = LblLabsFileName.Text = fileDialogLabs.SafeFileName;
             }
         }
@@ -273,7 +271,7 @@ namespace EngineeringManagement.UI.Forms
         {
             if (fileDialogSisosit.ShowDialog() == DialogResult.OK && MessageBox.Show("Esta a punto de modificar el archivo seleccionado de SISOSIT, ¿desea continuar?", "Editar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                SisositFileName = fileDialogSisosit.FileName;
+                SisositFileName = _employee.SisositFileName = fileDialogSisosit.FileName;
                 SisositSafeFileName = LblSisositFileName.Text = fileDialogSisosit.SafeFileName;
             }
         }
@@ -284,9 +282,24 @@ namespace EngineeringManagement.UI.Forms
             {
                 PictureSafeFileName = fileDialogPicture.SafeFileName;
                 PictureFileName = fileDialogPicture.FileName;
+                pbEmpPhoto.Image.Dispose();
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
         }
+
+        private void BtnViewLabs_Click(object sender, EventArgs e) => OpenFile(_employee.LabsFileName);
+
+        private void BtnViewSisosit_Click(object sender, EventArgs e) => OpenFile(_employee.SisositFileName);
+
+        private void OpenFile(string fileName)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Path.Combine(Application.StartupPath, "Documentos", _employee.EmployeeName, fileName),
+                UseShellExecute = true
+            });
+        }
         #endregion
+
     }
 }
