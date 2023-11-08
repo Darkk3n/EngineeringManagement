@@ -17,5 +17,7 @@ namespace EngineeringManagement.Data.Models
         public int CertificationId { get; set; }
 
         public virtual Certification Certification { get; set; }
+
+        public string FileName { get; set; }
     }
 }
