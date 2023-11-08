@@ -38,6 +38,11 @@
             dtpEndDate = new DateTimePicker();
             label4 = new Label();
             CmbCertifications = new ComboBox();
+            label5 = new Label();
+            BtnCertFile = new Button();
+            fileDialog = new OpenFileDialog();
+            LblFileName = new Label();
+            BtnViewCert = new Button();
             SuspendLayout();
             // 
             // label1
@@ -71,7 +76,7 @@
             // BtnOk
             // 
             BtnOk.Enabled = false;
-            BtnOk.Location = new Point(162, 174);
+            BtnOk.Location = new Point(146, 228);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 9;
@@ -81,7 +86,7 @@
             // 
             // BtnCancelar
             // 
-            BtnCancelar.Location = new Point(243, 174);
+            BtnCancelar.Location = new Point(227, 228);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(75, 23);
             BtnCancelar.TabIndex = 10;
@@ -91,7 +96,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(74, 115);
+            label3.Location = new Point(58, 169);
             label3.Name = "label3";
             label3.Size = new Size(63, 31);
             label3.TabIndex = 11;
@@ -102,7 +107,7 @@
             dtpStartDate.CustomFormat = "dd/MM/yyyy";
             dtpStartDate.Enabled = false;
             dtpStartDate.Format = DateTimePickerFormat.Custom;
-            dtpStartDate.Location = new Point(131, 116);
+            dtpStartDate.Location = new Point(115, 170);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(94, 23);
             dtpStartDate.TabIndex = 12;
@@ -112,14 +117,14 @@
             dtpEndDate.CustomFormat = "dd/MM/yyyy";
             dtpEndDate.Enabled = false;
             dtpEndDate.Format = DateTimePickerFormat.Custom;
-            dtpEndDate.Location = new Point(327, 116);
+            dtpEndDate.Location = new Point(311, 170);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(87, 23);
             dtpEndDate.TabIndex = 13;
             // 
             // label4
             // 
-            label4.Location = new Point(243, 116);
+            label4.Location = new Point(227, 170);
             label4.Name = "label4";
             label4.Size = new Size(80, 36);
             label4.TabIndex = 14;
@@ -135,13 +140,61 @@
             CmbCertifications.Size = new Size(299, 23);
             CmbCertifications.TabIndex = 15;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(36, 109);
+            label5.Name = "label5";
+            label5.Size = new Size(73, 15);
+            label5.TabIndex = 16;
+            label5.Text = "Documento:";
+            // 
+            // BtnCertFile
+            // 
+            BtnCertFile.Location = new Point(115, 105);
+            BtnCertFile.Name = "BtnCertFile";
+            BtnCertFile.Size = new Size(133, 23);
+            BtnCertFile.TabIndex = 17;
+            BtnCertFile.Text = "Seleccionar Archivo...";
+            BtnCertFile.UseVisualStyleBackColor = true;
+            BtnCertFile.Click += BtnCertFile_Click;
+            // 
+            // fileDialog
+            // 
+            fileDialog.Filter = "PDF files (*.pdf) | *.pdf";
+            fileDialog.InitialDirectory = "C:\\";
+            fileDialog.Title = "Seleccionar DC-3";
+            // 
+            // LblFileName
+            // 
+            LblFileName.AutoSize = true;
+            LblFileName.Location = new Point(115, 143);
+            LblFileName.Name = "LblFileName";
+            LblFileName.Size = new Size(170, 15);
+            LblFileName.TabIndex = 18;
+            LblFileName.Text = "Ningun archivo seleccionado...";
+            // 
+            // BtnViewCert
+            // 
+            BtnViewCert.Image = Properties.Resources.Lupa_Icon__2_;
+            BtnViewCert.Location = new Point(384, 135);
+            BtnViewCert.Name = "BtnViewCert";
+            BtnViewCert.Size = new Size(30, 29);
+            BtnViewCert.TabIndex = 19;
+            BtnViewCert.UseVisualStyleBackColor = true;
+            BtnViewCert.Click += BtnViewCert_Click;
+            // 
             // AddEmployeeCertification2
             // 
             AcceptButton = BtnOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = BtnCancelar;
-            ClientSize = new Size(453, 207);
+            ClientSize = new Size(428, 260);
+            Controls.Add(BtnViewCert);
+            Controls.Add(LblFileName);
+            Controls.Add(BtnCertFile);
+            Controls.Add(label5);
             Controls.Add(CmbCertifications);
             Controls.Add(label4);
             Controls.Add(dtpEndDate);
@@ -174,5 +227,10 @@
         private DateTimePicker dtpEndDate;
         private Label label4;
         private ComboBox CmbCertifications;
+        private Label label5;
+        private Button BtnCertFile;
+        private OpenFileDialog fileDialog;
+        private Label LblFileName;
+        private Button BtnViewCert;
     }
 }

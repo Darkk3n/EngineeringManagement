@@ -1,12 +1,17 @@
 ﻿using EngineeringManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Diagnostics;
 
 namespace EngineeringManagement.UI.Forms.Certifications
 {
     public partial class AddEmployeeCertification2 : Form
     {
         private readonly MainForm mainForm;
+
+        private string FileName { get; set; }
+
+        private string SafeFileName { get; set; }
 
         public AddEmployeeCertification2(MainForm mainForm)
         {
@@ -44,7 +49,6 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
         private void CleanAndDisableControls()
         {
-            CmbEmployees.SelectedIndex = 0;
             CmbCertifications.DataSource = null;
             CmbCertifications.Items.Clear();
             EnableControls(false);
@@ -53,7 +57,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
         private void EnableControls(bool value)
         {
             CmbCertifications.Enabled = value;
-            BtnOk.Enabled = value;
+            BtnOk.Enabled = BtnCertFile.Enabled = value;
             dtpStartDate.Enabled = dtpEndDate.Enabled = value;
         }
 
@@ -80,14 +84,15 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            var empId = ((Employee)CmbEmployees.SelectedItem).Id;
+            var emp = CmbEmployees.SelectedItem as Employee;
             var certId = ((Certification)CmbCertifications.SelectedItem).Id;
             var newEmpCertification = new EmployeeCertification
             {
-                EmployeeId = empId,
+                EmployeeId = emp.Id,
                 CertificationId = certId,
                 StartDate = dtpStartDate.Value,
                 EndDate = dtpEndDate.Value,
+                FileName = SafeFileName
             };
             try
             {
@@ -96,6 +101,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                     context.EmployeeCertifications.Add(newEmpCertification);
                     context.SaveChanges();
                 }
+                HandleFile(emp.EmployeeName);
             }
             catch (Exception)
             {
@@ -108,6 +114,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 if (result == DialogResult.Yes)
                 {
                     CleanAndDisableControls();
+                    CmbEmployees.SelectedIndex = 0;
                     CmbEmployees.Focus();
                 }
                 else
@@ -116,6 +123,37 @@ namespace EngineeringManagement.UI.Forms.Certifications
                     Close();
                 }
             }
+        }
+
+        private void HandleFile(string employeeName)
+        {
+            var pathToCopy = Path.Combine(Application.StartupPath, "Documentos", employeeName);
+            try
+            {
+                File.Copy(FileName, Path.Combine(pathToCopy, SafeFileName));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void BtnCertFile_Click(object sender, EventArgs e)
+        {
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FileName = fileDialog.FileName;
+                SafeFileName = LblFileName.Text = fileDialog.SafeFileName;
+            }
+        }
+
+        private void BtnViewCert_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = FileName,
+                UseShellExecute = true
+            });
         }
     }
 }
