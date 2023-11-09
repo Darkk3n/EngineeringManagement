@@ -220,13 +220,9 @@
         private Label LblFileName;
         private Label label5;
         private Label label6;
-        private ComboBox CmbEmployees;
-        private ComboBox comboBox2;
-        private Button button1;
         private Button BtnViewFile;
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
-        private Button button3;
         private Button BtnCancel;
         private Label LblEmployeeName;
         private Label LblCertName;
