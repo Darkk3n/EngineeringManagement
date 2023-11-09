@@ -113,10 +113,7 @@ namespace EngineeringManagement.UI
         {
             using var addCertToEmployee = new AddEmployeeCertification2(this);
             addCertToEmployee.ShowDialog();
-            if (ShouldRefreshAllEmployees)
-            {
-                LoadGrids();
-            }
+            ReloadGrids();
         }
 
         private void dgvExpiringCertEmp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +121,6 @@ namespace EngineeringManagement.UI
             var empCert = GetCertificationFromGrid(sender as DataGridView, e.RowIndex);
             OpenEditCertificationDialog(empCert);
         }
-
 
         private void dgvAllEmployees_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,6 +132,15 @@ namespace EngineeringManagement.UI
         {
             using var editCertification = new EditEmployeeCertification(this, empCert);
             editCertification.ShowDialog();
+            ReloadGrids();
+        }
+
+        private void ReloadGrids()
+        {
+            if (ShouldRefreshAllEmployees)
+            {
+                LoadGrids();
+            }
         }
 
         private static EmployeeCertification GetCertificationFromGrid(DataGridView dataGridView, int rowIndex)

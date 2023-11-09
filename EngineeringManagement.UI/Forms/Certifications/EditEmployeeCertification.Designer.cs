@@ -107,6 +107,7 @@
             BtnViewFile.Size = new Size(32, 25);
             BtnViewFile.TabIndex = 9;
             BtnViewFile.UseVisualStyleBackColor = true;
+            BtnViewFile.Click += BtnViewFile_Click;
             // 
             // dtpStartDate
             // 
@@ -162,6 +163,7 @@
             BtnOk.TabIndex = 16;
             BtnOk.Text = "Guardar";
             BtnOk.UseVisualStyleBackColor = true;
+            BtnOk.Click += BtnOk_Click;
             // 
             // BtnOpenFile
             // 
