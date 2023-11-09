@@ -1,3 +1,4 @@
+using System.Globalization;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
@@ -46,7 +47,9 @@ namespace EngineeringManagement.UI
                                     r.Employee.EmployeeName,
                                     r.Certification.CertificationName,
                                     StarDate = r.StartDate.Value.Date,
-                                    EndDate = r.EndDate.Value.Date
+                                    EndDate = r.EndDate.Value.Date,
+                                    StartDateStr = r.StartDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
+                                    EndDateStr = r.EndDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
                                 });
                 var soonToExpire = allEmployees.Where(r =>
                     r.EndDate >= tenDaysAgo
@@ -63,9 +66,11 @@ namespace EngineeringManagement.UI
         {
             gridView.Columns[1].HeaderText = "Colaborador";
             gridView.Columns[2].HeaderText = "Certificacion";
-            gridView.Columns[3].HeaderText = "Inicio";
-            gridView.Columns[4].HeaderText = "Vencimiento";
+            gridView.Columns[5].HeaderText = "Inicio";
+            gridView.Columns[6].HeaderText = "Vencimiento";
             gridView.Columns[0].Visible = false;
+            gridView.Columns[3].Visible = false;
+            gridView.Columns[4].Visible = false;
         }
 
         private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
