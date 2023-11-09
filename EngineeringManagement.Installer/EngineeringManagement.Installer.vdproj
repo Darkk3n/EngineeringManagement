@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_140CCBF2D75D4F308BF5498F50CD3214"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_90B6A566FD1249178766480F5349B8BE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -74,6 +80,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.DesktopRuntime.6.0.x64"
+                    {
+                    "Name" = "8:.NET Desktop Runtime 6.0.24 (x64)"
+                    "ProductCode" = "8:Microsoft.NetCore.DesktopRuntime.6.0.x64"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -105,6 +127,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_140CCBF2D75D4F308BF5498F50CD3214"
+            {
+            "SourcePath" = "8:..\\EngineeringManagement.UI\\Icon1.ico"
+            "TargetName" = "8:Icon1.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_D1A376AB9C3A42F1A453AE175AE2FD57"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -162,7 +204,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Control Total Ingenieria"
         "ProductCode" = "8:{0B6A11D8-2BC4-4F81-B784-030B545AEBAF}"
-        "PackageCode" = "8:{52996923-A189-44D1-A07D-13242914AE8B}"
+        "PackageCode" = "8:{0194C633-C850-4F43-8554-C5CAB71392EB}"
         "UpgradeCode" = "8:{9518BF5E-5B2B-4D40-AE9A-78F9A5F4C299}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -293,7 +335,7 @@
             "Target" = "8:_90B6A566FD1249178766480F5349B8BE"
             "Folder" = "8:_61EDB79A68934D9E89D54B6CC834487B"
             "WorkingFolder" = "8:_D1A376AB9C3A42F1A453AE175AE2FD57"
-            "Icon" = "8:"
+            "Icon" = "8:_140CCBF2D75D4F308BF5498F50CD3214"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6876C9312FB24E049D55ACE4D990B9B3"
@@ -307,7 +349,7 @@
             "Target" = "8:_90B6A566FD1249178766480F5349B8BE"
             "Folder" = "8:_FBF9141E96BF497CA88806AC46595A2A"
             "WorkingFolder" = "8:_D1A376AB9C3A42F1A453AE175AE2FD57"
-            "Icon" = "8:"
+            "Icon" = "8:_140CCBF2D75D4F308BF5498F50CD3214"
             "Feature" = "8:"
             }
         }
