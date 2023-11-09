@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCertification));
             BtnRemove = new Button();
             BtnOk = new Button();
             BtnCancel = new Button();
@@ -187,6 +188,7 @@
             Controls.Add(lbAllFacilities);
             Controls.Add(BtnRemove);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddCertification";

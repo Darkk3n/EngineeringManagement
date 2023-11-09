@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFacility));
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             TxtFacilityName = new TextBox();
@@ -111,6 +112,8 @@
             CancelButton = BtnCancelar;
             ClientSize = new Size(316, 85);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddFacility";

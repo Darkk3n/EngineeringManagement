@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCertification));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -215,6 +216,7 @@
             Controls.Add(TxtCertDesc);
             Controls.Add(TxtCertName);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditCertification";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar DC-3";

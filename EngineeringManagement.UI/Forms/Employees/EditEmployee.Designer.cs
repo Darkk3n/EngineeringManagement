@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEmployee));
             tableLayoutPanel1 = new TableLayoutPanel();
             CmbEmployees = new ComboBox();
             label1 = new Label();
@@ -388,6 +389,8 @@
             CancelButton = BtnCancel;
             ClientSize = new Size(444, 729);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "EditEmployee";

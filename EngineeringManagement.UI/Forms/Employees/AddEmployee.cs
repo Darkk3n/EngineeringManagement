@@ -14,7 +14,7 @@ namespace EngineeringManagement.UI.Forms
         private string SisositSafeFileName { get; set; }
         private string PictureSafeFileName { get; set; }
         private string PictureFileName { get; set; }
-        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"; 
+        private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
         #endregion
 
         #region Constructor
@@ -174,7 +174,7 @@ namespace EngineeringManagement.UI.Forms
                 PictureFileName = fileDialogPicture.FileName;
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
-        } 
+        }
         #endregion
     }
 }

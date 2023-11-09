@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeeCertification2));
             label1 = new Label();
             CmbEmployees = new ComboBox();
             label2 = new Label();
@@ -206,6 +207,7 @@
             Controls.Add(CmbEmployees);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AddEmployeeCertification2";
