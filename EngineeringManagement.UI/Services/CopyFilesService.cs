@@ -19,7 +19,7 @@ namespace EngineeringManagement.UI.Services
                     {
                         File.Delete(Path.Combine(pathToCopy, serviceArgs.OriginalFileName));
                     }
-                    File.Copy(serviceArgs.FileName, Path.Combine(pathToCopy, serviceArgs.SafeFileName));
+                    File.Copy(serviceArgs.FileName, Path.Combine(pathToCopy, serviceArgs.SafeFileName), true);
                 }
                 catch (Exception)
                 {
