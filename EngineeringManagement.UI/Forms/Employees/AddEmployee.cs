@@ -45,6 +45,11 @@ namespace EngineeringManagement.UI.Forms
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            var isValid = ValidateUniqueEmployee(txtName.Text);
+            if (!isValid)
+            {
+                return;
+            }
             var newEmp = new Employee
             {
                 EmployeeName = txtName.Text,
@@ -70,6 +75,20 @@ namespace EngineeringManagement.UI.Forms
                 MessageBox.Show("Guardado con exito", "Agregar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+        }
+
+        private bool ValidateUniqueEmployee(string employeeName)
+        {
+            using (var context = new Data.AppContext())
+            {
+                var employee = context.Employees.FirstOrDefault(r => r.EmployeeName.ToLower() == employeeName.ToLower());
+                if (employee != null)
+                {
+                    MessageBox.Show($"Ya se cuenta con un registro para el Empleado: {employeeName}.", "Agregar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void HandleFiles(Employee newEmp)
@@ -172,6 +191,7 @@ namespace EngineeringManagement.UI.Forms
             {
                 PictureSafeFileName = fileDialogPicture.SafeFileName;
                 PictureFileName = fileDialogPicture.FileName;
+                pbEmpPhoto.Image?.Dispose();
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
         }
