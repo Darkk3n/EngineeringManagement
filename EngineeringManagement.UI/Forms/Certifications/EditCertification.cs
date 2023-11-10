@@ -65,6 +65,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 TxtCertDesc.Text = existingCertification.Description;
 
                 facilityCertifications = context.FacilityCertifications
+                    .AsNoTracking()
                     .Include(r => r.Facility)
                     .Where(r => r.CertificationId == certification.Id)
                     .ToList();
@@ -73,7 +74,10 @@ namespace EngineeringManagement.UI.Forms.Certifications
                     lbAssignedFacilities.DataSource = facilityCertifications.Select(r => r.Facility).ToList();
                     lbAssignedFacilities.ValueMember = "Id";
                     lbAssignedFacilities.DisplayMember = "FacilityName";
-                    var remainingFacilities = context.Facilities.Where(r => !facilityCertifications.Select(r => r.FacilityId).Contains(r.Id)).ToList();
+                    var remainingFacilities = context.Facilities
+                        .AsNoTracking()
+                        .Where(r => !facilityCertifications.Select(r => r.FacilityId).Contains(r.Id))
+                        .ToList();
                     lbAllFacilities.DataSource = remainingFacilities;
                     lbAllFacilities.ValueMember = "Id";
                     lbAllFacilities.DisplayMember = "FacilityName";
@@ -127,6 +131,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 return;
             }
             var certId = (int)CmbCertifications.SelectedValue;
+            facilityCertifications = new();
             facilityCertifications.AddRange(lbAssignedFacilities.Items
                 .Cast<Facility>()
                 .Select(r => new FacilityCertification
@@ -142,7 +147,10 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 try
                 {
                     context.SaveChanges();
-                    var facilities = context.FacilityCertifications.Where(r => r.CertificationId == certId).ToList();
+                    var facilities = context.FacilityCertifications
+                        .AsNoTracking()
+                        .Where(r => r.CertificationId == certId)
+                        .ToList();
                     context.FacilityCertifications.RemoveRange(facilities);
                     context.SaveChanges();
                     context.FacilityCertifications.AddRange(facilityCertifications);
