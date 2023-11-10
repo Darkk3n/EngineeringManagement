@@ -282,7 +282,7 @@ namespace EngineeringManagement.UI.Forms
             {
                 PictureSafeFileName = fileDialogPicture.SafeFileName;
                 PictureFileName = fileDialogPicture.FileName;
-                pbEmpPhoto.Image.Dispose();
+                pbEmpPhoto.Image?.Dispose();
                 pbEmpPhoto.Image = Image.FromFile(fileDialogPicture.FileName);
             }
         }
