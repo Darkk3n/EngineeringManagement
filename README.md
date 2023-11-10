@@ -1,5 +1,5 @@
-# EngineeringManagement
+# Control Total Ingenieria
 
-Download
+Descargar
 
-https://github.com/Darkk3n/EngineeringManagement/blob/main/Installer/ControlIngenieria.zip
+[Control Total Ingenieria](https://github.com/Darkk3n/EngineeringManagement/blob/main/Installer/ControlIngenieria.zip)
