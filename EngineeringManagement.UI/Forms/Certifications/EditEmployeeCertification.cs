@@ -27,6 +27,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
             if (empCert.FileName.HasValue())
             {
                 LblFileName.Text = empCert.FileName;
+                BtnViewFile.Enabled = true;
             }
             dtpStartDate.Value = empCert.StartDate.Value;
             dtpEndDate.Value = empCert.EndDate.Value;
