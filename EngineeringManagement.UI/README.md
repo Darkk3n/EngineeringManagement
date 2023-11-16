@@ -15,7 +15,7 @@ Para ello, es bastante dificil que me escribas los detalles por WhatsApp tanto p
 
 Ojo: En los detalles es la parte más importante donde te puedes explayar con TODOS los detalles necesarios para que yo pueda resolver la solicitud, entre más detalles me pongas, más fácil y más rápido podré sacar la solicitud
 
-Ojo 2: La sección de `Labels` es crítica para mi, quiero llevar una estadistica personal de cuantos `Bugs` o `Features` se están realizando así que cuando crees un Issue elige la opción correcta:
+Ojo 2: La sección de `Labels` es crítica para mi, quiero llevar una estadistica personal de cuantos `Bugs` o `Enhancements` se están realizando así que cuando crees un Issue elige la opción correcta:
 
 - `Bug` -> Cuando algo está completamente mal y necesita ser corregido
 - `Enhancement` -> cuando la solicitud es algo completamente nuevo que JAMAS habíamos platicado previamente
