@@ -1,4 +1,5 @@
 ﻿using EngineeringManagement.Data.Models;
+using EngineeringManagement.UI.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
@@ -101,7 +102,10 @@ namespace EngineeringManagement.UI.Forms.Certifications
                     context.EmployeeCertifications.Add(newEmpCertification);
                     context.SaveChanges();
                 }
-                HandleFile(emp.EmployeeName);
+                if (SafeFileName.HasValue())
+                {
+                    HandleFile(emp.EmployeeName);
+                }
             }
             catch (Exception)
             {
@@ -149,6 +153,11 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
         private void BtnViewCert_Click(object sender, EventArgs e)
         {
+            if (!FileName.HasValue())
+            {
+                MessageBox.Show("No hay ningun archivo asignado", "Agregar DC-3 a Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Process.Start(new ProcessStartInfo
             {
                 FileName = FileName,

@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace EngineeringManagement.UI.Forms.Certifications
@@ -50,12 +51,15 @@ namespace EngineeringManagement.UI.Forms.Certifications
             {
                 using (var context = new Data.AppContext())
                 {
-                    var currentCert = context.EmployeeCertifications.Find(empCert.Id);
+                    var currentCert = context.EmployeeCertifications
+                        .Include(r => r.Employee)
+                        .First(r => r.Id == empCert.Id);
                     currentCert.StartDate = dtpStartDate.Value;
                     currentCert.EndDate = dtpEndDate.Value;
                     if (SafeFileName.HasValue())
                     {
                         currentCert.FileName = SafeFileName;
+                        HandleFile(currentCert.Employee.EmployeeName);
                     }
                     context.SaveChanges();
                 }
@@ -69,6 +73,19 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 MessageBox.Show("DC-3 actualizada con exito.", "Editar DC-3 a Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainForm.ShouldRefreshAllEmployees = true;
                 Close();
+            }
+        }
+
+        private void HandleFile(string employeeName)
+        {
+            var pathToCopy = Path.Combine(Application.StartupPath, "Documentos", employeeName);
+            try
+            {
+                File.Copy(FileName, Path.Combine(pathToCopy, SafeFileName), true);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 

@@ -27,7 +27,7 @@ namespace EngineeringManagement.UI
             FormatColumnHeaders(dgvExpiringCertEmp);
             FormatColumnHeaders(dgvAllEmployees);
             dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToShortDateString()} y {DateTime.Now.ToShortDateString()}";
+            tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy", new CultureInfo("es-MX"))} y {DateTime.Now.ToString("dd/MM/yyyy", new CultureInfo("es-MX"))}";
         }
 
         private void LoadGrids()
@@ -123,12 +123,16 @@ namespace EngineeringManagement.UI
 
         private void dgvExpiringCertEmp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
             var empCert = GetCertificationFromGrid(sender as DataGridView, e.RowIndex);
             OpenEditCertificationDialog(empCert);
         }
 
         private void dgvAllEmployees_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
             var empCert = GetCertificationFromGrid(sender as DataGridView, e.RowIndex);
             OpenEditCertificationDialog(empCert);
         }
