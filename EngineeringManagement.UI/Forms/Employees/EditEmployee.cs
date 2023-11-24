@@ -82,6 +82,7 @@ namespace EngineeringManagement.UI.Forms
             BtnViewLabs.Enabled = employee.LabsFileName.HasValue();
             LblSisositFileName.Text = employee.SisositFileName.HasValue() ? employee.SisositFileName : "Ningun archivo seleccionado";
             BtnViewSisosit.Enabled = employee.SisositFileName.HasValue();
+            pbEmpPhoto.Image = null;
             if (employee.PictureFileName.HasValue())
             {
                 pbEmpPhoto.Image = Image.FromFile(GetFilePath(employee));
