@@ -2,6 +2,7 @@ using System.Globalization;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
+using EngineeringManagement.UI.Forms.Employees;
 using Microsoft.EntityFrameworkCore;
 
 namespace EngineeringManagement.UI
@@ -161,6 +162,12 @@ namespace EngineeringManagement.UI
                 .Include(r => r.Employee)
                 .First(r => r.Id == empCertificationId);
             return empCert;
+        }
+
+        private void expedientesMedicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var medFiles = new EmployeeMedFile();
+            medFiles.ShowDialog();
         }
     }
 }
