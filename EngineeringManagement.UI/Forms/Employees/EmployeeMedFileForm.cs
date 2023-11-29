@@ -4,9 +4,9 @@ using EngineeringManagement.UI.Services;
 
 namespace EngineeringManagement.UI.Forms.Employees
 {
-    public partial class EmployeeMedFile : Form
+    public partial class EmployeeMedFileForm : Form
     {
-        public EmployeeMedFile()
+        public EmployeeMedFileForm()
         {
             InitializeComponent();
             Setup();
