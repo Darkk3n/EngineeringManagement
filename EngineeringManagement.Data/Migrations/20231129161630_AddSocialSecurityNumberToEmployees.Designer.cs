@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EngineeringManagement.Data.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20231129160025_AddSocialSecurityNumberToEmployees")]
+    [Migration("20231129161630_AddSocialSecurityNumberToEmployees")]
     partial class AddSocialSecurityNumberToEmployees
     {
         /// <inheritdoc />
@@ -208,8 +208,8 @@ namespace EngineeringManagement.Data.Migrations
                     b.Property<string>("SisositFileName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("SocialSecurityNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("SocialSecurityNumber")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -221,320 +221,280 @@ namespace EngineeringManagement.Data.Migrations
                             Id = -1,
                             EmployeeName = "Aguilar Gonzalez Armando",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -2,
                             EmployeeName = "Alejandre Blanco Javier",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -3,
                             EmployeeName = "Alfaro Muñiz Margarito",
                             EmployeeType = 1,
-                            Position = "Especialista en Tuberias",
-                            SocialSecurityNumber = 0
+                            Position = "Especialista en Tuberias"
                         },
                         new
                         {
                             Id = -4,
                             EmployeeName = "Angeles Hernandez Jesus",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -5,
                             EmployeeName = "Camacho Aguilar Ricardo",
                             EmployeeType = 1,
-                            Position = "Especialista A en Instrumentacion",
-                            SocialSecurityNumber = 0
+                            Position = "Especialista A en Instrumentacion"
                         },
                         new
                         {
                             Id = -6,
                             EmployeeName = "Campos Medina Axel",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -7,
                             EmployeeName = "Cardenas Vargas Carlos",
                             EmployeeType = 2,
-                            Position = "Jefe de Ingenieria de Confiabilidad",
-                            SocialSecurityNumber = 0
+                            Position = "Jefe de Ingenieria de Confiabilidad"
                         },
                         new
                         {
                             Id = -8,
                             EmployeeName = "Cartagena Vicencio Diego Alberto",
                             EmployeeType = 1,
-                            Position = "Controlador de Proyectos Jr",
-                            SocialSecurityNumber = 0
+                            Position = "Controlador de Proyectos Jr"
                         },
                         new
                         {
                             Id = -9,
                             EmployeeName = "Cisneros Zuñiga Gustavo",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -10,
                             EmployeeName = "De La Cruz Mendoza Andres",
                             EmployeeType = 1,
-                            Position = "Ingeniero b civil y estructuras",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero b civil y estructuras"
                         },
                         new
                         {
                             Id = -11,
                             EmployeeName = "Del Angel Del Angel Javier",
                             EmployeeType = 1,
-                            Position = "Supervisor de Calidad",
-                            SocialSecurityNumber = 0
+                            Position = "Supervisor de Calidad"
                         },
                         new
                         {
                             Id = -12,
                             EmployeeName = "Diaz Rendon Audrey Daniela",
                             EmployeeType = 1,
-                            Position = "Cadista Jr",
-                            SocialSecurityNumber = 0
+                            Position = "Cadista Jr"
                         },
                         new
                         {
                             Id = -13,
                             EmployeeName = "Diaz Rendon Wendy Montserrat",
                             EmployeeType = 2,
-                            Position = "Control de documentos",
-                            SocialSecurityNumber = 0
+                            Position = "Control de documentos"
                         },
                         new
                         {
                             Id = -14,
                             EmployeeName = "Gaspar Flores Jose Ernesto",
                             EmployeeType = 1,
-                            Position = "Ingeniero A de Tuberias",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero A de Tuberias"
                         },
                         new
                         {
                             Id = -15,
                             EmployeeName = "Gomez Reyes Edwin De Jesus",
                             EmployeeType = 2,
-                            Position = "Cadista Jr",
-                            SocialSecurityNumber = 0
+                            Position = "Cadista Jr"
                         },
                         new
                         {
                             Id = -16,
                             EmployeeName = "Hernandez Valdez Joel",
                             EmployeeType = 2,
-                            Position = "Cabo Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Cabo Electrico"
                         },
                         new
                         {
                             Id = -17,
                             EmployeeName = "Herrera Arteaga Josue",
                             EmployeeType = 1,
-                            Position = "Ingeniero A de Tuberias",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero A de Tuberias"
                         },
                         new
                         {
                             Id = -18,
                             EmployeeName = "Hervert Garibay Ricardo de Jesus",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -19,
                             EmployeeName = "Juarez Lopez Guillermo",
                             EmployeeType = 2,
-                            Position = "Supervisor de disciplina",
-                            SocialSecurityNumber = 0
+                            Position = "Supervisor de disciplina"
                         },
                         new
                         {
                             Id = -20,
                             EmployeeName = "Juarez Lopez Leonardo Alejandro",
                             EmployeeType = 2,
-                            Position = "Supervisor de disciplina",
-                            SocialSecurityNumber = 0
+                            Position = "Supervisor de disciplina"
                         },
                         new
                         {
                             Id = -21,
                             EmployeeName = "Lopez Ochoa Jonathan",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -22,
                             EmployeeName = "Lopez Pacheco Javier",
                             EmployeeType = 2,
-                            Position = "Coordinador Electrico e Instrumentacion",
-                            SocialSecurityNumber = 0
+                            Position = "Coordinador Electrico e Instrumentacion"
                         },
                         new
                         {
                             Id = -23,
                             EmployeeName = "Martinez Baeza Francisco",
                             EmployeeType = 2,
-                            Position = "Auxiliar de control de proyectos",
-                            SocialSecurityNumber = 0
+                            Position = "Auxiliar de control de proyectos"
                         },
                         new
                         {
                             Id = -24,
                             EmployeeName = "Maya Peña Juan Francisco",
                             EmployeeType = 1,
-                            Position = "Jefe de ingenieria",
-                            SocialSecurityNumber = 0
+                            Position = "Jefe de ingenieria"
                         },
                         new
                         {
                             Id = -25,
                             EmployeeName = "Melo Rivera Juan Jesus",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -26,
                             EmployeeName = "Miranda Martinez Andrea",
                             EmployeeType = 2,
-                            Position = "Ingeniero en procesos c",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero en procesos c"
                         },
                         new
                         {
                             Id = -27,
                             EmployeeName = "Nava Comsille Arturo",
                             EmployeeType = 1,
-                            Position = "Jefe de Ingenieria",
-                            SocialSecurityNumber = 0
+                            Position = "Jefe de Ingenieria"
                         },
                         new
                         {
                             Id = -28,
                             EmployeeName = "Osorio Estrella Hector",
                             EmployeeType = 2,
-                            Position = "Analista de precios unitarios",
-                            SocialSecurityNumber = 0
+                            Position = "Analista de precios unitarios"
                         },
                         new
                         {
                             Id = -29,
                             EmployeeName = "Otero Gonzalez Irma Jessica",
                             EmployeeType = 1,
-                            Position = "Ingeniero C de Proceso",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero C de Proceso"
                         },
                         new
                         {
                             Id = -30,
                             EmployeeName = "Piñeyro Lara Sergio Israel",
                             EmployeeType = 2,
-                            Position = "Gerente de Ingenieria",
-                            SocialSecurityNumber = 0
+                            Position = "Gerente de Ingenieria"
                         },
                         new
                         {
                             Id = -31,
                             EmployeeName = "Ramirez Francisco Jonathan",
                             EmployeeType = 1,
-                            Position = "Cadista Jr",
-                            SocialSecurityNumber = 0
+                            Position = "Cadista Jr"
                         },
                         new
                         {
                             Id = -32,
                             EmployeeName = "Ramirez Francisco Luis Enrique",
                             EmployeeType = 1,
-                            Position = "Proyectista",
-                            SocialSecurityNumber = 0
+                            Position = "Proyectista"
                         },
                         new
                         {
                             Id = -33,
                             EmployeeName = "Ramos Ruiz Alberto Ivan",
                             EmployeeType = 1,
-                            Position = "Control de Materiales",
-                            SocialSecurityNumber = 0
+                            Position = "Control de Materiales"
                         },
                         new
                         {
                             Id = -34,
                             EmployeeName = "Rodriguez Guerrero Jose Martin",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -35,
                             EmployeeName = "Sanchez Mar Nelson Ivan",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -36,
                             EmployeeName = "Saucedo Ramirez Fernando",
                             EmployeeType = 2,
-                            Position = "Andamiero",
-                            SocialSecurityNumber = 0
+                            Position = "Andamiero"
                         },
                         new
                         {
                             Id = -37,
                             EmployeeName = "Saucedo Ramirez Fernando",
                             EmployeeType = 2,
-                            Position = "Ayudante General",
-                            SocialSecurityNumber = 0
+                            Position = "Ayudante General"
                         },
                         new
                         {
                             Id = -38,
                             EmployeeName = "Villanueva Espinoza Julio Cesar",
                             EmployeeType = 1,
-                            Position = "Ingeniero A Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Ingeniero A Electrico"
                         },
                         new
                         {
                             Id = -39,
                             EmployeeName = "Santiago Hernandez Bernabe Esequiel",
                             EmployeeType = 2,
-                            Position = "Electrico",
-                            SocialSecurityNumber = 0
+                            Position = "Electrico"
                         },
                         new
                         {
                             Id = -40,
                             EmployeeName = "Alvarez Martir Christian",
                             EmployeeType = 1,
-                            Position = "Auxiliar de control de proyectos",
-                            SocialSecurityNumber = 0
+                            Position = "Auxiliar de control de proyectos"
                         });
                 });
 

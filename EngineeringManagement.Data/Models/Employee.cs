@@ -24,6 +24,6 @@ namespace EngineeringManagement.Data.Models
 
         public string PictureFileName { get; set; }
 
-        public int SocialSecurityNumber { get; set; }
+        public string SocialSecurityNumber { get; set; }
     }
 }
