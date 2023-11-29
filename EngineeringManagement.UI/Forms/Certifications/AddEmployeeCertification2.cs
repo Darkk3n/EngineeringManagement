@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
@@ -23,15 +24,10 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
         private void Setup()
         {
-            using (var context = new Data.AppContext())
-            {
-                var employees = context.Employees.ToList();
-                employees.Add(new Employee { Id = 10000, EmployeeName = "-- SELECCIONE --" });
-                CmbEmployees.DataSource = employees.OrderByDescending(r => r.Id).ToList();
-                CmbEmployees.ValueMember = nameof(Employee.Id);
-                CmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
-                CmbEmployees.SelectedIndex = 0;
-            }
+            CmbEmployees.DataSource = new EmployeeListService().Get().OrderByDescending(r => r.Id).ToList();
+            CmbEmployees.ValueMember = nameof(Employee.Id);
+            CmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
+            CmbEmployees.SelectedIndex = 0;
         }
 
         private void CmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
