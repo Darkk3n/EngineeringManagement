@@ -47,6 +47,7 @@
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             dgvAllEmployees = new DataGridView();
+            expedientesMedicosToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvExpiringCertEmp).BeginInit();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -66,7 +67,6 @@
             dgvExpiringCertEmp.Location = new Point(3, 3);
             dgvExpiringCertEmp.Name = "dgvExpiringCertEmp";
             dgvExpiringCertEmp.ReadOnly = true;
-            dgvExpiringCertEmp.RowTemplate.Height = 25;
             dgvExpiringCertEmp.Size = new Size(942, 430);
             dgvExpiringCertEmp.TabIndex = 0;
             dgvExpiringCertEmp.CellDoubleClick += dgvExpiringCertEmp_CellDoubleClick;
@@ -96,7 +96,7 @@
             // 
             // empleadosToolStripMenuItem
             // 
-            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarEmpleadoToolStripMenuItem, editarEmpleadoToolStripMenuItem });
+            empleadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarEmpleadoToolStripMenuItem, editarEmpleadoToolStripMenuItem, expedientesMedicosToolStripMenuItem });
             empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             empleadosToolStripMenuItem.Size = new Size(77, 20);
             empleadosToolStripMenuItem.Text = "Empleados";
@@ -104,14 +104,14 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            agregarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            agregarEmpleadoToolStripMenuItem.Size = new Size(185, 22);
             agregarEmpleadoToolStripMenuItem.Text = "Agregar Empleado";
             agregarEmpleadoToolStripMenuItem.Click += agregarEmpleadoToolStripMenuItem_Click;
             // 
             // editarEmpleadoToolStripMenuItem
             // 
             editarEmpleadoToolStripMenuItem.Name = "editarEmpleadoToolStripMenuItem";
-            editarEmpleadoToolStripMenuItem.Size = new Size(172, 22);
+            editarEmpleadoToolStripMenuItem.Size = new Size(185, 22);
             editarEmpleadoToolStripMenuItem.Text = "Editar Empleado";
             editarEmpleadoToolStripMenuItem.Click += editarEmpleadoToolStripMenuItem_Click;
             // 
@@ -207,10 +207,16 @@
             dgvAllEmployees.Dock = DockStyle.Fill;
             dgvAllEmployees.Location = new Point(3, 3);
             dgvAllEmployees.Name = "dgvAllEmployees";
-            dgvAllEmployees.RowTemplate.Height = 25;
             dgvAllEmployees.Size = new Size(942, 430);
             dgvAllEmployees.TabIndex = 0;
             dgvAllEmployees.CellDoubleClick += dgvAllEmployees_CellDoubleClick;
+            // 
+            // expedientesMedicosToolStripMenuItem
+            // 
+            expedientesMedicosToolStripMenuItem.Name = "expedientesMedicosToolStripMenuItem";
+            expedientesMedicosToolStripMenuItem.Size = new Size(185, 22);
+            expedientesMedicosToolStripMenuItem.Text = "Expedientes Medicos";
+            expedientesMedicosToolStripMenuItem.Click += expedientesMedicosToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -257,5 +263,6 @@
         private ToolStripMenuItem editarPlantaToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem expedientesMedicosToolStripMenuItem;
     }
 }
