@@ -76,6 +76,7 @@ namespace EngineeringManagement.UI.Forms
         {
             TxtName.Text = employee?.EmployeeName;
             TxtCurp.Text = employee?.Curp;
+            TxtNss.Text = employee?.SocialSecurityNumber;
             TxtPosition.Text = employee?.Position;
             CmbEmployeeType.SelectedIndex = (int)employee?.EmployeeType;
             LblLabsFileName.Text = employee.LabsFileName.HasValue() ? employee?.LabsFileName : "Ningun archivo seleccionado...";
@@ -172,6 +173,7 @@ namespace EngineeringManagement.UI.Forms
                     var originalEmployeeName = employee.EmployeeName;
                     employee.EmployeeName = TxtName.Text.Trim();
                     employee.Curp = TxtCurp.Text.Trim();
+                    employee.SocialSecurityNumber = TxtNss.Text.Trim();
                     employee.Position = TxtPosition.Text.Trim();
                     employee.EmployeeType = (EmployeeType)CmbEmployeeType.SelectedIndex;
                     if (PictureSafeFileName.HasValue())

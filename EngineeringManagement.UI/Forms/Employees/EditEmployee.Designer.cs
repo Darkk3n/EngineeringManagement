@@ -57,6 +57,8 @@
             fileDialogLabs = new OpenFileDialog();
             fileDialogSisosit = new OpenFileDialog();
             fileDialogPicture = new OpenFileDialog();
+            label8 = new Label();
+            TxtNss = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)pbEmpPhoto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errors).BeginInit();
             SuspendLayout();
@@ -101,7 +103,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(73, 549);
+            label4.Location = new Point(73, 593);
             label4.Name = "label4";
             label4.Size = new Size(40, 15);
             label4.TabIndex = 4;
@@ -128,7 +130,7 @@
             // TxtCurp
             // 
             TxtCurp.Enabled = false;
-            TxtCurp.Location = new Point(119, 545);
+            TxtCurp.Location = new Point(119, 589);
             TxtCurp.Name = "TxtCurp";
             TxtCurp.Size = new Size(224, 23);
             TxtCurp.TabIndex = 9;
@@ -137,7 +139,7 @@
             // BtnOk
             // 
             BtnOk.Enabled = false;
-            BtnOk.Location = new Point(119, 774);
+            BtnOk.Location = new Point(119, 818);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 5;
@@ -147,7 +149,7 @@
             // 
             // BtnCancel
             // 
-            BtnCancel.Location = new Point(215, 774);
+            BtnCancel.Location = new Point(215, 818);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 6;
@@ -159,7 +161,7 @@
             CmbEmployeeType.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbEmployeeType.Enabled = false;
             CmbEmployeeType.FormattingEnabled = true;
-            CmbEmployeeType.Location = new Point(119, 582);
+            CmbEmployeeType.Location = new Point(119, 626);
             CmbEmployeeType.Name = "CmbEmployeeType";
             CmbEmployeeType.Size = new Size(224, 23);
             CmbEmployeeType.TabIndex = 10;
@@ -168,7 +170,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(8, 586);
+            label5.Location = new Point(8, 630);
             label5.Name = "label5";
             label5.Size = new Size(105, 15);
             label5.TabIndex = 11;
@@ -207,7 +209,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(37, 624);
+            label7.Location = new Point(37, 668);
             label7.Name = "label7";
             label7.Size = new Size(76, 15);
             label7.TabIndex = 15;
@@ -216,7 +218,7 @@
             // LblLabsFileName
             // 
             LblLabsFileName.AutoSize = true;
-            LblLabsFileName.Location = new Point(119, 659);
+            LblLabsFileName.Location = new Point(119, 703);
             LblLabsFileName.Name = "LblLabsFileName";
             LblLabsFileName.Size = new Size(170, 15);
             LblLabsFileName.TabIndex = 16;
@@ -226,7 +228,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(64, 694);
+            label9.Location = new Point(64, 738);
             label9.Name = "label9";
             label9.Size = new Size(49, 15);
             label9.TabIndex = 17;
@@ -235,7 +237,7 @@
             // BtnLabsFile
             // 
             BtnLabsFile.Enabled = false;
-            BtnLabsFile.Location = new Point(119, 620);
+            BtnLabsFile.Location = new Point(119, 664);
             BtnLabsFile.Name = "BtnLabsFile";
             BtnLabsFile.Size = new Size(224, 23);
             BtnLabsFile.TabIndex = 18;
@@ -246,7 +248,7 @@
             // BtnSisositFile
             // 
             BtnSisositFile.Enabled = false;
-            BtnSisositFile.Location = new Point(119, 690);
+            BtnSisositFile.Location = new Point(119, 734);
             BtnSisositFile.Name = "BtnSisositFile";
             BtnSisositFile.Size = new Size(224, 23);
             BtnSisositFile.TabIndex = 19;
@@ -257,7 +259,7 @@
             // LblSisositFileName
             // 
             LblSisositFileName.AutoSize = true;
-            LblSisositFileName.Location = new Point(119, 732);
+            LblSisositFileName.Location = new Point(119, 776);
             LblSisositFileName.Name = "LblSisositFileName";
             LblSisositFileName.Size = new Size(170, 15);
             LblSisositFileName.TabIndex = 20;
@@ -268,7 +270,7 @@
             // 
             BtnViewLabs.Enabled = false;
             BtnViewLabs.Image = Properties.Resources.Lupa_Icon__2_;
-            BtnViewLabs.Location = new Point(349, 620);
+            BtnViewLabs.Location = new Point(349, 664);
             BtnViewLabs.Name = "BtnViewLabs";
             BtnViewLabs.Size = new Size(42, 25);
             BtnViewLabs.TabIndex = 21;
@@ -279,7 +281,7 @@
             // 
             BtnViewSisosit.Enabled = false;
             BtnViewSisosit.Image = Properties.Resources.Lupa_Icon__2_;
-            BtnViewSisosit.Location = new Point(349, 690);
+            BtnViewSisosit.Location = new Point(349, 734);
             BtnViewSisosit.Name = "BtnViewSisosit";
             BtnViewSisosit.Size = new Size(42, 25);
             BtnViewSisosit.TabIndex = 22;
@@ -306,6 +308,23 @@
             fileDialogPicture.Filter = "Archivos de Imagen (*.png, *.jpg, *.jpeg) | *.png ;*.jpg;*.jpeg";
             fileDialogPicture.InitialDirectory = "C:\\";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(82, 550);
+            label8.Name = "label8";
+            label8.Size = new Size(31, 15);
+            label8.TabIndex = 23;
+            label8.Text = "NSS:";
+            // 
+            // TxtNss
+            // 
+            TxtNss.Location = new Point(119, 547);
+            TxtNss.Mask = "00000000000";
+            TxtNss.Name = "TxtNss";
+            TxtNss.Size = new Size(224, 23);
+            TxtNss.TabIndex = 24;
+            // 
             // EditEmployee
             // 
             AcceptButton = BtnOk;
@@ -313,7 +332,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             CancelButton = BtnCancel;
-            ClientSize = new Size(405, 806);
+            ClientSize = new Size(405, 852);
+            Controls.Add(TxtNss);
+            Controls.Add(label8);
             Controls.Add(pbEmpPhoto);
             Controls.Add(CmbEmployees);
             Controls.Add(label1);
@@ -377,5 +398,7 @@
         private OpenFileDialog fileDialogPicture;
         private Button BtnViewLabs;
         private Button BtnViewSisosit;
+        private MaskedTextBox TxtNss;
+        private Label label8;
     }
 }
