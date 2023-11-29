@@ -54,6 +54,7 @@ namespace EngineeringManagement.UI.Forms
             {
                 EmployeeName = txtName.Text,
                 Curp = txtCurp.Text,
+                SocialSecurityNumber = TxtNss.Text,
                 Position = txtPosition.Text,
                 LabsFileName = LabsSafeFileName,
                 SisositFileName = SisositSafeFileName,
@@ -77,7 +78,7 @@ namespace EngineeringManagement.UI.Forms
             }
         }
 
-        private bool ValidateUniqueEmployee(string employeeName)
+        private static bool ValidateUniqueEmployee(string employeeName)
         {
             using (var context = new Data.AppContext())
             {
