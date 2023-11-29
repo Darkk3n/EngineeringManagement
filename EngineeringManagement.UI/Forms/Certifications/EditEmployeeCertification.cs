@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
@@ -101,14 +102,6 @@ namespace EngineeringManagement.UI.Forms.Certifications
             }
         }
 
-        private void OpenFile(string fileName)
-        {
-            var completeFilePath = Path.Combine(Application.StartupPath, "Documentos", empCert.Employee.EmployeeName, fileName);
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = completeFilePath,
-                UseShellExecute = true
-            });
-        }
+        private void OpenFile(string fileName) => OpenFileService.Execute(fileName, empCert.Employee.EmployeeName);
     }
 }

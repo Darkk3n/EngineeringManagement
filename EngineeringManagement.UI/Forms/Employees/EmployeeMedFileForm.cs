@@ -9,7 +9,8 @@ namespace EngineeringManagement.UI.Forms.Employees
     public partial class EmployeeMedFileForm : Form
     {
         #region Properties
-        public EmployeeMedFile CurrentMedFile { get; set; }
+        private EmployeeMedFile CurrentMedFile { get; set; }
+        private Employee SelectedEmployee { get; set; }
         #endregion
 
         #region Constructor
@@ -61,13 +62,12 @@ namespace EngineeringManagement.UI.Forms.Employees
             var medFile = context.EmployeeMedFiles
                 .Include(r => r.Employee)
                 .FirstOrDefault(r => r.EmployeeId == employeeId);
-
+            LoadEmployeeData(employeeId);
             EnableControls(true);
             if (medFile == null)
             {
-                var emp = GetBasicEmployeeData(employeeId);
-                LblCurp.Text = emp.Item1.HasValue() ? emp.Item1 : "_";
-                LblNss.Text = emp.Item2.HasValue() ? emp.Item2 : "_";
+                LblCurp.Text = SelectedEmployee.Curp.HasValue() ? SelectedEmployee.Curp : "_";
+                LblNss.Text = SelectedEmployee.SocialSecurityNumber.HasValue() ? SelectedEmployee.SocialSecurityNumber : "_";
                 return;
             }
             CurrentMedFile = medFile;
@@ -75,15 +75,20 @@ namespace EngineeringManagement.UI.Forms.Employees
             TxtEmergName.Text = medFile.EmergencyName;
             TxtEmergPhone.Text = medFile.EmergencyPhone;
             TxtRelation.Text = medFile.Relation;
-            LblCurp.Text = medFile.Employee.Curp.HasValue() ? medFile.Employee.Curp : "_";
-            LblNss.Text = medFile.Employee.SocialSecurityNumber.HasValue() ? medFile.Employee.SocialSecurityNumber : "_";
         }
 
-        private static Tuple<string, string> GetBasicEmployeeData(int employeeId)
+        private void LoadEmployeeData(int employeeId)
+        {
+            SelectedEmployee = GetBasicEmployeeData(employeeId);
+            LblCurp.Text = SelectedEmployee.Curp.HasValue() ? SelectedEmployee.Curp : "_";
+            LblNss.Text = SelectedEmployee.SocialSecurityNumber.HasValue() ? SelectedEmployee.SocialSecurityNumber : "_";
+        }
+
+        private static Employee GetBasicEmployeeData(int employeeId)
         {
             using var context = new Data.AppContext();
             var employee = context.Employees.Find(employeeId);
-            return new Tuple<string, string>(employee.Curp, employee.SocialSecurityNumber);
+            return employee;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e) => Close();
@@ -129,6 +134,25 @@ namespace EngineeringManagement.UI.Forms.Employees
                 Close();
             }
         }
+
+        private void BtnViewSisosit_Click(object sender, EventArgs e)
+        {
+            if (SelectedEmployee.SisositFileName.HasValue())
+                OpenFile(SelectedEmployee.SisositFileName);
+            else
+                MessageBox.Show("Empleado no cuenta con dicho archivo.", "Expedientes Medicos - Ver SISOSIT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        }
+
+        private void BtnViewLabs_Click(object sender, EventArgs e)
+        {
+            if (SelectedEmployee.LabsFileName.HasValue())
+                OpenFile(SelectedEmployee.LabsFileName);
+            else
+                MessageBox.Show("Empleado no cuenta con dicho archivo.", "Expedientes Medicos - Ver Laboratorios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void OpenFile(string fileName) => OpenFileService.Execute(SelectedEmployee.EmployeeName, fileName);
         #endregion
     }
 }
