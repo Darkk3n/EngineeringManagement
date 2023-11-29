@@ -47,15 +47,10 @@ namespace EngineeringManagement.UI.Forms
             CmbEmployeeType.DisplayMember = "Display";
             TxtCurp.CharacterCasing = CharacterCasing.Upper;
 
-            using (var context = new Data.AppContext())
-            {
-                var employees = context.Employees.ToList();
-                employees.Add(new Employee { Id = 1000000, EmployeeName = "-- SELECCIONE --" });
-                CmbEmployees.DataSource = employees.OrderByDescending(r => r.Id).ToList();
-                CmbEmployees.ValueMember = "Id";
-                CmbEmployees.DisplayMember = "EmployeeName";
-                CmbEmployees.SelectedIndex = 0;
-            }
+            CmbEmployees.DataSource = new EmployeeListService().Get().OrderByDescending(r => r.Id).ToList();
+            CmbEmployees.ValueMember = nameof(Employee.Id);
+            CmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
+            CmbEmployees.SelectedIndex = 0;
         }
 
         private void CmbEmployees_SelectedIndexChanged(object sender, EventArgs e)

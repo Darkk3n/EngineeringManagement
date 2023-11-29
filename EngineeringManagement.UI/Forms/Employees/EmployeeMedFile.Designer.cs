@@ -46,10 +46,10 @@
             BtnViewSisosit = new Button();
             BtnViewLabs = new Button();
             label11 = new Label();
-            textBox1 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            TxtBloodType = new TextBox();
+            TxtEmergPhone = new MaskedTextBox();
+            TxtEmergName = new TextBox();
+            TxtRelation = new TextBox();
             BtnOk = new Button();
             BtnCancel = new Button();
             SuspendLayout();
@@ -152,6 +152,7 @@
             CmbEmployees.Name = "CmbEmployees";
             CmbEmployees.Size = new Size(221, 23);
             CmbEmployees.TabIndex = 10;
+            CmbEmployees.SelectedIndexChanged += CmbEmployees_SelectedIndexChanged;
             // 
             // LblCurp
             // 
@@ -174,6 +175,7 @@
             // CmbAble
             // 
             CmbAble.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbAble.Enabled = false;
             CmbAble.FormattingEnabled = true;
             CmbAble.Location = new Point(483, 5);
             CmbAble.Name = "CmbAble";
@@ -182,6 +184,7 @@
             // 
             // BtnViewSisosit
             // 
+            BtnViewSisosit.Enabled = false;
             BtnViewSisosit.Image = Properties.Resources.Lupa_Icon__2_;
             BtnViewSisosit.Location = new Point(483, 40);
             BtnViewSisosit.Name = "BtnViewSisosit";
@@ -191,6 +194,7 @@
             // 
             // BtnViewLabs
             // 
+            BtnViewLabs.Enabled = false;
             BtnViewLabs.Image = Properties.Resources.Lupa_Icon__2_;
             BtnViewLabs.Location = new Point(483, 72);
             BtnViewLabs.Name = "BtnViewLabs";
@@ -207,34 +211,38 @@
             label11.TabIndex = 16;
             label11.Text = "Recordatorios:";
             // 
-            // textBox1
+            // TxtBloodType
             // 
-            textBox1.Location = new Point(154, 97);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(221, 23);
-            textBox1.TabIndex = 17;
+            TxtBloodType.Enabled = false;
+            TxtBloodType.Location = new Point(154, 97);
+            TxtBloodType.Name = "TxtBloodType";
+            TxtBloodType.Size = new Size(221, 23);
+            TxtBloodType.TabIndex = 17;
             // 
-            // maskedTextBox1
+            // TxtEmergPhone
             // 
-            maskedTextBox1.Location = new Point(154, 126);
-            maskedTextBox1.Mask = "999-000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(221, 23);
-            maskedTextBox1.TabIndex = 18;
+            TxtEmergPhone.Enabled = false;
+            TxtEmergPhone.Location = new Point(154, 126);
+            TxtEmergPhone.Mask = "999-000-0000";
+            TxtEmergPhone.Name = "TxtEmergPhone";
+            TxtEmergPhone.Size = new Size(221, 23);
+            TxtEmergPhone.TabIndex = 18;
             // 
-            // textBox2
+            // TxtEmergName
             // 
-            textBox2.Location = new Point(154, 163);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(221, 23);
-            textBox2.TabIndex = 19;
+            TxtEmergName.Enabled = false;
+            TxtEmergName.Location = new Point(154, 163);
+            TxtEmergName.Name = "TxtEmergName";
+            TxtEmergName.Size = new Size(221, 23);
+            TxtEmergName.TabIndex = 19;
             // 
-            // textBox3
+            // TxtRelation
             // 
-            textBox3.Location = new Point(154, 200);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(221, 23);
-            textBox3.TabIndex = 20;
+            TxtRelation.Enabled = false;
+            TxtRelation.Location = new Point(154, 200);
+            TxtRelation.Name = "TxtRelation";
+            TxtRelation.Size = new Size(221, 23);
+            TxtRelation.TabIndex = 20;
             // 
             // BtnOk
             // 
@@ -263,10 +271,10 @@
             ClientSize = new Size(616, 290);
             Controls.Add(BtnCancel);
             Controls.Add(BtnOk);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(textBox1);
+            Controls.Add(TxtRelation);
+            Controls.Add(TxtEmergName);
+            Controls.Add(TxtEmergPhone);
+            Controls.Add(TxtBloodType);
             Controls.Add(label11);
             Controls.Add(BtnViewLabs);
             Controls.Add(BtnViewSisosit);
@@ -313,10 +321,10 @@
         private Button BtnViewSisosit;
         private Button BtnViewLabs;
         private Label label11;
-        private TextBox textBox1;
-        private MaskedTextBox maskedTextBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox TxtBloodType;
+        private MaskedTextBox TxtEmergPhone;
+        private TextBox TxtEmergName;
+        private TextBox TxtRelation;
         private Button BtnOk;
         private Button BtnCancel;
     }
