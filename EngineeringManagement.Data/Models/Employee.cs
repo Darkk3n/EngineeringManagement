@@ -23,5 +23,7 @@ namespace EngineeringManagement.Data.Models
         public string SisositFileName { get; set; }
 
         public string PictureFileName { get; set; }
+
+        public int SocialSecurityNumber { get; set; }
     }
 }
