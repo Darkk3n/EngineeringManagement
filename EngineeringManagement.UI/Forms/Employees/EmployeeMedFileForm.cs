@@ -152,7 +152,7 @@ namespace EngineeringManagement.UI.Forms.Employees
                 MessageBox.Show("Empleado no cuenta con dicho archivo.", "Expedientes Medicos - Ver Laboratorios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void OpenFile(string fileName) => OpenFileService.Execute(SelectedEmployee.EmployeeName, fileName);
+        private void OpenFile(string fileName) => OpenFileService.Execute(fileName, SelectedEmployee.EmployeeName);
         #endregion
     }
 }
