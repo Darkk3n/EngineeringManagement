@@ -18,6 +18,6 @@ namespace EngineeringManagement.Data.Models
 
         public string Relation { get; set; }
 
-        public AbleType Able { get; set; }
+        public AbleType? Able { get; set; }
     }
 }
