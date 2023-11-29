@@ -166,7 +166,7 @@ namespace EngineeringManagement.UI
 
         private void expedientesMedicosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using var medFiles = new EmployeeMedFile();
+            using var medFiles = new EmployeeMedFileForm();
             medFiles.ShowDialog();
         }
     }

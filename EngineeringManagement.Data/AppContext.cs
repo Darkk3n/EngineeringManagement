@@ -20,6 +20,7 @@ namespace EngineeringManagement.Data
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<EmployeeCertification> EmployeeCertifications { get; set; }
         public DbSet<FacilityCertification> FacilityCertifications { get; set; }
+        public DbSet<EmployeeMedFile> EmployeeMedFiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

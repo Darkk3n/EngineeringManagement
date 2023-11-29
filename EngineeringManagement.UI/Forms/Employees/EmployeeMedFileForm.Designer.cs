@@ -1,6 +1,6 @@
 ﻿namespace EngineeringManagement.UI.Forms.Employees
 {
-    partial class EmployeeMedFile
+    partial class EmployeeMedFileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMedFile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMedFileForm));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
