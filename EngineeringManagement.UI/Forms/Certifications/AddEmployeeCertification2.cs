@@ -154,11 +154,7 @@ namespace EngineeringManagement.UI.Forms.Certifications
                 MessageBox.Show("No hay ningun archivo asignado", "Agregar DC-3 a Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = FileName,
-                UseShellExecute = true
-            });
+            OpenFileService.Execute(FileName);           
         }
     }
 }

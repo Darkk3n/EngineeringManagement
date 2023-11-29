@@ -191,6 +191,7 @@
             BtnViewSisosit.Size = new Size(42, 25);
             BtnViewSisosit.TabIndex = 14;
             BtnViewSisosit.UseVisualStyleBackColor = true;
+            BtnViewSisosit.Click += BtnViewSisosit_Click;
             // 
             // BtnViewLabs
             // 
@@ -201,6 +202,7 @@
             BtnViewLabs.Size = new Size(42, 25);
             BtnViewLabs.TabIndex = 15;
             BtnViewLabs.UseVisualStyleBackColor = true;
+            BtnViewLabs.Click += BtnViewLabs_Click;
             // 
             // label11
             // 

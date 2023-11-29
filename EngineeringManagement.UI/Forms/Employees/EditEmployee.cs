@@ -289,15 +289,7 @@ namespace EngineeringManagement.UI.Forms
 
         private void BtnViewSisosit_Click(object sender, EventArgs e) => OpenFile(_employee.SisositFileName);
 
-        private void OpenFile(string fileName)
-        {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = Path.Combine(Application.StartupPath, "Documentos", _employee.EmployeeName, fileName),
-                UseShellExecute = true
-            });
-        }
+        private void OpenFile(string fileName) => OpenFileService.Execute(_employee.EmployeeName, fileName);
         #endregion
-
     }
 }
