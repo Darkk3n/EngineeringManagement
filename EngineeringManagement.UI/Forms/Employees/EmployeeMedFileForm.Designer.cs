@@ -252,6 +252,7 @@
             BtnOk.TabIndex = 21;
             BtnOk.Text = "Guardar";
             BtnOk.UseVisualStyleBackColor = true;
+            BtnOk.Click += BtnOk_Click;
             // 
             // BtnCancel
             // 
@@ -261,8 +262,9 @@
             BtnCancel.TabIndex = 22;
             BtnCancel.Text = "Cancelar";
             BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.Click += BtnCancel_Click;
             // 
-            // EmployeeMedFile
+            // EmployeeMedFileForm
             // 
             AcceptButton = BtnOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -295,7 +297,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "EmployeeMedFile";
+            Name = "EmployeeMedFileForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Expedientes Medicos";
             ResumeLayout(false);
