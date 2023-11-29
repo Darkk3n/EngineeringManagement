@@ -150,7 +150,7 @@
             CmbEmployees.FormattingEnabled = true;
             CmbEmployees.Location = new Point(154, 5);
             CmbEmployees.Name = "CmbEmployees";
-            CmbEmployees.Size = new Size(263, 23);
+            CmbEmployees.Size = new Size(221, 23);
             CmbEmployees.TabIndex = 10;
             // 
             // LblCurp
