@@ -4,33 +4,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EngineeringManagement.Data
 {
-    public class AppContext : DbContext
-    {
-        public AppContext()
-        {
-        }
+   public class AppContext : DbContext
+   {
+      public AppContext()
+      {
+      }
 
-        public AppContext(DbContextOptions options)
-            : base(options)
-        {
-        }
+      public AppContext(DbContextOptions options)
+          : base(options)
+      {
+      }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Facility> Facilities { get; set; }
-        public DbSet<Certification> Certifications { get; set; }
-        public DbSet<EmployeeCertification> EmployeeCertifications { get; set; }
-        public DbSet<FacilityCertification> FacilityCertifications { get; set; }
-        public DbSet<EmployeeMedFile> EmployeeMedFiles { get; set; }
+      public DbSet<Employee> Employees { get; set; }
+      public DbSet<Facility> Facilities { get; set; }
+      public DbSet<Certification> Certifications { get; set; }
+      public DbSet<EmployeeCertification> EmployeeCertifications { get; set; }
+      public DbSet<FacilityCertification> FacilityCertifications { get; set; }
+      public DbSet<EmployeeMedFile> EmployeeMedFiles { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}");
-        }
+      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      {
+         optionsBuilder.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}");
+      }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Employee>().HasData(new[]
-            {
+      protected override void OnModelCreating(ModelBuilder modelBuilder)
+      {
+         modelBuilder.Entity<Employee>().HasData(new[]
+         {
                 new Employee{ Id =-1,EmployeeName="Aguilar Gonzalez Armando", EmployeeType=EmployeeType.Administrative, Position="Electrico"},
                 new Employee{Id =-2,EmployeeName="Alejandre Blanco Javier", EmployeeType=EmployeeType.Administrative, Position="Electrico"},
                 new Employee{Id =-3,EmployeeName="Alfaro Muñiz Margarito", EmployeeType=EmployeeType.Operative, Position="Especialista en Tuberias"},
@@ -73,14 +73,19 @@ namespace EngineeringManagement.Data
                 new Employee{Id =-40,EmployeeName="Alvarez Martir Christian", EmployeeType=EmployeeType.Operative, Position="Auxiliar de control de proyectos"},
             });
 
-            modelBuilder.Entity<Facility>().HasData(new[]
-            {
+         modelBuilder.Entity<Facility>().HasData(new[]
+         {
                 new Facility{Id=-1,FacilityName="Sabic"},
                 new Facility{Id=-2,FacilityName="Cabot"},
             });
 
-            modelBuilder.Entity<Certification>().HasData(new[]
-            {
+         modelBuilder.Entity<Facility>()
+            .HasIndex(r => r.FacilityName)
+            .HasDatabaseName("UQ_FacilityName")
+            .IsUnique();
+
+         modelBuilder.Entity<Certification>().HasData(new[]
+         {
                 new Certification{Id = -1, CertificationName = "Espacios Confinados"},
                 new Certification{Id = -2, CertificationName = "Corte y Soldadura"},
                 new Certification{Id = -3, CertificationName = "NOM-009-STPS-2011", Description = "Trabajos en Altura"},
@@ -108,8 +113,8 @@ namespace EngineeringManagement.Data
                 new Certification{Id = -25, CertificationName = "NOM-029", Description = "MANTENIMIENTO DE LAS INSTALACIONES ELECTRICAS EN LOS CENTROS DE TRABAJO"},
             });
 
-            modelBuilder.Entity<FacilityCertification>().HasData(new[]
-            {
+         modelBuilder.Entity<FacilityCertification>().HasData(new[]
+         {
                 //Sabic
                 new FacilityCertification{Id = -1, FacilityId = -1, CertificationId = -2},
                 new FacilityCertification{Id = -2, FacilityId = -2, CertificationId = -9},
@@ -136,8 +141,8 @@ namespace EngineeringManagement.Data
 
             });
 
-            modelBuilder.Entity<EmployeeCertification>().HasData(new[]
-            {
+         modelBuilder.Entity<EmployeeCertification>().HasData(new[]
+         {
                new EmployeeCertification{Id =-1, EmployeeId =-1, CertificationId =-1, StartDate = new DateTime(2023,8,5),EndDate = new DateTime(2023,11,1)},
                 new EmployeeCertification{Id =-2, EmployeeId =-1, CertificationId =-2, StartDate = new DateTime(2023,8,1),EndDate = new DateTime(2024,7,31)},
                 new EmployeeCertification{Id =-3, EmployeeId =-1, CertificationId =-3, StartDate = new DateTime(2023,8,4),EndDate = new DateTime(2024,8,3)},
@@ -245,6 +250,6 @@ namespace EngineeringManagement.Data
                 new EmployeeCertification{Id =-105, EmployeeId =-10, CertificationId =-15, StartDate = new DateTime(2023,1,14),EndDate = new DateTime(2024,1,14)},
                 new EmployeeCertification{Id =-106, EmployeeId =-10, CertificationId =-16, StartDate = new DateTime(2023,5,4),EndDate = new DateTime(2024,5,3)},
             });
-        }
-    }
+      }
+   }
 }
