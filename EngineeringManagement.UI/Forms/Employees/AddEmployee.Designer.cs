@@ -62,7 +62,7 @@
          // label1
          // 
          label1.AutoSize = true;
-         label1.Location = new Point(1167, 95);
+         label1.Location = new Point(1405, 147);
          label1.Margin = new Padding(6, 0, 6, 0);
          label1.Name = "label1";
          label1.Size = new Size(107, 32);
@@ -72,7 +72,7 @@
          // label2
          // 
          label2.AutoSize = true;
-         label2.Location = new Point(1167, 182);
+         label2.Location = new Point(1405, 234);
          label2.Margin = new Padding(6, 0, 6, 0);
          label2.Name = "label2";
          label2.Size = new Size(91, 32);
@@ -82,7 +82,7 @@
          // label3
          // 
          label3.AutoSize = true;
-         label3.Location = new Point(1167, 253);
+         label3.Location = new Point(1405, 305);
          label3.Margin = new Padding(6, 0, 6, 0);
          label3.Name = "label3";
          label3.Size = new Size(77, 32);
@@ -91,7 +91,7 @@
          // 
          // txtName
          // 
-         txtName.Location = new Point(1373, 95);
+         txtName.Location = new Point(1611, 147);
          txtName.Margin = new Padding(6);
          txtName.Name = "txtName";
          txtName.Size = new Size(372, 39);
@@ -100,7 +100,7 @@
          // 
          // txtPosition
          // 
-         txtPosition.Location = new Point(1373, 182);
+         txtPosition.Location = new Point(1611, 234);
          txtPosition.Margin = new Padding(6);
          txtPosition.Name = "txtPosition";
          txtPosition.Size = new Size(372, 39);
@@ -109,7 +109,7 @@
          // 
          // txtCurp
          // 
-         txtCurp.Location = new Point(1373, 253);
+         txtCurp.Location = new Point(1611, 305);
          txtCurp.Margin = new Padding(6);
          txtCurp.Name = "txtCurp";
          txtCurp.Size = new Size(372, 39);
@@ -119,7 +119,7 @@
          // label4
          // 
          label4.AutoSize = true;
-         label4.Location = new Point(1167, 410);
+         label4.Location = new Point(1405, 462);
          label4.Margin = new Padding(6, 0, 6, 0);
          label4.Name = "label4";
          label4.Size = new Size(213, 32);
@@ -130,7 +130,7 @@
          // 
          cmbEmployeeType.DropDownStyle = ComboBoxStyle.DropDownList;
          cmbEmployeeType.FormattingEnabled = true;
-         cmbEmployeeType.Location = new Point(1373, 410);
+         cmbEmployeeType.Location = new Point(1611, 462);
          cmbEmployeeType.Margin = new Padding(6);
          cmbEmployeeType.Name = "cmbEmployeeType";
          cmbEmployeeType.Size = new Size(372, 40);
@@ -140,7 +140,7 @@
          // label5
          // 
          label5.AutoSize = true;
-         label5.Location = new Point(1167, 485);
+         label5.Location = new Point(1405, 537);
          label5.Margin = new Padding(6, 0, 6, 0);
          label5.Name = "label5";
          label5.Size = new Size(150, 32);
@@ -149,7 +149,7 @@
          // 
          // btnOpenFile
          // 
-         btnOpenFile.Location = new Point(1373, 485);
+         btnOpenFile.Location = new Point(1611, 537);
          btnOpenFile.Margin = new Padding(6);
          btnOpenFile.Name = "btnOpenFile";
          btnOpenFile.Size = new Size(375, 49);
@@ -161,7 +161,7 @@
          // lblSelectedLabsFile
          // 
          lblSelectedLabsFile.AutoSize = true;
-         lblSelectedLabsFile.Location = new Point(1373, 549);
+         lblSelectedLabsFile.Location = new Point(1611, 601);
          lblSelectedLabsFile.Margin = new Padding(6, 0, 6, 0);
          lblSelectedLabsFile.Name = "lblSelectedLabsFile";
          lblSelectedLabsFile.Size = new Size(353, 32);
@@ -172,7 +172,7 @@
          // label6
          // 
          label6.AutoSize = true;
-         label6.Location = new Point(1167, 637);
+         label6.Location = new Point(1405, 689);
          label6.Margin = new Padding(6, 0, 6, 0);
          label6.Name = "label6";
          label6.Size = new Size(101, 32);
@@ -181,7 +181,7 @@
          // 
          // btnCancel
          // 
-         btnCancel.Location = new Point(1524, 797);
+         btnCancel.Location = new Point(1762, 849);
          btnCancel.Margin = new Padding(6);
          btnCancel.Name = "btnCancel";
          btnCancel.Size = new Size(139, 49);
@@ -192,7 +192,7 @@
          // 
          // btnOk
          // 
-         btnOk.Location = new Point(1373, 797);
+         btnOk.Location = new Point(1611, 849);
          btnOk.Margin = new Padding(6);
          btnOk.Name = "btnOk";
          btnOk.Size = new Size(139, 49);
@@ -204,7 +204,7 @@
          // lblSisositFile
          // 
          lblSisositFile.AutoSize = true;
-         lblSisositFile.Location = new Point(1373, 703);
+         lblSisositFile.Location = new Point(1611, 755);
          lblSisositFile.Margin = new Padding(6, 0, 6, 0);
          lblSisositFile.Name = "lblSisositFile";
          lblSisositFile.Size = new Size(353, 32);
@@ -214,7 +214,7 @@
          // 
          // btnSisositOpenFile
          // 
-         btnSisositOpenFile.Location = new Point(1373, 637);
+         btnSisositOpenFile.Location = new Point(1611, 689);
          btnSisositOpenFile.Margin = new Padding(6);
          btnSisositOpenFile.Name = "btnSisositOpenFile";
          btnSisositOpenFile.Size = new Size(375, 49);
@@ -226,7 +226,7 @@
          // pbEmpPhoto
          // 
          pbEmpPhoto.BorderStyle = BorderStyle.FixedSingle;
-         pbEmpPhoto.Location = new Point(15, 15);
+         pbEmpPhoto.Location = new Point(253, 67);
          pbEmpPhoto.Margin = new Padding(6);
          pbEmpPhoto.Name = "pbEmpPhoto";
          pbEmpPhoto.Size = new Size(943, 943);
@@ -236,7 +236,7 @@
          // 
          // btnPicture
          // 
-         btnPicture.Location = new Point(296, 978);
+         btnPicture.Location = new Point(534, 1030);
          btnPicture.Margin = new Padding(6);
          btnPicture.Name = "btnPicture";
          btnPicture.Size = new Size(375, 49);
@@ -248,7 +248,7 @@
          // label7
          // 
          label7.AutoSize = true;
-         label7.Location = new Point(190, 978);
+         label7.Location = new Point(428, 1030);
          label7.Margin = new Padding(6, 0, 6, 0);
          label7.Name = "label7";
          label7.Size = new Size(67, 32);
@@ -279,7 +279,7 @@
          // label8
          // 
          label8.AutoSize = true;
-         label8.Location = new Point(1167, 342);
+         label8.Location = new Point(1405, 394);
          label8.Margin = new Padding(6, 0, 6, 0);
          label8.Name = "label8";
          label8.Size = new Size(63, 32);
@@ -288,7 +288,7 @@
          // 
          // TxtNss
          // 
-         TxtNss.Location = new Point(1373, 336);
+         TxtNss.Location = new Point(1611, 388);
          TxtNss.Margin = new Padding(6);
          TxtNss.Mask = "00000000000";
          TxtNss.Name = "TxtNss";
@@ -303,7 +303,7 @@
          AutoScaleMode = AutoScaleMode.Font;
          AutoScroll = true;
          CancelButton = btnCancel;
-         ClientSize = new Size(2062, 1051);
+         ClientSize = new Size(2425, 1195);
          Controls.Add(TxtNss);
          Controls.Add(label8);
          Controls.Add(label1);

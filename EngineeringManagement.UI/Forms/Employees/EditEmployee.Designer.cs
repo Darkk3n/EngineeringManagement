@@ -67,8 +67,8 @@
          // 
          CmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
          CmbEmployees.FormattingEnabled = true;
-         CmbEmployees.Location = new Point(1214, 21);
-         CmbEmployees.Margin = new Padding(6, 6, 6, 6);
+         CmbEmployees.Location = new Point(1482, 99);
+         CmbEmployees.Margin = new Padding(6);
          CmbEmployees.Name = "CmbEmployees";
          CmbEmployees.Size = new Size(411, 40);
          CmbEmployees.TabIndex = 0;
@@ -77,7 +77,7 @@
          // label1
          // 
          label1.AutoSize = true;
-         label1.Location = new Point(1086, 29);
+         label1.Location = new Point(1354, 107);
          label1.Margin = new Padding(6, 0, 6, 0);
          label1.Name = "label1";
          label1.Size = new Size(125, 32);
@@ -87,7 +87,7 @@
          // label2
          // 
          label2.AutoSize = true;
-         label2.Location = new Point(1103, 108);
+         label2.Location = new Point(1371, 186);
          label2.Margin = new Padding(6, 0, 6, 0);
          label2.Name = "label2";
          label2.Size = new Size(107, 32);
@@ -97,7 +97,7 @@
          // label3
          // 
          label3.AutoSize = true;
-         label3.Location = new Point(1117, 189);
+         label3.Location = new Point(1385, 267);
          label3.Margin = new Padding(6, 0, 6, 0);
          label3.Name = "label3";
          label3.Size = new Size(91, 32);
@@ -107,7 +107,7 @@
          // label4
          // 
          label4.AutoSize = true;
-         label4.Location = new Point(1129, 364);
+         label4.Location = new Point(1397, 442);
          label4.Margin = new Padding(6, 0, 6, 0);
          label4.Name = "label4";
          label4.Size = new Size(77, 32);
@@ -117,8 +117,8 @@
          // TxtName
          // 
          TxtName.Enabled = false;
-         TxtName.Location = new Point(1214, 100);
-         TxtName.Margin = new Padding(6, 6, 6, 6);
+         TxtName.Location = new Point(1482, 178);
+         TxtName.Margin = new Padding(6);
          TxtName.Name = "TxtName";
          TxtName.Size = new Size(413, 39);
          TxtName.TabIndex = 7;
@@ -127,8 +127,8 @@
          // TxtPosition
          // 
          TxtPosition.Enabled = false;
-         TxtPosition.Location = new Point(1214, 181);
-         TxtPosition.Margin = new Padding(6, 6, 6, 6);
+         TxtPosition.Location = new Point(1482, 259);
+         TxtPosition.Margin = new Padding(6);
          TxtPosition.Name = "TxtPosition";
          TxtPosition.Size = new Size(413, 39);
          TxtPosition.TabIndex = 8;
@@ -137,8 +137,8 @@
          // TxtCurp
          // 
          TxtCurp.Enabled = false;
-         TxtCurp.Location = new Point(1214, 356);
-         TxtCurp.Margin = new Padding(6, 6, 6, 6);
+         TxtCurp.Location = new Point(1482, 434);
+         TxtCurp.Margin = new Padding(6);
          TxtCurp.Name = "TxtCurp";
          TxtCurp.Size = new Size(413, 39);
          TxtCurp.TabIndex = 9;
@@ -147,8 +147,8 @@
          // BtnOk
          // 
          BtnOk.Enabled = false;
-         BtnOk.Location = new Point(1214, 844);
-         BtnOk.Margin = new Padding(6, 6, 6, 6);
+         BtnOk.Location = new Point(1482, 922);
+         BtnOk.Margin = new Padding(6);
          BtnOk.Name = "BtnOk";
          BtnOk.Size = new Size(139, 49);
          BtnOk.TabIndex = 5;
@@ -158,8 +158,8 @@
          // 
          // BtnCancel
          // 
-         BtnCancel.Location = new Point(1392, 844);
-         BtnCancel.Margin = new Padding(6, 6, 6, 6);
+         BtnCancel.Location = new Point(1660, 922);
+         BtnCancel.Margin = new Padding(6);
          BtnCancel.Name = "BtnCancel";
          BtnCancel.Size = new Size(139, 49);
          BtnCancel.TabIndex = 6;
@@ -171,8 +171,8 @@
          CmbEmployeeType.DropDownStyle = ComboBoxStyle.DropDownList;
          CmbEmployeeType.Enabled = false;
          CmbEmployeeType.FormattingEnabled = true;
-         CmbEmployeeType.Location = new Point(1214, 434);
-         CmbEmployeeType.Margin = new Padding(6, 6, 6, 6);
+         CmbEmployeeType.Location = new Point(1482, 512);
+         CmbEmployeeType.Margin = new Padding(6);
          CmbEmployeeType.Name = "CmbEmployeeType";
          CmbEmployeeType.Size = new Size(413, 40);
          CmbEmployeeType.TabIndex = 10;
@@ -181,7 +181,7 @@
          // label5
          // 
          label5.AutoSize = true;
-         label5.Location = new Point(1008, 443);
+         label5.Location = new Point(1276, 521);
          label5.Margin = new Padding(6, 0, 6, 0);
          label5.Name = "label5";
          label5.Size = new Size(213, 32);
@@ -191,7 +191,7 @@
          // label6
          // 
          label6.AutoSize = true;
-         label6.Location = new Point(153, 1019);
+         label6.Location = new Point(421, 1097);
          label6.Margin = new Padding(6, 0, 6, 0);
          label6.Name = "label6";
          label6.Size = new Size(67, 32);
@@ -201,8 +201,8 @@
          // BtnPicture
          // 
          BtnPicture.Enabled = false;
-         BtnPicture.Location = new Point(227, 1010);
-         BtnPicture.Margin = new Padding(6, 6, 6, 6);
+         BtnPicture.Location = new Point(495, 1088);
+         BtnPicture.Margin = new Padding(6);
          BtnPicture.Name = "BtnPicture";
          BtnPicture.Size = new Size(416, 49);
          BtnPicture.TabIndex = 13;
@@ -213,8 +213,8 @@
          // pbEmpPhoto
          // 
          pbEmpPhoto.BorderStyle = BorderStyle.FixedSingle;
-         pbEmpPhoto.Location = new Point(15, 15);
-         pbEmpPhoto.Margin = new Padding(6, 6, 6, 6);
+         pbEmpPhoto.Location = new Point(283, 93);
+         pbEmpPhoto.Margin = new Padding(6);
          pbEmpPhoto.Name = "pbEmpPhoto";
          pbEmpPhoto.Size = new Size(943, 943);
          pbEmpPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -224,7 +224,7 @@
          // label7
          // 
          label7.AutoSize = true;
-         label7.Location = new Point(1062, 524);
+         label7.Location = new Point(1330, 602);
          label7.Margin = new Padding(6, 0, 6, 0);
          label7.Name = "label7";
          label7.Size = new Size(150, 32);
@@ -234,7 +234,7 @@
          // LblLabsFileName
          // 
          LblLabsFileName.AutoSize = true;
-         LblLabsFileName.Location = new Point(1214, 599);
+         LblLabsFileName.Location = new Point(1482, 677);
          LblLabsFileName.Margin = new Padding(6, 0, 6, 0);
          LblLabsFileName.Name = "LblLabsFileName";
          LblLabsFileName.Size = new Size(338, 32);
@@ -245,7 +245,7 @@
          // label9
          // 
          label9.AutoSize = true;
-         label9.Location = new Point(1112, 673);
+         label9.Location = new Point(1380, 751);
          label9.Margin = new Padding(6, 0, 6, 0);
          label9.Name = "label9";
          label9.Size = new Size(101, 32);
@@ -255,8 +255,8 @@
          // BtnLabsFile
          // 
          BtnLabsFile.Enabled = false;
-         BtnLabsFile.Location = new Point(1214, 516);
-         BtnLabsFile.Margin = new Padding(6, 6, 6, 6);
+         BtnLabsFile.Location = new Point(1482, 594);
+         BtnLabsFile.Margin = new Padding(6);
          BtnLabsFile.Name = "BtnLabsFile";
          BtnLabsFile.Size = new Size(416, 49);
          BtnLabsFile.TabIndex = 18;
@@ -267,8 +267,8 @@
          // BtnSisositFile
          // 
          BtnSisositFile.Enabled = false;
-         BtnSisositFile.Location = new Point(1214, 665);
-         BtnSisositFile.Margin = new Padding(6, 6, 6, 6);
+         BtnSisositFile.Location = new Point(1482, 743);
+         BtnSisositFile.Margin = new Padding(6);
          BtnSisositFile.Name = "BtnSisositFile";
          BtnSisositFile.Size = new Size(416, 49);
          BtnSisositFile.TabIndex = 19;
@@ -279,7 +279,7 @@
          // LblSisositFileName
          // 
          LblSisositFileName.AutoSize = true;
-         LblSisositFileName.Location = new Point(1214, 754);
+         LblSisositFileName.Location = new Point(1482, 832);
          LblSisositFileName.Margin = new Padding(6, 0, 6, 0);
          LblSisositFileName.Name = "LblSisositFileName";
          LblSisositFileName.Size = new Size(338, 32);
@@ -291,8 +291,8 @@
          // 
          BtnViewLabs.Enabled = false;
          BtnViewLabs.Image = Properties.Resources.Lupa_Icon__2_;
-         BtnViewLabs.Location = new Point(1641, 516);
-         BtnViewLabs.Margin = new Padding(6, 6, 6, 6);
+         BtnViewLabs.Location = new Point(1909, 594);
+         BtnViewLabs.Margin = new Padding(6);
          BtnViewLabs.Name = "BtnViewLabs";
          BtnViewLabs.Size = new Size(78, 53);
          BtnViewLabs.TabIndex = 21;
@@ -303,8 +303,8 @@
          // 
          BtnViewSisosit.Enabled = false;
          BtnViewSisosit.Image = Properties.Resources.Lupa_Icon__2_;
-         BtnViewSisosit.Location = new Point(1641, 665);
-         BtnViewSisosit.Margin = new Padding(6, 6, 6, 6);
+         BtnViewSisosit.Location = new Point(1909, 743);
+         BtnViewSisosit.Margin = new Padding(6);
          BtnViewSisosit.Name = "BtnViewSisosit";
          BtnViewSisosit.Size = new Size(78, 53);
          BtnViewSisosit.TabIndex = 22;
@@ -334,7 +334,7 @@
          // label8
          // 
          label8.AutoSize = true;
-         label8.Location = new Point(1145, 272);
+         label8.Location = new Point(1413, 350);
          label8.Margin = new Padding(6, 0, 6, 0);
          label8.Name = "label8";
          label8.Size = new Size(63, 32);
@@ -343,8 +343,8 @@
          // 
          // TxtNss
          // 
-         TxtNss.Location = new Point(1214, 266);
-         TxtNss.Margin = new Padding(6, 6, 6, 6);
+         TxtNss.Location = new Point(1482, 344);
+         TxtNss.Margin = new Padding(6);
          TxtNss.Mask = "00000000000";
          TxtNss.Name = "TxtNss";
          TxtNss.Size = new Size(413, 39);
@@ -357,7 +357,7 @@
          AutoScaleMode = AutoScaleMode.Font;
          AutoScroll = true;
          CancelButton = BtnCancel;
-         ClientSize = new Size(1770, 1091);
+         ClientSize = new Size(2425, 1195);
          Controls.Add(TxtNss);
          Controls.Add(label8);
          Controls.Add(pbEmpPhoto);
@@ -384,7 +384,7 @@
          Controls.Add(LblLabsFileName);
          Controls.Add(label7);
          Icon = (Icon)resources.GetObject("$this.Icon");
-         Margin = new Padding(6, 6, 6, 6);
+         Margin = new Padding(6);
          MaximizeBox = false;
          MinimizeBox = false;
          Name = "EditEmployee";
