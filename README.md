@@ -8,12 +8,8 @@
 [Control Total Ingenieria](https://github.com/Darkk3n/EngineeringManagement/blob/main/Installer/ControlIngeniera.zip)
 
 Como descargar:
-![image](https://github.com/Darkk3n/EngineeringManagement/assets/5014837/d22783d9-b427-4d80-8020-aca4f06b4ddd)
+![image](https://github.com/user-attachments/assets/54cc4c57-615c-4feb-9b1e-0c677476bc8d)
 
-Te saldra un cuadro de dialogo, confirma que lo que se va a bajar es un `.zip`
+![image](https://github.com/user-attachments/assets/8404b617-1806-46c5-857e-54c3465e97d7)
 
-![image](https://github.com/Darkk3n/EngineeringManagement/assets/5014837/c7797100-1cbf-4c86-afeb-fbb2aa9bba25)
-
-Descomprimes y ya puedes empezar a probar
-
-De esta manera deberia ser mas facil
+Y en automatico deberia descargarse
