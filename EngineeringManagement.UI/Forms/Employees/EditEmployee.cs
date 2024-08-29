@@ -1,12 +1,10 @@
-﻿using EngineeringManagement.Data.Models;
+﻿using EngineeringManagement.Core.Contracts;
+using EngineeringManagement.Core.Models;
+using EngineeringManagement.Data.Models;
 using EngineeringManagement.Data.Models.Enums;
 using EngineeringManagement.UI.Extensions;
-using EngineeringManagement.UI.Services;
 using System.Data;
-using System.Diagnostics;
-using System.Security.Policy;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace EngineeringManagement.UI.Forms
 {
@@ -21,11 +19,17 @@ namespace EngineeringManagement.UI.Forms
       private string PictureSafeFileName { get; set; }
       private string PictureFileName { get; set; }
       private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
+      private readonly ICopyFilesService copyFilesService;
+      private readonly IEmployeeListService employeeListService;
+      private readonly IOpenFileService openFileService;
       #endregion
 
       #region Constructor
-      public EditEmployee()
+      public EditEmployee(ICopyFilesService copyFilesService, IEmployeeListService employeeListService, IOpenFileService openFileService)
       {
+         this.copyFilesService = copyFilesService;
+         this.employeeListService = employeeListService;
+         this.openFileService = openFileService;
          InitializeComponent();
       }
       #endregion
@@ -47,7 +51,7 @@ namespace EngineeringManagement.UI.Forms
          CmbEmployeeType.DisplayMember = "Display";
          TxtCurp.CharacterCasing = CharacterCasing.Upper;
 
-         CmbEmployees.DataSource = new EmployeeListService().Get().OrderByDescending(r => r.Id).ToList();
+         CmbEmployees.DataSource = employeeListService.Get().OrderByDescending(r => r.Id).ToList();
          CmbEmployees.ValueMember = nameof(Employee.Id);
          CmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
          CmbEmployees.SelectedIndex = 0;
@@ -227,32 +231,35 @@ namespace EngineeringManagement.UI.Forms
       {
          if (PictureSafeFileName.HasValue())
          {
-            CopyFilesService.Execute(new CopyFilesServiceArgs
+            copyFilesService.Execute(new CopyFilesServiceArgs
             {
                EmployeeName = employee.EmployeeName,
                FileName = PictureFileName,
                SafeFileName = PictureSafeFileName,
-               OriginalFileName = originalPicture
+               OriginalFileName = originalPicture,
+               StartupPath = Application.StartupPath
             });
          }
          if (LabsSafeFileName.HasValue())
          {
-            CopyFilesService.Execute(new CopyFilesServiceArgs
+            copyFilesService.Execute(new CopyFilesServiceArgs
             {
                EmployeeName = employee.EmployeeName,
                FileName = LabsFileName,
                SafeFileName = LabsSafeFileName,
-               OriginalFileName = originalLabs
+               OriginalFileName = originalLabs,
+               StartupPath = Application.StartupPath
             });
          }
          if (SisositSafeFileName.HasValue())
          {
-            CopyFilesService.Execute(new CopyFilesServiceArgs
+            copyFilesService.Execute(new CopyFilesServiceArgs
             {
                EmployeeName = employee.EmployeeName,
                FileName = SisositFileName,
                SafeFileName = SisositSafeFileName,
-               OriginalFileName = originalSisosit
+               OriginalFileName = originalSisosit,
+               StartupPath = Application.StartupPath
             });
          }
       }
@@ -290,7 +297,7 @@ namespace EngineeringManagement.UI.Forms
 
       private void BtnViewSisosit_Click(object sender, EventArgs e) => OpenFile(_employee.SisositFileName);
 
-      private void OpenFile(string fileName) => OpenFileService.Execute(fileName, _employee.EmployeeName);
+      private void OpenFile(string fileName) => openFileService.Execute(fileName, Application.StartupPath, _employee.EmployeeName);
       #endregion
    }
 }

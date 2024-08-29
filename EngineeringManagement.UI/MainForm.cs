@@ -1,4 +1,6 @@
+using System;
 using System.Globalization;
+using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
@@ -143,7 +145,9 @@ namespace EngineeringManagement.UI
 
       private void OpenEditCertificationDialog(EmployeeCertification empCert)
       {
-         var editCertification = serviceProvider.GetRequiredService<EditEmployeeCertification>();
+         var openFileService = serviceProvider.GetRequiredService<IOpenFileService>();
+         var mainForm = serviceProvider.GetRequiredService<MainForm>();
+         using var editCertification = new EditEmployeeCertification(empCert, mainForm, openFileService);
          editCertification.ShowDialog();
          ReloadGrids();
       }
