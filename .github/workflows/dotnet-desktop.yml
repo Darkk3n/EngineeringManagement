@@ -31,9 +31,12 @@ jobs:
       - name: Publish application
         run: dotnet publish --configuration Release --output ./publish_output
 
+      - name: Install 7-Zip
+        run: choco install 7zip
+
       - name: Zip published files
         run: |
-          Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip -CompressionLevel Optimal -Exclude '*.pdb'
+          7z a -tzip ./ControlTotalIngenieria.zip ./publish_output\* -x!*.pdb
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
