@@ -4,16 +4,19 @@ using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EngineeringManagement.UI
 {
    public partial class MainForm : Form
    {
       public bool ShouldRefreshAllEmployees { get; set; }
+      private readonly IServiceProvider serviceProvider;
 
-      public MainForm()
+      public MainForm(IServiceProvider serviceProvider)
       {
          InitializeComponent();
+         this.serviceProvider = serviceProvider;
       }
 
       protected override void OnLoad(EventArgs e)
@@ -76,25 +79,25 @@ namespace EngineeringManagement.UI
 
       private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var addEmp = new AddEmployee();
+         var addEmp = serviceProvider.GetRequiredService<AddEmployee>();
          addEmp.ShowDialog();
       }
 
       private void editarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var editEmp = new EditEmployee();
+         var editEmp = serviceProvider.GetRequiredService<EditEmployee>();
          editEmp.ShowDialog();
       }
 
       private void agregarPlantaToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var addFacility = new AddFacility();
+         var addFacility = serviceProvider.GetRequiredService<AddFacility>();
          addFacility.ShowDialog();
       }
 
       private void editarPlantaToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var editFacility = new EditFacility();
+         var editFacility = serviceProvider.GetRequiredService<EditFacility>();
          editFacility.ShowDialog();
       }
 
@@ -105,19 +108,19 @@ namespace EngineeringManagement.UI
 
       private void agregarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var addCertificacion = new AddCertification();
+         var addCertificacion = serviceProvider.GetRequiredService<AddCertification>();
          addCertificacion.ShowDialog();
       }
 
       private void editarDC3ToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var editCertification = new EditCertification();
+         var editCertification = serviceProvider.GetRequiredService<EditCertification>();
          editCertification.ShowDialog();
       }
 
       private void agregarDC3AEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var addCertToEmployee = new AddEmployeeCertification2(this);
+         var addCertToEmployee = serviceProvider.GetRequiredService<AddEmployeeCertification2>();
          addCertToEmployee.ShowDialog();
          ReloadGrids();
       }
@@ -140,7 +143,7 @@ namespace EngineeringManagement.UI
 
       private void OpenEditCertificationDialog(EmployeeCertification empCert)
       {
-         using var editCertification = new EditEmployeeCertification(this, empCert);
+         var editCertification = serviceProvider.GetRequiredService<EditEmployeeCertification>();
          editCertification.ShowDialog();
          ReloadGrids();
       }
@@ -166,7 +169,7 @@ namespace EngineeringManagement.UI
 
       private void expedientesMedicosToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         using var medFiles = new EmployeeMedFileForm();
+         var medFiles = serviceProvider.GetRequiredService<EmployeeMedFileForm>();
          medFiles.ShowDialog();
       }
    }

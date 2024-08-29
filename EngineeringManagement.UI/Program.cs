@@ -1,6 +1,9 @@
 using System.Windows.Forms.Design;
 using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Core.Services;
+using EngineeringManagement.UI.Forms;
+using EngineeringManagement.UI.Forms.Certifications;
+using EngineeringManagement.UI.Forms.Employees;
 using EngineeringManagement.UI.Forms.ExceptionHandler;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,14 +41,32 @@ namespace EngineeringManagement.UI
 
          // Add the event handler for handling non-UI thread exceptions to the event.
          AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
-         Application.Run(new MainForm());
+         var mainForm = serviceProvider.GetRequiredService<MainForm>();
+         Application.Run(mainForm);
       }
 
       private static void ConfigureServices(IServiceCollection services)
       {
+         #region Forms
+         services.AddTransient<MainForm>();
+         services.AddTransient<AddCertification>();
+         services.AddTransient<AddEmployeeCertification>();
+         services.AddTransient<AddEmployeeCertification2>();
+         services.AddTransient<EditCertification>();
+         services.AddTransient<EditEmployeeCertification>();
+         services.AddTransient<AddEmployee>();
+         services.AddTransient<EditEmployee>();
+         services.AddTransient<EmployeeMedFileForm>();
+         services.AddTransient<ExceptionHandlerForm>();
+         services.AddTransient<AddFacility>();
+         services.AddTransient<EditFacility>(); 
+         #endregion
+
+         #region Services
          services.AddTransient<ICopyFilesService, CopyFilesService>();
          services.AddTransient<IEmployeeListService, EmployeeListService>();
-         services.AddTransient<IOpenFileService, OpenFileService>();
+         services.AddTransient<IOpenFileService, OpenFileService>(); 
+         #endregion
       }
 
       private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
