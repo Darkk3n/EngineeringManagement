@@ -1,4 +1,4 @@
-name: Build and Upload .NET WinForms Application
+name: Build Control Total Ingenieria
 
 on:
   push:
