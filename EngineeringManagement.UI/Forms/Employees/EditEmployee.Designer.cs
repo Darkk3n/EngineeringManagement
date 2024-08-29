@@ -67,90 +67,81 @@
          // 
          CmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
          CmbEmployees.FormattingEnabled = true;
-         CmbEmployees.Location = new Point(1482, 99);
-         CmbEmployees.Margin = new Padding(6);
+         CmbEmployees.Location = new Point(976, 21);
          CmbEmployees.Name = "CmbEmployees";
-         CmbEmployees.Size = new Size(411, 40);
+         CmbEmployees.Size = new Size(223, 23);
          CmbEmployees.TabIndex = 0;
          CmbEmployees.SelectedIndexChanged += CmbEmployees_SelectedIndexChanged;
          // 
          // label1
          // 
          label1.AutoSize = true;
-         label1.Location = new Point(1354, 107);
-         label1.Margin = new Padding(6, 0, 6, 0);
+         label1.Location = new Point(907, 25);
          label1.Name = "label1";
-         label1.Size = new Size(125, 32);
+         label1.Size = new Size(63, 15);
          label1.TabIndex = 1;
          label1.Text = "Empleado:";
          // 
          // label2
          // 
          label2.AutoSize = true;
-         label2.Location = new Point(1371, 186);
-         label2.Margin = new Padding(6, 0, 6, 0);
+         label2.Location = new Point(916, 62);
          label2.Name = "label2";
-         label2.Size = new Size(107, 32);
+         label2.Size = new Size(54, 15);
          label2.TabIndex = 2;
          label2.Text = "Nombre:";
          // 
          // label3
          // 
          label3.AutoSize = true;
-         label3.Location = new Point(1385, 267);
-         label3.Margin = new Padding(6, 0, 6, 0);
+         label3.Location = new Point(924, 100);
          label3.Name = "label3";
-         label3.Size = new Size(91, 32);
+         label3.Size = new Size(46, 15);
          label3.TabIndex = 3;
          label3.Text = "Puesto:";
          // 
          // label4
          // 
          label4.AutoSize = true;
-         label4.Location = new Point(1397, 442);
-         label4.Margin = new Padding(6, 0, 6, 0);
+         label4.Location = new Point(930, 182);
          label4.Name = "label4";
-         label4.Size = new Size(77, 32);
+         label4.Size = new Size(40, 15);
          label4.TabIndex = 4;
          label4.Text = "CURP:";
          // 
          // TxtName
          // 
          TxtName.Enabled = false;
-         TxtName.Location = new Point(1482, 178);
-         TxtName.Margin = new Padding(6);
+         TxtName.Location = new Point(976, 58);
          TxtName.Name = "TxtName";
-         TxtName.Size = new Size(413, 39);
+         TxtName.Size = new Size(224, 23);
          TxtName.TabIndex = 7;
          TxtName.Validating += TxtName_Validating;
          // 
          // TxtPosition
          // 
          TxtPosition.Enabled = false;
-         TxtPosition.Location = new Point(1482, 259);
-         TxtPosition.Margin = new Padding(6);
+         TxtPosition.Location = new Point(976, 96);
          TxtPosition.Name = "TxtPosition";
-         TxtPosition.Size = new Size(413, 39);
+         TxtPosition.Size = new Size(224, 23);
          TxtPosition.TabIndex = 8;
          TxtPosition.Validating += TxtPosition_Validating;
          // 
          // TxtCurp
          // 
          TxtCurp.Enabled = false;
-         TxtCurp.Location = new Point(1482, 434);
-         TxtCurp.Margin = new Padding(6);
+         TxtCurp.Location = new Point(976, 178);
          TxtCurp.Name = "TxtCurp";
-         TxtCurp.Size = new Size(413, 39);
+         TxtCurp.Size = new Size(224, 23);
          TxtCurp.TabIndex = 9;
          TxtCurp.Validating += TxtCurp_Validating;
          // 
          // BtnOk
          // 
          BtnOk.Enabled = false;
-         BtnOk.Location = new Point(1482, 922);
-         BtnOk.Margin = new Padding(6);
+         BtnOk.Location = new Point(976, 407);
          BtnOk.Name = "BtnOk";
-         BtnOk.Size = new Size(139, 49);
+         BtnOk.Size = new Size(75, 23);
          BtnOk.TabIndex = 5;
          BtnOk.Text = "Guardar";
          BtnOk.UseVisualStyleBackColor = true;
@@ -158,10 +149,9 @@
          // 
          // BtnCancel
          // 
-         BtnCancel.Location = new Point(1660, 922);
-         BtnCancel.Margin = new Padding(6);
+         BtnCancel.Location = new Point(1072, 407);
          BtnCancel.Name = "BtnCancel";
-         BtnCancel.Size = new Size(139, 49);
+         BtnCancel.Size = new Size(75, 23);
          BtnCancel.TabIndex = 6;
          BtnCancel.Text = "Cancelar";
          BtnCancel.UseVisualStyleBackColor = true;
@@ -171,40 +161,36 @@
          CmbEmployeeType.DropDownStyle = ComboBoxStyle.DropDownList;
          CmbEmployeeType.Enabled = false;
          CmbEmployeeType.FormattingEnabled = true;
-         CmbEmployeeType.Location = new Point(1482, 512);
-         CmbEmployeeType.Margin = new Padding(6);
+         CmbEmployeeType.Location = new Point(976, 215);
          CmbEmployeeType.Name = "CmbEmployeeType";
-         CmbEmployeeType.Size = new Size(413, 40);
+         CmbEmployeeType.Size = new Size(224, 23);
          CmbEmployeeType.TabIndex = 10;
          CmbEmployeeType.Validating += CmbEmployeeType_Validating;
          // 
          // label5
          // 
          label5.AutoSize = true;
-         label5.Location = new Point(1276, 521);
-         label5.Margin = new Padding(6, 0, 6, 0);
+         label5.Location = new Point(865, 219);
          label5.Name = "label5";
-         label5.Size = new Size(213, 32);
+         label5.Size = new Size(105, 15);
          label5.TabIndex = 11;
          label5.Text = "Tipo de Empleado:";
          // 
          // label6
          // 
          label6.AutoSize = true;
-         label6.Location = new Point(421, 1097);
-         label6.Margin = new Padding(6, 0, 6, 0);
+         label6.Location = new Point(326, 669);
          label6.Name = "label6";
-         label6.Size = new Size(67, 32);
+         label6.Size = new Size(34, 15);
          label6.TabIndex = 12;
          label6.Text = "Foto:";
          // 
          // BtnPicture
          // 
          BtnPicture.Enabled = false;
-         BtnPicture.Location = new Point(495, 1088);
-         BtnPicture.Margin = new Padding(6);
+         BtnPicture.Location = new Point(366, 665);
          BtnPicture.Name = "BtnPicture";
-         BtnPicture.Size = new Size(416, 49);
+         BtnPicture.Size = new Size(224, 23);
          BtnPicture.TabIndex = 13;
          BtnPicture.Text = "Seleccionar Archivo...";
          BtnPicture.UseVisualStyleBackColor = true;
@@ -213,10 +199,9 @@
          // pbEmpPhoto
          // 
          pbEmpPhoto.BorderStyle = BorderStyle.FixedSingle;
-         pbEmpPhoto.Location = new Point(283, 93);
-         pbEmpPhoto.Margin = new Padding(6);
+         pbEmpPhoto.Location = new Point(130, 12);
          pbEmpPhoto.Name = "pbEmpPhoto";
-         pbEmpPhoto.Size = new Size(943, 943);
+         pbEmpPhoto.Size = new Size(639, 632);
          pbEmpPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
          pbEmpPhoto.TabIndex = 14;
          pbEmpPhoto.TabStop = false;
@@ -224,20 +209,18 @@
          // label7
          // 
          label7.AutoSize = true;
-         label7.Location = new Point(1330, 602);
-         label7.Margin = new Padding(6, 0, 6, 0);
+         label7.Location = new Point(894, 257);
          label7.Name = "label7";
-         label7.Size = new Size(150, 32);
+         label7.Size = new Size(76, 15);
          label7.TabIndex = 15;
          label7.Text = "Laboratorios:";
          // 
          // LblLabsFileName
          // 
          LblLabsFileName.AutoSize = true;
-         LblLabsFileName.Location = new Point(1482, 677);
-         LblLabsFileName.Margin = new Padding(6, 0, 6, 0);
+         LblLabsFileName.Location = new Point(976, 292);
          LblLabsFileName.Name = "LblLabsFileName";
-         LblLabsFileName.Size = new Size(338, 32);
+         LblLabsFileName.Size = new Size(170, 15);
          LblLabsFileName.TabIndex = 16;
          LblLabsFileName.Text = "Ningun archivo seleccionado...";
          LblLabsFileName.TextAlign = ContentAlignment.MiddleCenter;
@@ -245,20 +228,18 @@
          // label9
          // 
          label9.AutoSize = true;
-         label9.Location = new Point(1380, 751);
-         label9.Margin = new Padding(6, 0, 6, 0);
+         label9.Location = new Point(921, 327);
          label9.Name = "label9";
-         label9.Size = new Size(101, 32);
+         label9.Size = new Size(49, 15);
          label9.TabIndex = 17;
          label9.Text = "SISOSIT:";
          // 
          // BtnLabsFile
          // 
          BtnLabsFile.Enabled = false;
-         BtnLabsFile.Location = new Point(1482, 594);
-         BtnLabsFile.Margin = new Padding(6);
+         BtnLabsFile.Location = new Point(976, 253);
          BtnLabsFile.Name = "BtnLabsFile";
-         BtnLabsFile.Size = new Size(416, 49);
+         BtnLabsFile.Size = new Size(224, 23);
          BtnLabsFile.TabIndex = 18;
          BtnLabsFile.Text = "Seleccionar Archivo...";
          BtnLabsFile.UseVisualStyleBackColor = true;
@@ -267,10 +248,9 @@
          // BtnSisositFile
          // 
          BtnSisositFile.Enabled = false;
-         BtnSisositFile.Location = new Point(1482, 743);
-         BtnSisositFile.Margin = new Padding(6);
+         BtnSisositFile.Location = new Point(976, 323);
          BtnSisositFile.Name = "BtnSisositFile";
-         BtnSisositFile.Size = new Size(416, 49);
+         BtnSisositFile.Size = new Size(224, 23);
          BtnSisositFile.TabIndex = 19;
          BtnSisositFile.Text = "Seleccionar Archivo..";
          BtnSisositFile.UseVisualStyleBackColor = true;
@@ -279,10 +259,9 @@
          // LblSisositFileName
          // 
          LblSisositFileName.AutoSize = true;
-         LblSisositFileName.Location = new Point(1482, 832);
-         LblSisositFileName.Margin = new Padding(6, 0, 6, 0);
+         LblSisositFileName.Location = new Point(976, 365);
          LblSisositFileName.Name = "LblSisositFileName";
-         LblSisositFileName.Size = new Size(338, 32);
+         LblSisositFileName.Size = new Size(170, 15);
          LblSisositFileName.TabIndex = 20;
          LblSisositFileName.Text = "Ningun archivo seleccionado...";
          LblSisositFileName.TextAlign = ContentAlignment.MiddleCenter;
@@ -291,10 +270,9 @@
          // 
          BtnViewLabs.Enabled = false;
          BtnViewLabs.Image = Properties.Resources.Lupa_Icon__2_;
-         BtnViewLabs.Location = new Point(1909, 594);
-         BtnViewLabs.Margin = new Padding(6);
+         BtnViewLabs.Location = new Point(1206, 253);
          BtnViewLabs.Name = "BtnViewLabs";
-         BtnViewLabs.Size = new Size(78, 53);
+         BtnViewLabs.Size = new Size(42, 25);
          BtnViewLabs.TabIndex = 21;
          BtnViewLabs.UseVisualStyleBackColor = true;
          BtnViewLabs.Click += BtnViewLabs_Click;
@@ -303,10 +281,9 @@
          // 
          BtnViewSisosit.Enabled = false;
          BtnViewSisosit.Image = Properties.Resources.Lupa_Icon__2_;
-         BtnViewSisosit.Location = new Point(1909, 743);
-         BtnViewSisosit.Margin = new Padding(6);
+         BtnViewSisosit.Location = new Point(1206, 323);
          BtnViewSisosit.Name = "BtnViewSisosit";
-         BtnViewSisosit.Size = new Size(78, 53);
+         BtnViewSisosit.Size = new Size(42, 25);
          BtnViewSisosit.TabIndex = 22;
          BtnViewSisosit.UseVisualStyleBackColor = true;
          BtnViewSisosit.Click += BtnViewSisosit_Click;
@@ -334,30 +311,29 @@
          // label8
          // 
          label8.AutoSize = true;
-         label8.Location = new Point(1413, 350);
-         label8.Margin = new Padding(6, 0, 6, 0);
+         label8.Location = new Point(939, 139);
          label8.Name = "label8";
-         label8.Size = new Size(63, 32);
+         label8.Size = new Size(31, 15);
          label8.TabIndex = 23;
          label8.Text = "NSS:";
          // 
          // TxtNss
          // 
-         TxtNss.Location = new Point(1482, 344);
-         TxtNss.Margin = new Padding(6);
+         TxtNss.Enabled = false;
+         TxtNss.Location = new Point(976, 136);
          TxtNss.Mask = "00000000000";
          TxtNss.Name = "TxtNss";
-         TxtNss.Size = new Size(413, 39);
+         TxtNss.Size = new Size(224, 23);
          TxtNss.TabIndex = 24;
          // 
          // EditEmployee
          // 
          AcceptButton = BtnOk;
-         AutoScaleDimensions = new SizeF(13F, 32F);
+         AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
          AutoScroll = true;
          CancelButton = BtnCancel;
-         ClientSize = new Size(2425, 1195);
+         ClientSize = new Size(1479, 718);
          Controls.Add(TxtNss);
          Controls.Add(label8);
          Controls.Add(pbEmpPhoto);
@@ -384,12 +360,11 @@
          Controls.Add(LblLabsFileName);
          Controls.Add(label7);
          Icon = (Icon)resources.GetObject("$this.Icon");
-         Margin = new Padding(6);
-         MaximizeBox = false;
          MinimizeBox = false;
          Name = "EditEmployee";
          StartPosition = FormStartPosition.CenterScreen;
          Text = "Editar Empleado";
+         WindowState = FormWindowState.Maximized;
          ((System.ComponentModel.ISupportInitialize)pbEmpPhoto).EndInit();
          ((System.ComponentModel.ISupportInitialize)errors).EndInit();
          ResumeLayout(false);

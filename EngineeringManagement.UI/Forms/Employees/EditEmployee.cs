@@ -107,6 +107,7 @@ namespace EngineeringManagement.UI.Forms
          BtnLabsFile.Enabled = enable;
          BtnPicture.Enabled = enable;
          BtnSisositFile.Enabled = enable;
+         TxtNss.Enabled = enable;
       }
 
       private void TxtName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
