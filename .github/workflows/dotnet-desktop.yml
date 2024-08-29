@@ -36,7 +36,7 @@ jobs:
           Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip -CompressionLevel Optimal
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ControlTotalIngenieria
           path: ./ControlTotalIngenieria.zip
