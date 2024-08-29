@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch: # Allows the workflow to be triggered manually
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   build:
@@ -31,13 +31,16 @@ jobs:
       - name: Publish application
         run: dotnet publish --configuration Release --output ./publish_output
 
-      # Remove any other zipping or compression commands
       - name: Zip published files
         run: |
-          Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip
+          Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip -CompressionLevel Optimal -Exclude '*.pdb'
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: ControlTotalIngenieria
           path: ./ControlTotalIngenieria.zip
+
+      - name: Clean up
+        run: |
+          Remove-Item -Path ./publish_output -Recurse -Force
