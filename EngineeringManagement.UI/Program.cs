@@ -1,12 +1,14 @@
 using System.Windows.Forms.Design;
 using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Core.Services;
+using EngineeringManagement.Data;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
 using EngineeringManagement.UI.Forms.ExceptionHandler;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using AppContext = EngineeringManagement.Data.AppContext;
 
 namespace EngineeringManagement.UI
 {
@@ -25,8 +27,9 @@ namespace EngineeringManagement.UI
          // To customize application configuration such as set high DPI settings or default font,
          // see https://aka.ms/applicationconfiguration.
          ApplicationConfiguration.Initialize();
-         using (var context = new Data.AppContext())
+         using (var scope = serviceProvider.CreateScope())
          {
+            var context = scope.ServiceProvider.GetRequiredService<Data.AppContext>();
             context.Database.Migrate();
          }
          if (!Directory.Exists(Path.Combine(Application.StartupPath, "Documentos")))
@@ -59,14 +62,16 @@ namespace EngineeringManagement.UI
          services.AddTransient<EmployeeMedFileForm>();
          services.AddTransient<ExceptionHandlerForm>();
          services.AddTransient<AddFacility>();
-         services.AddTransient<EditFacility>(); 
+         services.AddTransient<EditFacility>();
          #endregion
 
          #region Services
          services.AddTransient<ICopyFilesService, CopyFilesService>();
          services.AddTransient<IEmployeeListService, EmployeeListService>();
-         services.AddTransient<IOpenFileService, OpenFileService>(); 
+         services.AddTransient<IOpenFileService, OpenFileService>();
          #endregion
+
+         services.AddDbContext<AppContext>(options => options.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}"));
       }
 
       private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
