@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch: # Allows the workflow to be triggered manually
 
 jobs:
   build:
@@ -31,8 +31,10 @@ jobs:
       - name: Publish application
         run: dotnet publish --configuration Release --output ./publish_output
 
+      # Remove any other zipping or compression commands
       - name: Zip published files
-        run: Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip
+        run: |
+          Compress-Archive -Path ./publish_output/* -DestinationPath ./ControlTotalIngenieria.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
