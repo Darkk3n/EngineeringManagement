@@ -43,7 +43,13 @@
          agregarDC3ToolStripMenuItem = new ToolStripMenuItem();
          editarDC3ToolStripMenuItem = new ToolStripMenuItem();
          agregarDC3AEmpleadoToolStripMenuItem = new ToolStripMenuItem();
+         comboBox1 = new ComboBox();
+         dataGridView1 = new DataGridView();
+         button1 = new Button();
+         button2 = new Button();
+         label1 = new Label();
          menuStrip1.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
          SuspendLayout();
          // 
          // menuStrip1
@@ -146,11 +152,66 @@
          agregarDC3AEmpleadoToolStripMenuItem.Text = "Agregar DC-3 a Empleado";
          agregarDC3AEmpleadoToolStripMenuItem.Click += agregarDC3AEmpleadoToolStripMenuItem_Click;
          // 
+         // comboBox1
+         // 
+         comboBox1.FormattingEnabled = true;
+         comboBox1.Location = new Point(12, 47);
+         comboBox1.Name = "comboBox1";
+         comboBox1.Size = new Size(322, 23);
+         comboBox1.TabIndex = 2;
+         // 
+         // dataGridView1
+         // 
+         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+         dataGridView1.Dock = DockStyle.Bottom;
+         dataGridView1.Location = new Point(0, 77);
+         dataGridView1.Name = "dataGridView1";
+         dataGridView1.Size = new Size(956, 411);
+         dataGridView1.TabIndex = 3;
+         // 
+         // button1
+         // 
+         button1.Image = Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312__1_;
+         button1.ImageAlign = ContentAlignment.MiddleLeft;
+         button1.Location = new Point(365, 27);
+         button1.Name = "button1";
+         button1.Size = new Size(77, 43);
+         button1.TabIndex = 4;
+         button1.Text = "Agregar";
+         button1.TextAlign = ContentAlignment.MiddleRight;
+         button1.UseVisualStyleBackColor = true;
+         // 
+         // button2
+         // 
+         button2.Image = Properties.Resources.vcsconflicting_93497__1_;
+         button2.ImageAlign = ContentAlignment.MiddleLeft;
+         button2.Location = new Point(448, 28);
+         button2.Name = "button2";
+         button2.Size = new Size(77, 43);
+         button2.TabIndex = 5;
+         button2.Text = "Eliminar";
+         button2.TextAlign = ContentAlignment.MiddleRight;
+         button2.UseVisualStyleBackColor = true;
+         // 
+         // label1
+         // 
+         label1.AutoSize = true;
+         label1.Location = new Point(12, 24);
+         label1.Name = "label1";
+         label1.Size = new Size(68, 15);
+         label1.TabIndex = 6;
+         label1.Text = "Empleados:";
+         // 
          // MainForm
          // 
          AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
          ClientSize = new Size(956, 488);
+         Controls.Add(label1);
+         Controls.Add(button2);
+         Controls.Add(button1);
+         Controls.Add(dataGridView1);
+         Controls.Add(comboBox1);
          Controls.Add(menuStrip1);
          FormBorderStyle = FormBorderStyle.FixedSingle;
          Icon = (Icon)resources.GetObject("$this.Icon");
@@ -161,6 +222,7 @@
          WindowState = FormWindowState.Maximized;
          menuStrip1.ResumeLayout(false);
          menuStrip1.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
          ResumeLayout(false);
          PerformLayout();
       }
@@ -180,5 +242,10 @@
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem expedientesMedicosToolStripMenuItem;
-    }
+      private ComboBox comboBox1;
+      private DataGridView dataGridView1;
+      private Button button1;
+      private Button button2;
+      private Label label1;
+   }
 }
