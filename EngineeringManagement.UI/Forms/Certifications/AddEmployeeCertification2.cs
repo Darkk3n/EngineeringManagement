@@ -13,18 +13,20 @@ namespace EngineeringManagement.UI.Forms.Certifications
       private readonly IServiceProvider serviceProvider;
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
+      private readonly Data.AppContext context;
 
       private string FileName { get; set; }
 
       private string SafeFileName { get; set; }
 
-      public AddEmployeeCertification2(IServiceProvider serviceProvider, IEmployeeListService employeeListService, IOpenFileService openFileService)
+      public AddEmployeeCertification2(IServiceProvider serviceProvider, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
       {
          Setup();
          this.serviceProvider = serviceProvider;
          this.mainForm = serviceProvider.GetRequiredService<MainForm>();
          this.employeeListService = employeeListService;
          this.openFileService = openFileService;
+         this.context = context;
          InitializeComponent();
       }
 
@@ -66,21 +68,18 @@ namespace EngineeringManagement.UI.Forms.Certifications
 
       private void LoadEmployeeCertifications(int empId)
       {
-         using (var context = new Data.AppContext())
-         {
-            var assignedCerts = context.EmployeeCertifications
-                .Include(r => r.Certification)
-                .Where(r => r.EmployeeId == empId)
-                .Select(r => r.Certification)
-                .ToList();
-            var unassignedCerts = context.Certifications
-                .Where(r => !assignedCerts.Select(r => r.Id).Contains(r.Id))
-                .ToList();
-            unassignedCerts.Add(new Certification { Id = -10000, CertificationName = "-- SELECCIONE --" });
-            CmbCertifications.DataSource = unassignedCerts.OrderBy(r => r.Id).ToList();
-            CmbCertifications.ValueMember = nameof(Certification.Id);
-            CmbCertifications.DisplayMember = nameof(Certification.CertificationName);
-         }
+         var assignedCerts = context.EmployeeCertifications
+             .Include(r => r.Certification)
+             .Where(r => r.EmployeeId == empId)
+             .Select(r => r.Certification)
+             .ToList();
+         var unassignedCerts = context.Certifications
+             .Where(r => !assignedCerts.Select(r => r.Id).Contains(r.Id))
+             .ToList();
+         unassignedCerts.Add(new Certification { Id = -10000, CertificationName = "-- SELECCIONE --" });
+         CmbCertifications.DataSource = unassignedCerts.OrderBy(r => r.Id).ToList();
+         CmbCertifications.ValueMember = nameof(Certification.Id);
+         CmbCertifications.DisplayMember = nameof(Certification.CertificationName);
       }
 
       private void BtnCancelar_Click(object sender, EventArgs e) => Close();
@@ -99,11 +98,8 @@ namespace EngineeringManagement.UI.Forms.Certifications
          };
          try
          {
-            using (var context = new Data.AppContext())
-            {
-               context.EmployeeCertifications.Add(newEmpCertification);
-               context.SaveChanges();
-            }
+            context.EmployeeCertifications.Add(newEmpCertification);
+            context.SaveChanges();
             if (SafeFileName.HasValue())
             {
                HandleFile(emp.EmployeeName);

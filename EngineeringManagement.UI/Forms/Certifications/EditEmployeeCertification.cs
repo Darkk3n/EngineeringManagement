@@ -11,15 +11,17 @@ namespace EngineeringManagement.UI.Forms.Certifications
       private readonly MainForm mainForm;
       private readonly EmployeeCertification empCert;
       private readonly IOpenFileService openFileService;
+      private readonly Data.AppContext context;
 
       public string FileName { get; set; }
       public string SafeFileName { get; set; }
 
-      public EditEmployeeCertification(EmployeeCertification empCert, MainForm mainForm, IOpenFileService openFileService)
+      public EditEmployeeCertification(EmployeeCertification empCert, MainForm mainForm, IOpenFileService openFileService, Data.AppContext context)
       {
          this.mainForm = mainForm;
          this.empCert = empCert;
          this.openFileService = openFileService;
+         this.context = context;
          InitializeComponent();
       }
 
@@ -52,20 +54,17 @@ namespace EngineeringManagement.UI.Forms.Certifications
       {
          try
          {
-            using (var context = new Data.AppContext())
+            var currentCert = context.EmployeeCertifications
+                .Include(r => r.Employee)
+                .First(r => r.Id == empCert.Id);
+            currentCert.StartDate = dtpStartDate.Value;
+            currentCert.EndDate = dtpEndDate.Value;
+            if (SafeFileName.HasValue())
             {
-               var currentCert = context.EmployeeCertifications
-                   .Include(r => r.Employee)
-                   .First(r => r.Id == empCert.Id);
-               currentCert.StartDate = dtpStartDate.Value;
-               currentCert.EndDate = dtpEndDate.Value;
-               if (SafeFileName.HasValue())
-               {
-                  currentCert.FileName = SafeFileName;
-                  HandleFile(currentCert.Employee.EmployeeName);
-               }
-               context.SaveChanges();
+               currentCert.FileName = SafeFileName;
+               HandleFile(currentCert.Employee.EmployeeName);
             }
+            context.SaveChanges();
          }
          catch (Exception)
          {

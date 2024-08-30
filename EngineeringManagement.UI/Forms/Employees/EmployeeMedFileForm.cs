@@ -11,17 +11,20 @@ namespace EngineeringManagement.UI.Forms.Employees
       #region Properties
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
+      private readonly Data.AppContext context;
+
       private EmployeeMedFile CurrentMedFile { get; set; }
       private Employee SelectedEmployee { get; set; }
       #endregion
 
       #region Constructor
-      public EmployeeMedFileForm(IEmployeeListService employeeListService, IOpenFileService openFileService)
+      public EmployeeMedFileForm(IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
       {
          InitializeComponent();
          Setup();
          this.employeeListService = employeeListService;
          this.openFileService = openFileService;
+         this.context = context;
       }
       #endregion
 
@@ -62,7 +65,6 @@ namespace EngineeringManagement.UI.Forms.Employees
 
       private void LoadEmployee(int employeeId)
       {
-         using var context = new Data.AppContext();
          var medFile = context.EmployeeMedFiles
              .Include(r => r.Employee)
              .FirstOrDefault(r => r.EmployeeId == employeeId);
@@ -88,9 +90,8 @@ namespace EngineeringManagement.UI.Forms.Employees
          LblNss.Text = SelectedEmployee.SocialSecurityNumber.HasValue() ? SelectedEmployee.SocialSecurityNumber : "_";
       }
 
-      private static Employee GetBasicEmployeeData(int employeeId)
+      private Employee GetBasicEmployeeData(int employeeId)
       {
-         using var context = new Data.AppContext();
          var employee = context.Employees.Find(employeeId);
          return employee;
       }
@@ -100,7 +101,6 @@ namespace EngineeringManagement.UI.Forms.Employees
       private void BtnOk_Click(object sender, EventArgs e)
       {
          var empId = (int)CmbEmployees.SelectedValue;
-         using var context = new Data.AppContext();
          if (CurrentMedFile == null)
          {
             var medFile = new EmployeeMedFile

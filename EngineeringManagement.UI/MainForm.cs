@@ -14,11 +14,13 @@ namespace EngineeringManagement.UI
    {
       public bool ShouldRefreshAllEmployees { get; set; }
       private readonly IServiceProvider serviceProvider;
+      private readonly Data.AppContext context;
 
-      public MainForm(IServiceProvider serviceProvider)
+      public MainForm(IServiceProvider serviceProvider, Data.AppContext context)
       {
          InitializeComponent();
          this.serviceProvider = serviceProvider;
+         this.context = context;
       }
 
       protected override void OnLoad(EventArgs e)
@@ -41,31 +43,28 @@ namespace EngineeringManagement.UI
          dgvAllEmployees.DataSource = null;
          dgvExpiringCertEmp.DataSource = null;
          var tenDaysAgo = DateTime.Now.AddDays(-10);
-         using (var context = new Data.AppContext())
-         {
-            var allEmployees = context.EmployeeCertifications
-                            .Include(r => r.Employee)
-                            .Include(r => r.Certification)
-                            .OrderByDescending(r => r.EmployeeId)
-                            .Select(r => new
-                            {
-                               EmployeeCertId = r.Id,
-                               r.Employee.EmployeeName,
-                               r.Certification.CertificationName,
-                               StarDate = r.StartDate.Value.Date,
-                               EndDate = r.EndDate.Value.Date,
-                               StartDateStr = r.StartDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
-                               EndDateStr = r.EndDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
-                            });
-            var soonToExpire = allEmployees.Where(r =>
-                r.EndDate >= tenDaysAgo
-                && r.EndDate <= DateTime.Now)
-                .ToList();
-            dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
-            dgvAllEmployees.DataSource = allEmployees.ToList();
-            FormatColumnHeaders(dgvAllEmployees);
-            FormatColumnHeaders(dgvExpiringCertEmp);
-         }
+         var allEmployees = context.EmployeeCertifications
+                         .Include(r => r.Employee)
+                         .Include(r => r.Certification)
+                         .OrderByDescending(r => r.EmployeeId)
+                         .Select(r => new
+                         {
+                            EmployeeCertId = r.Id,
+                            r.Employee.EmployeeName,
+                            r.Certification.CertificationName,
+                            StarDate = r.StartDate.Value.Date,
+                            EndDate = r.EndDate.Value.Date,
+                            StartDateStr = r.StartDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
+                            EndDateStr = r.EndDate.Value.Date.ToString("dd/MM/yyyy", new CultureInfo("es-MX")),
+                         });
+         var soonToExpire = allEmployees.Where(r =>
+             r.EndDate >= tenDaysAgo
+             && r.EndDate <= DateTime.Now)
+             .ToList();
+         dgvExpiringCertEmp.DataSource = soonToExpire.OrderBy(r => r.EndDate).ToList();
+         dgvAllEmployees.DataSource = allEmployees.ToList();
+         FormatColumnHeaders(dgvAllEmployees);
+         FormatColumnHeaders(dgvExpiringCertEmp);
       }
 
       private static void FormatColumnHeaders(DataGridView gridView)
@@ -147,7 +146,7 @@ namespace EngineeringManagement.UI
       {
          var openFileService = serviceProvider.GetRequiredService<IOpenFileService>();
          var mainForm = serviceProvider.GetRequiredService<MainForm>();
-         using var editCertification = new EditEmployeeCertification(empCert, mainForm, openFileService);
+         using var editCertification = new EditEmployeeCertification(empCert, mainForm, openFileService, context);
          editCertification.ShowDialog();
          ReloadGrids();
       }
@@ -160,10 +159,9 @@ namespace EngineeringManagement.UI
          }
       }
 
-      private static EmployeeCertification GetCertificationFromGrid(DataGridView dataGridView, int rowIndex)
+      private EmployeeCertification GetCertificationFromGrid(DataGridView dataGridView, int rowIndex)
       {
          var empCertificationId = (int)dataGridView.Rows[rowIndex].Cells[0].Value;
-         using var context = new Data.AppContext();
          var empCert = context.EmployeeCertifications
              .Include(r => r.Certification)
              .Include(r => r.Employee)

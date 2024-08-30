@@ -17,12 +17,14 @@ namespace EngineeringManagement.UI.Forms
       private string PictureFileName { get; set; }
       private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
       private readonly ICopyFilesService copyFilesService;
+      private readonly Data.AppContext context;
       #endregion
 
       #region Constructor
-      public AddEmployee(ICopyFilesService copyFilesService)
+      public AddEmployee(ICopyFilesService copyFilesService, Data.AppContext context)
       {
          this.copyFilesService = copyFilesService;
+         this.context = context;
          InitializeComponent();
       }
       #endregion
@@ -65,7 +67,6 @@ namespace EngineeringManagement.UI.Forms
          };
          try
          {
-            using var context = new Data.AppContext();
             context.Employees.Add(newEmp);
             context.SaveChanges();
             HandleFiles(newEmp);
@@ -81,22 +82,19 @@ namespace EngineeringManagement.UI.Forms
          }
       }
 
-      private static bool ValidateUniqueEmployee(string employeeName)
+      private bool ValidateUniqueEmployee(string employeeName)
       {
-         using (var context = new Data.AppContext())
+         var employee = context.Employees.FirstOrDefault(r => r.EmployeeName.Equals(employeeName, StringComparison.CurrentCultureIgnoreCase));
+         if (employee != null)
          {
-            var employee = context.Employees.FirstOrDefault(r => r.EmployeeName.ToLower() == employeeName.ToLower());
-            if (employee != null)
-            {
-               MessageBox.Show($"Ya se cuenta con un registro para el Empleado: {employeeName}.", "Agregar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               return false;
-            }
+            MessageBox.Show($"Ya se cuenta con un registro para el Empleado: {employeeName}.", "Agregar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
          }
          return true;
       }
 
       private void HandleFiles(Employee newEmp)
-      {         
+      {
          if (PictureSafeFileName.HasValue())
          {
             copyFilesService.Execute(new CopyFilesServiceArgs

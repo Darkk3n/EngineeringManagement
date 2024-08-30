@@ -6,15 +6,15 @@ namespace EngineeringManagement.UI.Forms
 {
    public partial class AddFacility : Form
    {
-      public AddFacility()
+      private readonly Data.AppContext context;
+
+      public AddFacility(Data.AppContext context)
       {
          InitializeComponent();
+         this.context = context;
       }
 
-      private void BtnCancelar_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
+      private void BtnCancelar_Click(object sender, EventArgs e) => Close();
 
       private void BtnOk_Click(object sender, EventArgs e)
       {
@@ -22,37 +22,24 @@ namespace EngineeringManagement.UI.Forms
          {
             FacilityName = TxtFacilityName.Text
          };
-         using (var context = new Data.AppContext())
+         if (context.Facilities.Any(r => r.FacilityName.ToLower() == TxtFacilityName.Text.ToLower()))
          {
-            if (context.Facilities.Any(r => r.FacilityName.ToLower() == TxtFacilityName.Text.ToLower()))
-            {
-               MessageBox.Show($"La planta {TxtFacilityName.Text} ya existe.", "Agregar Planta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               return;
-            }
-            try
-            {
-               context.Facilities.Add(newFacility);
-               context.SaveChanges();
-               MessageBox.Show("Guardado con exito.", "Agregar Planta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               this.Close();
-            }
-            catch (Exception)
-            {
-               throw;
-            }
+            MessageBox.Show($"La planta {TxtFacilityName.Text} ya existe.", "Agregar Planta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+         }
+         try
+         {
+            context.Facilities.Add(newFacility);
+            context.SaveChanges();
+            MessageBox.Show("Guardado con exito.", "Agregar Planta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+         }
+         catch (Exception)
+         {
+            throw;
          }
       }
 
-      private void TxtFacilityName_TextChanged(object sender, EventArgs e)
-      {
-         if (((TextBox)sender).Text.HasValue())
-         {
-            BtnOk.Enabled = true;
-         }
-         else
-         {
-            BtnOk.Enabled = false;
-         }
-      }
+      private void TxtFacilityName_TextChanged(object sender, EventArgs e) => BtnOk.Enabled = ((TextBox)sender).Text.HasValue();
    }
 }

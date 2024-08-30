@@ -22,14 +22,16 @@ namespace EngineeringManagement.UI.Forms
       private readonly ICopyFilesService copyFilesService;
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
+      private readonly Data.AppContext context;
       #endregion
 
       #region Constructor
-      public EditEmployee(ICopyFilesService copyFilesService, IEmployeeListService employeeListService, IOpenFileService openFileService)
+      public EditEmployee(ICopyFilesService copyFilesService, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
       {
          this.copyFilesService = copyFilesService;
          this.employeeListService = employeeListService;
          this.openFileService = openFileService;
+         this.context = context;
          InitializeComponent();
       }
       #endregion
@@ -164,34 +166,31 @@ namespace EngineeringManagement.UI.Forms
          var employeeId = (int)CmbEmployees.SelectedValue;
          try
          {
-            using (var context = new Data.AppContext())
+            var employee = context.Employees.Find(employeeId);
+            var originalPicture = employee.PictureFileName;
+            var originalLabs = employee.LabsFileName;
+            var originalSisosit = employee.SisositFileName;
+            var originalEmployeeName = employee.EmployeeName;
+            employee.EmployeeName = TxtName.Text.Trim();
+            employee.Curp = TxtCurp.Text.Trim();
+            employee.SocialSecurityNumber = TxtNss.Text.Trim();
+            employee.Position = TxtPosition.Text.Trim();
+            employee.EmployeeType = (EmployeeType)CmbEmployeeType.SelectedIndex;
+            if (PictureSafeFileName.HasValue())
             {
-               var employee = context.Employees.Find(employeeId);
-               var originalPicture = employee.PictureFileName;
-               var originalLabs = employee.LabsFileName;
-               var originalSisosit = employee.SisositFileName;
-               var originalEmployeeName = employee.EmployeeName;
-               employee.EmployeeName = TxtName.Text.Trim();
-               employee.Curp = TxtCurp.Text.Trim();
-               employee.SocialSecurityNumber = TxtNss.Text.Trim();
-               employee.Position = TxtPosition.Text.Trim();
-               employee.EmployeeType = (EmployeeType)CmbEmployeeType.SelectedIndex;
-               if (PictureSafeFileName.HasValue())
-               {
-                  employee.PictureFileName = PictureSafeFileName;
-               }
-               if (LabsSafeFileName.HasValue())
-               {
-                  employee.LabsFileName = LabsSafeFileName;
-               }
-               if (SisositSafeFileName.HasValue())
-               {
-                  employee.SisositFileName = SisositSafeFileName;
-               }
-               context.SaveChanges();
-               RelocateFilesIfNecessary(originalEmployeeName, employee);
-               HandleFiles(employee, originalPicture, originalLabs, originalSisosit);
+               employee.PictureFileName = PictureSafeFileName;
             }
+            if (LabsSafeFileName.HasValue())
+            {
+               employee.LabsFileName = LabsSafeFileName;
+            }
+            if (SisositSafeFileName.HasValue())
+            {
+               employee.SisositFileName = SisositSafeFileName;
+            }
+            context.SaveChanges();
+            RelocateFilesIfNecessary(originalEmployeeName, employee);
+            HandleFiles(employee, originalPicture, originalLabs, originalSisosit);
          }
          catch (Exception)
          {
