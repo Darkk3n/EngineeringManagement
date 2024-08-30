@@ -16,6 +16,7 @@ namespace EngineeringManagement.Data
       }
 
       public DbSet<Employee> Employees { get; set; }
+      public DbSet<GeneralEmployee> GeneralEmployees { get; set; }
       public DbSet<Facility> Facilities { get; set; }
       public DbSet<Certification> Certifications { get; set; }
       public DbSet<EmployeeCertification> EmployeeCertifications { get; set; }
