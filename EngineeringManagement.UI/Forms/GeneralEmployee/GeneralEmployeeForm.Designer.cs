@@ -58,23 +58,23 @@
          txtRelationship = new TextBox();
          label15 = new Label();
          label16 = new Label();
-         comboBox1 = new ComboBox();
-         textBox1 = new TextBox();
-         textBox2 = new TextBox();
-         maskedTextBox1 = new MaskedTextBox();
-         textBox3 = new TextBox();
-         comboBox2 = new ComboBox();
+         cmbMaritalStatus = new ComboBox();
+         txtCurp = new TextBox();
+         txtRfc = new TextBox();
+         txtSocialSecutiry = new MaskedTextBox();
+         txtEmail = new TextBox();
+         cmbBloodType = new ComboBox();
          checkBox1 = new CheckBox();
-         checkBox2 = new CheckBox();
-         checkBox3 = new CheckBox();
-         checkBox4 = new CheckBox();
-         checkBox5 = new CheckBox();
-         checkBox6 = new CheckBox();
-         checkBox7 = new CheckBox();
-         checkBox8 = new CheckBox();
-         checkBox9 = new CheckBox();
-         checkBox10 = new CheckBox();
-         checkBox11 = new CheckBox();
+         chkBirthCertificate = new CheckBox();
+         chkRfc = new CheckBox();
+         chkCurp = new CheckBox();
+         chkVotingCard = new CheckBox();
+         chkPictures = new CheckBox();
+         chkSocialSecurity = new CheckBox();
+         chkInfonavit = new CheckBox();
+         chkDriverLicense = new CheckBox();
+         chkRecommendationLetters = new CheckBox();
+         chkBankStatus = new CheckBox();
          tabPage3 = new TabPage();
          ((System.ComponentModel.ISupportInitialize)pbEmployee).BeginInit();
          tabControl1.SuspendLayout();
@@ -220,23 +220,23 @@
          // 
          // tabPage1
          // 
-         tabPage1.Controls.Add(checkBox11);
-         tabPage1.Controls.Add(checkBox10);
-         tabPage1.Controls.Add(checkBox9);
-         tabPage1.Controls.Add(checkBox8);
-         tabPage1.Controls.Add(checkBox7);
-         tabPage1.Controls.Add(checkBox6);
-         tabPage1.Controls.Add(checkBox5);
-         tabPage1.Controls.Add(checkBox4);
-         tabPage1.Controls.Add(checkBox3);
-         tabPage1.Controls.Add(checkBox2);
+         tabPage1.Controls.Add(chkBankStatus);
+         tabPage1.Controls.Add(chkRecommendationLetters);
+         tabPage1.Controls.Add(chkDriverLicense);
+         tabPage1.Controls.Add(chkInfonavit);
+         tabPage1.Controls.Add(chkSocialSecurity);
+         tabPage1.Controls.Add(chkPictures);
+         tabPage1.Controls.Add(chkVotingCard);
+         tabPage1.Controls.Add(chkCurp);
+         tabPage1.Controls.Add(chkRfc);
+         tabPage1.Controls.Add(chkBirthCertificate);
          tabPage1.Controls.Add(checkBox1);
-         tabPage1.Controls.Add(comboBox2);
-         tabPage1.Controls.Add(textBox3);
-         tabPage1.Controls.Add(maskedTextBox1);
-         tabPage1.Controls.Add(textBox2);
-         tabPage1.Controls.Add(textBox1);
-         tabPage1.Controls.Add(comboBox1);
+         tabPage1.Controls.Add(cmbBloodType);
+         tabPage1.Controls.Add(txtEmail);
+         tabPage1.Controls.Add(txtSocialSecutiry);
+         tabPage1.Controls.Add(txtRfc);
+         tabPage1.Controls.Add(txtCurp);
+         tabPage1.Controls.Add(cmbMaritalStatus);
          tabPage1.Controls.Add(label16);
          tabPage1.Controls.Add(label15);
          tabPage1.Controls.Add(label9);
@@ -359,54 +359,54 @@
          label16.TabIndex = 11;
          label16.Text = "Tipo de Sangre:";
          // 
-         // comboBox1
+         // cmbMaritalStatus
          // 
-         comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-         comboBox1.FormattingEnabled = true;
-         comboBox1.Items.AddRange(new object[] { "--SELECCIONE--", "Soltero", "Casado", "Divorciado", "Viudo" });
-         comboBox1.Location = new Point(298, 35);
-         comboBox1.Name = "comboBox1";
-         comboBox1.Size = new Size(154, 23);
-         comboBox1.TabIndex = 12;
+         cmbMaritalStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+         cmbMaritalStatus.FormattingEnabled = true;
+         cmbMaritalStatus.Items.AddRange(new object[] { "--SELECCIONE--", "Soltero", "Casado", "Divorciado", "Viudo" });
+         cmbMaritalStatus.Location = new Point(298, 35);
+         cmbMaritalStatus.Name = "cmbMaritalStatus";
+         cmbMaritalStatus.Size = new Size(154, 23);
+         cmbMaritalStatus.TabIndex = 12;
          // 
-         // textBox1
+         // txtCurp
          // 
-         textBox1.Location = new Point(6, 35);
-         textBox1.Name = "textBox1";
-         textBox1.Size = new Size(190, 23);
-         textBox1.TabIndex = 13;
+         txtCurp.Location = new Point(6, 35);
+         txtCurp.Name = "txtCurp";
+         txtCurp.Size = new Size(190, 23);
+         txtCurp.TabIndex = 13;
          // 
-         // textBox2
+         // txtRfc
          // 
-         textBox2.Location = new Point(6, 92);
-         textBox2.Name = "textBox2";
-         textBox2.Size = new Size(190, 23);
-         textBox2.TabIndex = 14;
+         txtRfc.Location = new Point(6, 92);
+         txtRfc.Name = "txtRfc";
+         txtRfc.Size = new Size(190, 23);
+         txtRfc.TabIndex = 14;
          // 
-         // maskedTextBox1
+         // txtSocialSecutiry
          // 
-         maskedTextBox1.Location = new Point(6, 155);
-         maskedTextBox1.Mask = "00000000000";
-         maskedTextBox1.Name = "maskedTextBox1";
-         maskedTextBox1.Size = new Size(190, 23);
-         maskedTextBox1.TabIndex = 15;
+         txtSocialSecutiry.Location = new Point(6, 155);
+         txtSocialSecutiry.Mask = "00000000000";
+         txtSocialSecutiry.Name = "txtSocialSecutiry";
+         txtSocialSecutiry.Size = new Size(190, 23);
+         txtSocialSecutiry.TabIndex = 15;
          // 
-         // textBox3
+         // txtEmail
          // 
-         textBox3.Location = new Point(6, 222);
-         textBox3.Name = "textBox3";
-         textBox3.Size = new Size(190, 23);
-         textBox3.TabIndex = 16;
+         txtEmail.Location = new Point(6, 222);
+         txtEmail.Name = "txtEmail";
+         txtEmail.Size = new Size(190, 23);
+         txtEmail.TabIndex = 16;
          // 
-         // comboBox2
+         // cmbBloodType
          // 
-         comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-         comboBox2.FormattingEnabled = true;
-         comboBox2.Items.AddRange(new object[] { "A+", "A-", "O+", "O-", "AB+", "AB-", "RH+", "RH-" });
-         comboBox2.Location = new Point(6, 282);
-         comboBox2.Name = "comboBox2";
-         comboBox2.Size = new Size(190, 23);
-         comboBox2.TabIndex = 17;
+         cmbBloodType.DropDownStyle = ComboBoxStyle.DropDownList;
+         cmbBloodType.FormattingEnabled = true;
+         cmbBloodType.Items.AddRange(new object[] { "A+", "A-", "O+", "O-", "AB+", "AB-", "RH+", "RH-" });
+         cmbBloodType.Location = new Point(6, 282);
+         cmbBloodType.Name = "cmbBloodType";
+         cmbBloodType.Size = new Size(190, 23);
+         cmbBloodType.TabIndex = 17;
          // 
          // checkBox1
          // 
@@ -418,105 +418,105 @@
          checkBox1.Text = "Comprobante de Estudios";
          checkBox1.UseVisualStyleBackColor = true;
          // 
-         // checkBox2
+         // chkBirthCertificate
          // 
-         checkBox2.AutoSize = true;
-         checkBox2.Location = new Point(296, 155);
-         checkBox2.Name = "checkBox2";
-         checkBox2.Size = new Size(131, 19);
-         checkBox2.TabIndex = 19;
-         checkBox2.Text = "Acta de Nacimiento";
-         checkBox2.UseVisualStyleBackColor = true;
+         chkBirthCertificate.AutoSize = true;
+         chkBirthCertificate.Location = new Point(296, 155);
+         chkBirthCertificate.Name = "chkBirthCertificate";
+         chkBirthCertificate.Size = new Size(131, 19);
+         chkBirthCertificate.TabIndex = 19;
+         chkBirthCertificate.Text = "Acta de Nacimiento";
+         chkBirthCertificate.UseVisualStyleBackColor = true;
          // 
-         // checkBox3
+         // chkRfc
          // 
-         checkBox3.AutoSize = true;
-         checkBox3.Location = new Point(296, 180);
-         checkBox3.Name = "checkBox3";
-         checkBox3.Size = new Size(217, 19);
-         checkBox3.TabIndex = 20;
-         checkBox3.Text = "Constancia de Situacion Fiscal (RFC)";
-         checkBox3.UseVisualStyleBackColor = true;
+         chkRfc.AutoSize = true;
+         chkRfc.Location = new Point(296, 180);
+         chkRfc.Name = "chkRfc";
+         chkRfc.Size = new Size(217, 19);
+         chkRfc.TabIndex = 20;
+         chkRfc.Text = "Constancia de Situacion Fiscal (RFC)";
+         chkRfc.UseVisualStyleBackColor = true;
          // 
-         // checkBox4
+         // chkCurp
          // 
-         checkBox4.AutoSize = true;
-         checkBox4.Location = new Point(296, 206);
-         checkBox4.Name = "checkBox4";
-         checkBox4.Size = new Size(56, 19);
-         checkBox4.TabIndex = 21;
-         checkBox4.Text = "CURP";
-         checkBox4.UseVisualStyleBackColor = true;
+         chkCurp.AutoSize = true;
+         chkCurp.Location = new Point(296, 206);
+         chkCurp.Name = "chkCurp";
+         chkCurp.Size = new Size(56, 19);
+         chkCurp.TabIndex = 21;
+         chkCurp.Text = "CURP";
+         chkCurp.UseVisualStyleBackColor = true;
          // 
-         // checkBox5
+         // chkVotingCard
          // 
-         checkBox5.AutoSize = true;
-         checkBox5.Location = new Point(296, 231);
-         checkBox5.Name = "checkBox5";
-         checkBox5.Size = new Size(44, 19);
-         checkBox5.TabIndex = 22;
-         checkBox5.Text = "INE";
-         checkBox5.UseVisualStyleBackColor = true;
+         chkVotingCard.AutoSize = true;
+         chkVotingCard.Location = new Point(296, 231);
+         chkVotingCard.Name = "chkVotingCard";
+         chkVotingCard.Size = new Size(44, 19);
+         chkVotingCard.TabIndex = 22;
+         chkVotingCard.Text = "INE";
+         chkVotingCard.UseVisualStyleBackColor = true;
          // 
-         // checkBox6
+         // chkPictures
          // 
-         checkBox6.AutoSize = true;
-         checkBox6.Location = new Point(518, 231);
-         checkBox6.Name = "checkBox6";
-         checkBox6.Size = new Size(94, 19);
-         checkBox6.TabIndex = 23;
-         checkBox6.Text = "2 Fotografias";
-         checkBox6.UseVisualStyleBackColor = true;
+         chkPictures.AutoSize = true;
+         chkPictures.Location = new Point(518, 231);
+         chkPictures.Name = "chkPictures";
+         chkPictures.Size = new Size(94, 19);
+         chkPictures.TabIndex = 23;
+         chkPictures.Text = "2 Fotografias";
+         chkPictures.UseVisualStyleBackColor = true;
          // 
-         // checkBox7
+         // chkSocialSecurity
          // 
-         checkBox7.AutoSize = true;
-         checkBox7.Location = new Point(296, 256);
-         checkBox7.Name = "checkBox7";
-         checkBox7.Size = new Size(47, 19);
-         checkBox7.TabIndex = 24;
-         checkBox7.Text = "NSS";
-         checkBox7.UseVisualStyleBackColor = true;
+         chkSocialSecurity.AutoSize = true;
+         chkSocialSecurity.Location = new Point(296, 256);
+         chkSocialSecurity.Name = "chkSocialSecurity";
+         chkSocialSecurity.Size = new Size(47, 19);
+         chkSocialSecurity.TabIndex = 24;
+         chkSocialSecurity.Text = "NSS";
+         chkSocialSecurity.UseVisualStyleBackColor = true;
          // 
-         // checkBox8
+         // chkInfonavit
          // 
-         checkBox8.AutoSize = true;
-         checkBox8.Location = new Point(518, 155);
-         checkBox8.Name = "checkBox8";
-         checkBox8.Size = new Size(85, 19);
-         checkBox8.TabIndex = 25;
-         checkBox8.Text = "INFONAVIT";
-         checkBox8.UseVisualStyleBackColor = true;
+         chkInfonavit.AutoSize = true;
+         chkInfonavit.Location = new Point(518, 155);
+         chkInfonavit.Name = "chkInfonavit";
+         chkInfonavit.Size = new Size(85, 19);
+         chkInfonavit.TabIndex = 25;
+         chkInfonavit.Text = "INFONAVIT";
+         chkInfonavit.UseVisualStyleBackColor = true;
          // 
-         // checkBox9
+         // chkDriverLicense
          // 
-         checkBox9.AutoSize = true;
-         checkBox9.Location = new Point(518, 180);
-         checkBox9.Name = "checkBox9";
-         checkBox9.Size = new Size(128, 19);
-         checkBox9.TabIndex = 26;
-         checkBox9.Text = "Licencia de Manejo";
-         checkBox9.UseVisualStyleBackColor = true;
+         chkDriverLicense.AutoSize = true;
+         chkDriverLicense.Location = new Point(518, 180);
+         chkDriverLicense.Name = "chkDriverLicense";
+         chkDriverLicense.Size = new Size(128, 19);
+         chkDriverLicense.TabIndex = 26;
+         chkDriverLicense.Text = "Licencia de Manejo";
+         chkDriverLicense.UseVisualStyleBackColor = true;
          // 
-         // checkBox10
+         // chkRecommendationLetters
          // 
-         checkBox10.AutoSize = true;
-         checkBox10.Location = new Point(518, 206);
-         checkBox10.Name = "checkBox10";
-         checkBox10.Size = new Size(168, 19);
-         checkBox10.TabIndex = 27;
-         checkBox10.Text = "2 Carta de Recomendacion";
-         checkBox10.UseVisualStyleBackColor = true;
+         chkRecommendationLetters.AutoSize = true;
+         chkRecommendationLetters.Location = new Point(518, 206);
+         chkRecommendationLetters.Name = "chkRecommendationLetters";
+         chkRecommendationLetters.Size = new Size(168, 19);
+         chkRecommendationLetters.TabIndex = 27;
+         chkRecommendationLetters.Text = "2 Carta de Recomendacion";
+         chkRecommendationLetters.UseVisualStyleBackColor = true;
          // 
-         // checkBox11
+         // chkBankStatus
          // 
-         checkBox11.AutoSize = true;
-         checkBox11.Location = new Point(518, 256);
-         checkBox11.Name = "checkBox11";
-         checkBox11.Size = new Size(118, 19);
-         checkBox11.TabIndex = 28;
-         checkBox11.Text = "Estado de Cuenta";
-         checkBox11.UseVisualStyleBackColor = true;
+         chkBankStatus.AutoSize = true;
+         chkBankStatus.Location = new Point(518, 256);
+         chkBankStatus.Name = "chkBankStatus";
+         chkBankStatus.Size = new Size(118, 19);
+         chkBankStatus.TabIndex = 28;
+         chkBankStatus.Text = "Estado de Cuenta";
+         chkBankStatus.UseVisualStyleBackColor = true;
          // 
          // tabPage3
          // 
@@ -595,25 +595,25 @@
       private MaskedTextBox txtEmergencyPhone;
       private TextBox txtEmergencyContactName;
       private TextBox txtRelationship;
-      private ComboBox comboBox1;
+      private ComboBox cmbMaritalStatus;
       private Label label16;
       private Label label15;
-      private TextBox textBox2;
-      private TextBox textBox1;
-      private CheckBox checkBox10;
-      private CheckBox checkBox9;
-      private CheckBox checkBox8;
-      private CheckBox checkBox7;
-      private CheckBox checkBox6;
-      private CheckBox checkBox5;
-      private CheckBox checkBox4;
-      private CheckBox checkBox3;
-      private CheckBox checkBox2;
+      private TextBox txtRfc;
+      private TextBox txtCurp;
+      private CheckBox chkRecommendationLetters;
+      private CheckBox chkDriverLicense;
+      private CheckBox chkInfonavit;
+      private CheckBox chkSocialSecurity;
+      private CheckBox chkPictures;
+      private CheckBox chkVotingCard;
+      private CheckBox chkCurp;
+      private CheckBox chkRfc;
+      private CheckBox chkBirthCertificate;
       private CheckBox checkBox1;
-      private ComboBox comboBox2;
-      private TextBox textBox3;
-      private MaskedTextBox maskedTextBox1;
-      private CheckBox checkBox11;
+      private ComboBox cmbBloodType;
+      private TextBox txtEmail;
+      private MaskedTextBox txtSocialSecutiry;
+      private CheckBox chkBankStatus;
       private TabPage tabPage3;
    }
 }
