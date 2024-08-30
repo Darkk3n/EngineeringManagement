@@ -1,5 +1,4 @@
-﻿using EngineeringManagement.Data;
-using EngineeringManagement.Data.Models;
+﻿using EngineeringManagement.Data.Models;
 
 namespace EngineeringManagement.UI.Forms
 {
@@ -67,8 +66,8 @@ namespace EngineeringManagement.UI.Forms
          }
          finally
          {
-            MessageBox.Show("Actualizado con exito.", "Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            MessageBox.Show("Actualizado con exito.", "Editar Plantas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
          }
       }
    }
