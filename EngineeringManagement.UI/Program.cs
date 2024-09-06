@@ -6,6 +6,7 @@ using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
 using EngineeringManagement.UI.Forms.ExceptionHandler;
+using EngineeringManagement.UI.Forms.GeneralEmployee;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using AppContext = EngineeringManagement.Data.AppContext;
@@ -63,6 +64,7 @@ namespace EngineeringManagement.UI
          services.AddTransient<ExceptionHandlerForm>();
          services.AddTransient<AddFacility>();
          services.AddTransient<EditFacility>();
+         services.AddTransient<GeneralEmployeeForm>();
          #endregion
 
          #region Services

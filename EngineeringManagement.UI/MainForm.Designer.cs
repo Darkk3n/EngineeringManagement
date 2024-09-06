@@ -45,8 +45,8 @@
          agregarDC3AEmpleadoToolStripMenuItem = new ToolStripMenuItem();
          cmbEmployees = new ComboBox();
          dgvEmployeeList = new DataGridView();
-         button1 = new Button();
-         button2 = new Button();
+         btnAdd = new Button();
+         btnDelete = new Button();
          label1 = new Label();
          splitContainer1 = new SplitContainer();
          menuStrip1.SuspendLayout();
@@ -177,29 +177,30 @@
          dgvEmployeeList.Size = new Size(956, 550);
          dgvEmployeeList.TabIndex = 3;
          // 
-         // button1
+         // btnAdd
          // 
-         button1.Image = Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312__1_;
-         button1.ImageAlign = ContentAlignment.MiddleLeft;
-         button1.Location = new Point(365, 19);
-         button1.Name = "button1";
-         button1.Size = new Size(77, 43);
-         button1.TabIndex = 4;
-         button1.Text = "Agregar";
-         button1.TextAlign = ContentAlignment.MiddleRight;
-         button1.UseVisualStyleBackColor = true;
+         btnAdd.Image = Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312__1_;
+         btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
+         btnAdd.Location = new Point(365, 19);
+         btnAdd.Name = "btnAdd";
+         btnAdd.Size = new Size(77, 43);
+         btnAdd.TabIndex = 4;
+         btnAdd.Text = "Agregar";
+         btnAdd.TextAlign = ContentAlignment.MiddleRight;
+         btnAdd.UseVisualStyleBackColor = true;
+         btnAdd.Click += btnAdd_Click;
          // 
-         // button2
+         // btnDelete
          // 
-         button2.Image = Properties.Resources.vcsconflicting_93497__1_;
-         button2.ImageAlign = ContentAlignment.MiddleLeft;
-         button2.Location = new Point(448, 20);
-         button2.Name = "button2";
-         button2.Size = new Size(77, 43);
-         button2.TabIndex = 5;
-         button2.Text = "Eliminar";
-         button2.TextAlign = ContentAlignment.MiddleRight;
-         button2.UseVisualStyleBackColor = true;
+         btnDelete.Image = Properties.Resources.vcsconflicting_93497__1_;
+         btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
+         btnDelete.Location = new Point(448, 20);
+         btnDelete.Name = "btnDelete";
+         btnDelete.Size = new Size(77, 43);
+         btnDelete.TabIndex = 5;
+         btnDelete.Text = "Eliminar";
+         btnDelete.TextAlign = ContentAlignment.MiddleRight;
+         btnDelete.UseVisualStyleBackColor = true;
          // 
          // label1
          // 
@@ -221,8 +222,8 @@
          // 
          splitContainer1.Panel1.Controls.Add(cmbEmployees);
          splitContainer1.Panel1.Controls.Add(label1);
-         splitContainer1.Panel1.Controls.Add(button1);
-         splitContainer1.Panel1.Controls.Add(button2);
+         splitContainer1.Panel1.Controls.Add(btnAdd);
+         splitContainer1.Panel1.Controls.Add(btnDelete);
          // 
          // splitContainer1.Panel2
          // 
@@ -274,8 +275,8 @@
         private ToolStripMenuItem expedientesMedicosToolStripMenuItem;
       private ComboBox cmbEmployees;
       private DataGridView dgvEmployeeList;
-      private Button button1;
-      private Button button2;
+      private Button btnAdd;
+      private Button btnDelete;
       private Label label1;
       private SplitContainer splitContainer1;
    }

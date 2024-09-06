@@ -2,6 +2,7 @@ using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
+using EngineeringManagement.UI.Forms.GeneralEmployee;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EngineeringManagement.UI
@@ -36,7 +37,7 @@ namespace EngineeringManagement.UI
          //FormatColumnHeaders(dgvAllEmployees);
          //dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
          //tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy", new CultureInfo("es-MX"))} y {DateTime.Now.ToString("dd/MM/yyyy", new CultureInfo("es-MX"))}";
-         
+
          //TODO: Create statements to insert default data into GeneralEmployee table and
          //change this DbSet to GeneralEmployees
          Employees.AddRange([.. context.Employees]);
@@ -270,6 +271,12 @@ namespace EngineeringManagement.UI
             dgvEmployeeList.Rows.Clear();
             AddAllEmployees();
          }
+      }
+
+      private void btnAdd_Click(object sender, EventArgs e)
+      {
+         var generalEmpForm = serviceProvider.GetRequiredService<GeneralEmployeeForm>();
+         generalEmpForm.ShowDialog();
       }
    }
 }
