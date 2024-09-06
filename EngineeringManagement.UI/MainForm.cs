@@ -1,11 +1,7 @@
-using System;
-using System.Globalization;
-using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EngineeringManagement.UI
@@ -15,6 +11,8 @@ namespace EngineeringManagement.UI
       public bool ShouldRefreshAllEmployees { get; set; }
       private readonly IServiceProvider serviceProvider;
       private readonly Data.AppContext context;
+      private List<Employee> Employees { get; set; } = [];
+      private bool IsLoading { get; set; }
 
       public MainForm(IServiceProvider serviceProvider, Data.AppContext context)
       {
@@ -26,7 +24,9 @@ namespace EngineeringManagement.UI
       protected override void OnLoad(EventArgs e)
       {
          base.OnLoad(e);
+         IsLoading = true;
          Setup();
+         IsLoading = false;
       }
 
       private void Setup()
@@ -36,6 +36,84 @@ namespace EngineeringManagement.UI
          //FormatColumnHeaders(dgvAllEmployees);
          //dgvAllEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
          //tabPage1.Text = $"Proximos a expirar entre {DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy", new CultureInfo("es-MX"))} y {DateTime.Now.ToString("dd/MM/yyyy", new CultureInfo("es-MX"))}";
+         
+         //TODO: Create statements to insert default data into GeneralEmployee table and
+         //change this DbSet to GeneralEmployees
+         Employees.AddRange([.. context.Employees]);
+         if (Employees.Count == 0)
+         {
+            cmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEmployees.Items.Add("-- NO SE ENCONTRARON EMPLEADOS --");
+            cmbEmployees.SelectedIndex = 0;
+         }
+         else
+         {
+            SetupComboBox();
+            SetupGridView();
+         }
+      }
+
+      private void SetupGridView()
+      {
+         dgvEmployeeList.Rows.Clear();
+         AddColumnsToGrid();
+         AddAllEmployees();
+         dgvEmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+      }
+
+      private void AddAllEmployees()
+      {
+         var orderedEmployees = Employees.OrderBy(r => r.EmployeeName).ToList();
+         foreach (var employee in orderedEmployees)
+         {
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
+         }
+      }
+
+      private void AddColumnsToGrid()
+      {
+         var checkBoxColumn = new DataGridViewCheckBoxColumn
+         {
+            Name = "Select",
+            HeaderText = "",
+            Width = 20,
+            MinimumWidth = 20,
+            FillWeight = 20
+         };
+         int totalWidth = dgvEmployeeList.ClientSize.Width - checkBoxColumn.Width;
+         var columns = new DataGridViewTextBoxColumn[] {
+            new() {
+               Name = "Name",
+               HeaderText = "Empleado",
+               Width = totalWidth / 3
+            },
+
+            new() {
+               Name = "Position",
+               HeaderText = "Puesto",
+               Width = totalWidth / 3
+            },
+            new() {
+               Name = "Phone",
+               HeaderText = "Telefono",
+               Width = totalWidth / 3
+            }
+         };
+
+         dgvEmployeeList.Columns.Add(checkBoxColumn);
+         dgvEmployeeList.Columns.AddRange(columns);
+      }
+
+      private void SetupComboBox()
+      {
+         cmbEmployees.DropDownStyle = ComboBoxStyle.DropDown;
+         cmbEmployees.Items.AddRange([.. Employees]);
+         cmbEmployees.ValueMember = nameof(Employee.Id);
+         cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
+         cmbEmployees.SelectedIndex = 0;
+         cmbEmployees.AutoCompleteCustomSource.AddRange(Employees.Select(r => r.EmployeeName).ToArray());
+         cmbEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
+         cmbEmployees.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
       }
 
       //private void LoadGrids()
@@ -173,6 +251,25 @@ namespace EngineeringManagement.UI
       {
          var medFiles = serviceProvider.GetRequiredService<EmployeeMedFileForm>();
          medFiles.ShowDialog();
+      }
+
+      private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         if (!IsLoading)
+         {
+            var employee = ((ComboBox)sender).SelectedItem as Employee;
+            dgvEmployeeList.Rows.Clear();
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
+         }
+      }
+
+      private void cmbEmployees_TextChanged(object sender, EventArgs e)
+      {
+         if ((sender as ComboBox).Text == "")
+         {
+            dgvEmployeeList.Rows.Clear();
+            AddAllEmployees();
+         }
       }
    }
 }
