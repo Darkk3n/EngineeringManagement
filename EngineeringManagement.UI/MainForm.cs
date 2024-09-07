@@ -32,7 +32,7 @@ namespace EngineeringManagement.UI
          IsLoading = true;
          Setup();
          IsLoading = false;
-      } 
+      }
       #endregion
 
       #region Private Methods
@@ -133,7 +133,7 @@ namespace EngineeringManagement.UI
          Employees.Clear();
          Employees.AddRange([.. context.Employees]);
          AddAllEmployees();
-      } 
+      }
       #endregion
 
       //private void LoadGrids()
@@ -329,7 +329,17 @@ namespace EngineeringManagement.UI
                ReloadGrid();
             }
          }
-      } 
-      #endregion      
+      }
+      #endregion
+
+      private void btnClear_Click(object sender, EventArgs e)
+      {
+         var checkedRows = dgvEmployeeList.Rows
+          .Cast<DataGridViewRow>()
+          .Where(row => Convert.ToBoolean(row.Cells[0].Value) == true)
+          .ToList();
+
+         checkedRows.ForEach(row => { row.Cells[0].Value = false; });
+      }
    }
 }

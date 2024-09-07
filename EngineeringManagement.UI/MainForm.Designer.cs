@@ -49,6 +49,7 @@
          btnDelete = new Button();
          label1 = new Label();
          splitContainer1 = new SplitContainer();
+         btnClear = new Button();
          menuStrip1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)dgvEmployeeList).BeginInit();
          ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -221,6 +222,7 @@
          // 
          // splitContainer1.Panel1
          // 
+         splitContainer1.Panel1.Controls.Add(btnClear);
          splitContainer1.Panel1.Controls.Add(cmbEmployees);
          splitContainer1.Panel1.Controls.Add(label1);
          splitContainer1.Panel1.Controls.Add(btnAdd);
@@ -232,6 +234,16 @@
          splitContainer1.Size = new Size(956, 626);
          splitContainer1.SplitterDistance = 72;
          splitContainer1.TabIndex = 7;
+         // 
+         // btnClear
+         // 
+         btnClear.Location = new Point(531, 19);
+         btnClear.Name = "btnClear";
+         btnClear.Size = new Size(77, 43);
+         btnClear.TabIndex = 7;
+         btnClear.Text = "Anular Seleccion";
+         btnClear.UseVisualStyleBackColor = true;
+         btnClear.Click += btnClear_Click;
          // 
          // MainForm
          // 
@@ -280,5 +292,6 @@
       private Button btnDelete;
       private Label label1;
       private SplitContainer splitContainer1;
+      private Button btnClear;
    }
 }
