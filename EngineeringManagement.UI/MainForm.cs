@@ -113,7 +113,7 @@ namespace EngineeringManagement.UI
       private void SetupComboBox()
       {
          cmbEmployees.DropDownStyle = ComboBoxStyle.DropDown;
-         cmbEmployees.Items.AddRange([.. Employees]);
+         cmbEmployees.Items.AddRange([.. Employees.OrderBy(r=>r.EmployeeName)]);
          cmbEmployees.ValueMember = nameof(Employee.Id);
          cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
          cmbEmployees.SelectedIndex = 0;
@@ -265,7 +265,7 @@ namespace EngineeringManagement.UI
          {
             var employee = ((ComboBox)sender).SelectedItem as Employee;
             dgvEmployeeList.Rows.Clear();
-            dgvEmployeeList.Rows.Add(false, employee.Id, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.Position, employee.SocialSecurityNumber);
          }
       }
 
@@ -297,18 +297,18 @@ namespace EngineeringManagement.UI
           .ToList();
          if (checkedRows.Count == 0)
          {
-            MessageBox.Show("Seleccione al menos 1 Empleado", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Seleccione al menos 1 Empleado.", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
          }
          else
          {
             var message = string.Join(Environment.NewLine, checkedRows.Select(r => r.Name));
 
-            if (MessageBox.Show($"Esta seguro que desea eliminar los siguiente empleados: {Environment.NewLine}{Environment.NewLine}{message}", "Eliminar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show($"Esta seguro que desea eliminar el/los siguiente(s) empleado(s): {Environment.NewLine}{Environment.NewLine}{message}", "Eliminar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                context.Employees
                   .Where(r => checkedRows.Select(r => r.Id).Contains(r.Id))
                   .ExecuteDelete();
-               MessageBox.Show("Empleado(s) eliminado(s) con exito", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               MessageBox.Show("Empleado(s) eliminado(s) con exito.", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                ReloadGrid();
             }
          }
@@ -318,7 +318,7 @@ namespace EngineeringManagement.UI
       {
          dgvEmployeeList.Rows.Clear();
          Employees.Clear();
-         Employees.AddRange([..context.Employees]);
+         Employees.AddRange([.. context.Employees]);
          AddAllEmployees();
       }
    }
