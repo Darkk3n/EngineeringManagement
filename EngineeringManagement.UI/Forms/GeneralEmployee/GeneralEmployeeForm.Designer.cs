@@ -45,7 +45,27 @@
          label14 = new Label();
          tabControl1 = new TabControl();
          tabPage1 = new TabPage();
+         chkBankStatus = new CheckBox();
+         chkRecommendationLetters = new CheckBox();
+         chkDriverLicense = new CheckBox();
+         chkInfonavit = new CheckBox();
+         chkSocialSecurity = new CheckBox();
+         chkPictures = new CheckBox();
+         chkVotingCard = new CheckBox();
+         chkCurp = new CheckBox();
+         chkRfc = new CheckBox();
+         chkBirthCertificate = new CheckBox();
+         checkBox1 = new CheckBox();
+         cmbBloodType = new ComboBox();
+         txtEmail = new TextBox();
+         txtSocialSecutiry = new MaskedTextBox();
+         txtRfc = new TextBox();
+         txtCurp = new TextBox();
+         cmbMaritalStatus = new ComboBox();
+         label16 = new Label();
+         label15 = new Label();
          tabPage2 = new TabPage();
+         tabPage3 = new TabPage();
          btnSave = new Button();
          btnCancel = new Button();
          txtEmpName = new TextBox();
@@ -56,26 +76,8 @@
          txtEmergencyPhone = new MaskedTextBox();
          txtEmergencyContactName = new TextBox();
          txtRelationship = new TextBox();
-         label15 = new Label();
-         label16 = new Label();
-         cmbMaritalStatus = new ComboBox();
-         txtCurp = new TextBox();
-         txtRfc = new TextBox();
-         txtSocialSecutiry = new MaskedTextBox();
-         txtEmail = new TextBox();
-         cmbBloodType = new ComboBox();
-         checkBox1 = new CheckBox();
-         chkBirthCertificate = new CheckBox();
-         chkRfc = new CheckBox();
-         chkCurp = new CheckBox();
-         chkVotingCard = new CheckBox();
-         chkPictures = new CheckBox();
-         chkSocialSecurity = new CheckBox();
-         chkInfonavit = new CheckBox();
-         chkDriverLicense = new CheckBox();
-         chkRecommendationLetters = new CheckBox();
-         chkBankStatus = new CheckBox();
-         tabPage3 = new TabPage();
+         label8 = new Label();
+         button1 = new Button();
          ((System.ComponentModel.ISupportInitialize)pbEmployee).BeginInit();
          tabControl1.SuspendLayout();
          tabPage1.SuspendLayout();
@@ -165,7 +167,7 @@
          // label10
          // 
          label10.AutoSize = true;
-         label10.Location = new Point(12, 299);
+         label10.Location = new Point(12, 323);
          label10.Name = "label10";
          label10.Size = new Size(94, 15);
          label10.TabIndex = 10;
@@ -174,7 +176,7 @@
          // label11
          // 
          label11.AutoSize = true;
-         label11.Location = new Point(12, 366);
+         label11.Location = new Point(12, 390);
          label11.Name = "label11";
          label11.Size = new Size(103, 15);
          label11.TabIndex = 11;
@@ -183,7 +185,7 @@
          // label12
          // 
          label12.AutoSize = true;
-         label12.Location = new Point(12, 431);
+         label12.Location = new Point(12, 455);
          label12.Name = "label12";
          label12.Size = new Size(136, 15);
          label12.TabIndex = 12;
@@ -192,7 +194,7 @@
          // label13
          // 
          label13.AutoSize = true;
-         label13.Location = new Point(12, 489);
+         label13.Location = new Point(12, 513);
          label13.Name = "label13";
          label13.Size = new Size(201, 15);
          label13.TabIndex = 13;
@@ -201,7 +203,7 @@
          // label14
          // 
          label14.AutoSize = true;
-         label14.Location = new Point(12, 551);
+         label14.Location = new Point(12, 575);
          label14.Name = "label14";
          label14.Size = new Size(68, 15);
          label14.TabIndex = 14;
@@ -212,7 +214,7 @@
          tabControl1.Controls.Add(tabPage1);
          tabControl1.Controls.Add(tabPage2);
          tabControl1.Controls.Add(tabPage3);
-         tabControl1.Location = new Point(238, 65);
+         tabControl1.Location = new Point(238, 89);
          tabControl1.Name = "tabControl1";
          tabControl1.SelectedIndex = 0;
          tabControl1.Size = new Size(776, 550);
@@ -252,15 +254,202 @@
          tabPage1.Text = "Datos Personales";
          tabPage1.UseVisualStyleBackColor = true;
          // 
+         // chkBankStatus
+         // 
+         chkBankStatus.AutoSize = true;
+         chkBankStatus.Location = new Point(518, 256);
+         chkBankStatus.Name = "chkBankStatus";
+         chkBankStatus.Size = new Size(118, 19);
+         chkBankStatus.TabIndex = 28;
+         chkBankStatus.Text = "Estado de Cuenta";
+         chkBankStatus.UseVisualStyleBackColor = true;
+         // 
+         // chkRecommendationLetters
+         // 
+         chkRecommendationLetters.AutoSize = true;
+         chkRecommendationLetters.Location = new Point(518, 206);
+         chkRecommendationLetters.Name = "chkRecommendationLetters";
+         chkRecommendationLetters.Size = new Size(168, 19);
+         chkRecommendationLetters.TabIndex = 27;
+         chkRecommendationLetters.Text = "2 Carta de Recomendacion";
+         chkRecommendationLetters.UseVisualStyleBackColor = true;
+         // 
+         // chkDriverLicense
+         // 
+         chkDriverLicense.AutoSize = true;
+         chkDriverLicense.Location = new Point(518, 180);
+         chkDriverLicense.Name = "chkDriverLicense";
+         chkDriverLicense.Size = new Size(128, 19);
+         chkDriverLicense.TabIndex = 26;
+         chkDriverLicense.Text = "Licencia de Manejo";
+         chkDriverLicense.UseVisualStyleBackColor = true;
+         // 
+         // chkInfonavit
+         // 
+         chkInfonavit.AutoSize = true;
+         chkInfonavit.Location = new Point(518, 155);
+         chkInfonavit.Name = "chkInfonavit";
+         chkInfonavit.Size = new Size(85, 19);
+         chkInfonavit.TabIndex = 25;
+         chkInfonavit.Text = "INFONAVIT";
+         chkInfonavit.UseVisualStyleBackColor = true;
+         // 
+         // chkSocialSecurity
+         // 
+         chkSocialSecurity.AutoSize = true;
+         chkSocialSecurity.Location = new Point(296, 256);
+         chkSocialSecurity.Name = "chkSocialSecurity";
+         chkSocialSecurity.Size = new Size(47, 19);
+         chkSocialSecurity.TabIndex = 24;
+         chkSocialSecurity.Text = "NSS";
+         chkSocialSecurity.UseVisualStyleBackColor = true;
+         // 
+         // chkPictures
+         // 
+         chkPictures.AutoSize = true;
+         chkPictures.Location = new Point(518, 231);
+         chkPictures.Name = "chkPictures";
+         chkPictures.Size = new Size(94, 19);
+         chkPictures.TabIndex = 23;
+         chkPictures.Text = "2 Fotografias";
+         chkPictures.UseVisualStyleBackColor = true;
+         // 
+         // chkVotingCard
+         // 
+         chkVotingCard.AutoSize = true;
+         chkVotingCard.Location = new Point(296, 231);
+         chkVotingCard.Name = "chkVotingCard";
+         chkVotingCard.Size = new Size(44, 19);
+         chkVotingCard.TabIndex = 22;
+         chkVotingCard.Text = "INE";
+         chkVotingCard.UseVisualStyleBackColor = true;
+         // 
+         // chkCurp
+         // 
+         chkCurp.AutoSize = true;
+         chkCurp.Location = new Point(296, 206);
+         chkCurp.Name = "chkCurp";
+         chkCurp.Size = new Size(56, 19);
+         chkCurp.TabIndex = 21;
+         chkCurp.Text = "CURP";
+         chkCurp.UseVisualStyleBackColor = true;
+         // 
+         // chkRfc
+         // 
+         chkRfc.AutoSize = true;
+         chkRfc.Location = new Point(296, 180);
+         chkRfc.Name = "chkRfc";
+         chkRfc.Size = new Size(217, 19);
+         chkRfc.TabIndex = 20;
+         chkRfc.Text = "Constancia de Situacion Fiscal (RFC)";
+         chkRfc.UseVisualStyleBackColor = true;
+         // 
+         // chkBirthCertificate
+         // 
+         chkBirthCertificate.AutoSize = true;
+         chkBirthCertificate.Location = new Point(296, 155);
+         chkBirthCertificate.Name = "chkBirthCertificate";
+         chkBirthCertificate.Size = new Size(131, 19);
+         chkBirthCertificate.TabIndex = 19;
+         chkBirthCertificate.Text = "Acta de Nacimiento";
+         chkBirthCertificate.UseVisualStyleBackColor = true;
+         // 
+         // checkBox1
+         // 
+         checkBox1.AutoSize = true;
+         checkBox1.Location = new Point(296, 92);
+         checkBox1.Name = "checkBox1";
+         checkBox1.Size = new Size(163, 19);
+         checkBox1.TabIndex = 18;
+         checkBox1.Text = "Comprobante de Estudios";
+         checkBox1.UseVisualStyleBackColor = true;
+         // 
+         // cmbBloodType
+         // 
+         cmbBloodType.DropDownStyle = ComboBoxStyle.DropDownList;
+         cmbBloodType.FormattingEnabled = true;
+         cmbBloodType.Items.AddRange(new object[] { "A+", "A-", "O+", "O-", "AB+", "AB-", "RH+", "RH-" });
+         cmbBloodType.Location = new Point(6, 282);
+         cmbBloodType.Name = "cmbBloodType";
+         cmbBloodType.Size = new Size(190, 23);
+         cmbBloodType.TabIndex = 17;
+         // 
+         // txtEmail
+         // 
+         txtEmail.Location = new Point(6, 222);
+         txtEmail.Name = "txtEmail";
+         txtEmail.Size = new Size(190, 23);
+         txtEmail.TabIndex = 16;
+         // 
+         // txtSocialSecutiry
+         // 
+         txtSocialSecutiry.Location = new Point(6, 155);
+         txtSocialSecutiry.Mask = "00000000000";
+         txtSocialSecutiry.Name = "txtSocialSecutiry";
+         txtSocialSecutiry.Size = new Size(190, 23);
+         txtSocialSecutiry.TabIndex = 15;
+         // 
+         // txtRfc
+         // 
+         txtRfc.Location = new Point(6, 92);
+         txtRfc.Name = "txtRfc";
+         txtRfc.Size = new Size(190, 23);
+         txtRfc.TabIndex = 14;
+         // 
+         // txtCurp
+         // 
+         txtCurp.Location = new Point(6, 35);
+         txtCurp.Name = "txtCurp";
+         txtCurp.Size = new Size(190, 23);
+         txtCurp.TabIndex = 13;
+         // 
+         // cmbMaritalStatus
+         // 
+         cmbMaritalStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+         cmbMaritalStatus.FormattingEnabled = true;
+         cmbMaritalStatus.Items.AddRange(new object[] { "--SELECCIONE--", "Soltero", "Casado", "Divorciado", "Viudo" });
+         cmbMaritalStatus.Location = new Point(298, 35);
+         cmbMaritalStatus.Name = "cmbMaritalStatus";
+         cmbMaritalStatus.Size = new Size(154, 23);
+         cmbMaritalStatus.TabIndex = 12;
+         // 
+         // label16
+         // 
+         label16.AutoSize = true;
+         label16.Location = new Point(6, 264);
+         label16.Name = "label16";
+         label16.Size = new Size(88, 15);
+         label16.TabIndex = 11;
+         label16.Text = "Tipo de Sangre:";
+         // 
+         // label15
+         // 
+         label15.AutoSize = true;
+         label15.Location = new Point(6, 199);
+         label15.Name = "label15";
+         label15.Size = new Size(46, 15);
+         label15.TabIndex = 10;
+         label15.Text = "Correo:";
+         // 
          // tabPage2
          // 
          tabPage2.Location = new Point(4, 24);
          tabPage2.Name = "tabPage2";
          tabPage2.Padding = new Padding(3);
-         tabPage2.Size = new Size(756, 522);
+         tabPage2.Size = new Size(768, 522);
          tabPage2.TabIndex = 1;
          tabPage2.Text = "Datos de la Empresa";
          tabPage2.UseVisualStyleBackColor = true;
+         // 
+         // tabPage3
+         // 
+         tabPage3.Location = new Point(4, 24);
+         tabPage3.Name = "tabPage3";
+         tabPage3.Padding = new Padding(3);
+         tabPage3.Size = new Size(768, 522);
+         tabPage3.TabIndex = 2;
+         tabPage3.Text = "Historial de Contratos";
+         tabPage3.UseVisualStyleBackColor = true;
          // 
          // btnSave
          // 
@@ -305,7 +494,7 @@
          // 
          // txtWorkPhone
          // 
-         txtWorkPhone.Location = new Point(12, 319);
+         txtWorkPhone.Location = new Point(12, 343);
          txtWorkPhone.Mask = "999-000-0000";
          txtWorkPhone.Name = "txtWorkPhone";
          txtWorkPhone.Size = new Size(201, 23);
@@ -313,7 +502,7 @@
          // 
          // txtPersonalPhone
          // 
-         txtPersonalPhone.Location = new Point(12, 384);
+         txtPersonalPhone.Location = new Point(12, 408);
          txtPersonalPhone.Mask = "999-000-0000";
          txtPersonalPhone.Name = "txtPersonalPhone";
          txtPersonalPhone.Size = new Size(201, 23);
@@ -321,7 +510,7 @@
          // 
          // txtEmergencyPhone
          // 
-         txtEmergencyPhone.Location = new Point(12, 449);
+         txtEmergencyPhone.Location = new Point(12, 473);
          txtEmergencyPhone.Mask = "999-000-0000";
          txtEmergencyPhone.Name = "txtEmergencyPhone";
          txtEmergencyPhone.Size = new Size(201, 23);
@@ -329,210 +518,43 @@
          // 
          // txtEmergencyContactName
          // 
-         txtEmergencyContactName.Location = new Point(12, 507);
+         txtEmergencyContactName.Location = new Point(12, 531);
          txtEmergencyContactName.Name = "txtEmergencyContactName";
          txtEmergencyContactName.Size = new Size(201, 23);
          txtEmergencyContactName.TabIndex = 24;
          // 
          // txtRelationship
          // 
-         txtRelationship.Location = new Point(12, 569);
+         txtRelationship.Location = new Point(12, 593);
          txtRelationship.Name = "txtRelationship";
          txtRelationship.Size = new Size(201, 23);
          txtRelationship.TabIndex = 25;
          // 
-         // label15
+         // label8
          // 
-         label15.AutoSize = true;
-         label15.Location = new Point(6, 199);
-         label15.Name = "label15";
-         label15.Size = new Size(46, 15);
-         label15.TabIndex = 10;
-         label15.Text = "Correo:";
+         label8.AutoSize = true;
+         label8.Location = new Point(12, 293);
+         label8.Name = "label8";
+         label8.Size = new Size(34, 15);
+         label8.TabIndex = 26;
+         label8.Text = "Foto:";
          // 
-         // label16
+         // button1
          // 
-         label16.AutoSize = true;
-         label16.Location = new Point(6, 264);
-         label16.Name = "label16";
-         label16.Size = new Size(88, 15);
-         label16.TabIndex = 11;
-         label16.Text = "Tipo de Sangre:";
-         // 
-         // cmbMaritalStatus
-         // 
-         cmbMaritalStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-         cmbMaritalStatus.FormattingEnabled = true;
-         cmbMaritalStatus.Items.AddRange(new object[] { "--SELECCIONE--", "Soltero", "Casado", "Divorciado", "Viudo" });
-         cmbMaritalStatus.Location = new Point(298, 35);
-         cmbMaritalStatus.Name = "cmbMaritalStatus";
-         cmbMaritalStatus.Size = new Size(154, 23);
-         cmbMaritalStatus.TabIndex = 12;
-         // 
-         // txtCurp
-         // 
-         txtCurp.Location = new Point(6, 35);
-         txtCurp.Name = "txtCurp";
-         txtCurp.Size = new Size(190, 23);
-         txtCurp.TabIndex = 13;
-         // 
-         // txtRfc
-         // 
-         txtRfc.Location = new Point(6, 92);
-         txtRfc.Name = "txtRfc";
-         txtRfc.Size = new Size(190, 23);
-         txtRfc.TabIndex = 14;
-         // 
-         // txtSocialSecutiry
-         // 
-         txtSocialSecutiry.Location = new Point(6, 155);
-         txtSocialSecutiry.Mask = "00000000000";
-         txtSocialSecutiry.Name = "txtSocialSecutiry";
-         txtSocialSecutiry.Size = new Size(190, 23);
-         txtSocialSecutiry.TabIndex = 15;
-         // 
-         // txtEmail
-         // 
-         txtEmail.Location = new Point(6, 222);
-         txtEmail.Name = "txtEmail";
-         txtEmail.Size = new Size(190, 23);
-         txtEmail.TabIndex = 16;
-         // 
-         // cmbBloodType
-         // 
-         cmbBloodType.DropDownStyle = ComboBoxStyle.DropDownList;
-         cmbBloodType.FormattingEnabled = true;
-         cmbBloodType.Items.AddRange(new object[] { "A+", "A-", "O+", "O-", "AB+", "AB-", "RH+", "RH-" });
-         cmbBloodType.Location = new Point(6, 282);
-         cmbBloodType.Name = "cmbBloodType";
-         cmbBloodType.Size = new Size(190, 23);
-         cmbBloodType.TabIndex = 17;
-         // 
-         // checkBox1
-         // 
-         checkBox1.AutoSize = true;
-         checkBox1.Location = new Point(296, 92);
-         checkBox1.Name = "checkBox1";
-         checkBox1.Size = new Size(163, 19);
-         checkBox1.TabIndex = 18;
-         checkBox1.Text = "Comprobante de Estudios";
-         checkBox1.UseVisualStyleBackColor = true;
-         // 
-         // chkBirthCertificate
-         // 
-         chkBirthCertificate.AutoSize = true;
-         chkBirthCertificate.Location = new Point(296, 155);
-         chkBirthCertificate.Name = "chkBirthCertificate";
-         chkBirthCertificate.Size = new Size(131, 19);
-         chkBirthCertificate.TabIndex = 19;
-         chkBirthCertificate.Text = "Acta de Nacimiento";
-         chkBirthCertificate.UseVisualStyleBackColor = true;
-         // 
-         // chkRfc
-         // 
-         chkRfc.AutoSize = true;
-         chkRfc.Location = new Point(296, 180);
-         chkRfc.Name = "chkRfc";
-         chkRfc.Size = new Size(217, 19);
-         chkRfc.TabIndex = 20;
-         chkRfc.Text = "Constancia de Situacion Fiscal (RFC)";
-         chkRfc.UseVisualStyleBackColor = true;
-         // 
-         // chkCurp
-         // 
-         chkCurp.AutoSize = true;
-         chkCurp.Location = new Point(296, 206);
-         chkCurp.Name = "chkCurp";
-         chkCurp.Size = new Size(56, 19);
-         chkCurp.TabIndex = 21;
-         chkCurp.Text = "CURP";
-         chkCurp.UseVisualStyleBackColor = true;
-         // 
-         // chkVotingCard
-         // 
-         chkVotingCard.AutoSize = true;
-         chkVotingCard.Location = new Point(296, 231);
-         chkVotingCard.Name = "chkVotingCard";
-         chkVotingCard.Size = new Size(44, 19);
-         chkVotingCard.TabIndex = 22;
-         chkVotingCard.Text = "INE";
-         chkVotingCard.UseVisualStyleBackColor = true;
-         // 
-         // chkPictures
-         // 
-         chkPictures.AutoSize = true;
-         chkPictures.Location = new Point(518, 231);
-         chkPictures.Name = "chkPictures";
-         chkPictures.Size = new Size(94, 19);
-         chkPictures.TabIndex = 23;
-         chkPictures.Text = "2 Fotografias";
-         chkPictures.UseVisualStyleBackColor = true;
-         // 
-         // chkSocialSecurity
-         // 
-         chkSocialSecurity.AutoSize = true;
-         chkSocialSecurity.Location = new Point(296, 256);
-         chkSocialSecurity.Name = "chkSocialSecurity";
-         chkSocialSecurity.Size = new Size(47, 19);
-         chkSocialSecurity.TabIndex = 24;
-         chkSocialSecurity.Text = "NSS";
-         chkSocialSecurity.UseVisualStyleBackColor = true;
-         // 
-         // chkInfonavit
-         // 
-         chkInfonavit.AutoSize = true;
-         chkInfonavit.Location = new Point(518, 155);
-         chkInfonavit.Name = "chkInfonavit";
-         chkInfonavit.Size = new Size(85, 19);
-         chkInfonavit.TabIndex = 25;
-         chkInfonavit.Text = "INFONAVIT";
-         chkInfonavit.UseVisualStyleBackColor = true;
-         // 
-         // chkDriverLicense
-         // 
-         chkDriverLicense.AutoSize = true;
-         chkDriverLicense.Location = new Point(518, 180);
-         chkDriverLicense.Name = "chkDriverLicense";
-         chkDriverLicense.Size = new Size(128, 19);
-         chkDriverLicense.TabIndex = 26;
-         chkDriverLicense.Text = "Licencia de Manejo";
-         chkDriverLicense.UseVisualStyleBackColor = true;
-         // 
-         // chkRecommendationLetters
-         // 
-         chkRecommendationLetters.AutoSize = true;
-         chkRecommendationLetters.Location = new Point(518, 206);
-         chkRecommendationLetters.Name = "chkRecommendationLetters";
-         chkRecommendationLetters.Size = new Size(168, 19);
-         chkRecommendationLetters.TabIndex = 27;
-         chkRecommendationLetters.Text = "2 Carta de Recomendacion";
-         chkRecommendationLetters.UseVisualStyleBackColor = true;
-         // 
-         // chkBankStatus
-         // 
-         chkBankStatus.AutoSize = true;
-         chkBankStatus.Location = new Point(518, 256);
-         chkBankStatus.Name = "chkBankStatus";
-         chkBankStatus.Size = new Size(118, 19);
-         chkBankStatus.TabIndex = 28;
-         chkBankStatus.Text = "Estado de Cuenta";
-         chkBankStatus.UseVisualStyleBackColor = true;
-         // 
-         // tabPage3
-         // 
-         tabPage3.Location = new Point(4, 24);
-         tabPage3.Name = "tabPage3";
-         tabPage3.Padding = new Padding(3);
-         tabPage3.Size = new Size(768, 522);
-         tabPage3.TabIndex = 2;
-         tabPage3.Text = "Historial de Contratos";
-         tabPage3.UseVisualStyleBackColor = true;
+         button1.Location = new Point(52, 289);
+         button1.Name = "button1";
+         button1.Size = new Size(161, 23);
+         button1.TabIndex = 27;
+         button1.Text = "Seleccionar Archivo...";
+         button1.UseVisualStyleBackColor = true;
          // 
          // GeneralEmployeeForm
          // 
          AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
-         ClientSize = new Size(1017, 621);
+         ClientSize = new Size(1017, 651);
+         Controls.Add(button1);
+         Controls.Add(label8);
          Controls.Add(txtRelationship);
          Controls.Add(txtEmergencyContactName);
          Controls.Add(txtEmergencyPhone);
@@ -615,5 +637,7 @@
       private MaskedTextBox txtSocialSecutiry;
       private CheckBox chkBankStatus;
       private TabPage tabPage3;
+      private Label label8;
+      private Button button1;
    }
 }
