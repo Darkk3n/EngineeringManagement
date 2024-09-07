@@ -77,7 +77,8 @@
          txtEmergencyContactName = new TextBox();
          txtRelationship = new TextBox();
          label8 = new Label();
-         button1 = new Button();
+         btnPictureUpload = new Button();
+         pictureDialog = new OpenFileDialog();
          ((System.ComponentModel.ISupportInitialize)pbEmployee).BeginInit();
          tabControl1.SuspendLayout();
          tabPage1.SuspendLayout();
@@ -86,9 +87,11 @@
          // pbEmployee
          // 
          pbEmployee.BackgroundImageLayout = ImageLayout.Stretch;
+         pbEmployee.BorderStyle = BorderStyle.FixedSingle;
          pbEmployee.Location = new Point(9, 12);
          pbEmployee.Name = "pbEmployee";
          pbEmployee.Size = new Size(223, 269);
+         pbEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
          pbEmployee.TabIndex = 0;
          pbEmployee.TabStop = false;
          // 
@@ -539,21 +542,28 @@
          label8.TabIndex = 26;
          label8.Text = "Foto:";
          // 
-         // button1
+         // btnPictureUpload
          // 
-         button1.Location = new Point(52, 289);
-         button1.Name = "button1";
-         button1.Size = new Size(161, 23);
-         button1.TabIndex = 27;
-         button1.Text = "Seleccionar Archivo...";
-         button1.UseVisualStyleBackColor = true;
+         btnPictureUpload.Location = new Point(52, 289);
+         btnPictureUpload.Name = "btnPictureUpload";
+         btnPictureUpload.Size = new Size(161, 23);
+         btnPictureUpload.TabIndex = 27;
+         btnPictureUpload.Text = "Seleccionar Archivo...";
+         btnPictureUpload.UseVisualStyleBackColor = true;
+         btnPictureUpload.Click += btnPictureUpload_Click;
+         // 
+         // pictureDialog
+         // 
+         pictureDialog.Filter = "Archivos de Imagen (*.png, *.jpg, *.jpeg) | *.png ;*.jpg;*.jpeg";
+         pictureDialog.InitialDirectory = "C:\\";
          // 
          // GeneralEmployeeForm
          // 
          AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
+         CancelButton = btnCancel;
          ClientSize = new Size(1017, 651);
-         Controls.Add(button1);
+         Controls.Add(btnPictureUpload);
          Controls.Add(label8);
          Controls.Add(txtRelationship);
          Controls.Add(txtEmergencyContactName);
@@ -638,6 +648,7 @@
       private CheckBox chkBankStatus;
       private TabPage tabPage3;
       private Label label8;
-      private Button button1;
+      private Button btnPictureUpload;
+      private OpenFileDialog pictureDialog;
    }
 }
