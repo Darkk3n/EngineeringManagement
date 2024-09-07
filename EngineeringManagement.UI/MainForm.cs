@@ -330,7 +330,6 @@ namespace EngineeringManagement.UI
             }
          }
       }
-      #endregion
 
       private void btnClear_Click(object sender, EventArgs e)
       {
@@ -341,5 +340,6 @@ namespace EngineeringManagement.UI
 
          checkedRows.ForEach(row => { row.Cells[0].Value = false; });
       }
+      #endregion
    }
 }
