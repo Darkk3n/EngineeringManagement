@@ -201,6 +201,7 @@
          btnDelete.Text = "Eliminar";
          btnDelete.TextAlign = ContentAlignment.MiddleRight;
          btnDelete.UseVisualStyleBackColor = true;
+         btnDelete.Click += btnDelete_Click;
          // 
          // label1
          // 

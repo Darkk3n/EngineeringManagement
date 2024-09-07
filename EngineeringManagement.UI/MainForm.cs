@@ -3,6 +3,7 @@ using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
 using EngineeringManagement.UI.Forms.GeneralEmployee;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EngineeringManagement.UI
@@ -60,6 +61,7 @@ namespace EngineeringManagement.UI
          AddColumnsToGrid();
          AddAllEmployees();
          dgvEmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+         dgvEmployeeList.Columns[2].Visible = false;
       }
 
       private void AddAllEmployees()
@@ -67,7 +69,7 @@ namespace EngineeringManagement.UI
          var orderedEmployees = Employees.OrderBy(r => r.EmployeeName).ToList();
          foreach (var employee in orderedEmployees)
          {
-            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.Position, employee.SocialSecurityNumber);
          }
       }
 
@@ -88,7 +90,10 @@ namespace EngineeringManagement.UI
                HeaderText = "Empleado",
                Width = totalWidth / 3
             },
-
+            new() {
+               Name = "EmployeeId",
+               HeaderText = "Employee ID",
+            },
             new() {
                Name = "Position",
                HeaderText = "Puesto",
@@ -260,7 +265,7 @@ namespace EngineeringManagement.UI
          {
             var employee = ((ComboBox)sender).SelectedItem as Employee;
             dgvEmployeeList.Rows.Clear();
-            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
+            dgvEmployeeList.Rows.Add(false, employee.Id, employee.EmployeeName, employee.Position, employee.SocialSecurityNumber);
          }
       }
 
@@ -277,6 +282,44 @@ namespace EngineeringManagement.UI
       {
          var generalEmpForm = serviceProvider.GetRequiredService<GeneralEmployeeForm>();
          generalEmpForm.ShowDialog();
+      }
+
+      private void btnDelete_Click(object sender, EventArgs e)
+      {
+         var checkedRows = dgvEmployeeList.Rows
+          .Cast<DataGridViewRow>()
+          .Where(row => Convert.ToBoolean(row.Cells[0].Value) == true)
+          .Select(r => new
+          {
+             Id = Convert.ToInt32(r.Cells[2].Value),
+             Name = r.Cells[1].Value.ToString(),
+          })
+          .ToList();
+         if (checkedRows.Count == 0)
+         {
+            MessageBox.Show("Seleccione al menos 1 Empleado", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         }
+         else
+         {
+            var message = string.Join(Environment.NewLine, checkedRows.Select(r => r.Name));
+
+            if (MessageBox.Show($"Esta seguro que desea eliminar los siguiente empleados: {Environment.NewLine}{Environment.NewLine}{message}", "Eliminar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+               context.Employees
+                  .Where(r => checkedRows.Select(r => r.Id).Contains(r.Id))
+                  .ExecuteDelete();
+               MessageBox.Show("Empleado(s) eliminado(s) con exito", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               ReloadGrid();
+            }
+         }
+      }
+
+      private void ReloadGrid()
+      {
+         dgvEmployeeList.Rows.Clear();
+         Employees.Clear();
+         Employees.AddRange([..context.Employees]);
+         AddAllEmployees();
       }
    }
 }
