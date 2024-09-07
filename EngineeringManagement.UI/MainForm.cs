@@ -10,12 +10,15 @@ namespace EngineeringManagement.UI
 {
    public partial class MainForm : Form
    {
+      #region Properties
       public bool ShouldRefreshAllEmployees { get; set; }
       private readonly IServiceProvider serviceProvider;
       private readonly Data.AppContext context;
       private List<Employee> Employees { get; set; } = [];
       private bool IsLoading { get; set; }
+      #endregion
 
+      #region Initialization
       public MainForm(IServiceProvider serviceProvider, Data.AppContext context)
       {
          InitializeComponent();
@@ -29,8 +32,10 @@ namespace EngineeringManagement.UI
          IsLoading = true;
          Setup();
          IsLoading = false;
-      }
+      } 
+      #endregion
 
+      #region Private Methods
       private void Setup()
       {
          //LoadGrids();
@@ -113,7 +118,7 @@ namespace EngineeringManagement.UI
       private void SetupComboBox()
       {
          cmbEmployees.DropDownStyle = ComboBoxStyle.DropDown;
-         cmbEmployees.Items.AddRange([.. Employees.OrderBy(r=>r.EmployeeName)]);
+         cmbEmployees.Items.AddRange([.. Employees.OrderBy(r => r.EmployeeName)]);
          cmbEmployees.ValueMember = nameof(Employee.Id);
          cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
          cmbEmployees.SelectedIndex = 0;
@@ -121,6 +126,15 @@ namespace EngineeringManagement.UI
          cmbEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
          cmbEmployees.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
       }
+
+      private void ReloadGrid()
+      {
+         dgvEmployeeList.Rows.Clear();
+         Employees.Clear();
+         Employees.AddRange([.. context.Employees]);
+         AddAllEmployees();
+      } 
+      #endregion
 
       //private void LoadGrids()
       //{
@@ -162,6 +176,7 @@ namespace EngineeringManagement.UI
       //   gridView.Columns[4].Visible = false;
       //}
 
+      #region Menu Options
       private void agregarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
       {
          var addEmp = serviceProvider.GetRequiredService<AddEmployee>();
@@ -258,7 +273,9 @@ namespace EngineeringManagement.UI
          var medFiles = serviceProvider.GetRequiredService<EmployeeMedFileForm>();
          medFiles.ShowDialog();
       }
+      #endregion
 
+      #region Button Callbacks
       private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
       {
          if (!IsLoading)
@@ -312,14 +329,7 @@ namespace EngineeringManagement.UI
                ReloadGrid();
             }
          }
-      }
-
-      private void ReloadGrid()
-      {
-         dgvEmployeeList.Rows.Clear();
-         Employees.Clear();
-         Employees.AddRange([.. context.Employees]);
-         AddAllEmployees();
-      }
+      } 
+      #endregion      
    }
 }
