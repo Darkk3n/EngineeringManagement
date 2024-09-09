@@ -57,5 +57,6 @@ namespace EngineeringManagement.Data.Models
       public bool? HasComputer { get; set; }
       public bool? HasVehicle { get; set; }
       public bool? HasUniforms { get; set; }
+      public string PictureFileName { get; set; }
    }
 }
