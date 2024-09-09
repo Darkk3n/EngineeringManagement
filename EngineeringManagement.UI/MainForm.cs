@@ -2,7 +2,7 @@ using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
-using EngineeringManagement.UI.Forms.GeneralEmployee;
+using EngineeringManagement.UI.Forms.GeneralEmployeeForm;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
