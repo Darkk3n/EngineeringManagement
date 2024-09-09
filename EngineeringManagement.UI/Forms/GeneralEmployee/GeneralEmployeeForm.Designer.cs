@@ -1,4 +1,4 @@
-﻿namespace EngineeringManagement.UI.Forms.GeneralEmployee
+﻿namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
 {
    partial class GeneralEmployeeForm
    {
@@ -55,7 +55,7 @@
          chkCurp = new CheckBox();
          chkRfc = new CheckBox();
          chkBirthCertificate = new CheckBox();
-         checkBox1 = new CheckBox();
+         chkProofOfStudies = new CheckBox();
          cmbBloodType = new ComboBox();
          txtEmail = new TextBox();
          txtSocialSecutiry = new MaskedTextBox();
@@ -235,7 +235,7 @@
          tabPage1.Controls.Add(chkCurp);
          tabPage1.Controls.Add(chkRfc);
          tabPage1.Controls.Add(chkBirthCertificate);
-         tabPage1.Controls.Add(checkBox1);
+         tabPage1.Controls.Add(chkProofOfStudies);
          tabPage1.Controls.Add(cmbBloodType);
          tabPage1.Controls.Add(txtEmail);
          tabPage1.Controls.Add(txtSocialSecutiry);
@@ -357,15 +357,15 @@
          chkBirthCertificate.Text = "Acta de Nacimiento";
          chkBirthCertificate.UseVisualStyleBackColor = true;
          // 
-         // checkBox1
+         // chkProofOfStudies
          // 
-         checkBox1.AutoSize = true;
-         checkBox1.Location = new Point(296, 92);
-         checkBox1.Name = "checkBox1";
-         checkBox1.Size = new Size(163, 19);
-         checkBox1.TabIndex = 18;
-         checkBox1.Text = "Comprobante de Estudios";
-         checkBox1.UseVisualStyleBackColor = true;
+         chkProofOfStudies.AutoSize = true;
+         chkProofOfStudies.Location = new Point(296, 92);
+         chkProofOfStudies.Name = "chkProofOfStudies";
+         chkProofOfStudies.Size = new Size(163, 19);
+         chkProofOfStudies.TabIndex = 18;
+         chkProofOfStudies.Text = "Comprobante de Estudios";
+         chkProofOfStudies.UseVisualStyleBackColor = true;
          // 
          // cmbBloodType
          // 
@@ -462,6 +462,7 @@
          btnSave.TabIndex = 16;
          btnSave.Text = "Guardar";
          btnSave.UseVisualStyleBackColor = true;
+         btnSave.Click += btnSave_Click;
          // 
          // btnCancel
          // 
@@ -641,7 +642,7 @@
       private CheckBox chkCurp;
       private CheckBox chkRfc;
       private CheckBox chkBirthCertificate;
-      private CheckBox checkBox1;
+      private CheckBox chkProofOfStudies;
       private ComboBox cmbBloodType;
       private TextBox txtEmail;
       private MaskedTextBox txtSocialSecutiry;
