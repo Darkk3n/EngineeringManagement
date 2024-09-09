@@ -340,6 +340,27 @@ namespace EngineeringManagement.UI
 
          checkedRows.ForEach(row => { row.Cells[0].Value = false; });
       }
+
+      private void btnSearch_Click(object sender, EventArgs e)
+      {
+         var textToSearch = cmbEmployees.Text;
+         if (textToSearch == string.Empty)
+         {
+            MessageBox.Show("Escriba algun nombre para comenzar la busqueda.", "Buscar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+         }
+         var matches = Employees
+            .OrderBy(r => r.EmployeeName)
+            .Where(r => r.EmployeeName.Contains(textToSearch, StringComparison.InvariantCultureIgnoreCase))
+            .ToList();
+         if (matches.Count == 0)
+         {
+            MessageBox.Show("No se encontro ningun Empleado bajo el criterio de busqueda. Tome en cuenta que la busqueda se hace unicamente por nombre.", "Buscar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            return;
+         }
+         dgvEmployeeList.Rows.Clear();
+         matches.ForEach(match => dgvEmployeeList.Rows.Add(false, match.EmployeeName, match.Id, match.Position, match.SocialSecurityNumber));
+      }
       #endregion
    }
 }

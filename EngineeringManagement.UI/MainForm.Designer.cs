@@ -49,6 +49,7 @@
          btnDelete = new Button();
          label1 = new Label();
          splitContainer1 = new SplitContainer();
+         btnSearch = new Button();
          btnClear = new Button();
          menuStrip1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)dgvEmployeeList).BeginInit();
@@ -182,7 +183,7 @@
          // 
          btnAdd.Image = Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312__1_;
          btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
-         btnAdd.Location = new Point(365, 19);
+         btnAdd.Location = new Point(400, 19);
          btnAdd.Name = "btnAdd";
          btnAdd.Size = new Size(77, 43);
          btnAdd.TabIndex = 4;
@@ -195,7 +196,7 @@
          // 
          btnDelete.Image = Properties.Resources.vcsconflicting_93497__1_;
          btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-         btnDelete.Location = new Point(448, 20);
+         btnDelete.Location = new Point(483, 20);
          btnDelete.Name = "btnDelete";
          btnDelete.Size = new Size(77, 43);
          btnDelete.TabIndex = 5;
@@ -222,6 +223,7 @@
          // 
          // splitContainer1.Panel1
          // 
+         splitContainer1.Panel1.Controls.Add(btnSearch);
          splitContainer1.Panel1.Controls.Add(btnClear);
          splitContainer1.Panel1.Controls.Add(cmbEmployees);
          splitContainer1.Panel1.Controls.Add(label1);
@@ -235,9 +237,19 @@
          splitContainer1.SplitterDistance = 72;
          splitContainer1.TabIndex = 7;
          // 
+         // btnSearch
+         // 
+         btnSearch.Image = Properties.Resources.Lupa_Icon__2_;
+         btnSearch.Location = new Point(340, 29);
+         btnSearch.Name = "btnSearch";
+         btnSearch.Size = new Size(33, 24);
+         btnSearch.TabIndex = 8;
+         btnSearch.UseVisualStyleBackColor = true;
+         btnSearch.Click += btnSearch_Click;
+         // 
          // btnClear
          // 
-         btnClear.Location = new Point(531, 19);
+         btnClear.Location = new Point(566, 19);
          btnClear.Name = "btnClear";
          btnClear.Size = new Size(77, 43);
          btnClear.TabIndex = 7;
@@ -247,6 +259,7 @@
          // 
          // MainForm
          // 
+         AcceptButton = btnSearch;
          AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
          ClientSize = new Size(956, 650);
@@ -293,5 +306,6 @@
       private Label label1;
       private SplitContainer splitContainer1;
       private Button btnClear;
+      private Button btnSearch;
    }
 }
