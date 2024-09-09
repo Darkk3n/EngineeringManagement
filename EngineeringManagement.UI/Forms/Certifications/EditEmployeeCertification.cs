@@ -11,12 +11,12 @@ namespace EngineeringManagement.UI.Forms.Certifications
       private readonly MainForm mainForm;
       private readonly EmployeeCertification empCert;
       private readonly IOpenFileService openFileService;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
       public string FileName { get; set; }
       public string SafeFileName { get; set; }
 
-      public EditEmployeeCertification(EmployeeCertification empCert, MainForm mainForm, IOpenFileService openFileService, Data.AppContext context)
+      public EditEmployeeCertification(EmployeeCertification empCert, MainForm mainForm, IOpenFileService openFileService, Data.HrDataContext context)
       {
          this.mainForm = mainForm;
          this.empCert = empCert;

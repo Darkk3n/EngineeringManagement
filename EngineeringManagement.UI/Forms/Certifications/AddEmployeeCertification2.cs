@@ -13,13 +13,13 @@ namespace EngineeringManagement.UI.Forms.Certifications
       private readonly IServiceProvider serviceProvider;
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
       private string FileName { get; set; }
 
       private string SafeFileName { get; set; }
 
-      public AddEmployeeCertification2(IServiceProvider serviceProvider, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
+      public AddEmployeeCertification2(IServiceProvider serviceProvider, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.HrDataContext context)
       {
          Setup();
          this.serviceProvider = serviceProvider;

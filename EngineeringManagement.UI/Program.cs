@@ -9,7 +9,7 @@ using EngineeringManagement.UI.Forms.ExceptionHandler;
 using EngineeringManagement.UI.Forms.GeneralEmployee;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using AppContext = EngineeringManagement.Data.AppContext;
+using HrDataContext = EngineeringManagement.Data.HrDataContext;
 
 namespace EngineeringManagement.UI
 {
@@ -30,7 +30,7 @@ namespace EngineeringManagement.UI
          ApplicationConfiguration.Initialize();
          using (var scope = serviceProvider.CreateScope())
          {
-            var context = scope.ServiceProvider.GetRequiredService<Data.AppContext>();
+            var context = scope.ServiceProvider.GetRequiredService<Data.HrDataContext>();
             context.Database.Migrate();
          }
          if (!Directory.Exists(Path.Combine(Application.StartupPath, "Documentos")))
@@ -73,7 +73,7 @@ namespace EngineeringManagement.UI
          services.AddTransient<IOpenFileService, OpenFileService>();
          #endregion
 
-         services.AddDbContext<AppContext>(options => options.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}"));
+         services.AddDbContext<HrDataContext>(options => options.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}"));
       }
 
       private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

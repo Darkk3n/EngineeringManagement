@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EngineeringManagement.Data
 {
-   public class AppContext : DbContext
+   public class HrDataContext : DbContext
    {
-      public AppContext()
+      public HrDataContext()
       {
       }
 
-      public AppContext(DbContextOptions options)
+      public HrDataContext(DbContextOptions options)
           : base(options)
       {
       }

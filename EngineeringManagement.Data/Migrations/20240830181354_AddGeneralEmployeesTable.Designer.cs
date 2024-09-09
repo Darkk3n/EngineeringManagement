@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EngineeringManagement.Data.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(HrDataContext))]
     [Migration("20240830181354_AddGeneralEmployeesTable")]
     partial class AddGeneralEmployeesTable
     {

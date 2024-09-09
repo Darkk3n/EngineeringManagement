@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EngineeringManagement.Data.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(HrDataContext))]
     [Migration("20240705155900_AddUniqueIndexToFacility")]
     partial class AddUniqueIndexToFacility
     {

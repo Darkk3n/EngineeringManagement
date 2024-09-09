@@ -13,13 +13,13 @@ namespace EngineeringManagement.UI
       #region Properties
       public bool ShouldRefreshAllEmployees { get; set; }
       private readonly IServiceProvider serviceProvider;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
       private List<Employee> Employees { get; set; } = [];
       private bool IsLoading { get; set; }
       #endregion
 
       #region Initialization
-      public MainForm(IServiceProvider serviceProvider, Data.AppContext context)
+      public MainForm(IServiceProvider serviceProvider, Data.HrDataContext context)
       {
          InitializeComponent();
          this.serviceProvider = serviceProvider;

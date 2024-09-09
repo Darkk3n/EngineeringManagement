@@ -11,14 +11,14 @@ namespace EngineeringManagement.UI.Forms.Employees
       #region Properties
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
       private EmployeeMedFile CurrentMedFile { get; set; }
       private Employee SelectedEmployee { get; set; }
       #endregion
 
       #region Constructor
-      public EmployeeMedFileForm(IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
+      public EmployeeMedFileForm(IEmployeeListService employeeListService, IOpenFileService openFileService, Data.HrDataContext context)
       {
          InitializeComponent();
          Setup();

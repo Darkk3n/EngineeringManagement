@@ -8,9 +8,9 @@ namespace EngineeringManagement.UI.Forms.Certifications
    public partial class EditCertification : Form
    {
       private List<FacilityCertification> facilityCertifications = new();
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
-      public EditCertification(Data.AppContext context)
+      public EditCertification(Data.HrDataContext context)
       {
          InitializeComponent();
          this.context = context;

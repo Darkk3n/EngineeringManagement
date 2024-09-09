@@ -6,9 +6,9 @@ namespace EngineeringManagement.Core.Services
 {
    public class EmployeeListService : IEmployeeListService
    {
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
-      public EmployeeListService(Data.AppContext context) => this.context = context;
+      public EmployeeListService(Data.HrDataContext context) => this.context = context;
 
       public IEnumerable<Employee> Get()
       {

@@ -4,9 +4,9 @@ namespace EngineeringManagement.UI.Forms
 {
    public partial class EditFacility : Form
    {
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
-      public EditFacility(Data.AppContext context)
+      public EditFacility(Data.HrDataContext context)
       {
          InitializeComponent();
          this.context = context;

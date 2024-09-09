@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EngineeringManagement.Data.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(HrDataContext))]
     [Migration("20231129185947_ChangeAbleFieldToNullable")]
     partial class ChangeAbleFieldToNullable
     {

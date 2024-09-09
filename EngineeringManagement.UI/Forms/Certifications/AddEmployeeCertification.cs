@@ -7,9 +7,9 @@ namespace EngineeringManagement.UI.Forms.Certifications
    public partial class AddEmployeeCertification : Form
    {
       private readonly MainForm mainForm;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
-      public AddEmployeeCertification(MainForm mainForm, Data.AppContext context)
+      public AddEmployeeCertification(MainForm mainForm, Data.HrDataContext context)
       {
          InitializeComponent();
          this.mainForm = mainForm;

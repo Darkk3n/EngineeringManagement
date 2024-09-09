@@ -1,5 +1,6 @@
 ﻿using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Core.Models;
+using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Extensions;
 using System.Text.RegularExpressions;
@@ -17,11 +18,11 @@ namespace EngineeringManagement.UI.Forms
       private string PictureFileName { get; set; }
       private static string CuprRegex => @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
       private readonly ICopyFilesService copyFilesService;
-      private readonly Data.AppContext context;
+      private readonly HrDataContext context;
       #endregion
 
       #region Constructor
-      public AddEmployee(ICopyFilesService copyFilesService, Data.AppContext context)
+      public AddEmployee(ICopyFilesService copyFilesService, HrDataContext context)
       {
          this.copyFilesService = copyFilesService;
          this.context = context;

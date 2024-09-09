@@ -14,9 +14,9 @@ namespace EngineeringManagement.UI.Forms
 {
    public partial class AddCertification : Form
    {
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
 
-      public AddCertification(Data.AppContext context)
+      public AddCertification(Data.HrDataContext context)
       {
          InitializeComponent();
          Setup();

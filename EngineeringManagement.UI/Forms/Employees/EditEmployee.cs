@@ -22,11 +22,11 @@ namespace EngineeringManagement.UI.Forms
       private readonly ICopyFilesService copyFilesService;
       private readonly IEmployeeListService employeeListService;
       private readonly IOpenFileService openFileService;
-      private readonly Data.AppContext context;
+      private readonly Data.HrDataContext context;
       #endregion
 
       #region Constructor
-      public EditEmployee(ICopyFilesService copyFilesService, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.AppContext context)
+      public EditEmployee(ICopyFilesService copyFilesService, IEmployeeListService employeeListService, IOpenFileService openFileService, Data.HrDataContext context)
       {
          this.copyFilesService = copyFilesService;
          this.employeeListService = employeeListService;
