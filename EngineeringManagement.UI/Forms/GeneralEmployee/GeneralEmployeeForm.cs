@@ -44,7 +44,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             Has2RecomendationLetters = chkRecommendationLetters.Checked,
             HasBankStatement = chkBankStatus.Checked,
             //TODO: These fields are not shown in mock ups HasCellPhone, HasComputer, HasEquipment, HasJobReferences
-            //HasProofOfAddress
+            //HasProofOfAddress, EmployeeType, EmployeeId
             HasCurp = chkCurp.Checked,
             HasDrivingLicense = chkDriverLicense.Checked,
             HasInfonavit = chkInfonavit.Checked,
@@ -58,6 +58,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             RenewalDate = dtpRenewalDate.Value.ToShortDateString(),
             SocialSecurityNumber = txtSocialSecutiry.Text,
             WorkCellPhone = txtWorkPhone.Text,
+            PictureFileName = PictureSafeFileName
          };
       }
    }
