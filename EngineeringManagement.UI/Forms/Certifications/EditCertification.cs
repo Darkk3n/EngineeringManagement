@@ -1,5 +1,5 @@
 ﻿using EngineeringManagement.Data.Models;
-using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.Core.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 

@@ -2,7 +2,7 @@
 using EngineeringManagement.Core.Models;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
-using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.Core.Extensions;
 using System.Text.RegularExpressions;
 
 namespace EngineeringManagement.UI.Forms

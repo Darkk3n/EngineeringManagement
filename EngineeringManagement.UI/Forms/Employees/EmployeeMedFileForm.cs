@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Data.Models;
-using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.Core.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace EngineeringManagement.UI.Forms.Employees

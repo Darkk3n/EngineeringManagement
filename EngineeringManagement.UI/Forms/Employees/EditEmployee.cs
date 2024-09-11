@@ -2,7 +2,7 @@
 using EngineeringManagement.Core.Models;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.Data.Models.Enums;
-using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.Core.Extensions;
 using System.Data;
 using System.Text.RegularExpressions;
 

@@ -1,6 +1,5 @@
 ﻿using EngineeringManagement.Data.Models;
-using EngineeringManagement.UI.Extensions;
-using Microsoft.EntityFrameworkCore;
+using EngineeringManagement.Core.Extensions;
 
 namespace EngineeringManagement.UI.Forms
 {

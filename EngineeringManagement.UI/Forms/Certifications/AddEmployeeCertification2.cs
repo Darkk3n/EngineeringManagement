@@ -1,6 +1,6 @@
 ﻿using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Data.Models;
-using EngineeringManagement.UI.Extensions;
+using EngineeringManagement.Core.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
