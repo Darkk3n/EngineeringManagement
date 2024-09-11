@@ -44,7 +44,8 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             Has2RecomendationLetters = chkRecommendationLetters.Checked,
             HasBankStatement = chkBankStatus.Checked,
             //TODO: These fields are not shown in mock ups HasCellPhone, HasComputer, HasEquipment, HasJobReferences
-            //HasProofOfAddress, EmployeeType, EmployeeId
+            //HasProofOfAddress, EmployeeType,
+            EmployeeId = int.Parse(txtEmpCode.Text),
             HasCurp = chkCurp.Checked,
             HasDrivingLicense = chkDriverLicense.Checked,
             HasInfonavit = chkInfonavit.Checked,

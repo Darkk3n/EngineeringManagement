@@ -79,6 +79,8 @@
          label8 = new Label();
          btnPictureUpload = new Button();
          pictureDialog = new OpenFileDialog();
+         label17 = new Label();
+         txtEmpCode = new TextBox();
          ((System.ComponentModel.ISupportInitialize)pbEmployee).BeginInit();
          tabControl1.SuspendLayout();
          tabPage1.SuspendLayout();
@@ -98,11 +100,11 @@
          // label1
          // 
          label1.AutoSize = true;
-         label1.Location = new Point(313, 16);
+         label1.Location = new Point(309, 16);
          label1.Name = "label1";
-         label1.Size = new Size(63, 15);
+         label1.Size = new Size(129, 15);
          label1.TabIndex = 1;
-         label1.Text = "Empleado:";
+         label1.Text = "Nombre del Empleado:";
          // 
          // label2
          // 
@@ -170,7 +172,7 @@
          // label10
          // 
          label10.AutoSize = true;
-         label10.Location = new Point(12, 323);
+         label10.Location = new Point(12, 375);
          label10.Name = "label10";
          label10.Size = new Size(94, 15);
          label10.TabIndex = 10;
@@ -179,7 +181,7 @@
          // label11
          // 
          label11.AutoSize = true;
-         label11.Location = new Point(12, 390);
+         label11.Location = new Point(12, 442);
          label11.Name = "label11";
          label11.Size = new Size(103, 15);
          label11.TabIndex = 11;
@@ -188,7 +190,7 @@
          // label12
          // 
          label12.AutoSize = true;
-         label12.Location = new Point(12, 455);
+         label12.Location = new Point(12, 507);
          label12.Name = "label12";
          label12.Size = new Size(136, 15);
          label12.TabIndex = 12;
@@ -197,7 +199,7 @@
          // label13
          // 
          label13.AutoSize = true;
-         label13.Location = new Point(12, 513);
+         label13.Location = new Point(12, 565);
          label13.Name = "label13";
          label13.Size = new Size(201, 15);
          label13.TabIndex = 13;
@@ -206,7 +208,7 @@
          // label14
          // 
          label14.AutoSize = true;
-         label14.Location = new Point(12, 575);
+         label14.Location = new Point(12, 627);
          label14.Name = "label14";
          label14.Size = new Size(68, 15);
          label14.TabIndex = 14;
@@ -263,7 +265,7 @@
          chkBankStatus.Location = new Point(518, 256);
          chkBankStatus.Name = "chkBankStatus";
          chkBankStatus.Size = new Size(118, 19);
-         chkBankStatus.TabIndex = 28;
+         chkBankStatus.TabIndex = 26;
          chkBankStatus.Text = "Estado de Cuenta";
          chkBankStatus.UseVisualStyleBackColor = true;
          // 
@@ -273,7 +275,7 @@
          chkRecommendationLetters.Location = new Point(518, 206);
          chkRecommendationLetters.Name = "chkRecommendationLetters";
          chkRecommendationLetters.Size = new Size(168, 19);
-         chkRecommendationLetters.TabIndex = 27;
+         chkRecommendationLetters.TabIndex = 24;
          chkRecommendationLetters.Text = "2 Carta de Recomendacion";
          chkRecommendationLetters.UseVisualStyleBackColor = true;
          // 
@@ -283,7 +285,7 @@
          chkDriverLicense.Location = new Point(518, 180);
          chkDriverLicense.Name = "chkDriverLicense";
          chkDriverLicense.Size = new Size(128, 19);
-         chkDriverLicense.TabIndex = 26;
+         chkDriverLicense.TabIndex = 23;
          chkDriverLicense.Text = "Licencia de Manejo";
          chkDriverLicense.UseVisualStyleBackColor = true;
          // 
@@ -293,7 +295,7 @@
          chkInfonavit.Location = new Point(518, 155);
          chkInfonavit.Name = "chkInfonavit";
          chkInfonavit.Size = new Size(85, 19);
-         chkInfonavit.TabIndex = 25;
+         chkInfonavit.TabIndex = 22;
          chkInfonavit.Text = "INFONAVIT";
          chkInfonavit.UseVisualStyleBackColor = true;
          // 
@@ -303,7 +305,7 @@
          chkSocialSecurity.Location = new Point(296, 256);
          chkSocialSecurity.Name = "chkSocialSecurity";
          chkSocialSecurity.Size = new Size(47, 19);
-         chkSocialSecurity.TabIndex = 24;
+         chkSocialSecurity.TabIndex = 21;
          chkSocialSecurity.Text = "NSS";
          chkSocialSecurity.UseVisualStyleBackColor = true;
          // 
@@ -313,7 +315,7 @@
          chkPictures.Location = new Point(518, 231);
          chkPictures.Name = "chkPictures";
          chkPictures.Size = new Size(94, 19);
-         chkPictures.TabIndex = 23;
+         chkPictures.TabIndex = 25;
          chkPictures.Text = "2 Fotografias";
          chkPictures.UseVisualStyleBackColor = true;
          // 
@@ -323,7 +325,7 @@
          chkVotingCard.Location = new Point(296, 231);
          chkVotingCard.Name = "chkVotingCard";
          chkVotingCard.Size = new Size(44, 19);
-         chkVotingCard.TabIndex = 22;
+         chkVotingCard.TabIndex = 20;
          chkVotingCard.Text = "INE";
          chkVotingCard.UseVisualStyleBackColor = true;
          // 
@@ -333,7 +335,7 @@
          chkCurp.Location = new Point(296, 206);
          chkCurp.Name = "chkCurp";
          chkCurp.Size = new Size(56, 19);
-         chkCurp.TabIndex = 21;
+         chkCurp.TabIndex = 19;
          chkCurp.Text = "CURP";
          chkCurp.UseVisualStyleBackColor = true;
          // 
@@ -343,7 +345,7 @@
          chkRfc.Location = new Point(296, 180);
          chkRfc.Name = "chkRfc";
          chkRfc.Size = new Size(217, 19);
-         chkRfc.TabIndex = 20;
+         chkRfc.TabIndex = 18;
          chkRfc.Text = "Constancia de Situacion Fiscal (RFC)";
          chkRfc.UseVisualStyleBackColor = true;
          // 
@@ -353,7 +355,7 @@
          chkBirthCertificate.Location = new Point(296, 155);
          chkBirthCertificate.Name = "chkBirthCertificate";
          chkBirthCertificate.Size = new Size(131, 19);
-         chkBirthCertificate.TabIndex = 19;
+         chkBirthCertificate.TabIndex = 17;
          chkBirthCertificate.Text = "Acta de Nacimiento";
          chkBirthCertificate.UseVisualStyleBackColor = true;
          // 
@@ -363,7 +365,7 @@
          chkProofOfStudies.Location = new Point(296, 92);
          chkProofOfStudies.Name = "chkProofOfStudies";
          chkProofOfStudies.Size = new Size(163, 19);
-         chkProofOfStudies.TabIndex = 18;
+         chkProofOfStudies.TabIndex = 16;
          chkProofOfStudies.Text = "Comprobante de Estudios";
          chkProofOfStudies.UseVisualStyleBackColor = true;
          // 
@@ -375,14 +377,14 @@
          cmbBloodType.Location = new Point(6, 282);
          cmbBloodType.Name = "cmbBloodType";
          cmbBloodType.Size = new Size(190, 23);
-         cmbBloodType.TabIndex = 17;
+         cmbBloodType.TabIndex = 14;
          // 
          // txtEmail
          // 
          txtEmail.Location = new Point(6, 222);
          txtEmail.Name = "txtEmail";
          txtEmail.Size = new Size(190, 23);
-         txtEmail.TabIndex = 16;
+         txtEmail.TabIndex = 13;
          // 
          // txtSocialSecutiry
          // 
@@ -390,21 +392,21 @@
          txtSocialSecutiry.Mask = "00000000000";
          txtSocialSecutiry.Name = "txtSocialSecutiry";
          txtSocialSecutiry.Size = new Size(190, 23);
-         txtSocialSecutiry.TabIndex = 15;
+         txtSocialSecutiry.TabIndex = 12;
          // 
          // txtRfc
          // 
          txtRfc.Location = new Point(6, 92);
          txtRfc.Name = "txtRfc";
          txtRfc.Size = new Size(190, 23);
-         txtRfc.TabIndex = 14;
+         txtRfc.TabIndex = 11;
          // 
          // txtCurp
          // 
          txtCurp.Location = new Point(6, 35);
          txtCurp.Name = "txtCurp";
          txtCurp.Size = new Size(190, 23);
-         txtCurp.TabIndex = 13;
+         txtCurp.TabIndex = 10;
          // 
          // cmbMaritalStatus
          // 
@@ -414,7 +416,7 @@
          cmbMaritalStatus.Location = new Point(298, 35);
          cmbMaritalStatus.Name = "cmbMaritalStatus";
          cmbMaritalStatus.Size = new Size(154, 23);
-         cmbMaritalStatus.TabIndex = 12;
+         cmbMaritalStatus.TabIndex = 15;
          // 
          // label16
          // 
@@ -478,7 +480,7 @@
          txtEmpName.Location = new Point(241, 34);
          txtEmpName.Name = "txtEmpName";
          txtEmpName.Size = new Size(247, 23);
-         txtEmpName.TabIndex = 18;
+         txtEmpName.TabIndex = 1;
          // 
          // dtpStartDate
          // 
@@ -486,7 +488,7 @@
          dtpStartDate.Location = new Point(494, 34);
          dtpStartDate.Name = "dtpStartDate";
          dtpStartDate.Size = new Size(200, 23);
-         dtpStartDate.TabIndex = 19;
+         dtpStartDate.TabIndex = 2;
          // 
          // dtpRenewalDate
          // 
@@ -494,45 +496,45 @@
          dtpRenewalDate.Location = new Point(719, 34);
          dtpRenewalDate.Name = "dtpRenewalDate";
          dtpRenewalDate.Size = new Size(200, 23);
-         dtpRenewalDate.TabIndex = 20;
+         dtpRenewalDate.TabIndex = 3;
          // 
          // txtWorkPhone
          // 
-         txtWorkPhone.Location = new Point(12, 343);
+         txtWorkPhone.Location = new Point(12, 395);
          txtWorkPhone.Mask = "999-000-0000";
          txtWorkPhone.Name = "txtWorkPhone";
          txtWorkPhone.Size = new Size(201, 23);
-         txtWorkPhone.TabIndex = 21;
+         txtWorkPhone.TabIndex = 5;
          // 
          // txtPersonalPhone
          // 
-         txtPersonalPhone.Location = new Point(12, 408);
+         txtPersonalPhone.Location = new Point(12, 460);
          txtPersonalPhone.Mask = "999-000-0000";
          txtPersonalPhone.Name = "txtPersonalPhone";
          txtPersonalPhone.Size = new Size(201, 23);
-         txtPersonalPhone.TabIndex = 22;
+         txtPersonalPhone.TabIndex = 6;
          // 
          // txtEmergencyPhone
          // 
-         txtEmergencyPhone.Location = new Point(12, 473);
+         txtEmergencyPhone.Location = new Point(12, 525);
          txtEmergencyPhone.Mask = "999-000-0000";
          txtEmergencyPhone.Name = "txtEmergencyPhone";
          txtEmergencyPhone.Size = new Size(201, 23);
-         txtEmergencyPhone.TabIndex = 23;
+         txtEmergencyPhone.TabIndex = 7;
          // 
          // txtEmergencyContactName
          // 
-         txtEmergencyContactName.Location = new Point(12, 531);
+         txtEmergencyContactName.Location = new Point(12, 583);
          txtEmergencyContactName.Name = "txtEmergencyContactName";
          txtEmergencyContactName.Size = new Size(201, 23);
-         txtEmergencyContactName.TabIndex = 24;
+         txtEmergencyContactName.TabIndex = 8;
          // 
          // txtRelationship
          // 
-         txtRelationship.Location = new Point(12, 593);
+         txtRelationship.Location = new Point(12, 645);
          txtRelationship.Name = "txtRelationship";
          txtRelationship.Size = new Size(201, 23);
-         txtRelationship.TabIndex = 25;
+         txtRelationship.TabIndex = 9;
          // 
          // label8
          // 
@@ -558,12 +560,30 @@
          pictureDialog.Filter = "Archivos de Imagen (*.png, *.jpg, *.jpeg) | *.png ;*.jpg;*.jpeg";
          pictureDialog.InitialDirectory = "C:\\";
          // 
+         // label17
+         // 
+         label17.AutoSize = true;
+         label17.Location = new Point(12, 323);
+         label17.Name = "label17";
+         label17.Size = new Size(111, 15);
+         label17.TabIndex = 28;
+         label17.Text = "Clave de Empleado:";
+         // 
+         // txtEmpCode
+         // 
+         txtEmpCode.Location = new Point(12, 342);
+         txtEmpCode.Name = "txtEmpCode";
+         txtEmpCode.Size = new Size(201, 23);
+         txtEmpCode.TabIndex = 4;
+         // 
          // GeneralEmployeeForm
          // 
          AutoScaleDimensions = new SizeF(7F, 15F);
          AutoScaleMode = AutoScaleMode.Font;
          CancelButton = btnCancel;
-         ClientSize = new Size(1017, 651);
+         ClientSize = new Size(1017, 682);
+         Controls.Add(txtEmpCode);
+         Controls.Add(label17);
          Controls.Add(btnPictureUpload);
          Controls.Add(label8);
          Controls.Add(txtRelationship);
@@ -651,5 +671,7 @@
       private Label label8;
       private Button btnPictureUpload;
       private OpenFileDialog pictureDialog;
+      private Label label17;
+      private TextBox txtEmpCode;
    }
 }
