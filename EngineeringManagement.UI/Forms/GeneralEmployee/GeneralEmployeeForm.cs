@@ -1,4 +1,7 @@
-﻿using EngineeringManagement.Core.Extensions;
+﻿using EngineeringManagement.Core.Contracts;
+using EngineeringManagement.Core.Extensions;
+using EngineeringManagement.Core.Models;
+using EngineeringManagement.Core.Services;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 
@@ -7,18 +10,21 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
    public partial class GeneralEmployeeForm : Form
    {
       #region Properties
-      public string PictureSafeFileName { get; set; }
-      public string PictureFileName { get; set; }
-      public GeneralEmployee SelectedEmployee { get; set; }
+      private string PictureSafeFileName { get; set; }
+      private string PictureFileName { get; set; }
+      private GeneralEmployee SelectedEmployee { get; set; }
       private readonly HrDataContext context;
+      private readonly ICopyFilesService copyFilesService;
+
       public List<GeneralEmployee> CurrentEmployees { get; set; } = [];
       #endregion
 
       #region Setup
-      public GeneralEmployeeForm(HrDataContext context)
+      public GeneralEmployeeForm(HrDataContext context, ICopyFilesService copyFilesService)
       {
          InitializeComponent();
          this.context = context;
+         this.copyFilesService = copyFilesService;
       }
 
       protected override void OnLoad(EventArgs e)
@@ -74,6 +80,19 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
          {
             context.GeneralEmployees.Add(employee);
             recordCount = context.SaveChanges();
+            if (recordCount > 0)
+            {
+               if (PictureSafeFileName.HasValue())
+               {
+                  copyFilesService.Execute(new CopyFilesServiceArgs
+                  {
+                     EmployeeName = employee.EmployeeName,
+                     FileName = PictureFileName,
+                     SafeFileName = PictureSafeFileName,
+                     StartupPath = Application.StartupPath
+                  });
+               }
+            }
          }
          catch (Exception)
          {
