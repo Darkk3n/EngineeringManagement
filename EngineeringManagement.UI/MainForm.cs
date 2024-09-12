@@ -1,3 +1,4 @@
+using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
@@ -13,13 +14,13 @@ namespace EngineeringManagement.UI
       #region Properties
       public bool ShouldRefreshAllEmployees { get; set; }
       private readonly IServiceProvider serviceProvider;
-      private readonly Data.HrDataContext context;
-      private List<Employee> Employees { get; set; } = [];
+      private readonly HrDataContext context;
+      private List<GeneralEmployee> Employees { get; set; } = [];
       private bool IsLoading { get; set; }
       #endregion
 
       #region Initialization
-      public MainForm(IServiceProvider serviceProvider, Data.HrDataContext context)
+      public MainForm(IServiceProvider serviceProvider, HrDataContext context)
       {
          InitializeComponent();
          this.serviceProvider = serviceProvider;
@@ -46,7 +47,7 @@ namespace EngineeringManagement.UI
 
          //TODO: Create statements to insert default data into GeneralEmployee table and
          //change this DbSet to GeneralEmployees
-         Employees.AddRange([.. context.Employees]);
+         Employees.AddRange([.. context.GeneralEmployees]);
          if (Employees.Count == 0)
          {
             cmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -74,7 +75,7 @@ namespace EngineeringManagement.UI
          var orderedEmployees = Employees.OrderBy(r => r.EmployeeName).ToList();
          foreach (var employee in orderedEmployees)
          {
-            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.Position, employee.SocialSecurityNumber);
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.JobDescription, employee.PersonalCellPhone);
          }
       }
 
@@ -131,7 +132,7 @@ namespace EngineeringManagement.UI
       {
          dgvEmployeeList.Rows.Clear();
          Employees.Clear();
-         Employees.AddRange([.. context.Employees]);
+         Employees.AddRange([.. context.GeneralEmployees]);
          AddAllEmployees();
       }
       #endregion
@@ -280,9 +281,9 @@ namespace EngineeringManagement.UI
       {
          if (!IsLoading)
          {
-            var employee = ((ComboBox)sender).SelectedItem as Employee;
+            var employee = ((ComboBox)sender).SelectedItem as GeneralEmployee;
             dgvEmployeeList.Rows.Clear();
-            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.Position, employee.SocialSecurityNumber);
+            dgvEmployeeList.Rows.Add(false, employee.EmployeeName, employee.Id, employee.JobDescription, employee.PersonalCellPhone);
          }
       }
 
@@ -322,7 +323,7 @@ namespace EngineeringManagement.UI
 
             if (MessageBox.Show($"Esta seguro que desea eliminar el/los siguiente(s) empleado(s): {Environment.NewLine}{Environment.NewLine}{message}", "Eliminar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
-               context.Employees
+               context.GeneralEmployees
                   .Where(r => checkedRows.Select(r => r.Id).Contains(r.Id))
                   .ExecuteDelete();
                MessageBox.Show("Empleado(s) eliminado(s) con exito.", "Eliminar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -359,7 +360,7 @@ namespace EngineeringManagement.UI
             return;
          }
          dgvEmployeeList.Rows.Clear();
-         matches.ForEach(match => dgvEmployeeList.Rows.Add(false, match.EmployeeName, match.Id, match.Position, match.SocialSecurityNumber));
+         matches.ForEach(match => dgvEmployeeList.Rows.Add(false, match.EmployeeName, match.Id, match.JobDescription, match.PersonalCellPhone));
       }
       #endregion
    }
