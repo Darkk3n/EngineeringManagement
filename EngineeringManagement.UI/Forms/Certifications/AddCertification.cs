@@ -11,8 +11,8 @@ namespace EngineeringManagement.UI.Forms
       public AddCertification(Data.HrDataContext context)
       {
          InitializeComponent();
-         Setup();
          this.context = context;
+         Setup();
       }
 
       private void Setup()

@@ -21,10 +21,10 @@ namespace EngineeringManagement.UI.Forms.Employees
       public EmployeeMedFileForm(IEmployeeListService employeeListService, IOpenFileService openFileService, Data.HrDataContext context)
       {
          InitializeComponent();
-         Setup();
          this.employeeListService = employeeListService;
          this.openFileService = openFileService;
          this.context = context;
+         Setup();
       }
       #endregion
 
