@@ -1,3 +1,7 @@
+using System.Data;
+using System.Diagnostics;
+using ClosedXML.Excel;
+using EngineeringManagement.Core.Extensions;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 using EngineeringManagement.UI.Forms;
@@ -306,14 +310,11 @@ namespace EngineeringManagement.UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var checkedRows = dgvEmployeeList.Rows
-             .Cast<DataGridViewRow>()
-             .Where(row => Convert.ToBoolean(row.Cells[0].Value) == true)
-             .Select(r => new
-             {
-                 Id = Convert.ToInt32(r.Cells[2].Value),
-                 Name = r.Cells[1].Value.ToString(),
-             })
+            var checkedRows = GetCheckedRows().Select(r => new
+            {
+                Id = Convert.ToInt32(r.Cells[2].Value),
+                Name = r.Cells[1].Value.ToString(),
+            })
              .ToList();
             if (checkedRows.Count == 0)
             {
@@ -336,18 +337,15 @@ namespace EngineeringManagement.UI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            var checkedRows = dgvEmployeeList.Rows
-             .Cast<DataGridViewRow>()
-             .Where(row => Convert.ToBoolean(row.Cells[0].Value) == true)
-             .ToList();
-
-            checkedRows.ForEach(row => { row.Cells[0].Value = false; });
+            GetCheckedRows()
+             .ToList()
+             .ForEach(row => { row.Cells[0].Value = false; });
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var textToSearch = cmbEmployees.Text;
-            if (textToSearch == string.Empty)
+            if (!textToSearch.HasValue())
             {
                 MessageBox.Show("Escriba algun nombre para comenzar la busqueda.", "Buscar Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -371,6 +369,99 @@ namespace EngineeringManagement.UI
             Employees.AddRange([.. context.GeneralEmployees]);
             ReloadGrid();
             SetupComboBox();
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            var dt = new DataTable();
+            var selectedEmployees = new List<GeneralEmployee>();
+            AddDataTableColumns(dt);
+            var rows = GetCheckedRows().Select(r => new
+            {
+                Id = Convert.ToInt32(r.Cells[2].Value),
+            })
+                .ToList();
+            if (rows.Count == 0)
+            {
+                selectedEmployees.AddRange([.. Employees]);
+            }
+            else
+            {
+                selectedEmployees.AddRange(Employees
+                    .Where(e => rows.Select(r => r.Id).Contains(e.Id)));
+            }
+            foreach (var employee in selectedEmployees)
+            {
+                dt.Rows.Add(employee.EmployeeId, employee.EmployeeName, employee.StartDate, employee.RenewalDate, employee.PersonalCellPhone,
+                    employee.BirthDate, employee.BirthPlace, employee.Curp, employee.Rfc, employee.SocialSecurityNumber,
+                    employee.Email, employee.BloodType, employee.MaritalStatus, employee.Address, employee.AcademicDegree,
+                    employee.AcademicDegreeDocument, employee.Profession, employee.FatherName, employee.MotherName,
+                    employee.EmergencyContactName, employee.BenefitiaryAddress, employee.EmergencyPhoneNumber,
+                    employee.EmergencyContactRelationShip, employee.BenefitiaryBirthDate, employee.BenefitiaryPercent,
+                    employee.HospitalNumber, employee.InfonavitNumber, employee.InfonavitPercent);
+            }
+            ProcessExcelExport(dt);
+        }
+
+        private static void ProcessExcelExport(DataTable dt)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var savePath = Path.Combine(documentsPath, "Empleados AES.xlsx");
+            try
+            {
+                using var workbook = new XLWorkbook();
+                var worksheet = workbook.Worksheets.Add(dt, "Base de datos Empleados");
+                worksheet.Columns().AdjustToContents();
+                workbook.SaveAs(savePath);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                MessageBox.Show("Exportado de datos exitoso.", "Exportar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Process.Start("explorer.exe", savePath);
+            }
+        }
+
+        private static void AddDataTableColumns(DataTable dt)
+        {
+            dt.Columns.Add("ID Empleado");
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Fecha de Contratacion");
+            dt.Columns.Add("Fecha de Renovacion");
+            dt.Columns.Add("Telefono Personal");
+            dt.Columns.Add("Fecha de Nacimiento");
+            dt.Columns.Add("Lugar de Nacimiento");
+            dt.Columns.Add("CURP");
+            dt.Columns.Add("RFC");
+            dt.Columns.Add("NSS");
+            dt.Columns.Add("Correo");
+            dt.Columns.Add("Tipo de Sangre");
+            dt.Columns.Add("Estado Civil");
+            dt.Columns.Add("Direccion");
+            dt.Columns.Add("Grado Academico");
+            dt.Columns.Add("Documento");
+            dt.Columns.Add("Profesion");
+            dt.Columns.Add("Nombre del Padre");
+            dt.Columns.Add("Nombre de la Madre");
+            dt.Columns.Add("Beneficiario"); //EmergencyContactName
+            dt.Columns.Add("Direccion del Beneficiario");//BenefitiaryAddress
+            dt.Columns.Add("Telefono del Beneficiario"); //EmergencyPhoneNumber
+            dt.Columns.Add("Parentesco");
+            dt.Columns.Add("Fecha de Nacimiento del Beneficiario");//BenefitiaryBirthDate
+            dt.Columns.Add("Porcentaje del Beneficiario");//BenefitiaryPercent
+            dt.Columns.Add("Numero de Clinica IMSS");//HospitalNumber
+            dt.Columns.Add("Numero de Credito Infonavit");//InfonavitNumber
+            dt.Columns.Add("% - VSM - Cuota");//InfonavitPercent
+        }
+
+        private IEnumerable<DataGridViewRow> GetCheckedRows()
+        {
+            return dgvEmployeeList.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => Convert.ToBoolean(row.Cells[0].Value) == true);
         }
         #endregion
     }

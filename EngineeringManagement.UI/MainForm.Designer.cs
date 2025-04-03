@@ -50,6 +50,7 @@
             btnDelete = new Button();
             label1 = new Label();
             splitContainer1 = new SplitContainer();
+            BtnExport = new Button();
             btnSearch = new Button();
             btnClear = new Button();
             menuStrip1.SuspendLayout();
@@ -230,6 +231,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(BtnExport);
             splitContainer1.Panel1.Controls.Add(btnSearch);
             splitContainer1.Panel1.Controls.Add(btnClear);
             splitContainer1.Panel1.Controls.Add(cmbEmployees);
@@ -244,6 +246,16 @@
             splitContainer1.SplitterDistance = 72;
             splitContainer1.TabIndex = 7;
             // 
+            // BtnExport
+            // 
+            BtnExport.Location = new Point(601, 20);
+            BtnExport.Name = "BtnExport";
+            BtnExport.Size = new Size(77, 43);
+            BtnExport.TabIndex = 9;
+            BtnExport.Text = "Exportar a Excel";
+            BtnExport.UseVisualStyleBackColor = true;
+            BtnExport.Click += BtnExport_Click;
+            // 
             // btnSearch
             // 
             btnSearch.Image = Properties.Resources.Lupa_Icon__2_;
@@ -256,7 +268,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(601, 20);
+            btnClear.Location = new Point(684, 19);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(77, 43);
             btnClear.TabIndex = 7;
@@ -315,5 +327,6 @@
       private Button btnClear;
       private Button btnSearch;
         private ToolStripMenuItem generarContratoToolStripMenuItem;
+        private Button BtnExport;
     }
 }
