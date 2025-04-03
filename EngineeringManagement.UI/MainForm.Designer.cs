@@ -36,6 +36,7 @@
             agregarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             editarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             expedientesMedicosToolStripMenuItem = new ToolStripMenuItem();
+            generarContratoToolStripMenuItem = new ToolStripMenuItem();
             plantasToolStripMenuItem = new ToolStripMenuItem();
             agregarPlantaToolStripMenuItem = new ToolStripMenuItem();
             editarPlantaToolStripMenuItem = new ToolStripMenuItem();
@@ -51,7 +52,6 @@
             splitContainer1 = new SplitContainer();
             btnSearch = new Button();
             btnClear = new Button();
-            generarContratoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmployeeList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -110,6 +110,12 @@
             expedientesMedicosToolStripMenuItem.Size = new Size(184, 22);
             expedientesMedicosToolStripMenuItem.Text = "Expedientes Medicos";
             expedientesMedicosToolStripMenuItem.Click += expedientesMedicosToolStripMenuItem_Click;
+            // 
+            // generarContratoToolStripMenuItem
+            // 
+            generarContratoToolStripMenuItem.Name = "generarContratoToolStripMenuItem";
+            generarContratoToolStripMenuItem.Size = new Size(184, 22);
+            generarContratoToolStripMenuItem.Text = "Generar Contrato";
             // 
             // plantasToolStripMenuItem
             // 
@@ -186,9 +192,9 @@
             btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
             btnAdd.Location = new Point(400, 19);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(77, 43);
+            btnAdd.Size = new Size(112, 43);
             btnAdd.TabIndex = 4;
-            btnAdd.Text = "Agregar";
+            btnAdd.Text = "Agregar/Editar";
             btnAdd.TextAlign = ContentAlignment.MiddleRight;
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
@@ -197,7 +203,7 @@
             // 
             btnDelete.Image = Properties.Resources.vcsconflicting_93497__1_;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(483, 20);
+            btnDelete.Location = new Point(518, 20);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(77, 43);
             btnDelete.TabIndex = 5;
@@ -250,19 +256,13 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(566, 19);
+            btnClear.Location = new Point(601, 20);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(77, 43);
             btnClear.TabIndex = 7;
             btnClear.Text = "Anular Seleccion";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
-            // 
-            // generarContratoToolStripMenuItem
-            // 
-            generarContratoToolStripMenuItem.Name = "generarContratoToolStripMenuItem";
-            generarContratoToolStripMenuItem.Size = new Size(184, 22);
-            generarContratoToolStripMenuItem.Text = "Generar Contrato";
             // 
             // MainForm
             // 
