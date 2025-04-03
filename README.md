@@ -5,7 +5,7 @@
 
 ## Link de descarga
 
-[Control Total Ingenieria](https://github.com/Darkk3n/EngineeringManagement/blob/main/Installer/ControlTotalIngeniera.zip)
+[Control Total Ingenieria](https://github.com/Darkk3n/EngineeringManagement/blob/main/Installer/ControlTotalIngeneria.zip)
 
 Como descargar:
 ![image](https://github.com/user-attachments/assets/54cc4c57-615c-4feb-9b1e-0c677476bc8d)
