@@ -106,9 +106,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 EmployeeAdded?.Invoke(this, EventArgs.Empty);
             }
         }
-        #endregion
 
-        #region Private Methods
         private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbEmployees.SelectedIndex != 0)
@@ -165,6 +163,9 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 }
             }
         }
+        #endregion
+
+        #region Private Methods
 
         private static string GetFilePath(GeneralEmployee employee) => Path.Combine(Application.StartupPath, "Documentos", employee.EmployeeName, employee.PictureFileName);
 
