@@ -69,6 +69,39 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            MapValuesForUpdate();
+            var recordCount = 0;
+            try
+            {
+                context.GeneralEmployees.Update(SelectedEmployee);
+                recordCount = context.SaveChanges();
+                if (recordCount > 0)
+                {
+                    if (PictureSafeFileName.HasValue())
+                    {
+                        copyFilesService.Execute(new CopyFilesServiceArgs
+                        {
+                            EmployeeName = SelectedEmployee.EmployeeName,
+                            FileName = PictureFileName,
+                            SafeFileName = PictureSafeFileName,
+                            StartupPath = Application.StartupPath
+                        });
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (recordCount > 0)
+                {
+                    MessageBox.Show("Empleado actualizado con exito.", "Agregar/Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                EmployeeAdded?.Invoke(this, EventArgs.Empty);
+            }
+
         }
 
         private void BtnAddNew_Click(object sender, EventArgs e)
@@ -101,7 +134,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             {
                 if (recordCount > 0)
                 {
-                    MessageBox.Show("Empleado guardado con exito.", "Agregar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Empleado guardado con exito.", "Agregar/Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 EmployeeAdded?.Invoke(this, EventArgs.Empty);
             }
@@ -220,6 +253,56 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 Profession = TxtProfession.Text,
                 BenefitiaryAddress = TxtBenefitAddress.Text
             };
+        }
+
+        private void MapValuesForUpdate()
+        {
+            SelectedEmployee.BloodType = cmbBloodType.SelectedText;
+            SelectedEmployee.Curp = txtCurp.Text;
+            SelectedEmployee.Email = txtEmail.Text;
+            SelectedEmployee.EmergencyContactName = txtEmergencyContactName.Text;
+            SelectedEmployee.EmergencyContactRelationShip = txtRelationship.Text;
+            SelectedEmployee.EmergencyPhoneNumber = txtEmergencyPhone.Text;
+            SelectedEmployee.EmployeeName = txtEmpName.Text;
+            //TODO: Figure out EmployeeType 
+            SelectedEmployee.Has2Pictures = chkPictures.Checked;
+            SelectedEmployee.Has2RecomendationLetters = chkRecommendationLetters.Checked;
+            SelectedEmployee.HasBankStatement = chkBankStatus.Checked;
+            //TODO: These fields are not shown in mock ups HasCellPhone, HasComputer, HasEquipment, HasJobReferences
+            //HasProofOfAddress, EmployeeType,
+            SelectedEmployee.EmployeeId = int.Parse(txtEmpCode.Text);
+            SelectedEmployee.HasCurp = chkCurp.Checked;
+            SelectedEmployee.HasDrivingLicense = chkDriverLicense.Checked;
+            SelectedEmployee.HasInfonavit = chkInfonavit.Checked;
+            SelectedEmployee.HasNss = chkSocialSecurity.Checked;
+            SelectedEmployee.HasProofOfStudies = chkProofOfStudies.Checked;
+            SelectedEmployee.HasSat = chkRfc.Checked;
+            SelectedEmployee.MaritalStatus = cmbMaritalStatus.SelectedText;
+            SelectedEmployee.Rfc = txtRfc.Text;
+            SelectedEmployee.PersonalCellPhone = txtPersonalPhone.Text;
+            SelectedEmployee.StartDate = dtpStartDate.Value.ToShortDateString();
+            SelectedEmployee.RenewalDate = dtpRenewalDate.Value.ToShortDateString();
+            SelectedEmployee.SocialSecurityNumber = txtSocialSecutiry.Text;
+            //WorkCellPhone = txtWorkPhone.Text,
+            SelectedEmployee.PictureFileName = PictureSafeFileName;
+            SelectedEmployee.AcademicDegree = TxtAcademicDegree.Text;
+            SelectedEmployee.AcademicDegreeDocument = TxtAcademicDocument.Text;
+            SelectedEmployee.Address = TxtAddress.Text;
+            SelectedEmployee.BankAccountCard = int.Parse(TxtBankCard.Text);
+            SelectedEmployee.BankAccountNumber = int.Parse(TxtBankAcc.Text);
+            SelectedEmployee.BankName = TxtBankName.Text;
+            SelectedEmployee.BenefitiaryBirthDate = DtpBenefitBirthDate.Value;
+            SelectedEmployee.BenefitiaryPercent = int.Parse(TxtBenefitPerc.Text);
+            SelectedEmployee.BirthDate = DtpBirthDate.Value;
+            SelectedEmployee.BirthPlace = TxtBirthPlace.Text;
+            SelectedEmployee.FatherName = TxtFatherName.Text;
+            SelectedEmployee.FonacotClientNumber = TxtFonacot.Text;
+            SelectedEmployee.InfonavitNumber = TxtHouseCredit.Text;
+            SelectedEmployee.InfonavitPercent = TxtHouseCreditPercent.Text;
+            SelectedEmployee.HospitalNumber = TxtHospitalNumber.Text;
+            SelectedEmployee.MotherName = TxtMotherName.Text;
+            SelectedEmployee.Profession = TxtProfession.Text;
+            SelectedEmployee.BenefitiaryAddress = TxtBenefitAddress.Text;
         }
         #endregion
     }
