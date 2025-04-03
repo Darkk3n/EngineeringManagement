@@ -113,7 +113,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
         {
             if (cmbEmployees.SelectedIndex != 0)
             {
-                SelectedEmployee = CurrentEmployees.First(r => r.Id == cmbEmployees.SelectedIndex);
+                SelectedEmployee = CurrentEmployees.First(r => r.EmployeeName == ((GeneralEmployee)cmbEmployees.SelectedItem).EmployeeName);
                 cmbBloodType.SelectedIndex = cmbBloodType.FindString(SelectedEmployee.BloodType);
                 cmbMaritalStatus.SelectedIndex = cmbMaritalStatus.FindString(SelectedEmployee.MaritalStatus);
                 txtCurp.Text = SelectedEmployee.Curp;
@@ -138,6 +138,26 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 dtpRenewalDate.Value = DateTime.Parse(SelectedEmployee.RenewalDate);
                 txtSocialSecutiry.Text = SelectedEmployee.SocialSecurityNumber;
                 //txtWorkPhone.Text = SelectedEmployee.WorkCellPhone;
+                TxtAcademicDegree.Text = SelectedEmployee.AcademicDegree;
+                TxtAcademicDocument.Text = SelectedEmployee.AcademicDegreeDocument;
+                TxtAddress.Text = SelectedEmployee.Address;
+                TxtBankCard.Text = SelectedEmployee.BankAccountCard.ToString();
+                TxtBankAcc.Text = SelectedEmployee.BankAccountNumber.ToString();
+                TxtBankName.Text = SelectedEmployee.BankName;
+                DtpBenefitBirthDate.Value = SelectedEmployee.BenefitiaryBirthDate.Value;
+                TxtBenefitPerc.Text = SelectedEmployee.BenefitiaryPercent.ToString();
+                DtpBirthDate.Value = SelectedEmployee.BirthDate.Value;
+                TxtBirthPlace.Text = SelectedEmployee.BirthPlace;
+                TxtFatherName.Text = SelectedEmployee.FatherName;
+                TxtFonacot.Text = SelectedEmployee.FonacotClientNumber;
+                TxtHouseCredit.Text = SelectedEmployee.InfonavitNumber;
+                TxtHouseCreditPercent.Text = SelectedEmployee.InfonavitPercent;
+                TxtHospitalNumber.Text = SelectedEmployee.HospitalNumber;
+                TxtMotherName.Text = SelectedEmployee.MotherName;
+                TxtProfession.Text = SelectedEmployee.Profession;
+                TxtBenefitAddress.Text = SelectedEmployee.BenefitiaryAddress;
+                cmbBloodType.SelectedIndex = cmbBloodType.FindString(SelectedEmployee.BloodType);
+                cmbMaritalStatus.SelectedIndex = cmbMaritalStatus.FindString(SelectedEmployee.MaritalStatus);
                 if (SelectedEmployee.PictureFileName.HasValue())
                 {
                     pbEmployee.Image?.Dispose();
@@ -179,7 +199,25 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 RenewalDate = dtpRenewalDate.Value.ToShortDateString(),
                 SocialSecurityNumber = txtSocialSecutiry.Text,
                 //WorkCellPhone = txtWorkPhone.Text,
-                PictureFileName = PictureSafeFileName
+                PictureFileName = PictureSafeFileName,
+                AcademicDegree = TxtAcademicDegree.Text,
+                AcademicDegreeDocument = TxtAcademicDocument.Text,
+                Address = TxtAddress.Text,
+                BankAccountCard = int.Parse(TxtBankCard.Text),
+                BankAccountNumber = int.Parse(TxtBankAcc.Text),
+                BankName = TxtBankName.Text,
+                BenefitiaryBirthDate = DtpBenefitBirthDate.Value,
+                BenefitiaryPercent = int.Parse(TxtBenefitPerc.Text),
+                BirthDate = DtpBirthDate.Value,
+                BirthPlace = TxtBirthPlace.Text,
+                FatherName = TxtFatherName.Text,
+                FonacotClientNumber = TxtFonacot.Text,
+                InfonavitNumber = TxtHouseCredit.Text,
+                InfonavitPercent = TxtHouseCreditPercent.Text,
+                HospitalNumber = TxtHospitalNumber.Text,
+                MotherName = TxtMotherName.Text,
+                Profession = TxtProfession.Text,
+                BenefitiaryAddress = TxtBenefitAddress.Text
             };
         }
         #endregion

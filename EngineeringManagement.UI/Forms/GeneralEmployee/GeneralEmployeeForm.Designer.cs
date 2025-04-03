@@ -44,6 +44,8 @@
             label14 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label35 = new Label();
+            label34 = new Label();
             label33 = new Label();
             TxtBankName = new TextBox();
             TxtBankCard = new TextBox();
@@ -59,7 +61,7 @@
             TxtMotherName = new TextBox();
             txtRelationship = new TextBox();
             TxtFatherName = new TextBox();
-            TxtProfesion = new TextBox();
+            TxtProfession = new TextBox();
             TxtAcademicDocument = new TextBox();
             TxtAcademicDegree = new TextBox();
             label27 = new Label();
@@ -77,9 +79,9 @@
             TxtHouseCredit = new TextBox();
             label22 = new Label();
             label21 = new Label();
-            textBox2 = new TextBox();
+            TxtHospitalNumber = new TextBox();
             label20 = new Label();
-            textBox1 = new TextBox();
+            TxtAddress = new TextBox();
             label19 = new Label();
             chkBankStatus = new CheckBox();
             chkRecommendationLetters = new CheckBox();
@@ -116,8 +118,6 @@
             cmbEmployees = new ComboBox();
             label18 = new Label();
             BtnAddNew = new Button();
-            label34 = new Label();
-            label35 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbEmployee).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -272,7 +272,7 @@
             tabPage1.Controls.Add(TxtMotherName);
             tabPage1.Controls.Add(txtRelationship);
             tabPage1.Controls.Add(TxtFatherName);
-            tabPage1.Controls.Add(TxtProfesion);
+            tabPage1.Controls.Add(TxtProfession);
             tabPage1.Controls.Add(TxtAcademicDocument);
             tabPage1.Controls.Add(TxtAcademicDegree);
             tabPage1.Controls.Add(label27);
@@ -293,9 +293,9 @@
             tabPage1.Controls.Add(TxtHouseCredit);
             tabPage1.Controls.Add(label22);
             tabPage1.Controls.Add(label21);
-            tabPage1.Controls.Add(textBox2);
+            tabPage1.Controls.Add(TxtHospitalNumber);
             tabPage1.Controls.Add(label20);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(TxtAddress);
             tabPage1.Controls.Add(label19);
             tabPage1.Controls.Add(chkBankStatus);
             tabPage1.Controls.Add(chkRecommendationLetters);
@@ -328,6 +328,24 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Datos Personales";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Location = new Point(594, 375);
+            label35.Name = "label35";
+            label35.Size = new Size(43, 15);
+            label35.TabIndex = 64;
+            label35.Text = "Banco:";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(436, 375);
+            label34.Name = "label34";
+            label34.Size = new Size(88, 15);
+            label34.TabIndex = 63;
+            label34.Text = "Tarjeta / CLABE";
             // 
             // label33
             // 
@@ -448,12 +466,12 @@
             TxtFatherName.Size = new Size(237, 23);
             TxtFatherName.TabIndex = 49;
             // 
-            // TxtProfesion
+            // TxtProfession
             // 
-            TxtProfesion.Location = new Point(539, 209);
-            TxtProfesion.Name = "TxtProfesion";
-            TxtProfesion.Size = new Size(239, 23);
-            TxtProfesion.TabIndex = 48;
+            TxtProfession.Location = new Point(539, 209);
+            TxtProfession.Name = "TxtProfession";
+            TxtProfession.Size = new Size(239, 23);
+            TxtProfession.TabIndex = 48;
             // 
             // TxtAcademicDocument
             // 
@@ -592,12 +610,12 @@
             label21.TabIndex = 33;
             label21.Text = "No. Credito INFONAVIT";
             // 
-            // textBox2
+            // TxtHospitalNumber
             // 
-            textBox2.Location = new Point(97, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(65, 23);
-            textBox2.TabIndex = 32;
+            TxtHospitalNumber.Location = new Point(97, 95);
+            TxtHospitalNumber.Name = "TxtHospitalNumber";
+            TxtHospitalNumber.Size = new Size(65, 23);
+            TxtHospitalNumber.TabIndex = 32;
             // 
             // label20
             // 
@@ -608,13 +626,13 @@
             label20.TabIndex = 31;
             label20.Text = "No. Clinica IMSS:";
             // 
-            // textBox1
+            // TxtAddress
             // 
-            textBox1.Location = new Point(407, 33);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(370, 36);
-            textBox1.TabIndex = 30;
+            TxtAddress.Location = new Point(407, 33);
+            TxtAddress.Multiline = true;
+            TxtAddress.Name = "TxtAddress";
+            TxtAddress.Size = new Size(370, 36);
+            TxtAddress.TabIndex = 30;
             // 
             // label19
             // 
@@ -755,7 +773,7 @@
             txtSocialSecutiry.Location = new Point(8, 95);
             txtSocialSecutiry.Mask = "00000000000";
             txtSocialSecutiry.Name = "txtSocialSecutiry";
-            txtSocialSecutiry.Size = new Size(69, 23);
+            txtSocialSecutiry.Size = new Size(83, 23);
             txtSocialSecutiry.TabIndex = 12;
             // 
             // txtRfc
@@ -798,7 +816,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(783, 702);
+            tabPage2.Size = new Size(783, 665);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos de la Empresa";
             tabPage2.UseVisualStyleBackColor = true;
@@ -808,7 +826,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(783, 702);
+            tabPage3.Size = new Size(783, 665);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Historial de Contratos";
             tabPage3.UseVisualStyleBackColor = true;
@@ -942,24 +960,6 @@
             BtnAddNew.UseVisualStyleBackColor = true;
             BtnAddNew.Click += BtnAddNew_Click;
             // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Location = new Point(436, 375);
-            label34.Name = "label34";
-            label34.Size = new Size(88, 15);
-            label34.TabIndex = 63;
-            label34.Text = "Tarjeta / CLABE";
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Location = new Point(594, 375);
-            label35.Name = "label35";
-            label35.Size = new Size(43, 15);
-            label35.TabIndex = 64;
-            label35.Text = "Banco:";
-            // 
             // GeneralEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -988,6 +988,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "GeneralEmployeeForm";
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Empleado";
             ((System.ComponentModel.ISupportInitialize)pbEmployee).EndInit();
@@ -1054,9 +1055,9 @@
       private Label label18;
       private Button BtnAddNew;
         private Label label19;
-        private TextBox textBox2;
+        private TextBox TxtHospitalNumber;
         private Label label20;
-        private TextBox textBox1;
+        private TextBox TxtAddress;
         private TextBox TxtBirthPlace;
         private DateTimePicker DtpBirthDate;
         private TextBox TxtFonacot;
@@ -1069,7 +1070,7 @@
         private Label label28;
         private TextBox TxtMotherName;
         private TextBox TxtFatherName;
-        private TextBox TxtProfesion;
+        private TextBox TxtProfession;
         private TextBox TxtAcademicDocument;
         private TextBox TxtAcademicDegree;
         private Label label27;
