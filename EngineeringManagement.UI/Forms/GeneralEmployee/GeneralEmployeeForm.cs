@@ -137,7 +137,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 dtpStartDate.Value = DateTime.Parse(SelectedEmployee.StartDate);
                 dtpRenewalDate.Value = DateTime.Parse(SelectedEmployee.RenewalDate);
                 txtSocialSecutiry.Text = SelectedEmployee.SocialSecurityNumber;
-                txtWorkPhone.Text = SelectedEmployee.WorkCellPhone;
+                //txtWorkPhone.Text = SelectedEmployee.WorkCellPhone;
                 if (SelectedEmployee.PictureFileName.HasValue())
                 {
                     pbEmployee.Image?.Dispose();
@@ -178,7 +178,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 StartDate = dtpStartDate.Value.ToShortDateString(),
                 RenewalDate = dtpRenewalDate.Value.ToShortDateString(),
                 SocialSecurityNumber = txtSocialSecutiry.Text,
-                WorkCellPhone = txtWorkPhone.Text,
+                //WorkCellPhone = txtWorkPhone.Text,
                 PictureFileName = PictureSafeFileName
             };
         }
