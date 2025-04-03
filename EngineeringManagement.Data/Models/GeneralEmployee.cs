@@ -75,6 +75,7 @@ namespace EngineeringManagement.Data.Models
         public string MotherName { get; set; }
         public int BenefitiaryPercent { get; set; }
         public DateTime? BenefitiaryBirthDate { get; set; }
+        public string BenefitiaryAddress { get; set; }
         public int BankAccountNumber { get; set; }
         public int BankAccountCard { get; set; }
         public string BankName { get; set; }
