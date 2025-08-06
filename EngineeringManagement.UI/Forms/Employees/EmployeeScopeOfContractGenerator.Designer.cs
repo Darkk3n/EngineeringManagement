@@ -91,6 +91,8 @@
             label8 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            label39 = new Label();
+            cmbCompany = new ComboBox();
             txtSchedule = new TextBox();
             label36 = new Label();
             txtRequester = new TextBox();
@@ -121,8 +123,6 @@
             label3 = new Label();
             btnCancel = new Button();
             BtnGenerate = new Button();
-            cmbCompany = new ComboBox();
-            label39 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUdPercent).BeginInit();
@@ -744,6 +744,25 @@
             tabPage2.Text = "Informacion llenada por el personal de AES";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(13, 170);
+            label39.Name = "label39";
+            label39.Size = new Size(69, 20);
+            label39.TabIndex = 32;
+            label39.Text = "Empresa:";
+            // 
+            // cmbCompany
+            // 
+            cmbCompany.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCompany.FormattingEnabled = true;
+            cmbCompany.Items.AddRange(new object[] { "--SELECCIONE--", "AES", "CRESSERT" });
+            cmbCompany.Location = new Point(88, 170);
+            cmbCompany.Name = "cmbCompany";
+            cmbCompany.Size = new Size(192, 28);
+            cmbCompany.TabIndex = 31;
+            // 
             // txtSchedule
             // 
             txtSchedule.Location = new Point(396, 225);
@@ -998,25 +1017,7 @@
             BtnGenerate.TabIndex = 2;
             BtnGenerate.Text = "Generar";
             BtnGenerate.UseVisualStyleBackColor = true;
-            // 
-            // cmbCompany
-            // 
-            cmbCompany.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCompany.FormattingEnabled = true;
-            cmbCompany.Items.AddRange(new object[] { "--SELECCIONE--", "AES", "CRESSERT" });
-            cmbCompany.Location = new Point(88, 170);
-            cmbCompany.Name = "cmbCompany";
-            cmbCompany.Size = new Size(192, 28);
-            cmbCompany.TabIndex = 31;
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(13, 170);
-            label39.Name = "label39";
-            label39.Size = new Size(69, 20);
-            label39.TabIndex = 32;
-            label39.Text = "Empresa:";
+            BtnGenerate.Click += BtnGenerate_Click;
             // 
             // EmployeeScopeOfContractGenerator
             // 

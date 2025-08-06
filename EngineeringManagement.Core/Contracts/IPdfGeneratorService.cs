@@ -4,6 +4,6 @@ namespace EngineeringManagement.Core.Contracts
 {
     public interface IPdfGeneratorService
     {
-        void Generate(GeneralEmployee employee);
+        void Generate(GeneralEmployee employee, string basePath);
     }
 }

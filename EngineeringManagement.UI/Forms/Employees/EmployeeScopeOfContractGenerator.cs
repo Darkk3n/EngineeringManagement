@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 
@@ -14,14 +7,14 @@ namespace EngineeringManagement.UI.Forms.Employees
 {
     public partial class EmployeeScopeOfContractGenerator : Form
     {
-        private readonly IServiceProvider serviceProvider;
+        private readonly IPdfGeneratorService pdfGeneratorService;
         private readonly HrDataContext context;
         private List<GeneralEmployee> Employees { get; set; } = [];
 
-        public EmployeeScopeOfContractGenerator(IServiceProvider serviceProvider, HrDataContext context)
+        public EmployeeScopeOfContractGenerator(IPdfGeneratorService pdfGeneratorService, HrDataContext context)
         {
             InitializeComponent();
-            this.serviceProvider = serviceProvider;
+            this.pdfGeneratorService = pdfGeneratorService;
             this.context = context;
             LoadEmployees();
         }
@@ -45,5 +38,11 @@ namespace EngineeringManagement.UI.Forms.Employees
         }
 
         private void btnCancel_Click(object sender, EventArgs e) => Close();
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            var location = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PdfTest";
+            pdfGeneratorService.Generate(Employees[0], location);
+        }
     }
 }
