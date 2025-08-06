@@ -66,6 +66,7 @@ namespace EngineeringManagement.UI
             services.AddTransient<EditFacility>();
             services.AddTransient<GeneralEmployeeForm>();
             services.AddTransient<EmployeeContractGenerator>();
+            services.AddTransient<EmployeeScopeOfContractGenerator>();
             #endregion
 
             #region Services
