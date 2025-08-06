@@ -279,6 +279,12 @@ namespace EngineeringManagement.UI
             var medFiles = serviceProvider.GetRequiredService<EmployeeMedFileForm>();
             medFiles.ShowDialog();
         }
+
+        private void generarAlcanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var scopeOfContractGenerator = serviceProvider.GetRequiredService<EmployeeScopeOfContractGenerator>();
+            scopeOfContractGenerator.ShowDialog();
+        }
         #endregion
 
         #region Button Callbacks
