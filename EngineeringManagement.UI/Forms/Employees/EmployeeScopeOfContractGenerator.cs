@@ -32,7 +32,6 @@ namespace EngineeringManagement.UI.Forms.Employees
             if (Employees.Count == 0)
             {
                 cmbEmployees.Items.Add("-- NO SE ENCONTRARON EMPLEADOS --");
-                cmbEmployees.SelectedIndex = 0;
             }
             else
             {
@@ -40,7 +39,11 @@ namespace EngineeringManagement.UI.Forms.Employees
                 cmbEmployees.Items.AddRange([.. Employees.OrderBy(r => r.EmployeeName)]);
                 cmbEmployees.ValueMember = nameof(Employee.Id);
                 cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
+                cmbEmployees.Items.Insert(0, "--SELECCIONE--");
             }
+            cmbEmployees.SelectedIndex = 0;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
     }
 }

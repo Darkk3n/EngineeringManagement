@@ -98,8 +98,6 @@
             txtWeeklyTotal = new TextBox();
             chkWeekly = new CheckBox();
             chkBiWeekly = new CheckBox();
-            chkCressert = new CheckBox();
-            chkAes = new CheckBox();
             txtPensions = new TextBox();
             chkUnionPerc = new CheckBox();
             numUdUnion = new NumericUpDown();
@@ -121,6 +119,10 @@
             label4 = new Label();
             dtpStartDate = new DateTimePicker();
             label3 = new Label();
+            btnCancel = new Button();
+            BtnGenerate = new Button();
+            cmbCompany = new ComboBox();
+            label39 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUdPercent).BeginInit();
@@ -704,6 +706,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label39);
+            tabPage2.Controls.Add(cmbCompany);
             tabPage2.Controls.Add(txtSchedule);
             tabPage2.Controls.Add(label36);
             tabPage2.Controls.Add(txtRequester);
@@ -711,8 +715,6 @@
             tabPage2.Controls.Add(txtWeeklyTotal);
             tabPage2.Controls.Add(chkWeekly);
             tabPage2.Controls.Add(chkBiWeekly);
-            tabPage2.Controls.Add(chkCressert);
-            tabPage2.Controls.Add(chkAes);
             tabPage2.Controls.Add(txtPensions);
             tabPage2.Controls.Add(chkUnionPerc);
             tabPage2.Controls.Add(numUdUnion);
@@ -775,7 +777,7 @@
             // 
             // txtWeeklyTotal
             // 
-            txtWeeklyTotal.Location = new Point(490, 167);
+            txtWeeklyTotal.Location = new Point(602, 172);
             txtWeeklyTotal.Name = "txtWeeklyTotal";
             txtWeeklyTotal.Size = new Size(201, 27);
             txtWeeklyTotal.TabIndex = 26;
@@ -783,7 +785,7 @@
             // chkWeekly
             // 
             chkWeekly.AutoSize = true;
-            chkWeekly.Location = new Point(284, 169);
+            chkWeekly.Location = new Point(396, 174);
             chkWeekly.Name = "chkWeekly";
             chkWeekly.Size = new Size(88, 24);
             chkWeekly.TabIndex = 25;
@@ -793,32 +795,12 @@
             // chkBiWeekly
             // 
             chkBiWeekly.AutoSize = true;
-            chkBiWeekly.Location = new Point(181, 169);
+            chkBiWeekly.Location = new Point(293, 174);
             chkBiWeekly.Name = "chkBiWeekly";
             chkBiWeekly.Size = new Size(97, 24);
             chkBiWeekly.TabIndex = 24;
             chkBiWeekly.Text = "Quincenal";
             chkBiWeekly.UseVisualStyleBackColor = true;
-            // 
-            // chkCressert
-            // 
-            chkCressert.AutoSize = true;
-            chkCressert.Location = new Point(78, 169);
-            chkCressert.Name = "chkCressert";
-            chkCressert.Size = new Size(97, 24);
-            chkCressert.TabIndex = 23;
-            chkCressert.Text = "CRESSERT";
-            chkCressert.UseVisualStyleBackColor = true;
-            // 
-            // chkAes
-            // 
-            chkAes.AutoSize = true;
-            chkAes.Location = new Point(15, 169);
-            chkAes.Name = "chkAes";
-            chkAes.Size = new Size(57, 24);
-            chkAes.TabIndex = 22;
-            chkAes.Text = "AES";
-            chkAes.UseVisualStyleBackColor = true;
             // 
             // txtPensions
             // 
@@ -900,7 +882,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(378, 170);
+            label20.Location = new Point(490, 175);
             label20.Name = "label20";
             label20.Size = new Size(106, 20);
             label20.TabIndex = 11;
@@ -998,13 +980,55 @@
             label3.TabIndex = 0;
             label3.Text = "Ingreso:";
             // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(752, 627);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 1;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // BtnGenerate
+            // 
+            BtnGenerate.Location = new Point(855, 627);
+            BtnGenerate.Name = "BtnGenerate";
+            BtnGenerate.Size = new Size(94, 29);
+            BtnGenerate.TabIndex = 2;
+            BtnGenerate.Text = "Generar";
+            BtnGenerate.UseVisualStyleBackColor = true;
+            // 
+            // cmbCompany
+            // 
+            cmbCompany.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCompany.FormattingEnabled = true;
+            cmbCompany.Items.AddRange(new object[] { "--SELECCIONE--", "AES", "CRESSERT" });
+            cmbCompany.Location = new Point(88, 170);
+            cmbCompany.Name = "cmbCompany";
+            cmbCompany.Size = new Size(192, 28);
+            cmbCompany.TabIndex = 31;
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(13, 170);
+            label39.Name = "label39";
+            label39.Size = new Size(69, 20);
+            label39.TabIndex = 32;
+            label39.Text = "Empresa:";
+            // 
             // EmployeeScopeOfContractGenerator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
             ClientSize = new Size(959, 679);
+            Controls.Add(BtnGenerate);
+            Controls.Add(btnCancel);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "EmployeeScopeOfContractGenerator";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleados - Generador de Alcance";
@@ -1104,14 +1128,16 @@
         private CheckBox chkUnionPerc;
         private NumericUpDown numUdUnion;
         private CheckBox chkInfonavit;
-        private CheckBox chkAes;
         private CheckBox chkWeekly;
         private CheckBox chkBiWeekly;
-        private CheckBox chkCressert;
         private DateTimePicker dtpEndDate;
         private TextBox txtWeeklyTotal;
         private TextBox txtSchedule;
         private Label label36;
         private TextBox txtRequester;
+        private Button btnCancel;
+        private Button BtnGenerate;
+        private Label label39;
+        private ComboBox cmbCompany;
     }
 }
