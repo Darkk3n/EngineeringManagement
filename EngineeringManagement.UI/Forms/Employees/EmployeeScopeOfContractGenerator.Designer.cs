@@ -91,6 +91,15 @@
             label8 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            txtSchedule = new TextBox();
+            label36 = new Label();
+            txtRequester = new TextBox();
+            dtpEndDate = new DateTimePicker();
+            txtWeeklyTotal = new TextBox();
+            chkWeekly = new CheckBox();
+            chkBiWeekly = new CheckBox();
+            chkCressert = new CheckBox();
+            chkAes = new CheckBox();
             txtPensions = new TextBox();
             chkUnionPerc = new CheckBox();
             numUdUnion = new NumericUpDown();
@@ -112,15 +121,6 @@
             label4 = new Label();
             dtpStartDate = new DateTimePicker();
             label3 = new Label();
-            chkAes = new CheckBox();
-            chkCressert = new CheckBox();
-            chkBiWeekly = new CheckBox();
-            chkWeekly = new CheckBox();
-            txtWeeklyTotal = new TextBox();
-            dtpEndDate = new DateTimePicker();
-            txtRequester = new TextBox();
-            label36 = new Label();
-            txtSchedule = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUdPercent).BeginInit();
@@ -260,7 +260,7 @@
             dtpBenefiatiryBirthDate.Format = DateTimePickerFormat.Short;
             dtpBenefiatiryBirthDate.Location = new Point(778, 405);
             dtpBenefiatiryBirthDate.Name = "dtpBenefiatiryBirthDate";
-            dtpBenefiatiryBirthDate.Size = new Size(165, 27);
+            dtpBenefiatiryBirthDate.Size = new Size(162, 27);
             dtpBenefiatiryBirthDate.TabIndex = 116;
             // 
             // mTxtBenefiatiryPhone
@@ -742,6 +742,84 @@
             tabPage2.Text = "Informacion llenada por el personal de AES";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtSchedule
+            // 
+            txtSchedule.Location = new Point(396, 225);
+            txtSchedule.Name = "txtSchedule";
+            txtSchedule.Size = new Size(376, 27);
+            txtSchedule.TabIndex = 30;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Location = new Point(326, 225);
+            label36.Name = "label36";
+            label36.Size = new Size(64, 20);
+            label36.TabIndex = 29;
+            label36.Text = "Jornada:";
+            // 
+            // txtRequester
+            // 
+            txtRequester.Location = new Point(101, 222);
+            txtRequester.Name = "txtRequester";
+            txtRequester.Size = new Size(206, 27);
+            txtRequester.TabIndex = 28;
+            // 
+            // dtpEndDate
+            // 
+            dtpEndDate.Format = DateTimePickerFormat.Short;
+            dtpEndDate.Location = new Point(315, 14);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(219, 27);
+            dtpEndDate.TabIndex = 27;
+            // 
+            // txtWeeklyTotal
+            // 
+            txtWeeklyTotal.Location = new Point(490, 167);
+            txtWeeklyTotal.Name = "txtWeeklyTotal";
+            txtWeeklyTotal.Size = new Size(201, 27);
+            txtWeeklyTotal.TabIndex = 26;
+            // 
+            // chkWeekly
+            // 
+            chkWeekly.AutoSize = true;
+            chkWeekly.Location = new Point(284, 169);
+            chkWeekly.Name = "chkWeekly";
+            chkWeekly.Size = new Size(88, 24);
+            chkWeekly.TabIndex = 25;
+            chkWeekly.Text = "Semanal";
+            chkWeekly.UseVisualStyleBackColor = true;
+            // 
+            // chkBiWeekly
+            // 
+            chkBiWeekly.AutoSize = true;
+            chkBiWeekly.Location = new Point(181, 169);
+            chkBiWeekly.Name = "chkBiWeekly";
+            chkBiWeekly.Size = new Size(97, 24);
+            chkBiWeekly.TabIndex = 24;
+            chkBiWeekly.Text = "Quincenal";
+            chkBiWeekly.UseVisualStyleBackColor = true;
+            // 
+            // chkCressert
+            // 
+            chkCressert.AutoSize = true;
+            chkCressert.Location = new Point(78, 169);
+            chkCressert.Name = "chkCressert";
+            chkCressert.Size = new Size(97, 24);
+            chkCressert.TabIndex = 23;
+            chkCressert.Text = "CRESSERT";
+            chkCressert.UseVisualStyleBackColor = true;
+            // 
+            // chkAes
+            // 
+            chkAes.AutoSize = true;
+            chkAes.Location = new Point(15, 169);
+            chkAes.Name = "chkAes";
+            chkAes.Size = new Size(57, 24);
+            chkAes.TabIndex = 22;
+            chkAes.Text = "AES";
+            chkAes.UseVisualStyleBackColor = true;
+            // 
             // txtPensions
             // 
             txtPensions.Location = new Point(427, 109);
@@ -919,84 +997,6 @@
             label3.Size = new Size(61, 20);
             label3.TabIndex = 0;
             label3.Text = "Ingreso:";
-            // 
-            // chkAes
-            // 
-            chkAes.AutoSize = true;
-            chkAes.Location = new Point(15, 169);
-            chkAes.Name = "chkAes";
-            chkAes.Size = new Size(57, 24);
-            chkAes.TabIndex = 22;
-            chkAes.Text = "AES";
-            chkAes.UseVisualStyleBackColor = true;
-            // 
-            // chkCressert
-            // 
-            chkCressert.AutoSize = true;
-            chkCressert.Location = new Point(78, 169);
-            chkCressert.Name = "chkCressert";
-            chkCressert.Size = new Size(97, 24);
-            chkCressert.TabIndex = 23;
-            chkCressert.Text = "CRESSERT";
-            chkCressert.UseVisualStyleBackColor = true;
-            // 
-            // chkBiWeekly
-            // 
-            chkBiWeekly.AutoSize = true;
-            chkBiWeekly.Location = new Point(181, 169);
-            chkBiWeekly.Name = "chkBiWeekly";
-            chkBiWeekly.Size = new Size(97, 24);
-            chkBiWeekly.TabIndex = 24;
-            chkBiWeekly.Text = "Quincenal";
-            chkBiWeekly.UseVisualStyleBackColor = true;
-            // 
-            // chkWeekly
-            // 
-            chkWeekly.AutoSize = true;
-            chkWeekly.Location = new Point(284, 169);
-            chkWeekly.Name = "chkWeekly";
-            chkWeekly.Size = new Size(88, 24);
-            chkWeekly.TabIndex = 25;
-            chkWeekly.Text = "Semanal";
-            chkWeekly.UseVisualStyleBackColor = true;
-            // 
-            // txtWeeklyTotal
-            // 
-            txtWeeklyTotal.Location = new Point(490, 167);
-            txtWeeklyTotal.Name = "txtWeeklyTotal";
-            txtWeeklyTotal.Size = new Size(201, 27);
-            txtWeeklyTotal.TabIndex = 26;
-            // 
-            // dtpEndDate
-            // 
-            dtpEndDate.Format = DateTimePickerFormat.Short;
-            dtpEndDate.Location = new Point(315, 14);
-            dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.Size = new Size(219, 27);
-            dtpEndDate.TabIndex = 27;
-            // 
-            // txtRequester
-            // 
-            txtRequester.Location = new Point(101, 222);
-            txtRequester.Name = "txtRequester";
-            txtRequester.Size = new Size(206, 27);
-            txtRequester.TabIndex = 28;
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Location = new Point(326, 225);
-            label36.Name = "label36";
-            label36.Size = new Size(64, 20);
-            label36.TabIndex = 29;
-            label36.Text = "Jornada:";
-            // 
-            // txtSchedule
-            // 
-            txtSchedule.Location = new Point(396, 225);
-            txtSchedule.Name = "txtSchedule";
-            txtSchedule.Size = new Size(376, 27);
-            txtSchedule.TabIndex = 30;
             // 
             // EmployeeScopeOfContractGenerator
             // 
