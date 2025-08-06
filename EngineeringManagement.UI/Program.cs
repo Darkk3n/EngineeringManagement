@@ -1,7 +1,5 @@
-using System.Windows.Forms.Design;
 using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Core.Services;
-using EngineeringManagement.Data;
 using EngineeringManagement.UI.Forms;
 using EngineeringManagement.UI.Forms.Certifications;
 using EngineeringManagement.UI.Forms.Employees;
@@ -30,7 +28,7 @@ namespace EngineeringManagement.UI
             ApplicationConfiguration.Initialize();
             using (var scope = serviceProvider.CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<Data.HrDataContext>();
+                var context = scope.ServiceProvider.GetRequiredService<HrDataContext>();
                 context.Database.Migrate();
             }
             if (!Directory.Exists(Path.Combine(Application.StartupPath, "Documentos")))
