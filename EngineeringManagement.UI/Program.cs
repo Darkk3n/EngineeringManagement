@@ -71,6 +71,7 @@ namespace EngineeringManagement.UI
             services.AddTransient<ICopyFilesService, CopyFilesService>();
             services.AddTransient<IEmployeeListService, EmployeeListService>();
             services.AddTransient<IOpenFileService, OpenFileService>();
+            services.AddTransient<IPdfGeneratorService, PdfGeneratorService>();
             #endregion
 
             services.AddDbContext<HrDataContext>(options => options.UseSqlite($"Data Source = {Path.Combine(Environment.CurrentDirectory + @"\EngineeringManagement.db")}"));
