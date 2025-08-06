@@ -28,12 +28,716 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "EmployeeScopeOfContractGenerator";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeScopeOfContractGenerator));
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            txtBankName = new TextBox();
+            txtBankCard = new TextBox();
+            txtBankAccount = new TextBox();
+            txtBenefiatiryAddress = new TextBox();
+            dtpBenefiatiryBirthDate = new DateTimePicker();
+            mTxtBenefiatiryPhone = new MaskedTextBox();
+            numericUdPercent = new NumericUpDown();
+            txtBenefitiary = new TextBox();
+            txtMotherName = new TextBox();
+            txtFatherName = new TextBox();
+            txtProfession = new TextBox();
+            txtDegreeDoc = new TextBox();
+            txtDegree = new TextBox();
+            txtBirthPlace = new TextBox();
+            chkQuota = new CheckBox();
+            chkInfonavitNA = new CheckBox();
+            dtpBirthDate = new DateTimePicker();
+            mTxtRfc = new MaskedTextBox();
+            txtCurp = new TextBox();
+            txtInfonavitNumber = new TextBox();
+            chkFonacotNA = new CheckBox();
+            txtFonacotId = new TextBox();
+            mTxtPhone = new MaskedTextBox();
+            numUdQuota = new NumericUpDown();
+            txtImssHosp = new TextBox();
+            txtAddress = new TextBox();
+            maskedTextBox1 = new MaskedTextBox();
+            txtEmail = new TextBox();
+            cmbCivilState = new ComboBox();
+            txtName = new TextBox();
+            label34 = new Label();
+            label33 = new Label();
+            label32 = new Label();
+            label31 = new Label();
+            label30 = new Label();
+            label29 = new Label();
+            label28 = new Label();
+            label27 = new Label();
+            label26 = new Label();
+            label25 = new Label();
+            label24 = new Label();
+            label23 = new Label();
+            label22 = new Label();
+            label21 = new Label();
+            label99 = new Label();
+            label19 = new Label();
+            label18 = new Label();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            lbl1 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label1 = new Label();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUdPercent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numUdQuota).BeginInit();
+            SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(2, 2);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(954, 555);
+            tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(txtBankName);
+            tabPage1.Controls.Add(txtBankCard);
+            tabPage1.Controls.Add(txtBankAccount);
+            tabPage1.Controls.Add(txtBenefiatiryAddress);
+            tabPage1.Controls.Add(dtpBenefiatiryBirthDate);
+            tabPage1.Controls.Add(mTxtBenefiatiryPhone);
+            tabPage1.Controls.Add(numericUdPercent);
+            tabPage1.Controls.Add(txtBenefitiary);
+            tabPage1.Controls.Add(txtMotherName);
+            tabPage1.Controls.Add(txtFatherName);
+            tabPage1.Controls.Add(txtProfession);
+            tabPage1.Controls.Add(txtDegreeDoc);
+            tabPage1.Controls.Add(txtDegree);
+            tabPage1.Controls.Add(txtBirthPlace);
+            tabPage1.Controls.Add(chkQuota);
+            tabPage1.Controls.Add(chkInfonavitNA);
+            tabPage1.Controls.Add(dtpBirthDate);
+            tabPage1.Controls.Add(mTxtRfc);
+            tabPage1.Controls.Add(txtCurp);
+            tabPage1.Controls.Add(txtInfonavitNumber);
+            tabPage1.Controls.Add(chkFonacotNA);
+            tabPage1.Controls.Add(txtFonacotId);
+            tabPage1.Controls.Add(mTxtPhone);
+            tabPage1.Controls.Add(numUdQuota);
+            tabPage1.Controls.Add(txtImssHosp);
+            tabPage1.Controls.Add(txtAddress);
+            tabPage1.Controls.Add(maskedTextBox1);
+            tabPage1.Controls.Add(txtEmail);
+            tabPage1.Controls.Add(cmbCivilState);
+            tabPage1.Controls.Add(txtName);
+            tabPage1.Controls.Add(label34);
+            tabPage1.Controls.Add(label33);
+            tabPage1.Controls.Add(label32);
+            tabPage1.Controls.Add(label31);
+            tabPage1.Controls.Add(label30);
+            tabPage1.Controls.Add(label29);
+            tabPage1.Controls.Add(label28);
+            tabPage1.Controls.Add(label27);
+            tabPage1.Controls.Add(label26);
+            tabPage1.Controls.Add(label25);
+            tabPage1.Controls.Add(label24);
+            tabPage1.Controls.Add(label23);
+            tabPage1.Controls.Add(label22);
+            tabPage1.Controls.Add(label21);
+            tabPage1.Controls.Add(label99);
+            tabPage1.Controls.Add(label19);
+            tabPage1.Controls.Add(label18);
+            tabPage1.Controls.Add(label17);
+            tabPage1.Controls.Add(label16);
+            tabPage1.Controls.Add(label15);
+            tabPage1.Controls.Add(label14);
+            tabPage1.Controls.Add(label13);
+            tabPage1.Controls.Add(label12);
+            tabPage1.Controls.Add(lbl1);
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(946, 522);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Datos Generales";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(946, 522);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Informacion llenada por el personal de AES";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtBankName
+            // 
+            txtBankName.Location = new Point(721, 482);
+            txtBankName.Name = "txtBankName";
+            txtBankName.Size = new Size(205, 27);
+            txtBankName.TabIndex = 120;
+            // 
+            // txtBankCard
+            // 
+            txtBankCard.Location = new Point(435, 482);
+            txtBankCard.Name = "txtBankCard";
+            txtBankCard.Size = new Size(223, 27);
+            txtBankCard.TabIndex = 119;
+            // 
+            // txtBankAccount
+            // 
+            txtBankAccount.Location = new Point(124, 482);
+            txtBankAccount.Name = "txtBankAccount";
+            txtBankAccount.Size = new Size(194, 27);
+            txtBankAccount.TabIndex = 118;
+            // 
+            // txtBenefiatiryAddress
+            // 
+            txtBenefiatiryAddress.Location = new Point(173, 416);
+            txtBenefiatiryAddress.Multiline = true;
+            txtBenefiatiryAddress.Name = "txtBenefiatiryAddress";
+            txtBenefiatiryAddress.Size = new Size(769, 50);
+            txtBenefiatiryAddress.TabIndex = 117;
+            // 
+            // dtpBenefiatiryBirthDate
+            // 
+            dtpBenefiatiryBirthDate.Format = DateTimePickerFormat.Short;
+            dtpBenefiatiryBirthDate.Location = new Point(777, 365);
+            dtpBenefiatiryBirthDate.Name = "dtpBenefiatiryBirthDate";
+            dtpBenefiatiryBirthDate.Size = new Size(165, 27);
+            dtpBenefiatiryBirthDate.TabIndex = 116;
+            // 
+            // mTxtBenefiatiryPhone
+            // 
+            mTxtBenefiatiryPhone.Location = new Point(549, 362);
+            mTxtBenefiatiryPhone.Mask = "999-999-9999";
+            mTxtBenefiatiryPhone.Name = "mTxtBenefiatiryPhone";
+            mTxtBenefiatiryPhone.Size = new Size(125, 27);
+            mTxtBenefiatiryPhone.TabIndex = 115;
+            // 
+            // numericUdPercent
+            // 
+            numericUdPercent.Location = new Point(324, 362);
+            numericUdPercent.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUdPercent.Name = "numericUdPercent";
+            numericUdPercent.Size = new Size(60, 27);
+            numericUdPercent.TabIndex = 114;
+            numericUdPercent.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // txtBenefitiary
+            // 
+            txtBenefitiary.Location = new Point(104, 362);
+            txtBenefitiary.Name = "txtBenefitiary";
+            txtBenefitiary.Size = new Size(187, 27);
+            txtBenefitiary.TabIndex = 113;
+            // 
+            // txtMotherName
+            // 
+            txtMotherName.Location = new Point(730, 315);
+            txtMotherName.Name = "txtMotherName";
+            txtMotherName.Size = new Size(188, 27);
+            txtMotherName.TabIndex = 112;
+            // 
+            // txtFatherName
+            // 
+            txtFatherName.Location = new Point(382, 312);
+            txtFatherName.Name = "txtFatherName";
+            txtFatherName.Size = new Size(185, 27);
+            txtFatherName.TabIndex = 111;
+            // 
+            // txtProfession
+            // 
+            txtProfession.Location = new Point(87, 309);
+            txtProfession.Name = "txtProfession";
+            txtProfession.Size = new Size(150, 27);
+            txtProfession.TabIndex = 110;
+            // 
+            // txtDegreeDoc
+            // 
+            txtDegreeDoc.Location = new Point(745, 269);
+            txtDegreeDoc.Name = "txtDegreeDoc";
+            txtDegreeDoc.Size = new Size(173, 27);
+            txtDegreeDoc.TabIndex = 109;
+            // 
+            // txtDegree
+            // 
+            txtDegree.Location = new Point(478, 266);
+            txtDegree.Name = "txtDegree";
+            txtDegree.Size = new Size(163, 27);
+            txtDegree.TabIndex = 108;
+            // 
+            // txtBirthPlace
+            // 
+            txtBirthPlace.Location = new Point(164, 266);
+            txtBirthPlace.Name = "txtBirthPlace";
+            txtBirthPlace.Size = new Size(175, 27);
+            txtBirthPlace.TabIndex = 107;
+            // 
+            // chkQuota
+            // 
+            chkQuota.AutoSize = true;
+            chkQuota.Location = new Point(192, 170);
+            chkQuota.Name = "chkQuota";
+            chkQuota.Size = new Size(58, 24);
+            chkQuota.TabIndex = 106;
+            chkQuota.Text = "N/A";
+            chkQuota.UseVisualStyleBackColor = true;
+            // 
+            // chkInfonavitNA
+            // 
+            chkInfonavitNA.AutoSize = true;
+            chkInfonavitNA.Location = new Point(884, 122);
+            chkInfonavitNA.Name = "chkInfonavitNA";
+            chkInfonavitNA.Size = new Size(58, 24);
+            chkInfonavitNA.TabIndex = 105;
+            chkInfonavitNA.Text = "N/A";
+            chkInfonavitNA.UseVisualStyleBackColor = true;
+            // 
+            // dtpBirthDate
+            // 
+            dtpBirthDate.Format = DateTimePickerFormat.Short;
+            dtpBirthDate.Location = new Point(649, 217);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new Size(181, 27);
+            dtpBirthDate.TabIndex = 104;
+            // 
+            // mTxtRfc
+            // 
+            mTxtRfc.Location = new Point(324, 219);
+            mTxtRfc.Name = "mTxtRfc";
+            mTxtRfc.Size = new Size(168, 27);
+            mTxtRfc.TabIndex = 103;
+            // 
+            // txtCurp
+            // 
+            txtCurp.Location = new Point(61, 219);
+            txtCurp.Name = "txtCurp";
+            txtCurp.Size = new Size(214, 27);
+            txtCurp.TabIndex = 102;
+            // 
+            // txtInfonavitNumber
+            // 
+            txtInfonavitNumber.Location = new Point(705, 123);
+            txtInfonavitNumber.Name = "txtInfonavitNumber";
+            txtInfonavitNumber.Size = new Size(175, 27);
+            txtInfonavitNumber.TabIndex = 73;
+            // 
+            // chkFonacotNA
+            // 
+            chkFonacotNA.AutoSize = true;
+            chkFonacotNA.Location = new Point(616, 170);
+            chkFonacotNA.Name = "chkFonacotNA";
+            chkFonacotNA.Size = new Size(58, 24);
+            chkFonacotNA.TabIndex = 101;
+            chkFonacotNA.Text = "N/A";
+            chkFonacotNA.UseVisualStyleBackColor = true;
+            // 
+            // txtFonacotId
+            // 
+            txtFonacotId.Location = new Point(417, 167);
+            txtFonacotId.Name = "txtFonacotId";
+            txtFonacotId.Size = new Size(193, 27);
+            txtFonacotId.TabIndex = 77;
+            // 
+            // mTxtPhone
+            // 
+            mTxtPhone.Location = new Point(387, 120);
+            mTxtPhone.Mask = "999-999-9999";
+            mTxtPhone.Name = "mTxtPhone";
+            mTxtPhone.Size = new Size(125, 27);
+            mTxtPhone.TabIndex = 72;
+            // 
+            // numUdQuota
+            // 
+            numUdQuota.Location = new Point(125, 168);
+            numUdQuota.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numUdQuota.Name = "numUdQuota";
+            numUdQuota.Size = new Size(61, 27);
+            numUdQuota.TabIndex = 75;
+            numUdQuota.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // txtImssHosp
+            // 
+            txtImssHosp.Location = new Point(133, 116);
+            txtImssHosp.Name = "txtImssHosp";
+            txtImssHosp.Size = new Size(160, 27);
+            txtImssHosp.TabIndex = 70;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(93, 50);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(854, 50);
+            txtAddress.TabIndex = 69;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(822, 6);
+            maskedTextBox1.Mask = "00000000000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(125, 27);
+            maskedTextBox1.TabIndex = 68;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(618, 6);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(153, 27);
+            txtEmail.TabIndex = 67;
+            // 
+            // cmbCivilState
+            // 
+            cmbCivilState.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCivilState.FormattingEnabled = true;
+            cmbCivilState.Items.AddRange(new object[] { "--SELECCIONE--", "Soltero", "Casado", "Divorciado", "Viudo", "Union Libre" });
+            cmbCivilState.Location = new Point(398, 3);
+            cmbCivilState.Name = "cmbCivilState";
+            cmbCivilState.Size = new Size(151, 28);
+            cmbCivilState.TabIndex = 66;
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(80, 6);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(224, 27);
+            txtName.TabIndex = 65;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Location = new Point(7, 54);
+            label34.Name = "label34";
+            label34.Size = new Size(75, 20);
+            label34.TabIndex = 100;
+            label34.Text = "Direccion:";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(310, 6);
+            label33.Name = "label33";
+            label33.Size = new Size(89, 20);
+            label33.TabIndex = 99;
+            label33.Text = "Estado Civil:";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(555, 6);
+            label32.Name = "label32";
+            label32.Size = new Size(57, 20);
+            label32.TabIndex = 98;
+            label32.Text = "Correo:";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(777, 6);
+            label31.Name = "label31";
+            label31.Size = new Size(39, 20);
+            label31.TabIndex = 97;
+            label31.Text = "NSS:";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(7, 119);
+            label30.Name = "label30";
+            label30.Size = new Size(120, 20);
+            label30.TabIndex = 96;
+            label30.Text = "No. Clinica IMSS:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(6, 170);
+            label29.Name = "label29";
+            label29.Size = new Size(121, 20);
+            label29.TabIndex = 95;
+            label29.Text = "% - VSM - Cuota:";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(314, 123);
+            label28.Name = "label28";
+            label28.Size = new Size(70, 20);
+            label28.TabIndex = 94;
+            label28.Text = "Telefono:";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(256, 170);
+            label27.Name = "label27";
+            label27.Size = new Size(155, 20);
+            label27.TabIndex = 93;
+            label27.Text = "No. Cliente FONACOT:";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(531, 123);
+            label26.Name = "label26";
+            label26.Size = new Size(166, 20);
+            label26.TabIndex = 92;
+            label26.Text = "No. Credito INFONAVIT:";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(7, 222);
+            label25.Name = "label25";
+            label25.Size = new Size(48, 20);
+            label25.TabIndex = 91;
+            label25.Text = "CURP:";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(281, 222);
+            label24.Name = "label24";
+            label24.Size = new Size(37, 20);
+            label24.TabIndex = 90;
+            label24.Text = "RFC:";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(498, 222);
+            label23.Name = "label23";
+            label23.Size = new Size(152, 20);
+            label23.TabIndex = 89;
+            label23.Text = "Fecha de Nacimiento:";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(7, 266);
+            label22.Name = "label22";
+            label22.Size = new Size(151, 20);
+            label22.TabIndex = 88;
+            label22.Text = "Lugar de Nacimiento:";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(345, 269);
+            label21.Name = "label21";
+            label21.Size = new Size(132, 20);
+            label21.TabIndex = 87;
+            label21.Text = "Grado Academico:";
+            // 
+            // label99
+            // 
+            label99.AutoSize = true;
+            label99.Location = new Point(649, 269);
+            label99.Name = "label99";
+            label99.Size = new Size(90, 20);
+            label99.TabIndex = 86;
+            label99.Text = "Documento:";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(7, 312);
+            label19.Name = "label19";
+            label19.Size = new Size(74, 20);
+            label19.TabIndex = 85;
+            label19.Text = "Profesion:";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(243, 312);
+            label18.Name = "label18";
+            label18.Size = new Size(133, 20);
+            label18.TabIndex = 84;
+            label18.Text = "Nombre del Padre:";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(573, 315);
+            label17.Name = "label17";
+            label17.Size = new Size(151, 20);
+            label17.TabIndex = 83;
+            label17.Text = "Nombre de la Madre:";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(297, 365);
+            label16.Name = "label16";
+            label16.Size = new Size(21, 20);
+            label16.TabIndex = 82;
+            label16.Text = "%";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(390, 365);
+            label15.Name = "label15";
+            label15.Size = new Size(153, 20);
+            label15.TabIndex = 81;
+            label15.Text = "Telefono Beneficiario:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(7, 419);
+            label14.Name = "label14";
+            label14.Size = new Size(160, 20);
+            label14.TabIndex = 80;
+            label14.Text = "Domicilio Beneficiario:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(7, 482);
+            label13.Name = "label13";
+            label13.Size = new Size(119, 20);
+            label13.TabIndex = 79;
+            label13.Text = "Cuenta Bancaria:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(324, 485);
+            label12.Name = "label12";
+            label12.Size = new Size(105, 20);
+            label12.TabIndex = 78;
+            label12.Text = "Tarjeta/CLABE:";
+            // 
+            // lbl1
+            // 
+            lbl1.AutoSize = true;
+            lbl1.Location = new Point(662, 485);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(53, 20);
+            lbl1.TabIndex = 76;
+            lbl1.Text = "Banco:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(7, 362);
+            label9.Name = "label9";
+            label9.Size = new Size(91, 20);
+            label9.TabIndex = 74;
+            label9.Text = "Beneficiario:";
+            // 
+            // label8
+            // 
+            label8.Location = new Point(680, 365);
+            label8.Name = "label8";
+            label8.Size = new Size(93, 43);
+            label8.TabIndex = 71;
+            label8.Text = "Fecha de Nacimiento:";
+            label8.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(7, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 64;
+            label1.Text = "Nombre:";
+            // 
+            // EmployeeScopeOfContractGenerator
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(959, 625);
+            Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "EmployeeScopeOfContractGenerator";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Empleados - Generador de Alcance";
+            Load += EmployeeScopeOfContractGenerator_Load;
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUdPercent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numUdQuota).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TextBox txtBankName;
+        private TextBox txtBankCard;
+        private TextBox txtBankAccount;
+        private TextBox txtBenefiatiryAddress;
+        private DateTimePicker dtpBenefiatiryBirthDate;
+        private MaskedTextBox mTxtBenefiatiryPhone;
+        private NumericUpDown numericUdPercent;
+        private TextBox txtBenefitiary;
+        private TextBox txtMotherName;
+        private TextBox txtFatherName;
+        private TextBox txtProfession;
+        private TextBox txtDegreeDoc;
+        private TextBox txtDegree;
+        private TextBox txtBirthPlace;
+        private CheckBox chkQuota;
+        private CheckBox chkInfonavitNA;
+        private DateTimePicker dtpBirthDate;
+        private MaskedTextBox mTxtRfc;
+        private TextBox txtCurp;
+        private TextBox txtInfonavitNumber;
+        private CheckBox chkFonacotNA;
+        private TextBox txtFonacotId;
+        private MaskedTextBox mTxtPhone;
+        private NumericUpDown numUdQuota;
+        private TextBox txtImssHosp;
+        private TextBox txtAddress;
+        private MaskedTextBox maskedTextBox1;
+        private TextBox txtEmail;
+        private ComboBox cmbCivilState;
+        private TextBox txtName;
+        private Label label34;
+        private Label label33;
+        private Label label32;
+        private Label label31;
+        private Label label30;
+        private Label label29;
+        private Label label28;
+        private Label label27;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private Label label22;
+        private Label label21;
+        private Label label99;
+        private Label label19;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label lbl1;
+        private Label label9;
+        private Label label8;
+        private Label label1;
+        private TabPage tabPage2;
     }
 }

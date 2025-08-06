@@ -16,5 +16,10 @@ namespace EngineeringManagement.UI.Forms.Employees
         {
             InitializeComponent();
         }
+
+        private void EmployeeScopeOfContractGenerator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
