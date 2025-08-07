@@ -41,7 +41,7 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            var pdfFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\PdfTest";
+            var pdfFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads") + @"\PdfTest";
             var logoPath = Path.Combine(AppContext.BaseDirectory, "Resources");
             pdfGeneratorService.Generate(Employees[0], pdfFilePath, logoPath);
         }
