@@ -36,6 +36,9 @@
     <None Update="EngineeringManagement.db">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\LogoAES.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.104.2" />
