@@ -34,7 +34,69 @@ namespace EngineeringManagement.Core.Services
 
             AddFirstSection(document, boldFont, regularFont);
 
+            AddSecondSection(document, boldFont, regularFont);
+
             document.Close();
+        }
+
+        private static void AddSecondSection(Document document, PdfFont boldFont, PdfFont regularFont)
+        {
+            var tableTitle2 = new Table(1).UseAllAvailableWidth();
+            tableTitle2.AddCell(new Cell()
+                .Add(new Paragraph("INFORMACIÓN LLENADA POR PERSONAL DE LA EMPRESA")
+                .SetFont(boldFont).SetFontSize(10))
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetPadding(5));
+            document.Add(tableTitle2);
+            document.Add(new Paragraph().SetHeight(10));
+
+            // Flexible 6-column layout for second section
+            var table2 = new Table(6).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
+
+            // --- header row grouping with right borders ---
+            table2.AddCell(new Cell(1, 2)
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetBorderRight(new SolidBorder(1))
+                .SetBorderTop(Border.NO_BORDER)
+                .SetBorderLeft(Border.NO_BORDER)
+                .SetBorderBottom(Border.NO_BORDER)
+                .Add(new Paragraph("Ingresos").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
+
+            table2.AddCell(new Cell(1, 2)
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetBorderRight(new SolidBorder(1))
+                .SetBorderTop(Border.NO_BORDER)
+                .SetBorderLeft(Border.NO_BORDER)
+                .SetBorderBottom(Border.NO_BORDER)
+                .Add(new Paragraph("Impuestos - Descuentos").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
+
+            table2.AddCell(new Cell(1, 2)
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph("Empresa").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
+
+            // data rows with right borders between sections
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDB:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$278.80")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Infonavit:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("NO APLICA")));
+            table2.AddCell(NoBorderCell("AES:"));
+            table2.AddCell(NoBorderCell("X"));
+
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDI:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$292.54")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("% sindical:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SI APLICA")));
+            table2.AddCell(NoBorderCell("Neto Semanal:"));
+            table2.AddCell(NoBorderCell("$ 3,044.75 SEMANALES"));
+
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tipo de contrato:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("TIEMPO DETERMINADO")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tiempo de contratación:")));
+            table2.AddCell(NoBorderCell("DEL 01 ABRIL 2025 AL 01 MAYO 2025.", 3));
+
+            document.Add(table2);
         }
 
         private static void AddFirstSection(Document document, PdfFont boldFont, PdfFont regularFont)
@@ -84,7 +146,7 @@ namespace EngineeringManagement.Core.Services
             table1.AddCell(NoBorderCell("Fecha de Nacimiento:"));
             table1.AddCell(NoBorderCell("08/05/1999").SetUnderline());
 
-            table1.AddCell(NoBorderCell("Lugar de Nacimiento:",2));
+            table1.AddCell(NoBorderCell("Lugar de Nacimiento:", 2));
             table1.AddCell(NoBorderCell("CD MADERO TAMPS.", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Grado acad."));
