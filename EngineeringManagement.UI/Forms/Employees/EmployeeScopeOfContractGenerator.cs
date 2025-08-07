@@ -8,13 +8,15 @@ namespace EngineeringManagement.UI.Forms.Employees
     public partial class EmployeeScopeOfContractGenerator : Form
     {
         private readonly IPdfGeneratorService pdfGeneratorService;
+        private readonly IOpenFileService openFileService;
         private readonly HrDataContext context;
         private List<GeneralEmployee> Employees { get; set; } = [];
 
-        public EmployeeScopeOfContractGenerator(IPdfGeneratorService pdfGeneratorService, HrDataContext context)
+        public EmployeeScopeOfContractGenerator(IPdfGeneratorService pdfGeneratorService, IOpenFileService openFileService, HrDataContext context)
         {
             InitializeComponent();
             this.pdfGeneratorService = pdfGeneratorService;
+            this.openFileService = openFileService;
             this.context = context;
             LoadEmployees();
         }
@@ -46,11 +48,12 @@ namespace EngineeringManagement.UI.Forms.Employees
             var logoPath = Path.Combine(AppContext.BaseDirectory, "Resources");
             while (retry)
             {
-
                 try
                 {
                     pdfGeneratorService.Generate(Employees[0], pdfFilePath, logoPath);
                     MessageBox.Show("PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Thread.Sleep(1000);
+                    openFileService.Execute($@"{pdfFilePath}\Alcance {Employees[0].EmployeeName}.pdf");
                     retry = false;
                 }
                 catch (IOException)
