@@ -41,9 +41,28 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
+            var retry = true;
             var pdfFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads") + @"\PdfTest";
             var logoPath = Path.Combine(AppContext.BaseDirectory, "Resources");
-            pdfGeneratorService.Generate(Employees[0], pdfFilePath, logoPath);
+            while (retry)
+            {
+
+                try
+                {
+                    pdfGeneratorService.Generate(Employees[0], pdfFilePath, logoPath);
+                    MessageBox.Show("PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    retry = false;
+                }
+                catch (IOException)
+                {
+                    var result = MessageBox.Show("No se puede sobrescribir el archivo porque está abierto. ¿Deseas intentar de nuevo?", "Archivo en uso", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+
+                    if (result != DialogResult.Retry)
+                    {
+                        retry = false;
+                    }
+                }
+            }
         }
     }
 }
