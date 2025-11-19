@@ -11,6 +11,7 @@ namespace EngineeringManagement.UI.Forms.Employees
         private readonly IOpenFileService openFileService;
         private readonly HrDataContext context;
         private List<GeneralEmployee> Employees { get; set; } = [];
+        private GeneralEmployee SelectedEmployee { get; set; }
 
         public EmployeeScopeOfContractGenerator(IPdfGeneratorService pdfGeneratorService, IOpenFileService openFileService, HrDataContext context)
         {
@@ -66,6 +67,37 @@ namespace EngineeringManagement.UI.Forms.Employees
                     }
                 }
             }
+        }
+
+        private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((ComboBox)sender).SelectedIndex != 0)
+            {
+                var empId = (((ComboBox)sender).SelectedItem as GeneralEmployee).Id;
+                SelectedEmployee = context.GeneralEmployees.Find(empId);
+                MapFields();
+            }
+            else
+            {
+                SelectedEmployee = null;
+                ClearAllFields();
+            }
+        }
+
+        private void ClearAllFields()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MapFields()
+        {
+            txtName.Text = SelectedEmployee.EmployeeName;
+            cmbCivilState.SelectedIndex = cmbCivilState.FindString(SelectedEmployee.MaritalStatus);
+            txtEmail.Text = SelectedEmployee.Email;
+            TxtSocialSecurity.Text = SelectedEmployee.SocialSecurityNumber;
+            txtCurp.Text = SelectedEmployee.Curp;
+            txtAddress.Text = SelectedEmployee.Address;
+            
         }
     }
 }

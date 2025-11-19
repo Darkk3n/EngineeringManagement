@@ -59,7 +59,7 @@
             numUdQuota = new NumericUpDown();
             txtImssHosp = new TextBox();
             txtAddress = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
+            TxtSocialSecurity = new MaskedTextBox();
             txtEmail = new TextBox();
             cmbCivilState = new ComboBox();
             txtName = new TextBox();
@@ -171,7 +171,7 @@
             tabPage1.Controls.Add(numUdQuota);
             tabPage1.Controls.Add(txtImssHosp);
             tabPage1.Controls.Add(txtAddress);
-            tabPage1.Controls.Add(maskedTextBox1);
+            tabPage1.Controls.Add(TxtSocialSecurity);
             tabPage1.Controls.Add(txtEmail);
             tabPage1.Controls.Add(cmbCivilState);
             tabPage1.Controls.Add(txtName);
@@ -218,6 +218,7 @@
             cmbEmployees.Name = "cmbEmployees";
             cmbEmployees.Size = new Size(225, 28);
             cmbEmployees.TabIndex = 122;
+            cmbEmployees.SelectedIndexChanged += cmbEmployees_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -429,13 +430,13 @@
             txtAddress.Size = new Size(847, 50);
             txtAddress.TabIndex = 69;
             // 
-            // maskedTextBox1
+            // TxtSocialSecurity
             // 
-            maskedTextBox1.Location = new Point(823, 46);
-            maskedTextBox1.Mask = "00000000000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(118, 27);
-            maskedTextBox1.TabIndex = 68;
+            TxtSocialSecurity.Location = new Point(823, 46);
+            TxtSocialSecurity.Mask = "00000000000";
+            TxtSocialSecurity.Name = "TxtSocialSecurity";
+            TxtSocialSecurity.Size = new Size(118, 27);
+            TxtSocialSecurity.TabIndex = 68;
             // 
             // txtEmail
             // 
@@ -1074,7 +1075,7 @@
         private NumericUpDown numUdQuota;
         private TextBox txtImssHosp;
         private TextBox txtAddress;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox TxtSocialSecurity;
         private TextBox txtEmail;
         private ComboBox cmbCivilState;
         private TextBox txtName;
