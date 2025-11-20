@@ -86,7 +86,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(60, 100);
             label4.Name = "label4";
-            label4.Size = new Size(88, 15);
+            label4.Size = new Size(89, 15);
             label4.TabIndex = 3;
             label4.Text = "Tipo de Sangre:";
             // 
@@ -95,7 +95,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(12, 129);
             label5.Name = "label5";
-            label5.Size = new Size(136, 15);
+            label5.Size = new Size(137, 15);
             label5.TabIndex = 4;
             label5.Text = "Telefono de Emergencia:";
             // 
@@ -131,7 +131,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(409, 44);
             label9.Name = "label9";
-            label9.Size = new Size(68, 15);
+            label9.Size = new Size(69, 15);
             label9.TabIndex = 8;
             label9.Text = "Ver SISOSIT:";
             // 
@@ -269,8 +269,8 @@
             // EmployeeMedFileForm
             // 
             AcceptButton = BtnOk;
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             CancelButton = BtnCancel;
             ClientSize = new Size(616, 290);
             Controls.Add(BtnCancel);

@@ -39,19 +39,20 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(645, 90);
+            label1.Size = new Size(564, 68);
             label1.TabIndex = 0;
             label1.Text = "Chale... Ocurrio un error... Pero la aplicacion no se cerrara!";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // BtnClose
             // 
-            BtnClose.Location = new Point(694, 531);
+            BtnClose.Location = new Point(607, 398);
+            BtnClose.Margin = new Padding(3, 2, 3, 2);
             BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(94, 29);
+            BtnClose.Size = new Size(82, 22);
             BtnClose.TabIndex = 1;
             BtnClose.Text = "Cerrar";
             BtnClose.UseVisualStyleBackColor = true;
@@ -59,28 +60,30 @@
             // 
             // txtEx
             // 
-            txtEx.Location = new Point(12, 235);
+            txtEx.Location = new Point(10, 176);
+            txtEx.Margin = new Padding(3, 2, 3, 2);
             txtEx.Multiline = true;
             txtEx.Name = "txtEx";
             txtEx.ReadOnly = true;
-            txtEx.Size = new Size(776, 273);
+            txtEx.Size = new Size(680, 206);
             txtEx.TabIndex = 2;
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 142);
+            label2.Font = new Font("Segoe UI", 10.8F);
+            label2.Location = new Point(10, 106);
             label2.Name = "label2";
-            label2.Size = new Size(776, 90);
+            label2.Size = new Size(679, 68);
             label2.TabIndex = 3;
             label2.Text = resources.GetString("label2.Text");
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Error;
-            pictureBox1.Location = new Point(663, 9);
+            pictureBox1.Location = new Point(580, 7);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 121);
+            pictureBox1.Size = new Size(109, 91);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -88,10 +91,10 @@
             // ExceptionHandlerForm
             // 
             AcceptButton = BtnClose;
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             CancelButton = BtnClose;
-            ClientSize = new Size(800, 572);
+            ClientSize = new Size(700, 429);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(txtEx);
@@ -99,6 +102,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ExceptionHandlerForm";

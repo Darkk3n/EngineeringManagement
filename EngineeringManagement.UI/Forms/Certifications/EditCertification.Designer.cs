@@ -49,27 +49,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 23);
+            label1.Location = new Point(41, 17);
             label1.Name = "label1";
-            label1.Size = new Size(46, 20);
+            label1.Size = new Size(37, 15);
             label1.TabIndex = 0;
             label1.Text = "DC-3:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 67);
+            label2.Location = new Point(24, 50);
             label2.Name = "label2";
-            label2.Size = new Size(67, 20);
+            label2.Size = new Size(54, 15);
             label2.TabIndex = 1;
             label2.Text = "Nombre:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(7, 148);
+            label3.Location = new Point(6, 111);
             label3.Name = "label3";
-            label3.Size = new Size(90, 20);
+            label3.Size = new Size(72, 15);
             label3.TabIndex = 2;
             label3.Text = "Descripcion:";
             // 
@@ -77,38 +77,34 @@
             // 
             CmbCertifications.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCertifications.FormattingEnabled = true;
-            CmbCertifications.Location = new Point(97, 19);
-            CmbCertifications.Margin = new Padding(3, 4, 3, 4);
+            CmbCertifications.Location = new Point(85, 14);
             CmbCertifications.Name = "CmbCertifications";
-            CmbCertifications.Size = new Size(329, 28);
+            CmbCertifications.Size = new Size(288, 23);
             CmbCertifications.TabIndex = 3;
             CmbCertifications.SelectedIndexChanged += CmbCertifications_SelectedIndexChanged;
             // 
             // TxtCertName
             // 
             TxtCertName.Enabled = false;
-            TxtCertName.Location = new Point(97, 61);
-            TxtCertName.Margin = new Padding(3, 4, 3, 4);
+            TxtCertName.Location = new Point(85, 46);
             TxtCertName.Name = "TxtCertName";
-            TxtCertName.Size = new Size(329, 27);
+            TxtCertName.Size = new Size(288, 23);
             TxtCertName.TabIndex = 4;
             // 
             // TxtCertDesc
             // 
             TxtCertDesc.Enabled = false;
-            TxtCertDesc.Location = new Point(97, 107);
-            TxtCertDesc.Margin = new Padding(3, 4, 3, 4);
+            TxtCertDesc.Location = new Point(85, 80);
             TxtCertDesc.Multiline = true;
             TxtCertDesc.Name = "TxtCertDesc";
-            TxtCertDesc.Size = new Size(329, 103);
+            TxtCertDesc.Size = new Size(288, 78);
             TxtCertDesc.TabIndex = 5;
             // 
             // BtnOk
             // 
-            BtnOk.Location = new Point(146, 395);
-            BtnOk.Margin = new Padding(3, 4, 3, 4);
+            BtnOk.Location = new Point(128, 296);
             BtnOk.Name = "BtnOk";
-            BtnOk.Size = new Size(86, 31);
+            BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 6;
             BtnOk.Text = "Guardar";
             BtnOk.UseVisualStyleBackColor = true;
@@ -116,10 +112,9 @@
             // 
             // BtnCancel
             // 
-            BtnCancel.Location = new Point(239, 395);
-            BtnCancel.Margin = new Padding(3, 4, 3, 4);
+            BtnCancel.Location = new Point(209, 296);
             BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(86, 31);
+            BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 7;
             BtnCancel.Text = "Cancelar";
             BtnCancel.UseVisualStyleBackColor = true;
@@ -128,9 +123,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 236);
+            label4.Location = new Point(26, 177);
             label4.Name = "label4";
-            label4.Size = new Size(69, 20);
+            label4.Size = new Size(56, 15);
             label4.TabIndex = 8;
             label4.Text = "Planta(s):";
             // 
@@ -138,31 +133,28 @@
             // 
             lbAllFacilities.Enabled = false;
             lbAllFacilities.FormattingEnabled = true;
-            lbAllFacilities.ItemHeight = 20;
-            lbAllFacilities.Location = new Point(97, 224);
-            lbAllFacilities.Margin = new Padding(3, 4, 3, 4);
+            lbAllFacilities.ItemHeight = 15;
+            lbAllFacilities.Location = new Point(85, 168);
             lbAllFacilities.Name = "lbAllFacilities";
-            lbAllFacilities.Size = new Size(137, 144);
+            lbAllFacilities.Size = new Size(120, 109);
             lbAllFacilities.TabIndex = 9;
             // 
             // lbAssignedFacilities
             // 
             lbAssignedFacilities.Enabled = false;
             lbAssignedFacilities.FormattingEnabled = true;
-            lbAssignedFacilities.ItemHeight = 20;
-            lbAssignedFacilities.Location = new Point(289, 224);
-            lbAssignedFacilities.Margin = new Padding(3, 4, 3, 4);
+            lbAssignedFacilities.ItemHeight = 15;
+            lbAssignedFacilities.Location = new Point(253, 168);
             lbAssignedFacilities.Name = "lbAssignedFacilities";
-            lbAssignedFacilities.Size = new Size(137, 144);
+            lbAssignedFacilities.Size = new Size(120, 109);
             lbAssignedFacilities.TabIndex = 10;
             // 
             // BtnRemove
             // 
             BtnRemove.Enabled = false;
-            BtnRemove.Location = new Point(239, 225);
-            BtnRemove.Margin = new Padding(3, 4, 3, 4);
+            BtnRemove.Location = new Point(209, 169);
             BtnRemove.Name = "BtnRemove";
-            BtnRemove.Size = new Size(43, 31);
+            BtnRemove.Size = new Size(38, 23);
             BtnRemove.TabIndex = 11;
             BtnRemove.Text = "<";
             BtnRemove.UseVisualStyleBackColor = true;
@@ -171,10 +163,9 @@
             // BtnRemoveAll
             // 
             BtnRemoveAll.Enabled = false;
-            BtnRemoveAll.Location = new Point(239, 264);
-            BtnRemoveAll.Margin = new Padding(3, 4, 3, 4);
+            BtnRemoveAll.Location = new Point(209, 198);
             BtnRemoveAll.Name = "BtnRemoveAll";
-            BtnRemoveAll.Size = new Size(43, 31);
+            BtnRemoveAll.Size = new Size(38, 23);
             BtnRemoveAll.TabIndex = 12;
             BtnRemoveAll.Text = "<<";
             BtnRemoveAll.UseVisualStyleBackColor = true;
@@ -183,10 +174,9 @@
             // BtnAdd
             // 
             BtnAdd.Enabled = false;
-            BtnAdd.Location = new Point(241, 303);
-            BtnAdd.Margin = new Padding(3, 4, 3, 4);
+            BtnAdd.Location = new Point(211, 227);
             BtnAdd.Name = "BtnAdd";
-            BtnAdd.Size = new Size(43, 31);
+            BtnAdd.Size = new Size(38, 23);
             BtnAdd.TabIndex = 13;
             BtnAdd.Text = ">";
             BtnAdd.UseVisualStyleBackColor = true;
@@ -195,10 +185,9 @@
             // BtnAddAll
             // 
             BtnAddAll.Enabled = false;
-            BtnAddAll.Location = new Point(241, 341);
-            BtnAddAll.Margin = new Padding(3, 4, 3, 4);
+            BtnAddAll.Location = new Point(211, 256);
             BtnAddAll.Name = "BtnAddAll";
-            BtnAddAll.Size = new Size(43, 31);
+            BtnAddAll.Size = new Size(38, 23);
             BtnAddAll.TabIndex = 14;
             BtnAddAll.Text = ">>";
             BtnAddAll.UseVisualStyleBackColor = true;
@@ -207,10 +196,10 @@
             // EditCertification
             // 
             AcceptButton = BtnOk;
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             CancelButton = BtnCancel;
-            ClientSize = new Size(453, 444);
+            ClientSize = new Size(396, 333);
             Controls.Add(BtnAddAll);
             Controls.Add(BtnAdd);
             Controls.Add(BtnRemoveAll);
@@ -228,7 +217,6 @@
             Controls.Add(TxtCertName);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "EditCertification";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar DC-3";

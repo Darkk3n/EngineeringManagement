@@ -49,54 +49,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(54, 27);
+            label1.Location = new Point(47, 20);
             label1.Name = "label1";
-            label1.Size = new Size(80, 20);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 0;
             label1.Text = "Empleado:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(83, 72);
+            label2.Location = new Point(73, 54);
             label2.Name = "label2";
-            label2.Size = new Size(46, 20);
+            label2.Size = new Size(37, 15);
             label2.TabIndex = 1;
             label2.Text = "DC-3:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(42, 123);
+            label3.Location = new Point(37, 92);
             label3.Name = "label3";
-            label3.Size = new Size(90, 20);
+            label3.Size = new Size(73, 15);
             label3.TabIndex = 2;
             label3.Text = "Documento:";
             // 
             // LblFileName
             // 
             LblFileName.AutoSize = true;
-            LblFileName.Location = new Point(133, 181);
+            LblFileName.Location = new Point(116, 136);
             LblFileName.Name = "LblFileName";
-            LblFileName.Size = new Size(209, 20);
+            LblFileName.Size = new Size(170, 15);
             LblFileName.TabIndex = 3;
             LblFileName.Text = "Ningun archivo seleccionado...";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(34, 251);
+            label5.Location = new Point(30, 188);
             label5.Name = "label5";
-            label5.Size = new Size(111, 20);
+            label5.Size = new Size(89, 15);
             label5.TabIndex = 4;
             label5.Text = "Fecha de Inicio:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(251, 251);
+            label6.Location = new Point(220, 188);
             label6.Name = "label6";
-            label6.Size = new Size(157, 20);
+            label6.Size = new Size(126, 15);
             label6.TabIndex = 5;
             label6.Text = "Fecha de Vencimiento:";
             // 
@@ -104,10 +104,9 @@
             // 
             BtnViewFile.Enabled = false;
             BtnViewFile.Image = Properties.Resources.Lupa_Icon__2_;
-            BtnViewFile.Location = new Point(471, 175);
-            BtnViewFile.Margin = new Padding(3, 4, 3, 4);
+            BtnViewFile.Location = new Point(412, 131);
             BtnViewFile.Name = "BtnViewFile";
-            BtnViewFile.Size = new Size(37, 33);
+            BtnViewFile.Size = new Size(32, 25);
             BtnViewFile.TabIndex = 9;
             BtnViewFile.UseVisualStyleBackColor = true;
             BtnViewFile.Click += BtnViewFile_Click;
@@ -116,28 +115,25 @@
             // 
             dtpStartDate.CustomFormat = "dd/MM/yyyy";
             dtpStartDate.Format = DateTimePickerFormat.Custom;
-            dtpStartDate.Location = new Point(143, 243);
-            dtpStartDate.Margin = new Padding(3, 4, 3, 4);
+            dtpStartDate.Location = new Point(125, 182);
             dtpStartDate.Name = "dtpStartDate";
-            dtpStartDate.Size = new Size(101, 27);
+            dtpStartDate.Size = new Size(89, 23);
             dtpStartDate.TabIndex = 10;
             // 
             // dtpEndDate
             // 
             dtpEndDate.CustomFormat = "dd/MM/yyyy";
             dtpEndDate.Format = DateTimePickerFormat.Custom;
-            dtpEndDate.Location = new Point(402, 243);
-            dtpEndDate.Margin = new Padding(3, 4, 3, 4);
+            dtpEndDate.Location = new Point(352, 182);
             dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.Size = new Size(105, 27);
+            dtpEndDate.Size = new Size(92, 23);
             dtpEndDate.TabIndex = 11;
             // 
             // BtnCancel
             // 
-            BtnCancel.Location = new Point(270, 316);
-            BtnCancel.Margin = new Padding(3, 4, 3, 4);
+            BtnCancel.Location = new Point(236, 237);
             BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(86, 31);
+            BtnCancel.Size = new Size(75, 23);
             BtnCancel.TabIndex = 13;
             BtnCancel.Text = "Cancelar";
             BtnCancel.UseVisualStyleBackColor = true;
@@ -146,27 +142,26 @@
             // LblEmployeeName
             // 
             LblEmployeeName.AutoSize = true;
-            LblEmployeeName.Location = new Point(133, 27);
+            LblEmployeeName.Location = new Point(116, 20);
             LblEmployeeName.Name = "LblEmployeeName";
-            LblEmployeeName.Size = new Size(50, 20);
+            LblEmployeeName.Size = new Size(38, 15);
             LblEmployeeName.TabIndex = 14;
             LblEmployeeName.Text = "label7";
             // 
             // LblCertName
             // 
             LblCertName.AutoSize = true;
-            LblCertName.Location = new Point(133, 72);
+            LblCertName.Location = new Point(116, 54);
             LblCertName.Name = "LblCertName";
-            LblCertName.Size = new Size(50, 20);
+            LblCertName.Size = new Size(38, 15);
             LblCertName.TabIndex = 15;
             LblCertName.Text = "label8";
             // 
             // BtnOk
             // 
-            BtnOk.Location = new Point(159, 316);
-            BtnOk.Margin = new Padding(3, 4, 3, 4);
+            BtnOk.Location = new Point(139, 237);
             BtnOk.Name = "BtnOk";
-            BtnOk.Size = new Size(86, 31);
+            BtnOk.Size = new Size(75, 23);
             BtnOk.TabIndex = 16;
             BtnOk.Text = "Guardar";
             BtnOk.UseVisualStyleBackColor = true;
@@ -174,10 +169,9 @@
             // 
             // BtnOpenFile
             // 
-            BtnOpenFile.Location = new Point(133, 117);
-            BtnOpenFile.Margin = new Padding(3, 4, 3, 4);
+            BtnOpenFile.Location = new Point(116, 88);
             BtnOpenFile.Name = "BtnOpenFile";
-            BtnOpenFile.Size = new Size(162, 31);
+            BtnOpenFile.Size = new Size(142, 23);
             BtnOpenFile.TabIndex = 17;
             BtnOpenFile.Text = "Seleccionar Archivo...";
             BtnOpenFile.UseVisualStyleBackColor = true;
@@ -192,10 +186,10 @@
             // EditEmployeeCertification
             // 
             AcceptButton = BtnOk;
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             CancelButton = BtnCancel;
-            ClientSize = new Size(543, 377);
+            ClientSize = new Size(475, 283);
             Controls.Add(BtnOpenFile);
             Controls.Add(BtnOk);
             Controls.Add(LblCertName);
@@ -212,7 +206,6 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "EditEmployeeCertification";
