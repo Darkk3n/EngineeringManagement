@@ -44,6 +44,9 @@
             label14 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            TxtEmergencyPhone = new TextBox();
+            TxtPersonalPhone = new TextBox();
+            TxtSocialSecurity = new TextBox();
             label35 = new Label();
             label34 = new Label();
             label33 = new Label();
@@ -65,7 +68,6 @@
             TxtAcademicDocument = new TextBox();
             TxtAcademicDegree = new TextBox();
             label27 = new Label();
-            txtEmergencyPhone = new MaskedTextBox();
             txtEmergencyContactName = new TextBox();
             label26 = new Label();
             label25 = new Label();
@@ -87,7 +89,6 @@
             chkRecommendationLetters = new CheckBox();
             chkDriverLicense = new CheckBox();
             chkInfonavit = new CheckBox();
-            txtPersonalPhone = new MaskedTextBox();
             chkSocialSecurity = new CheckBox();
             chkPictures = new CheckBox();
             chkVotingCard = new CheckBox();
@@ -96,7 +97,6 @@
             chkBirthCertificate = new CheckBox();
             chkProofOfStudies = new CheckBox();
             txtEmail = new TextBox();
-            txtSocialSecutiry = new MaskedTextBox();
             txtRfc = new TextBox();
             txtCurp = new TextBox();
             cmbMaritalStatus = new ComboBox();
@@ -255,6 +255,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(TxtEmergencyPhone);
+            tabPage1.Controls.Add(TxtPersonalPhone);
+            tabPage1.Controls.Add(TxtSocialSecurity);
             tabPage1.Controls.Add(label35);
             tabPage1.Controls.Add(label34);
             tabPage1.Controls.Add(label33);
@@ -276,7 +279,6 @@
             tabPage1.Controls.Add(TxtAcademicDocument);
             tabPage1.Controls.Add(TxtAcademicDegree);
             tabPage1.Controls.Add(label27);
-            tabPage1.Controls.Add(txtEmergencyPhone);
             tabPage1.Controls.Add(txtEmergencyContactName);
             tabPage1.Controls.Add(label14);
             tabPage1.Controls.Add(label26);
@@ -301,7 +303,6 @@
             tabPage1.Controls.Add(chkRecommendationLetters);
             tabPage1.Controls.Add(chkDriverLicense);
             tabPage1.Controls.Add(chkInfonavit);
-            tabPage1.Controls.Add(txtPersonalPhone);
             tabPage1.Controls.Add(chkSocialSecurity);
             tabPage1.Controls.Add(chkPictures);
             tabPage1.Controls.Add(chkVotingCard);
@@ -310,7 +311,6 @@
             tabPage1.Controls.Add(chkBirthCertificate);
             tabPage1.Controls.Add(chkProofOfStudies);
             tabPage1.Controls.Add(txtEmail);
-            tabPage1.Controls.Add(txtSocialSecutiry);
             tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(txtRfc);
             tabPage1.Controls.Add(txtCurp);
@@ -328,6 +328,30 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Datos Personales";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // TxtEmergencyPhone
+            // 
+            TxtEmergencyPhone.Location = new Point(273, 323);
+            TxtEmergencyPhone.Name = "TxtEmergencyPhone";
+            TxtEmergencyPhone.Size = new Size(121, 23);
+            TxtEmergencyPhone.TabIndex = 23;
+            TxtEmergencyPhone.KeyPress += OnlyNumbers_KeyPress;
+            // 
+            // TxtPersonalPhone
+            // 
+            TxtPersonalPhone.Location = new Point(188, 95);
+            TxtPersonalPhone.Name = "TxtPersonalPhone";
+            TxtPersonalPhone.Size = new Size(104, 23);
+            TxtPersonalPhone.TabIndex = 9;
+            TxtPersonalPhone.KeyPress += OnlyNumbers_KeyPress;
+            // 
+            // TxtSocialSecurity
+            // 
+            TxtSocialSecurity.Location = new Point(8, 96);
+            TxtSocialSecurity.Name = "TxtSocialSecurity";
+            TxtSocialSecurity.Size = new Size(78, 23);
+            TxtSocialSecurity.TabIndex = 7;
+            TxtSocialSecurity.KeyPress += OnlyNumbers_KeyPress;
             // 
             // label35
             // 
@@ -361,21 +385,21 @@
             TxtBankName.Location = new Point(594, 397);
             TxtBankName.Name = "TxtBankName";
             TxtBankName.Size = new Size(141, 23);
-            TxtBankName.TabIndex = 61;
+            TxtBankName.TabIndex = 30;
             // 
             // TxtBankCard
             // 
             TxtBankCard.Location = new Point(436, 397);
             TxtBankCard.Name = "TxtBankCard";
             TxtBankCard.Size = new Size(132, 23);
-            TxtBankCard.TabIndex = 60;
+            TxtBankCard.TabIndex = 29;
             // 
             // TxtBankAcc
             // 
             TxtBankAcc.Location = new Point(269, 397);
             TxtBankAcc.Name = "TxtBankAcc";
             TxtBankAcc.Size = new Size(150, 23);
-            TxtBankAcc.TabIndex = 59;
+            TxtBankAcc.TabIndex = 28;
             // 
             // TxtBenefitAddress
             // 
@@ -383,7 +407,7 @@
             TxtBenefitAddress.Multiline = true;
             TxtBenefitAddress.Name = "TxtBenefitAddress";
             TxtBenefitAddress.Size = new Size(234, 70);
-            TxtBenefitAddress.TabIndex = 58;
+            TxtBenefitAddress.TabIndex = 27;
             // 
             // label32
             // 
@@ -409,14 +433,15 @@
             DtpBenefitBirthDate.Location = new Point(476, 323);
             DtpBenefitBirthDate.Name = "DtpBenefitBirthDate";
             DtpBenefitBirthDate.Size = new Size(122, 23);
-            DtpBenefitBirthDate.TabIndex = 55;
+            DtpBenefitBirthDate.TabIndex = 25;
             // 
             // TxtBenefitPerc
             // 
             TxtBenefitPerc.Location = new Point(407, 323);
             TxtBenefitPerc.Name = "TxtBenefitPerc";
             TxtBenefitPerc.Size = new Size(57, 23);
-            TxtBenefitPerc.TabIndex = 54;
+            TxtBenefitPerc.TabIndex = 24;
+            TxtBenefitPerc.KeyPress += OnlyNumbers_KeyPress;
             // 
             // label30
             // 
@@ -450,42 +475,42 @@
             TxtMotherName.Location = new Point(275, 267);
             TxtMotherName.Name = "TxtMotherName";
             TxtMotherName.Size = new Size(237, 23);
-            TxtMotherName.TabIndex = 50;
+            TxtMotherName.TabIndex = 21;
             // 
             // txtRelationship
             // 
             txtRelationship.Location = new Point(614, 323);
             txtRelationship.Name = "txtRelationship";
             txtRelationship.Size = new Size(121, 23);
-            txtRelationship.TabIndex = 9;
+            txtRelationship.TabIndex = 26;
             // 
             // TxtFatherName
             // 
             TxtFatherName.Location = new Point(14, 267);
             TxtFatherName.Name = "TxtFatherName";
             TxtFatherName.Size = new Size(237, 23);
-            TxtFatherName.TabIndex = 49;
+            TxtFatherName.TabIndex = 20;
             // 
             // TxtProfession
             // 
             TxtProfession.Location = new Point(539, 209);
             TxtProfession.Name = "TxtProfession";
             TxtProfession.Size = new Size(239, 23);
-            TxtProfession.TabIndex = 48;
+            TxtProfession.TabIndex = 19;
             // 
             // TxtAcademicDocument
             // 
             TxtAcademicDocument.Location = new Point(275, 209);
             TxtAcademicDocument.Name = "TxtAcademicDocument";
             TxtAcademicDocument.Size = new Size(239, 23);
-            TxtAcademicDocument.TabIndex = 47;
+            TxtAcademicDocument.TabIndex = 18;
             // 
             // TxtAcademicDegree
             // 
             TxtAcademicDegree.Location = new Point(14, 209);
             TxtAcademicDegree.Name = "TxtAcademicDegree";
             TxtAcademicDegree.Size = new Size(239, 23);
-            TxtAcademicDegree.TabIndex = 46;
+            TxtAcademicDegree.TabIndex = 17;
             // 
             // label27
             // 
@@ -496,20 +521,12 @@
             label27.TabIndex = 45;
             label27.Text = "Profesion:";
             // 
-            // txtEmergencyPhone
-            // 
-            txtEmergencyPhone.Location = new Point(269, 323);
-            txtEmergencyPhone.Mask = "999-000-0000";
-            txtEmergencyPhone.Name = "txtEmergencyPhone";
-            txtEmergencyPhone.Size = new Size(121, 23);
-            txtEmergencyPhone.TabIndex = 7;
-            // 
             // txtEmergencyContactName
             // 
             txtEmergencyContactName.Location = new Point(14, 323);
             txtEmergencyContactName.Name = "txtEmergencyContactName";
             txtEmergencyContactName.Size = new Size(239, 23);
-            txtEmergencyContactName.TabIndex = 8;
+            txtEmergencyContactName.TabIndex = 22;
             // 
             // label26
             // 
@@ -552,7 +569,7 @@
             TxtBirthPlace.Location = new Point(547, 149);
             TxtBirthPlace.Name = "TxtBirthPlace";
             TxtBirthPlace.Size = new Size(230, 23);
-            TxtBirthPlace.TabIndex = 40;
+            TxtBirthPlace.TabIndex = 16;
             // 
             // DtpBirthDate
             // 
@@ -560,14 +577,14 @@
             DtpBirthDate.Location = new Point(400, 149);
             DtpBirthDate.Name = "DtpBirthDate";
             DtpBirthDate.Size = new Size(136, 23);
-            DtpBirthDate.TabIndex = 39;
+            DtpBirthDate.TabIndex = 15;
             // 
             // TxtFonacot
             // 
             TxtFonacot.Location = new Point(547, 96);
             TxtFonacot.Name = "TxtFonacot";
             TxtFonacot.Size = new Size(230, 23);
-            TxtFonacot.TabIndex = 38;
+            TxtFonacot.TabIndex = 12;
             // 
             // label23
             // 
@@ -583,14 +600,15 @@
             TxtHouseCreditPercent.Location = new Point(441, 95);
             TxtHouseCreditPercent.Name = "TxtHouseCreditPercent";
             TxtHouseCreditPercent.Size = new Size(100, 23);
-            TxtHouseCreditPercent.TabIndex = 36;
+            TxtHouseCreditPercent.TabIndex = 11;
+            TxtHouseCreditPercent.KeyPress += OnlyNumbers_KeyPress;
             // 
             // TxtHouseCredit
             // 
             TxtHouseCredit.Location = new Point(304, 95);
             TxtHouseCredit.Name = "TxtHouseCredit";
             TxtHouseCredit.Size = new Size(131, 23);
-            TxtHouseCredit.TabIndex = 35;
+            TxtHouseCredit.TabIndex = 10;
             // 
             // label22
             // 
@@ -615,7 +633,8 @@
             TxtHospitalNumber.Location = new Point(97, 95);
             TxtHospitalNumber.Name = "TxtHospitalNumber";
             TxtHospitalNumber.Size = new Size(66, 23);
-            TxtHospitalNumber.TabIndex = 32;
+            TxtHospitalNumber.TabIndex = 8;
+            TxtHospitalNumber.KeyPress += OnlyNumbers_KeyPress;
             // 
             // label20
             // 
@@ -632,7 +651,7 @@
             TxtAddress.Multiline = true;
             TxtAddress.Name = "TxtAddress";
             TxtAddress.Size = new Size(370, 36);
-            TxtAddress.TabIndex = 30;
+            TxtAddress.TabIndex = 6;
             // 
             // label19
             // 
@@ -682,14 +701,6 @@
             chkInfonavit.TabIndex = 22;
             chkInfonavit.Text = "INFONAVIT";
             chkInfonavit.UseVisualStyleBackColor = true;
-            // 
-            // txtPersonalPhone
-            // 
-            txtPersonalPhone.Location = new Point(188, 95);
-            txtPersonalPhone.Mask = "999-000-0000";
-            txtPersonalPhone.Name = "txtPersonalPhone";
-            txtPersonalPhone.Size = new Size(104, 23);
-            txtPersonalPhone.TabIndex = 6;
             // 
             // chkSocialSecurity
             // 
@@ -766,15 +777,7 @@
             txtEmail.Location = new Point(172, 33);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(205, 23);
-            txtEmail.TabIndex = 13;
-            // 
-            // txtSocialSecutiry
-            // 
-            txtSocialSecutiry.Location = new Point(8, 95);
-            txtSocialSecutiry.Mask = "00000000000";
-            txtSocialSecutiry.Name = "txtSocialSecutiry";
-            txtSocialSecutiry.Size = new Size(83, 23);
-            txtSocialSecutiry.TabIndex = 12;
+            txtEmail.TabIndex = 5;
             // 
             // txtRfc
             // 
@@ -782,7 +785,7 @@
             txtRfc.Location = new Point(204, 149);
             txtRfc.Name = "txtRfc";
             txtRfc.Size = new Size(190, 23);
-            txtRfc.TabIndex = 11;
+            txtRfc.TabIndex = 14;
             // 
             // txtCurp
             // 
@@ -790,7 +793,7 @@
             txtCurp.Location = new Point(8, 149);
             txtCurp.Name = "txtCurp";
             txtCurp.Size = new Size(190, 23);
-            txtCurp.TabIndex = 10;
+            txtCurp.TabIndex = 13;
             // 
             // cmbMaritalStatus
             // 
@@ -800,7 +803,7 @@
             cmbMaritalStatus.Location = new Point(8, 33);
             cmbMaritalStatus.Name = "cmbMaritalStatus";
             cmbMaritalStatus.Size = new Size(154, 23);
-            cmbMaritalStatus.TabIndex = 15;
+            cmbMaritalStatus.TabIndex = 4;
             // 
             // label15
             // 
@@ -874,7 +877,7 @@
             txtEmpName.Location = new Point(240, 80);
             txtEmpName.Name = "txtEmpName";
             txtEmpName.Size = new Size(247, 23);
-            txtEmpName.TabIndex = 1;
+            txtEmpName.TabIndex = 2;
             // 
             // dtpStartDate
             // 
@@ -882,7 +885,7 @@
             dtpStartDate.Location = new Point(493, 80);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(200, 23);
-            dtpStartDate.TabIndex = 2;
+            dtpStartDate.TabIndex = 3;
             // 
             // dtpRenewalDate
             // 
@@ -890,7 +893,7 @@
             dtpRenewalDate.Location = new Point(718, 80);
             dtpRenewalDate.Name = "dtpRenewalDate";
             dtpRenewalDate.Size = new Size(200, 23);
-            dtpRenewalDate.TabIndex = 3;
+            dtpRenewalDate.TabIndex = 4;
             // 
             // label8
             // 
@@ -935,11 +938,12 @@
             // 
             // cmbEmployees
             // 
+            cmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEmployees.FormattingEnabled = true;
             cmbEmployees.Location = new Point(240, 37);
             cmbEmployees.Name = "cmbEmployees";
             cmbEmployees.Size = new Size(247, 23);
-            cmbEmployees.TabIndex = 29;
+            cmbEmployees.TabIndex = 1;
             cmbEmployees.SelectedIndexChanged += cmbEmployees_SelectedIndexChanged;
             // 
             // label18
@@ -1023,8 +1027,6 @@
       private TextBox txtEmpName;
       private DateTimePicker dtpStartDate;
       private DateTimePicker dtpRenewalDate;
-      private MaskedTextBox txtPersonalPhone;
-      private MaskedTextBox txtEmergencyPhone;
       private TextBox txtEmergencyContactName;
       private TextBox txtRelationship;
       private ComboBox cmbMaritalStatus;
@@ -1044,7 +1046,6 @@
       private CheckBox chkProofOfStudies;
       private ComboBox cmbBloodType;
       private TextBox txtEmail;
-      private MaskedTextBox txtSocialSecutiry;
       private CheckBox chkBankStatus;
       private TabPage tabPage3;
       private Label label8;
@@ -1091,5 +1092,8 @@
         private TextBox TxtBankAcc;
         private Label label35;
         private Label label34;
+        private TextBox TxtSocialSecurity;
+        private TextBox TxtPersonalPhone;
+        private TextBox TxtEmergencyPhone;
     }
 }

@@ -151,7 +151,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 txtEmail.Text = SelectedEmployee.Email;
                 txtEmergencyContactName.Text = SelectedEmployee.EmergencyContactName;
                 txtRelationship.Text = SelectedEmployee.EmergencyContactRelationShip;
-                txtEmergencyPhone.Text = SelectedEmployee.EmergencyPhoneNumber;
+                TxtEmergencyPhone.Text = SelectedEmployee.EmergencyPhoneNumber;
                 txtEmpName.Text = SelectedEmployee.EmployeeName;
                 txtEmpCode.Text = SelectedEmployee.EmployeeId.ToString();
                 chkPictures.Checked = SelectedEmployee.Has2Pictures ?? false;
@@ -164,10 +164,10 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 chkProofOfStudies.Checked = SelectedEmployee.HasProofOfStudies ?? false;
                 chkRfc.Checked = SelectedEmployee.HasSat ?? false;
                 txtRfc.Text = SelectedEmployee.Rfc;
-                txtPersonalPhone.Text = SelectedEmployee.PersonalCellPhone;
+                TxtPersonalPhone.Text = SelectedEmployee.PersonalCellPhone;
                 dtpStartDate.Value = DateTime.Parse(SelectedEmployee.StartDate);
                 dtpRenewalDate.Value = DateTime.Parse(SelectedEmployee.RenewalDate);
-                txtSocialSecutiry.Text = SelectedEmployee.SocialSecurityNumber;
+                TxtSocialSecurity.Text = SelectedEmployee.SocialSecurityNumber;
                 //txtWorkPhone.Text = SelectedEmployee.WorkCellPhone;
                 TxtAcademicDegree.Text = SelectedEmployee.AcademicDegree;
                 TxtAcademicDocument.Text = SelectedEmployee.AcademicDegreeDocument;
@@ -211,7 +211,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 Email = txtEmail.Text,
                 EmergencyContactName = txtEmergencyContactName.Text,
                 EmergencyContactRelationShip = txtRelationship.Text,
-                EmergencyPhoneNumber = txtEmergencyPhone.Text,
+                EmergencyPhoneNumber = TxtEmergencyPhone.Text,
                 EmployeeName = txtEmpName.Text,
                 //TODO: Figure out EmployeeType 
                 Has2Pictures = chkPictures.Checked,
@@ -228,10 +228,10 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 HasSat = chkRfc.Checked,
                 MaritalStatus = cmbMaritalStatus.SelectedText,
                 Rfc = txtRfc.Text,
-                PersonalCellPhone = txtPersonalPhone.Text,
+                PersonalCellPhone = TxtPersonalPhone.Text,
                 StartDate = dtpStartDate.Value.ToShortDateString(),
                 RenewalDate = dtpRenewalDate.Value.ToShortDateString(),
-                SocialSecurityNumber = txtSocialSecutiry.Text,
+                SocialSecurityNumber = TxtSocialSecurity.Text,
                 //WorkCellPhone = txtWorkPhone.Text,
                 PictureFileName = PictureSafeFileName,
                 AcademicDegree = TxtAcademicDegree.Text,
@@ -262,7 +262,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             SelectedEmployee.Email = txtEmail.Text;
             SelectedEmployee.EmergencyContactName = txtEmergencyContactName.Text;
             SelectedEmployee.EmergencyContactRelationShip = txtRelationship.Text;
-            SelectedEmployee.EmergencyPhoneNumber = txtEmergencyPhone.Text;
+            SelectedEmployee.EmergencyPhoneNumber = TxtEmergencyPhone.Text;
             SelectedEmployee.EmployeeName = txtEmpName.Text;
             //TODO: Figure out EmployeeType 
             SelectedEmployee.Has2Pictures = chkPictures.Checked;
@@ -279,10 +279,10 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             SelectedEmployee.HasSat = chkRfc.Checked;
             SelectedEmployee.MaritalStatus = cmbMaritalStatus.SelectedText;
             SelectedEmployee.Rfc = txtRfc.Text;
-            SelectedEmployee.PersonalCellPhone = txtPersonalPhone.Text;
+            SelectedEmployee.PersonalCellPhone = TxtPersonalPhone.Text;
             SelectedEmployee.StartDate = dtpStartDate.Value.ToShortDateString();
             SelectedEmployee.RenewalDate = dtpRenewalDate.Value.ToShortDateString();
-            SelectedEmployee.SocialSecurityNumber = txtSocialSecutiry.Text;
+            SelectedEmployee.SocialSecurityNumber = TxtSocialSecurity.Text;
             //WorkCellPhone = txtWorkPhone.Text,
             SelectedEmployee.PictureFileName = PictureSafeFileName;
             SelectedEmployee.AcademicDegree = TxtAcademicDegree.Text;
@@ -304,7 +304,6 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             SelectedEmployee.Profession = TxtProfession.Text;
             SelectedEmployee.BenefitiaryAddress = TxtBenefitAddress.Text;
         }
-        #endregion
 
         private void OnlyNumbers_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -316,5 +315,6 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             if (!char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
+        #endregion
     }
 }
