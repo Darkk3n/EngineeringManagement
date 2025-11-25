@@ -305,5 +305,16 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             SelectedEmployee.BenefitiaryAddress = TxtBenefitAddress.Text;
         }
         #endregion
+
+        private void OnlyNumbers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys like Backspace, Delete, etc.
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow digits only
+            if (!char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

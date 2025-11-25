@@ -614,7 +614,7 @@
             // 
             TxtHospitalNumber.Location = new Point(97, 95);
             TxtHospitalNumber.Name = "TxtHospitalNumber";
-            TxtHospitalNumber.Size = new Size(65, 23);
+            TxtHospitalNumber.Size = new Size(66, 23);
             TxtHospitalNumber.TabIndex = 32;
             // 
             // label20
@@ -931,6 +931,7 @@
             txtEmpCode.Name = "txtEmpCode";
             txtEmpCode.Size = new Size(201, 23);
             txtEmpCode.TabIndex = 4;
+            txtEmpCode.KeyPress += OnlyNumbers_KeyPress;
             // 
             // cmbEmployees
             // 
