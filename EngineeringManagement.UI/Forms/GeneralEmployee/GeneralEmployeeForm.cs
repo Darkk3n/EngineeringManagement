@@ -206,7 +206,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
         {
             return new()
             {
-                BloodType = cmbBloodType.SelectedText,
+                BloodType = cmbBloodType.SelectedItem.ToString(),
                 Curp = txtCurp.Text,
                 Email = txtEmail.Text,
                 EmergencyContactName = txtEmergencyContactName.Text,
@@ -226,7 +226,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
                 HasNss = chkSocialSecurity.Checked,
                 HasProofOfStudies = chkProofOfStudies.Checked,
                 HasSat = chkRfc.Checked,
-                MaritalStatus = cmbMaritalStatus.SelectedText,
+                MaritalStatus = cmbMaritalStatus.SelectedItem.ToString(),
                 Rfc = txtRfc.Text,
                 PersonalCellPhone = TxtPersonalPhone.Text,
                 StartDate = dtpStartDate.Value.ToShortDateString(),
@@ -257,7 +257,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
 
         private void MapValuesForUpdate()
         {
-            SelectedEmployee.BloodType = cmbBloodType.SelectedText;
+            SelectedEmployee.BloodType = cmbBloodType.SelectedIndex == 0 ? string.Empty : cmbBloodType.SelectedItem.ToString();
             SelectedEmployee.Curp = txtCurp.Text;
             SelectedEmployee.Email = txtEmail.Text;
             SelectedEmployee.EmergencyContactName = txtEmergencyContactName.Text;
@@ -277,7 +277,7 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
             SelectedEmployee.HasNss = chkSocialSecurity.Checked;
             SelectedEmployee.HasProofOfStudies = chkProofOfStudies.Checked;
             SelectedEmployee.HasSat = chkRfc.Checked;
-            SelectedEmployee.MaritalStatus = cmbMaritalStatus.SelectedText;
+            SelectedEmployee.MaritalStatus = cmbMaritalStatus.SelectedIndex == 0 ? string.Empty : cmbMaritalStatus.SelectedItem.ToString();
             SelectedEmployee.Rfc = txtRfc.Text;
             SelectedEmployee.PersonalCellPhone = TxtPersonalPhone.Text;
             SelectedEmployee.StartDate = dtpStartDate.Value.ToShortDateString();

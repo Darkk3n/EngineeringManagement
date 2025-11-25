@@ -668,7 +668,7 @@
             chkBankStatus.Location = new Point(256, 637);
             chkBankStatus.Name = "chkBankStatus";
             chkBankStatus.Size = new Size(118, 19);
-            chkBankStatus.TabIndex = 26;
+            chkBankStatus.TabIndex = 41;
             chkBankStatus.Text = "Estado de Cuenta";
             chkBankStatus.UseVisualStyleBackColor = true;
             // 
@@ -678,7 +678,7 @@
             chkRecommendationLetters.Location = new Point(256, 587);
             chkRecommendationLetters.Name = "chkRecommendationLetters";
             chkRecommendationLetters.Size = new Size(168, 19);
-            chkRecommendationLetters.TabIndex = 24;
+            chkRecommendationLetters.TabIndex = 39;
             chkRecommendationLetters.Text = "2 Carta de Recomendacion";
             chkRecommendationLetters.UseVisualStyleBackColor = true;
             // 
@@ -688,7 +688,7 @@
             chkDriverLicense.Location = new Point(256, 562);
             chkDriverLicense.Name = "chkDriverLicense";
             chkDriverLicense.Size = new Size(128, 19);
-            chkDriverLicense.TabIndex = 23;
+            chkDriverLicense.TabIndex = 38;
             chkDriverLicense.Text = "Licencia de Manejo";
             chkDriverLicense.UseVisualStyleBackColor = true;
             // 
@@ -698,7 +698,7 @@
             chkInfonavit.Location = new Point(256, 537);
             chkInfonavit.Name = "chkInfonavit";
             chkInfonavit.Size = new Size(86, 19);
-            chkInfonavit.TabIndex = 22;
+            chkInfonavit.TabIndex = 37;
             chkInfonavit.Text = "INFONAVIT";
             chkInfonavit.UseVisualStyleBackColor = true;
             // 
@@ -708,7 +708,7 @@
             chkSocialSecurity.Location = new Point(19, 638);
             chkSocialSecurity.Name = "chkSocialSecurity";
             chkSocialSecurity.Size = new Size(47, 19);
-            chkSocialSecurity.TabIndex = 21;
+            chkSocialSecurity.TabIndex = 36;
             chkSocialSecurity.Text = "NSS";
             chkSocialSecurity.UseVisualStyleBackColor = true;
             // 
@@ -718,7 +718,7 @@
             chkPictures.Location = new Point(256, 613);
             chkPictures.Name = "chkPictures";
             chkPictures.Size = new Size(94, 19);
-            chkPictures.TabIndex = 25;
+            chkPictures.TabIndex = 40;
             chkPictures.Text = "2 Fotografias";
             chkPictures.UseVisualStyleBackColor = true;
             // 
@@ -728,7 +728,7 @@
             chkVotingCard.Location = new Point(19, 613);
             chkVotingCard.Name = "chkVotingCard";
             chkVotingCard.Size = new Size(44, 19);
-            chkVotingCard.TabIndex = 20;
+            chkVotingCard.TabIndex = 35;
             chkVotingCard.Text = "INE";
             chkVotingCard.UseVisualStyleBackColor = true;
             // 
@@ -738,7 +738,7 @@
             chkCurp.Location = new Point(19, 588);
             chkCurp.Name = "chkCurp";
             chkCurp.Size = new Size(56, 19);
-            chkCurp.TabIndex = 19;
+            chkCurp.TabIndex = 34;
             chkCurp.Text = "CURP";
             chkCurp.UseVisualStyleBackColor = true;
             // 
@@ -748,7 +748,7 @@
             chkRfc.Location = new Point(19, 562);
             chkRfc.Name = "chkRfc";
             chkRfc.Size = new Size(217, 19);
-            chkRfc.TabIndex = 18;
+            chkRfc.TabIndex = 33;
             chkRfc.Text = "Constancia de Situacion Fiscal (RFC)";
             chkRfc.UseVisualStyleBackColor = true;
             // 
@@ -758,7 +758,7 @@
             chkBirthCertificate.Location = new Point(19, 537);
             chkBirthCertificate.Name = "chkBirthCertificate";
             chkBirthCertificate.Size = new Size(131, 19);
-            chkBirthCertificate.TabIndex = 17;
+            chkBirthCertificate.TabIndex = 32;
             chkBirthCertificate.Text = "Acta de Nacimiento";
             chkBirthCertificate.UseVisualStyleBackColor = true;
             // 
@@ -768,7 +768,7 @@
             chkProofOfStudies.Location = new Point(19, 482);
             chkProofOfStudies.Name = "chkProofOfStudies";
             chkProofOfStudies.Size = new Size(163, 19);
-            chkProofOfStudies.TabIndex = 16;
+            chkProofOfStudies.TabIndex = 31;
             chkProofOfStudies.Text = "Comprobante de Estudios";
             chkProofOfStudies.UseVisualStyleBackColor = true;
             // 
