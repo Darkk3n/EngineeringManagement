@@ -110,9 +110,9 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtProfession.Text = SelectedEmployee.Profession;
             txtFatherName.Text = SelectedEmployee.FatherName;
             txtMotherName.Text = SelectedEmployee.MotherName;
-            //txtBenefitiary.Text = SelectedEmployee.;
+            txtBenefitiary.Text = SelectedEmployee.EmergencyContactName;
             numUdPercent.Value = SelectedEmployee.BenefitiaryPercent;
-            //TxtBenefitiaryPhone.Text = SelectedEmployee.BenefitiaryPhone;
+            TxtBenefitiaryPhone.Text = SelectedEmployee.EmergencyPhoneNumber;
             dtpBenefiatiryBirthDate.Value = SelectedEmployee.BenefitiaryBirthDate.Value;
             txtBenefiatiryAddress.Text = SelectedEmployee.BenefitiaryAddress;
             txtBankAccount.Text = SelectedEmployee.BankAccountNumber.ToString();
