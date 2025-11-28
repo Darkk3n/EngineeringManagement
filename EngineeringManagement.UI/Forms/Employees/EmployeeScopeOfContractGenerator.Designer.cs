@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeScopeOfContractGenerator));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            TxtRfc = new TextBox();
+            TxtPhone = new TextBox();
+            TxtNss = new TextBox();
             cmbEmployees = new ComboBox();
             label2 = new Label();
             txtBankName = new TextBox();
@@ -38,8 +41,7 @@
             txtBankAccount = new TextBox();
             txtBenefiatiryAddress = new TextBox();
             dtpBenefiatiryBirthDate = new DateTimePicker();
-            mTxtBenefiatiryPhone = new MaskedTextBox();
-            numericUdPercent = new NumericUpDown();
+            numUdPercent = new NumericUpDown();
             txtBenefitiary = new TextBox();
             txtMotherName = new TextBox();
             txtFatherName = new TextBox();
@@ -50,16 +52,13 @@
             chkQuota = new CheckBox();
             chkInfonavitNA = new CheckBox();
             dtpBirthDate = new DateTimePicker();
-            mTxtRfc = new MaskedTextBox();
             txtCurp = new TextBox();
             txtInfonavitNumber = new TextBox();
             chkFonacotNA = new CheckBox();
             txtFonacotId = new TextBox();
-            mTxtPhone = new MaskedTextBox();
             numUdQuota = new NumericUpDown();
             txtImssHosp = new TextBox();
             txtAddress = new TextBox();
-            TxtSocialSecurity = new MaskedTextBox();
             txtEmail = new TextBox();
             cmbCivilState = new ComboBox();
             txtName = new TextBox();
@@ -123,9 +122,10 @@
             label3 = new Label();
             btnCancel = new Button();
             BtnGenerate = new Button();
+            TxtBenefitiaryPhone = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUdPercent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numUdPercent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numUdQuota).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numUdUnion).BeginInit();
@@ -144,6 +144,10 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(TxtBenefitiaryPhone);
+            tabPage1.Controls.Add(TxtRfc);
+            tabPage1.Controls.Add(TxtPhone);
+            tabPage1.Controls.Add(TxtNss);
             tabPage1.Controls.Add(cmbEmployees);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(txtBankName);
@@ -151,8 +155,7 @@
             tabPage1.Controls.Add(txtBankAccount);
             tabPage1.Controls.Add(txtBenefiatiryAddress);
             tabPage1.Controls.Add(dtpBenefiatiryBirthDate);
-            tabPage1.Controls.Add(mTxtBenefiatiryPhone);
-            tabPage1.Controls.Add(numericUdPercent);
+            tabPage1.Controls.Add(numUdPercent);
             tabPage1.Controls.Add(txtBenefitiary);
             tabPage1.Controls.Add(txtMotherName);
             tabPage1.Controls.Add(txtFatherName);
@@ -163,16 +166,13 @@
             tabPage1.Controls.Add(chkQuota);
             tabPage1.Controls.Add(chkInfonavitNA);
             tabPage1.Controls.Add(dtpBirthDate);
-            tabPage1.Controls.Add(mTxtRfc);
             tabPage1.Controls.Add(txtCurp);
             tabPage1.Controls.Add(txtInfonavitNumber);
             tabPage1.Controls.Add(chkFonacotNA);
             tabPage1.Controls.Add(txtFonacotId);
-            tabPage1.Controls.Add(mTxtPhone);
             tabPage1.Controls.Add(numUdQuota);
             tabPage1.Controls.Add(txtImssHosp);
             tabPage1.Controls.Add(txtAddress);
-            tabPage1.Controls.Add(TxtSocialSecurity);
             tabPage1.Controls.Add(txtEmail);
             tabPage1.Controls.Add(cmbCivilState);
             tabPage1.Controls.Add(txtName);
@@ -212,6 +212,27 @@
             tabPage1.Text = "Datos Generales";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // TxtRfc
+            // 
+            TxtRfc.Location = new Point(276, 193);
+            TxtRfc.Name = "TxtRfc";
+            TxtRfc.Size = new Size(155, 23);
+            TxtRfc.TabIndex = 125;
+            // 
+            // TxtPhone
+            // 
+            TxtPhone.Location = new Point(332, 120);
+            TxtPhone.Name = "TxtPhone";
+            TxtPhone.Size = new Size(128, 23);
+            TxtPhone.TabIndex = 124;
+            // 
+            // TxtNss
+            // 
+            TxtNss.Location = new Point(712, 34);
+            TxtNss.Name = "TxtNss";
+            TxtNss.Size = new Size(109, 23);
+            TxtNss.TabIndex = 123;
+            // 
             // cmbEmployees
             // 
             cmbEmployees.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -234,7 +255,7 @@
             // 
             // txtBankName
             // 
-            txtBankName.Location = new Point(632, 392);
+            txtBankName.Location = new Point(625, 394);
             txtBankName.Margin = new Padding(3, 2, 3, 2);
             txtBankName.Name = "txtBankName";
             txtBankName.Size = new Size(180, 23);
@@ -242,7 +263,7 @@
             // 
             // txtBankCard
             // 
-            txtBankCard.Location = new Point(382, 392);
+            txtBankCard.Location = new Point(375, 394);
             txtBankCard.Margin = new Padding(3, 2, 3, 2);
             txtBankCard.Name = "txtBankCard";
             txtBankCard.Size = new Size(196, 23);
@@ -274,24 +295,15 @@
             dtpBenefiatiryBirthDate.Size = new Size(142, 23);
             dtpBenefiatiryBirthDate.TabIndex = 116;
             // 
-            // mTxtBenefiatiryPhone
+            // numUdPercent
             // 
-            mTxtBenefiatiryPhone.Location = new Point(481, 302);
-            mTxtBenefiatiryPhone.Margin = new Padding(3, 2, 3, 2);
-            mTxtBenefiatiryPhone.Mask = "999-999-9999";
-            mTxtBenefiatiryPhone.Name = "mTxtBenefiatiryPhone";
-            mTxtBenefiatiryPhone.Size = new Size(110, 23);
-            mTxtBenefiatiryPhone.TabIndex = 115;
-            // 
-            // numericUdPercent
-            // 
-            numericUdPercent.Location = new Point(284, 302);
-            numericUdPercent.Margin = new Padding(3, 2, 3, 2);
-            numericUdPercent.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUdPercent.Name = "numericUdPercent";
-            numericUdPercent.Size = new Size(52, 23);
-            numericUdPercent.TabIndex = 114;
-            numericUdPercent.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numUdPercent.Location = new Point(284, 302);
+            numUdPercent.Margin = new Padding(3, 2, 3, 2);
+            numUdPercent.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numUdPercent.Name = "numUdPercent";
+            numUdPercent.Size = new Size(52, 23);
+            numUdPercent.TabIndex = 114;
+            numUdPercent.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // txtBenefitiary
             // 
@@ -303,7 +315,7 @@
             // 
             // txtMotherName
             // 
-            txtMotherName.Location = new Point(640, 266);
+            txtMotherName.Location = new Point(625, 264);
             txtMotherName.Margin = new Padding(3, 2, 3, 2);
             txtMotherName.Name = "txtMotherName";
             txtMotherName.Size = new Size(165, 23);
@@ -311,7 +323,7 @@
             // 
             // txtFatherName
             // 
-            txtFatherName.Location = new Point(335, 264);
+            txtFatherName.Location = new Point(320, 261);
             txtFatherName.Margin = new Padding(3, 2, 3, 2);
             txtFatherName.Name = "txtFatherName";
             txtFatherName.Size = new Size(162, 23);
@@ -327,7 +339,7 @@
             // 
             // txtDegreeDoc
             // 
-            txtDegreeDoc.Location = new Point(653, 232);
+            txtDegreeDoc.Location = new Point(648, 229);
             txtDegreeDoc.Margin = new Padding(3, 2, 3, 2);
             txtDegreeDoc.Name = "txtDegreeDoc";
             txtDegreeDoc.Size = new Size(152, 23);
@@ -380,14 +392,6 @@
             dtpBirthDate.Size = new Size(159, 23);
             dtpBirthDate.TabIndex = 104;
             // 
-            // mTxtRfc
-            // 
-            mTxtRfc.Location = new Point(284, 194);
-            mTxtRfc.Margin = new Padding(3, 2, 3, 2);
-            mTxtRfc.Name = "mTxtRfc";
-            mTxtRfc.Size = new Size(148, 23);
-            mTxtRfc.TabIndex = 103;
-            // 
             // txtCurp
             // 
             txtCurp.Location = new Point(54, 194);
@@ -398,7 +402,7 @@
             // 
             // txtInfonavitNumber
             // 
-            txtInfonavitNumber.Location = new Point(618, 122);
+            txtInfonavitNumber.Location = new Point(606, 120);
             txtInfonavitNumber.Margin = new Padding(3, 2, 3, 2);
             txtInfonavitNumber.Name = "txtInfonavitNumber";
             txtInfonavitNumber.Size = new Size(154, 23);
@@ -422,15 +426,6 @@
             txtFonacotId.Name = "txtFonacotId";
             txtFonacotId.Size = new Size(169, 23);
             txtFonacotId.TabIndex = 77;
-            // 
-            // mTxtPhone
-            // 
-            mTxtPhone.Location = new Point(340, 120);
-            mTxtPhone.Margin = new Padding(3, 2, 3, 2);
-            mTxtPhone.Mask = "999-999-9999";
-            mTxtPhone.Name = "mTxtPhone";
-            mTxtPhone.Size = new Size(110, 23);
-            mTxtPhone.TabIndex = 72;
             // 
             // numUdQuota
             // 
@@ -459,21 +454,12 @@
             txtAddress.Size = new Size(742, 38);
             txtAddress.TabIndex = 69;
             // 
-            // TxtSocialSecurity
-            // 
-            TxtSocialSecurity.Location = new Point(720, 34);
-            TxtSocialSecurity.Margin = new Padding(3, 2, 3, 2);
-            TxtSocialSecurity.Mask = "00000000000";
-            TxtSocialSecurity.Name = "TxtSocialSecurity";
-            TxtSocialSecurity.Size = new Size(104, 23);
-            TxtSocialSecurity.TabIndex = 68;
-            // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(542, 34);
+            txtEmail.Location = new Point(529, 32);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(134, 23);
+            txtEmail.Size = new Size(148, 23);
             txtEmail.TabIndex = 67;
             // 
             // cmbCivilState
@@ -1073,6 +1059,13 @@
             BtnGenerate.UseVisualStyleBackColor = true;
             BtnGenerate.Click += BtnGenerate_Click;
             // 
+            // TxtBenefitiaryPhone
+            // 
+            TxtBenefitiaryPhone.Location = new Point(462, 304);
+            TxtBenefitiaryPhone.Name = "TxtBenefitiaryPhone";
+            TxtBenefitiaryPhone.Size = new Size(128, 23);
+            TxtBenefitiaryPhone.TabIndex = 126;
+            // 
             // EmployeeScopeOfContractGenerator
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -1091,7 +1084,7 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUdPercent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numUdPercent).EndInit();
             ((System.ComponentModel.ISupportInitialize)numUdQuota).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -1109,7 +1102,7 @@
         private TextBox txtBenefiatiryAddress;
         private DateTimePicker dtpBenefiatiryBirthDate;
         private MaskedTextBox mTxtBenefiatiryPhone;
-        private NumericUpDown numericUdPercent;
+        private NumericUpDown numUdPercent;
         private TextBox txtBenefitiary;
         private TextBox txtMotherName;
         private TextBox txtFatherName;
@@ -1120,16 +1113,13 @@
         private CheckBox chkQuota;
         private CheckBox chkInfonavitNA;
         private DateTimePicker dtpBirthDate;
-        private MaskedTextBox mTxtRfc;
         private TextBox txtCurp;
         private TextBox txtInfonavitNumber;
         private CheckBox chkFonacotNA;
         private TextBox txtFonacotId;
-        private MaskedTextBox mTxtPhone;
         private NumericUpDown numUdQuota;
         private TextBox txtImssHosp;
         private TextBox txtAddress;
-        private MaskedTextBox TxtSocialSecurity;
         private TextBox txtEmail;
         private ComboBox cmbCivilState;
         private TextBox txtName;
@@ -1195,5 +1185,9 @@
         private Button BtnGenerate;
         private Label label39;
         private ComboBox cmbCompany;
+        private TextBox TxtPhone;
+        private TextBox TxtNss;
+        private TextBox TxtRfc;
+        private TextBox TxtBenefitiaryPhone;
     }
 }

@@ -86,7 +86,6 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void ClearAllFields()
         {
-            throw new NotImplementedException();
         }
 
         private void MapFields()
@@ -94,10 +93,31 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtName.Text = SelectedEmployee.EmployeeName;
             cmbCivilState.SelectedIndex = cmbCivilState.FindString(SelectedEmployee.MaritalStatus);
             txtEmail.Text = SelectedEmployee.Email;
-            TxtSocialSecurity.Text = SelectedEmployee.SocialSecurityNumber;
+            TxtNss.Text = SelectedEmployee.SocialSecurityNumber;
             txtCurp.Text = SelectedEmployee.Curp;
             txtAddress.Text = SelectedEmployee.Address;
-            
+            txtImssHosp.Text = SelectedEmployee.HospitalNumber;
+            TxtPhone.Text = SelectedEmployee.PersonalCellPhone;
+            txtInfonavitNumber.Text = SelectedEmployee.InfonavitNumber;
+            numUdQuota.Value = decimal.Parse(SelectedEmployee.InfonavitPercent);
+            txtFonacotId.Text = SelectedEmployee.FonacotClientNumber;
+            txtCurp.Text = SelectedEmployee.Curp;
+            TxtRfc.Text = SelectedEmployee.Rfc;
+            dtpBirthDate.Value = SelectedEmployee.BirthDate.Value;
+            txtBirthPlace.Text = SelectedEmployee.BirthPlace;
+            txtDegree.Text = SelectedEmployee.AcademicDegree;
+            txtDegreeDoc.Text = SelectedEmployee.AcademicDegreeDocument;
+            txtProfession.Text = SelectedEmployee.Profession;
+            txtFatherName.Text = SelectedEmployee.FatherName;
+            txtMotherName.Text = SelectedEmployee.MotherName;
+            //txtBenefitiary.Text = SelectedEmployee.;
+            numUdPercent.Value = SelectedEmployee.BenefitiaryPercent;
+            //TxtBenefitiaryPhone.Text = SelectedEmployee.BenefitiaryPhone;
+            dtpBenefiatiryBirthDate.Value = SelectedEmployee.BenefitiaryBirthDate.Value;
+            txtBenefiatiryAddress.Text = SelectedEmployee.BenefitiaryAddress;
+            txtBankAccount.Text = SelectedEmployee.BankAccountNumber.ToString();
+            txtBankCard.Text = SelectedEmployee.BankAccountCard.ToString();
+            txtBankName.Text = SelectedEmployee.BankName;
         }
     }
 }
