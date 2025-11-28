@@ -86,6 +86,34 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void ClearAllFields()
         {
+            txtName.Clear();
+            cmbCivilState.SelectedIndex = 0;
+            txtEmail.Clear();
+            TxtNss.Clear();
+            txtCurp.Clear();
+            txtAddress.Clear();
+            txtImssHosp.Clear();
+            TxtPhone.Clear();
+            txtInfonavitNumber.Clear();
+            numUdQuota.Value = 1;
+            txtFonacotId.Clear();
+            txtCurp.Clear();
+            TxtRfc.Clear();
+            dtpBirthDate.Value = DateTime.Now;
+            txtBirthPlace.Clear();
+            txtDegree.Clear();
+            txtDegreeDoc.Clear();
+            txtProfession.Clear();
+            txtFatherName.Clear();
+            txtMotherName.Clear();
+            txtBenefitiary.Clear();
+            numUdPercent.Value = 1;
+            TxtBenefitiaryPhone.Clear();
+            dtpBenefiatiryBirthDate.Value = DateTime.Now;
+            txtBenefiatiryAddress.Clear();
+            txtBankAccount.Clear();
+            txtBankCard.Clear();
+            txtBankName.Clear();
         }
 
         private void MapFields()
