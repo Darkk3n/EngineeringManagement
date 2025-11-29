@@ -127,10 +127,11 @@ namespace EngineeringManagement.UI
             cmbEmployees.Items.AddRange([.. Employees.OrderBy(r => r.EmployeeName)]);
             cmbEmployees.ValueMember = nameof(Employee.Id);
             cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
-            cmbEmployees.SelectedIndex = 0;
             cmbEmployees.AutoCompleteCustomSource.AddRange(Employees.Select(r => r.EmployeeName).ToArray());
             cmbEmployees.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cmbEmployees.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbEmployees.Items.Insert(0, "-- SELECCIONE --");
+            cmbEmployees.SelectedIndex = 0;
         }
 
         private void ReloadGrid()
@@ -290,6 +291,13 @@ namespace EngineeringManagement.UI
         #region Button Callbacks
         private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbEmployees.SelectedIndex == 0)
+            {
+                dgvEmployeeList.Rows.Clear();
+                AddAllEmployees();
+                return;
+            }
+
             if (!IsLoading)
             {
                 var employee = ((ComboBox)sender).SelectedItem as GeneralEmployee;
