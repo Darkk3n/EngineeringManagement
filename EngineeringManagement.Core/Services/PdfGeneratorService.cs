@@ -170,7 +170,7 @@ namespace EngineeringManagement.Core.Services
             table1.AddCell(NoBorderCell($"{employee.EmergencyPhoneNumber}").SetUnderline());
 
             table1.AddCell(NoBorderCell("Fecha de nacimiento:"));
-            table1.AddCell(NoBorderCell($"{employee.BenefitiaryBirthDate}", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BenefitiaryBirthDate.Value:d}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Parentesco:"));
             table1.AddCell(NoBorderCell($"{employee.EmergencyContactRelationShip}").SetUnderline());
