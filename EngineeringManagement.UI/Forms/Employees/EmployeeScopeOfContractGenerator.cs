@@ -33,6 +33,11 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
+            if (cmbEmployees.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione un Empleado", "Generador de Alcances", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var tempEmployee = GenerateTemporalEmployee();
             var retry = true;
             var pdfFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads") + @"\PdfTest";
@@ -203,7 +208,9 @@ namespace EngineeringManagement.UI.Forms.Employees
                 BankAccountNumber = int.Parse(txtBankAccount.Text),
                 BankAccountCard = int.Parse(txtBankCard.Text),
                 BankName = txtBankName.Text,
-                StartDate = dtpStartDate.Value.ToShortDateString()
+                StartDate = dtpStartDate.Value.ToShortDateString(),
+                Category = txtCategory.Text,
+                ProjectNumber = txtProjectNum.Text
             };
         }
         #endregion
