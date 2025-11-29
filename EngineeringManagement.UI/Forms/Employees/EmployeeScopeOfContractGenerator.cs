@@ -7,12 +7,15 @@ namespace EngineeringManagement.UI.Forms.Employees
 {
     public partial class EmployeeScopeOfContractGenerator : Form
     {
+        #region Props
         private readonly IPdfGeneratorService pdfGeneratorService;
         private readonly IOpenFileService openFileService;
         private readonly HrDataContext context;
         private List<GeneralEmployee> Employees { get; set; } = [];
         private GeneralEmployee SelectedEmployee { get; set; }
+        #endregion
 
+        #region Constructor
         public EmployeeScopeOfContractGenerator(IPdfGeneratorService pdfGeneratorService, IOpenFileService openFileService, HrDataContext context)
         {
             InitializeComponent();
@@ -20,26 +23,10 @@ namespace EngineeringManagement.UI.Forms.Employees
             this.openFileService = openFileService;
             this.context = context;
             LoadEmployees();
-        }
+        } 
+        #endregion
 
-        private void LoadEmployees()
-        {
-            Employees.AddRange([.. context.GeneralEmployees]);
-            if (Employees.Count == 0)
-            {
-                cmbEmployees.Items.Add("-- NO SE ENCONTRARON EMPLEADOS --");
-            }
-            else
-            {
-                cmbEmployees.Items.Clear();
-                cmbEmployees.Items.AddRange([.. Employees.OrderBy(r => r.EmployeeName)]);
-                cmbEmployees.ValueMember = nameof(Employee.Id);
-                cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
-                cmbEmployees.Items.Insert(0, "--SELECCIONE--");
-            }
-            cmbEmployees.SelectedIndex = 0;
-        }
-
+        #region Button callbacks
         private void btnCancel_Click(object sender, EventArgs e) => Close();
 
         private void BtnGenerate_Click(object sender, EventArgs e)
@@ -82,6 +69,37 @@ namespace EngineeringManagement.UI.Forms.Employees
                 SelectedEmployee = null;
                 ClearAllFields();
             }
+        }
+
+        private void chkQuota_CheckedChanged(object sender, EventArgs e)
+        {
+            numUdQuota.Enabled = !((CheckBox)sender).Checked;
+        }
+
+        private void chkFonacotNA_CheckedChanged(object sender, EventArgs e)
+        {
+            txtFonacotId.Text = string.Empty;
+            txtFonacotId.Enabled = !((CheckBox)sender).Checked;
+        }
+        #endregion
+
+        #region Private Methods
+        private void LoadEmployees()
+        {
+            Employees.AddRange([.. context.GeneralEmployees]);
+            if (Employees.Count == 0)
+            {
+                cmbEmployees.Items.Add("-- NO SE ENCONTRARON EMPLEADOS --");
+            }
+            else
+            {
+                cmbEmployees.Items.Clear();
+                cmbEmployees.Items.AddRange([.. Employees.OrderBy(r => r.EmployeeName)]);
+                cmbEmployees.ValueMember = nameof(Employee.Id);
+                cmbEmployees.DisplayMember = nameof(Employee.EmployeeName);
+                cmbEmployees.Items.Insert(0, "--SELECCIONE--");
+            }
+            cmbEmployees.SelectedIndex = 0;
         }
 
         private void ClearAllFields()
@@ -146,6 +164,7 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtBankAccount.Text = SelectedEmployee.BankAccountNumber.ToString();
             txtBankCard.Text = SelectedEmployee.BankAccountCard.ToString();
             txtBankName.Text = SelectedEmployee.BankName;
-        }
+        } 
+        #endregion
     }
 }

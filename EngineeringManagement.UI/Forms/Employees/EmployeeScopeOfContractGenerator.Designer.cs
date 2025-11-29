@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeScopeOfContractGenerator));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            TxtBenefitiaryPhone = new TextBox();
             TxtRfc = new TextBox();
             TxtPhone = new TextBox();
             TxtNss = new TextBox();
@@ -122,7 +123,6 @@
             label3 = new Label();
             btnCancel = new Button();
             BtnGenerate = new Button();
-            TxtBenefitiaryPhone = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numUdPercent).BeginInit();
@@ -211,6 +211,13 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Datos Generales";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // TxtBenefitiaryPhone
+            // 
+            TxtBenefitiaryPhone.Location = new Point(462, 304);
+            TxtBenefitiaryPhone.Name = "TxtBenefitiaryPhone";
+            TxtBenefitiaryPhone.Size = new Size(128, 23);
+            TxtBenefitiaryPhone.TabIndex = 126;
             // 
             // TxtRfc
             // 
@@ -371,6 +378,7 @@
             chkQuota.TabIndex = 106;
             chkQuota.Text = "N/A";
             chkQuota.UseVisualStyleBackColor = true;
+            chkQuota.CheckedChanged += chkQuota_CheckedChanged;
             // 
             // chkInfonavitNA
             // 
@@ -418,10 +426,11 @@
             chkFonacotNA.TabIndex = 101;
             chkFonacotNA.Text = "N/A";
             chkFonacotNA.UseVisualStyleBackColor = true;
+            chkFonacotNA.CheckedChanged += chkFonacotNA_CheckedChanged;
             // 
             // txtFonacotId
             // 
-            txtFonacotId.Location = new Point(366, 155);
+            txtFonacotId.Location = new Point(358, 155);
             txtFonacotId.Margin = new Padding(3, 2, 3, 2);
             txtFonacotId.Name = "txtFonacotId";
             txtFonacotId.Size = new Size(169, 23);
@@ -1058,13 +1067,6 @@
             BtnGenerate.Text = "Generar";
             BtnGenerate.UseVisualStyleBackColor = true;
             BtnGenerate.Click += BtnGenerate_Click;
-            // 
-            // TxtBenefitiaryPhone
-            // 
-            TxtBenefitiaryPhone.Location = new Point(462, 304);
-            TxtBenefitiaryPhone.Name = "TxtBenefitiaryPhone";
-            TxtBenefitiaryPhone.Size = new Size(128, 23);
-            TxtBenefitiaryPhone.TabIndex = 126;
             // 
             // EmployeeScopeOfContractGenerator
             // 
