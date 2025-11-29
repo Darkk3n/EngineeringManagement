@@ -107,6 +107,12 @@ namespace EngineeringManagement.UI.Forms.GeneralEmployeeForm
         private void BtnAddNew_Click(object sender, EventArgs e)
         {
             var employee = BuildNewEmployeeObject();
+            var existingEmployee = CurrentEmployees.Any(e => e.EmployeeName == employee.EmployeeName);
+            if (existingEmployee)
+            {
+                MessageBox.Show("Ya existe un empleado con este nombre. Utilice el boton Actualizar si desea actualizar los datos existentes.", "Agregar/Editar Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var recordCount = 0;
             try
             {
