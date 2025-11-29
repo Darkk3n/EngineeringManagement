@@ -291,7 +291,7 @@ namespace EngineeringManagement.UI
         #region Button Callbacks
         private void cmbEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbEmployees.SelectedIndex == 0)
+            if (cmbEmployees.SelectedIndex == 0 && dgvEmployeeList.Rows.Count > 0)
             {
                 dgvEmployeeList.Rows.Clear();
                 AddAllEmployees();
