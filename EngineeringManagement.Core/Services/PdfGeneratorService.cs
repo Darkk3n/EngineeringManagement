@@ -54,7 +54,7 @@ namespace EngineeringManagement.Core.Services
             document.Add(new Paragraph().SetHeight(10));
 
             // Flexible 6-column layout for second section
-            var table2 = new Table([1.2f, 1f, 1.2f, 1f, 1.2f, 1f]).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
+            var table2 = new Table([1.2f, 0.8f, 1.2f, 0.8f, 1.2f, 0.8f]).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
 
             // --- Ingresos / Categoria / Proyecto ---
             table2.AddCell(new Cell()
@@ -95,19 +95,91 @@ namespace EngineeringManagement.Core.Services
                 .Add(new Paragraph("Empresa").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
 
             // data rows with right borders between sections
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDB:")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$278.80")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Infonavit:")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("NO APLICA")));
-            //table2.AddCell(NoBorderCell("AES:"));
-            //table2.AddCell(NoBorderCell("X"));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderLeft(new SolidBorder((float)0.5m)).Add(new Paragraph("SDB:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder((float)0.5m)).SetUnderline().Add(new Paragraph($"{employee.SBD}")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).Add(new Paragraph("Infonavit:")));
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder((float)0.5m)).Add(new Paragraph("NO APLICA")));
+            table2.AddCell(NoBorderCell("AES")).SetPaddingRight(0);
+            table2.AddCell(new Cell()
+                .SetPaddingTop(3)
+                .SetMinHeight(14)
+                .SetBorder(new SolidBorder((float)0.5m))
+                .SetHorizontalAlignment(HorizontalAlignment.CENTER)
+                .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                .Add(new Paragraph("X")
+                    .SetFontSize(8)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .SetMargin(0)));
 
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDI:")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$292.54")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("% sindical:")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SI APLICA")));
-            //table2.AddCell(NoBorderCell("Neto Semanal:"));
-            //table2.AddCell(NoBorderCell("$ 3,044.75 SEMANALES"));
+            // --- SDI row ---
+            // --- SDI row (perfectly matches screenshot) ---
+
+            // SDI label
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderLeft(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph("SDI:").SetMargin(0))
+            );
+
+            // SDI value (underlined)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph($"{employee.SDI}")
+                        .SetUnderline()
+                        .SetMargin(0))
+            );
+
+            // Percent value (underlined)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("3")    // like "3"
+                        .SetUnderline()
+                        .SetMargin(0))
+            );
+
+            // ONE CELL containing: [ % sindical ] [ SI APLICA ]
+            // % sindical is normal text
+            // SI APLICA is underlined
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .Add(
+                        new Paragraph()
+                            .Add(new Text("% sindical\u00A0\u00A0"))
+                            .Add(new Text("SI APLICA").SetUnderline()
+                            )
+                            .SetMargin(0)
+                    )
+            );
+
+            // Empresa name
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("CRESSERT").SetMargin(0))
+            );
+
+            // Checkbox
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(new SolidBorder((float)0.5m))
+                    .SetMinHeight(14)
+                    .SetPadding(2)
+                    .SetHorizontalAlignment(HorizontalAlignment.CENTER)
+                    .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                    .Add(new Paragraph("X")
+                        .SetFontSize(8)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMargin(0))
+            );
+
+
+
 
             //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tipo de contrato:")));
             //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("TIEMPO DETERMINADO")));
