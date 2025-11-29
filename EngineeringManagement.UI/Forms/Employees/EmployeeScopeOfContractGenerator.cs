@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using EngineeringManagement.Core.Contracts;
+using EngineeringManagement.Core.Extensions;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 
@@ -23,7 +24,7 @@ namespace EngineeringManagement.UI.Forms.Employees
             this.openFileService = openFileService;
             this.context = context;
             LoadEmployees();
-        } 
+        }
         #endregion
 
         #region Button callbacks
@@ -31,6 +32,7 @@ namespace EngineeringManagement.UI.Forms.Employees
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
+            var tempEmployee = GenerateTemporalEmployee();
             var retry = true;
             var pdfFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads") + @"\PdfTest";
             var logoPath = Path.Combine(AppContext.BaseDirectory, "Resources");
@@ -38,10 +40,10 @@ namespace EngineeringManagement.UI.Forms.Employees
             {
                 try
                 {
-                    pdfGeneratorService.Generate(Employees[0], pdfFilePath, logoPath);
+                    pdfGeneratorService.Generate(tempEmployee, pdfFilePath, logoPath);
                     MessageBox.Show("PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Thread.Sleep(1000);
-                    openFileService.Execute($@"{pdfFilePath}\Alcance {Employees[0].EmployeeName}.pdf");
+                    openFileService.Execute($@"{pdfFilePath}\Alcance {tempEmployee.EmployeeName}.pdf");
                     retry = false;
                 }
                 catch (IOException)
@@ -71,15 +73,18 @@ namespace EngineeringManagement.UI.Forms.Employees
             }
         }
 
-        private void chkQuota_CheckedChanged(object sender, EventArgs e)
-        {
-            numUdQuota.Enabled = !((CheckBox)sender).Checked;
-        }
+        private void chkQuota_CheckedChanged(object sender, EventArgs e) => numUdQuota.Enabled = !((CheckBox)sender).Checked;
 
         private void chkFonacotNA_CheckedChanged(object sender, EventArgs e)
         {
             txtFonacotId.Text = string.Empty;
             txtFonacotId.Enabled = !((CheckBox)sender).Checked;
+        }
+
+        private void chkInfonavitNA_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtInfonavitNumber.Text = string.Empty;
+            txtInfonavitNumber.Enabled = !((CheckBox)sender).Checked;
         }
         #endregion
 
@@ -164,7 +169,41 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtBankAccount.Text = SelectedEmployee.BankAccountNumber.ToString();
             txtBankCard.Text = SelectedEmployee.BankAccountCard.ToString();
             txtBankName.Text = SelectedEmployee.BankName;
-        } 
+        }
+
+        private GeneralEmployee GenerateTemporalEmployee()
+        {
+            return new GeneralEmployee
+            {
+                EmployeeName = txtName.Text,
+                MaritalStatus = cmbCivilState.Text,
+                Email = txtEmail.Text,
+                SocialSecurityNumber = TxtNss.Text,
+                Curp = txtCurp.Text,
+                Address = txtAddress.Text,
+                HospitalNumber = txtImssHosp.Text,
+                PersonalCellPhone = TxtPhone.Text,
+                InfonavitNumber = !txtInfonavitNumber.Text.HasValue() ? "NO APLICA" : txtInfonavitNumber.Text,
+                InfonavitPercent = chkQuota.Checked ? "0" : numUdQuota.Value.ToString(),
+                FonacotClientNumber = !txtFonacotId.Text.HasValue() ? "NO APLICA" : txtFonacotId.Text,
+                Rfc = TxtRfc.Text,
+                BirthDate = dtpBirthDate.Value,
+                BirthPlace = txtBirthPlace.Text,
+                AcademicDegree = txtDegree.Text,
+                AcademicDegreeDocument = txtDegreeDoc.Text,
+                Profession = txtProfession.Text,
+                FatherName = txtFatherName.Text,
+                MotherName = txtMotherName.Text,
+                EmergencyContactName = txtBenefitiary.Text,
+                BenefitiaryPercent = (int)numUdPercent.Value,
+                EmergencyPhoneNumber = TxtBenefitiaryPhone.Text,
+                BenefitiaryBirthDate = dtpBenefiatiryBirthDate.Value,
+                BenefitiaryAddress = txtBenefiatiryAddress.Text,
+                BankAccountNumber = int.Parse(txtBankAccount.Text),
+                BankAccountCard = int.Parse(txtBankCard.Text),
+                BankName = txtBankName.Text,
+            };
+        }
         #endregion
     }
 }

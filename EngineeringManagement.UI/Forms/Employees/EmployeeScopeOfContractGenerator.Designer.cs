@@ -390,6 +390,7 @@
             chkInfonavitNA.TabIndex = 105;
             chkInfonavitNA.Text = "N/A";
             chkInfonavitNA.UseVisualStyleBackColor = true;
+            chkInfonavitNA.CheckedChanged += chkInfonavitNA_CheckedChanged_1;
             // 
             // dtpBirthDate
             // 
