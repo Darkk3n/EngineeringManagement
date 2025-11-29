@@ -54,28 +54,44 @@ namespace EngineeringManagement.Core.Services
             document.Add(new Paragraph().SetHeight(10));
 
             // Flexible 6-column layout for second section
-            var table2 = new Table(6).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
+            var table2 = new Table([1.2f, 1f, 1.2f, 1f, 1.2f, 1f]).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
+
+            // --- Ingresos / Categoria / Proyecto ---
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph("Ingresos:").SetFont(boldFont)));
+
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph($"{employee.StartDate}").SetUnderline()));
+
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph("Categoría:").SetFont(boldFont)));
+
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph($"{employee.Category}").SetUnderline()));
+
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph("Proyecto:").SetFont(boldFont).SetTextAlignment(TextAlignment.LEFT)));
+
+            table2.AddCell(new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph($"{employee.ProjectNumber}").SetUnderline().SetTextAlignment(TextAlignment.LEFT)));
 
             // --- header row grouping with right borders ---
             table2.AddCell(new Cell(1, 2)
                 .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-                .SetBorderRight(new SolidBorder(1))
-                .SetBorderTop(Border.NO_BORDER)
-                .SetBorderLeft(Border.NO_BORDER)
-                .SetBorderBottom(Border.NO_BORDER)
                 .Add(new Paragraph("Ingresos").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
 
             table2.AddCell(new Cell(1, 2)
                 .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-                .SetBorderRight(new SolidBorder(1))
-                .SetBorderTop(Border.NO_BORDER)
-                .SetBorderLeft(Border.NO_BORDER)
-                .SetBorderBottom(Border.NO_BORDER)
                 .Add(new Paragraph("Impuestos - Descuentos").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
 
             table2.AddCell(new Cell(1, 2)
                 .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-                .SetBorder(Border.NO_BORDER)
                 .Add(new Paragraph("Empresa").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
 
             // data rows with right borders between sections
