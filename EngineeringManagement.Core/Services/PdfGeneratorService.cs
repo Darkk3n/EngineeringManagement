@@ -32,7 +32,7 @@ namespace EngineeringManagement.Core.Services
 
             AddHeader(document, logoPath, boldFont, regularFont);
 
-            AddFirstSection(document, boldFont, regularFont);
+            AddFirstSection(document, boldFont, regularFont, employee);
 
             AddSecondSection(document, boldFont, regularFont);
 
@@ -99,7 +99,7 @@ namespace EngineeringManagement.Core.Services
             document.Add(table2);
         }
 
-        private static void AddFirstSection(Document document, PdfFont boldFont, PdfFont regularFont)
+        private static void AddFirstSection(Document document, PdfFont boldFont, PdfFont regularFont, GeneralEmployee employee)
         {
             // First block of info (2-column layout)
             var tableTitle = new Table(1).UseAllAvailableWidth();
@@ -116,73 +116,73 @@ namespace EngineeringManagement.Core.Services
             var table1 = new Table(6).UseAllAvailableWidth().SetFont(regularFont).SetFontSize(9);
 
             table1.AddCell(NoBorderCell("Nombre:"));
-            table1.AddCell(NoBorderCell("ERICK EUGENIO DEL VALLE BALDERAS").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.EmployeeName}").SetUnderline());
             table1.AddCell(NoBorderCell("Estado civil:"));
-            table1.AddCell(NoBorderCell("SOLTERO").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.MaritalStatus}").SetUnderline());
             table1.AddCell(NoBorderCell("Correo:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.Email}").SetUnderline());
 
             table1.AddCell(NoBorderCell("Domicilio:"));
-            table1.AddCell(NoBorderCell("AV LAS TORRES 2308 COL LAZARO CARDENAS CP. 89602 ALTAMIRA TAMPS.", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.Address}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("NSS:"));
-            table1.AddCell(NoBorderCell("38179900907").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.SocialSecurityNumber}").SetUnderline());
             table1.AddCell(NoBorderCell("No. Clínica IMSS:"));
-            table1.AddCell(NoBorderCell("10").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.HospitalNumber}").SetUnderline());
             table1.AddCell(NoBorderCell("Teléfono:"));
-            table1.AddCell(NoBorderCell("833 323 5657").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.PersonalCellPhone}").SetUnderline());
 
             table1.AddCell(NoBorderCell("No. Crédito Infonavit:"));
-            table1.AddCell(NoBorderCell("NO APLICA").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.InfonavitNumber}").SetUnderline());
             table1.AddCell(NoBorderCell("% - VSM - Cuota:"));
-            table1.AddCell(NoBorderCell("NO APLICA").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.InfonavitPercent}").SetUnderline());
             table1.AddCell(NoBorderCell("Número de cliente (Fonacot):"));
-            table1.AddCell(NoBorderCell("NO APLICA").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.FonacotClientNumber}").SetUnderline());
 
             table1.AddCell(NoBorderCell("CURP:"));
-            table1.AddCell(NoBorderCell("VABE990508HTSLLR05").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.Curp}").SetUnderline());
             table1.AddCell(NoBorderCell("RFC:"));
-            table1.AddCell(NoBorderCell("VABE9905088J4").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.Rfc}").SetUnderline());
             table1.AddCell(NoBorderCell("Fecha de Nacimiento:"));
-            table1.AddCell(NoBorderCell("08/05/1999").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BirthDate.Value:d}").SetUnderline());
 
             table1.AddCell(NoBorderCell("Lugar de Nacimiento:", 2));
-            table1.AddCell(NoBorderCell("CD MADERO TAMPS.", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BirthPlace}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Grado acad."));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.AcademicDegree}").SetUnderline());
             table1.AddCell(NoBorderCell("Documento:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.AcademicDegreeDocument}").SetUnderline());
             table1.AddCell(NoBorderCell("Profesión:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.Profession}").SetUnderline());
 
             table1.AddCell(NoBorderCell("Nombre del padre:"));
-            table1.AddCell(NoBorderCell("JAIME DEL VALLE OLMEDO", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.FatherName}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Nombre de la madre:"));
-            table1.AddCell(NoBorderCell("ZOILA BALDERAS RAMIREZ", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.MotherName}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Beneficiario:"));
-            table1.AddCell(NoBorderCell("ZOILA BALDERAS RAMIREZ").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.EmergencyContactName}").SetUnderline());
             table1.AddCell(NoBorderCell("%:"));
-            table1.AddCell(NoBorderCell("100").SetTextAlignment(TextAlignment.LEFT).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BenefitiaryPercent}").SetTextAlignment(TextAlignment.LEFT).SetUnderline());
             table1.AddCell(NoBorderCell("Teléfono beneficiario:"));
-            table1.AddCell(NoBorderCell("833 104 2230").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.EmergencyPhoneNumber}").SetUnderline());
 
             table1.AddCell(NoBorderCell("Fecha de nacimiento:"));
-            table1.AddCell(NoBorderCell("", 5).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BenefitiaryBirthDate}", 5).SetUnderline());
 
             table1.AddCell(NoBorderCell("Parentesco:"));
-            table1.AddCell(NoBorderCell("MADRE").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.EmergencyContactRelationShip}").SetUnderline());
             table1.AddCell(NoBorderCell("Domicilio del beneficiario:"));
-            table1.AddCell(NoBorderCell("AV LAS TORRES 2308 COL LAZARO CARDENAS CP. 89602 ALTAMIRA TAMPS.", 3).SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BenefitiaryAddress}", 3).SetUnderline());
 
             table1.AddCell(NoBorderCell("Cuenta Bancaria:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BankAccountNumber}").SetUnderline());
             table1.AddCell(NoBorderCell("Tarjeta / Clabe:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BankAccountCard}").SetUnderline());
             table1.AddCell(NoBorderCell("Banco:"));
-            table1.AddCell(NoBorderCell("").SetUnderline());
+            table1.AddCell(NoBorderCell($"{employee.BankName}").SetUnderline());
 
 
             document.Add(table1);
