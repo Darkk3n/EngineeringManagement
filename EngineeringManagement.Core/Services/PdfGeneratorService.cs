@@ -179,12 +179,188 @@ namespace EngineeringManagement.Core.Services
             );
 
 
+            //3rd Row
+
+            // --- Canasta + Pensiones + Quincenal row ---
+
+            // 1. Canasta label
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderLeft(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph("Canasta:").SetMargin(0))
+            );
+
+            // 2. Canasta underline
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph("_____________")
+                        .SetMargin(0))
+            );
+
+            // 3. Pensiones label
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("Pensiones:").SetMargin(0))
+            );
+
+            // 4. Pensiones underline
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph("_____________")
+                        .SetMargin(0))
+            );
+
+            // 5. Quincenal label (no border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("Quincenal").SetMargin(0))
+            );
+
+            // 6. Quincenal empty checkbox
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(new SolidBorder((float)0.5m))   // full box
+                    .SetMinHeight(14)
+                    .SetPadding(2)
+                    .SetHorizontalAlignment(HorizontalAlignment.CENTER)
+                    .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                    .Add(new Paragraph("")        // empty checkbox
+                        .SetFontSize(8)
+                        .SetMargin(0))
+            );
+
+            //4th row
+
+            // --- Semanal row ---
+
+            // Col 1
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderLeft(new SolidBorder((float)0.5m)));
+
+            // Col 2 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+            );
+
+            // Col 3
+            table2.AddCell(
+                new Cell().SetBorder(Border.NO_BORDER)
+            );
+
+            // Col 4 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+            );
+
+            // Col 5: Semanal label
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("Semanal").SetMargin(0))
+            );
+
+            // Col 6: Empty checkbox
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(new SolidBorder((float)0.5m))
+                    .SetMinHeight(14)
+                    .SetPadding(2)
+                    .SetHorizontalAlignment(HorizontalAlignment.CENTER)
+                    .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                    .Add(new Paragraph("")      // empty check
+                        .SetFontSize(8)
+                        .SetMargin(0))
+            );
+
+            // --- Neto Semanal row (NO checkbox) ---
+
+            // Col 1
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderLeft(new SolidBorder((float)0.5m)));
+
+            // Col 2 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+            );
+
+            // Col 3
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER));
+
+            // Col 4 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+            );
+
+            // Col 5 label
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .Add(new Paragraph("Neto Semanal:").SetMargin(0))
+            );
+
+            // Col 6 (empty — no checkbox)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .Add(new Paragraph("").SetMargin(0))
+            );
 
 
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tipo de contrato:")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("TIEMPO DETERMINADO")));
-            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tiempo de contratación:")));
-            //table2.AddCell(NoBorderCell("DEL 01 ABRIL 2025 AL 01 MAYO 2025.", 3));
+            // --- Neto Semanal amount row ---
+
+            // Col 1
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderLeft(new SolidBorder((float)0.5m)).SetBorderBottom(new SolidBorder((float)0.5m)));
+
+            // Col 2 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .SetBorderBottom(new SolidBorder((float)0.5m))
+            );
+
+            // Col 3
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER)).SetBorderBottom(new SolidBorder((float)0.5m));
+
+            // Col 4 (right border)
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderBottom(new SolidBorder((float)0.5m))
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+            );
+
+            // Col 5 empty
+            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER));
+
+            // Col 6 — centered underlined amount
+            table2.AddCell(
+                new Cell()
+                    .SetBorder(Border.NO_BORDER)
+                    .SetBorderRight(new SolidBorder((float)0.5m))
+                    .SetBorderBottom(new SolidBorder((float)0.5m))
+                    .SetTextAlignment(TextAlignment.CENTER)  // <-- centers it
+                    .Add(new Paragraph($"0 SEMANALES") //Replacement
+                        .SetUnderline()
+                        .SetMargin(0))
+            );
+
+
+
 
             document.Add(table2);
         }
