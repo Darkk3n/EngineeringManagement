@@ -143,6 +143,12 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtBankAccount.Clear();
             txtBankCard.Clear();
             txtBankName.Clear();
+            txtCategory.Clear();
+            dtpStartDate.Value = DateTime.Today;
+            dtpEndDate.Value = DateTime.Today;
+            txtProjectNum.Clear();
+            txtSbd.Clear();
+            txtSdi.Clear();            
         }
 
         private void MapFields()
@@ -212,6 +218,17 @@ namespace EngineeringManagement.UI.Forms.Employees
                 Category = txtCategory.Text,
                 ProjectNumber = txtProjectNum.Text
             };
+        }
+
+        private void OnlyNumbers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys like Backspace, Delete, etc.
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow digits only
+            if (!char.IsDigit(e.KeyChar))
+                e.Handled = true;
         }
         #endregion
     }

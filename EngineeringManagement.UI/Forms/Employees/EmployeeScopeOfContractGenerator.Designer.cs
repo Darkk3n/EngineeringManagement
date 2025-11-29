@@ -901,7 +901,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(671, 47);
+            textBox1.Location = new Point(661, 47);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(140, 23);
@@ -909,7 +909,7 @@
             // 
             // txtSdi
             // 
-            txtSdi.Location = new Point(488, 45);
+            txtSdi.Location = new Point(480, 47);
             txtSdi.Margin = new Padding(3, 2, 3, 2);
             txtSdi.Name = "txtSdi";
             txtSdi.Size = new Size(117, 23);
@@ -927,7 +927,7 @@
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(610, 47);
+            label37.Location = new Point(603, 50);
             label37.Name = "label37";
             label37.Size = new Size(52, 15);
             label37.TabIndex = 14;
@@ -971,7 +971,7 @@
             // 
             // txtSbd
             // 
-            txtSbd.Location = new Point(318, 45);
+            txtSbd.Location = new Point(315, 44);
             txtSbd.Margin = new Padding(3, 2, 3, 2);
             txtSbd.Name = "txtSbd";
             txtSbd.Size = new Size(129, 23);
@@ -984,6 +984,7 @@
             txtProjectNum.Name = "txtProjectNum";
             txtProjectNum.Size = new Size(163, 23);
             txtProjectNum.TabIndex = 7;
+            txtProjectNum.KeyPress += OnlyNumbers_KeyPress;
             // 
             // txtCategory
             // 
