@@ -1,4 +1,6 @@
 ﻿using EngineeringManagement.Core.Contracts;
+using EngineeringManagement.Core.Extensions;
+using EngineeringManagement.Core.Models;
 using EngineeringManagement.Data.Models;
 using iText.IO.Font.Constants;
 using iText.IO.Image;
@@ -16,7 +18,7 @@ namespace EngineeringManagement.Core.Services
     {
         private readonly string logoPath;
 
-        public void Generate(GeneralEmployee employee, string basePath, string logoPath)
+        public void Generate(GeneralEmployeeWithExtras employee, string basePath, string logoPath)
         {
             var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             var regularFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
@@ -34,12 +36,12 @@ namespace EngineeringManagement.Core.Services
 
             AddFirstSection(document, boldFont, regularFont, employee);
 
-            AddSecondSection(document, boldFont, regularFont);
+            AddSecondSection(document, boldFont, regularFont, employee);
 
             document.Close();
         }
 
-        private static void AddSecondSection(Document document, PdfFont boldFont, PdfFont regularFont)
+        private static void AddSecondSection(Document document, PdfFont boldFont, PdfFont regularFont, GeneralEmployeeWithExtras employee)
         {
             var tableTitle2 = new Table(1).UseAllAvailableWidth();
             tableTitle2.AddCell(new Cell()
@@ -77,29 +79,29 @@ namespace EngineeringManagement.Core.Services
                 .Add(new Paragraph("Empresa").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER)));
 
             // data rows with right borders between sections
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDB:")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$278.80")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Infonavit:")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("NO APLICA")));
-            table2.AddCell(NoBorderCell("AES:"));
-            table2.AddCell(NoBorderCell("X"));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDB:")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$278.80")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Infonavit:")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("NO APLICA")));
+            //table2.AddCell(NoBorderCell("AES:"));
+            //table2.AddCell(NoBorderCell("X"));
 
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDI:")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$292.54")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("% sindical:")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SI APLICA")));
-            table2.AddCell(NoBorderCell("Neto Semanal:"));
-            table2.AddCell(NoBorderCell("$ 3,044.75 SEMANALES"));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SDI:")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("$292.54")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("% sindical:")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("SI APLICA")));
+            //table2.AddCell(NoBorderCell("Neto Semanal:"));
+            //table2.AddCell(NoBorderCell("$ 3,044.75 SEMANALES"));
 
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tipo de contrato:")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("TIEMPO DETERMINADO")));
-            table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tiempo de contratación:")));
-            table2.AddCell(NoBorderCell("DEL 01 ABRIL 2025 AL 01 MAYO 2025.", 3));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tipo de contrato:")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("TIEMPO DETERMINADO")));
+            //table2.AddCell(new Cell().SetBorder(Border.NO_BORDER).SetBorderRight(new SolidBorder(1)).Add(new Paragraph("Tiempo de contratación:")));
+            //table2.AddCell(NoBorderCell("DEL 01 ABRIL 2025 AL 01 MAYO 2025.", 3));
 
             document.Add(table2);
         }
 
-        private static void AddFirstSection(Document document, PdfFont boldFont, PdfFont regularFont, GeneralEmployee employee)
+        private static void AddFirstSection(Document document, PdfFont boldFont, PdfFont regularFont, GeneralEmployeeWithExtras employee)
         {
             // First block of info (2-column layout)
             var tableTitle = new Table(1).UseAllAvailableWidth();

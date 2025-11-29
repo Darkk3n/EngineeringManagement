@@ -1,9 +1,10 @@
-﻿using EngineeringManagement.Data.Models;
+﻿using EngineeringManagement.Core.Models;
+using EngineeringManagement.Data.Models;
 
 namespace EngineeringManagement.Core.Contracts
 {
     public interface IPdfGeneratorService
     {
-        void Generate(GeneralEmployee employee, string basePath, string logoPath);
+        void Generate(GeneralEmployeeWithExtras employee, string basePath, string logoPath);
     }
 }

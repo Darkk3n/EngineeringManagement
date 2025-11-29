@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using EngineeringManagement.Core.Contracts;
 using EngineeringManagement.Core.Extensions;
+using EngineeringManagement.Core.Models;
 using EngineeringManagement.Data;
 using EngineeringManagement.Data.Models;
 
@@ -171,9 +172,9 @@ namespace EngineeringManagement.UI.Forms.Employees
             txtBankName.Text = SelectedEmployee.BankName;
         }
 
-        private GeneralEmployee GenerateTemporalEmployee()
+        private GeneralEmployeeWithExtras GenerateTemporalEmployee()
         {
-            return new GeneralEmployee
+            return new GeneralEmployeeWithExtras
             {
                 EmployeeName = txtName.Text,
                 MaritalStatus = cmbCivilState.Text,
@@ -202,6 +203,7 @@ namespace EngineeringManagement.UI.Forms.Employees
                 BankAccountNumber = int.Parse(txtBankAccount.Text),
                 BankAccountCard = int.Parse(txtBankCard.Text),
                 BankName = txtBankName.Text,
+                StartDate = dtpStartDate.Value.ToShortDateString()
             };
         }
         #endregion
