@@ -11,7 +11,7 @@ A specialized desktop ERP prototype built for personnel management, focusing on 
 Unlike traditional "Drag-and-Drop" WinForms apps, this project implements a modern architectural approach:
 
 - **Framework:** .NET 8 (Windows)
-- **ORM:** Entity Framework Core 8 (using a modular Data/Core project split).
+- **ORM:** Entity Framework Core 8 using a **Code-First** approach. Managed database schema evolution through **EF Migrations**, ensuring consistent data structures across development and local environments.
 - **Inversion of Control:** Implemented **Microsoft.Extensions.DependencyInjection** to manage service lifetimes and promote decoupled code.
 - **Reporting:** Utilized **iText 9** for programmatic PDF generation and **ClosedXML** for spreadsheet data exports.
 
